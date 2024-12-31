@@ -1,0 +1,59 @@
+
+/* Content for styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(206, 206, 206));
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 15px;
+    padding-bottom: 0px;
+    font-size: x-large;
+}
+header img {
+    border-radius: 50%;
+    width:20vw;
+    border: 5px solid #ececec;
+}
+
+section {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: rgb(255, 255, 255);
+    border-radius: 50px;
+}
+footer a{
+    
+    color: rgb(0, 0, 0);
+    text-decoration: solid;
+    text-decoration-color: rgb(0, 0, 0);
+}
+footer a :hover{
+    text-decoration: underline;
+    text-decoration-color: rgb(0, 0, 0);
+}
+
+ul{
+    padding: 0px;
+    text-decoration: underline;
+}
+
+p{
+    padding-top: 0px;
+    margin-top: 5px;
+}
+
+h2{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
