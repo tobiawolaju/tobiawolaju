@@ -1,5 +1,3 @@
-
-/* Content for styles.css */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -14,6 +12,7 @@ header {
     padding-bottom: 0px;
     font-size: x-large;
 }
+
 header img {
     border-radius: 50%;
     width:20vw;
@@ -27,17 +26,25 @@ section {
 }
 
 footer {
+justify-items: center;
+}
+
+.footit{
     text-align: center;
     padding: 10px;
+    margin: 20px;
     background: rgb(255, 255, 255);
     border-radius: 50px;
+    width: 90%;
+    max-width: 800px;
 }
+
 footer a{
-    
     color: rgb(0, 0, 0);
     text-decoration: solid;
     text-decoration-color: rgb(0, 0, 0);
 }
+
 footer a :hover{
     text-decoration: underline;
     text-decoration-color: rgb(0, 0, 0);
@@ -60,4 +67,18 @@ h2{
 
 a{
     color: black;
+}
+
+
+/* Initial state: hidden with opacity 0 */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* When visible, fade in and reset position */
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
