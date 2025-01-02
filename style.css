@@ -1,3 +1,4 @@
+/* Default styles (light mode) */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -15,7 +16,7 @@ header {
 
 header img {
     border-radius: 50%;
-    width:20vw;
+    width: 20vw;
     border: 5px solid #ececec;
 }
 
@@ -28,10 +29,10 @@ section {
 }
 
 footer {
-justify-items: center;
+    justify-items: center;
 }
 
-.footit{
+.footit {
     text-align: center;
     padding: 10px;
     margin: 20px;
@@ -41,36 +42,35 @@ justify-items: center;
     max-width: 800px;
 }
 
-footer a{
+footer a {
     color: rgb(0, 0, 0);
     text-decoration: solid;
     text-decoration-color: rgb(0, 0, 0);
 }
 
-footer a :hover{
+footer a:hover {
     text-decoration: underline;
     text-decoration-color: rgb(0, 0, 0);
 }
 
-ul{
+ul {
     padding: 0px;
     text-decoration: underline;
 }
 
-p{
+p {
     padding-top: 0px;
     margin-top: 5px;
 }
 
-h2{
+h2 {
     padding-bottom: 0px;
     margin-bottom: 0px;
 }
 
-a{
+a {
     color: black;
 }
-
 
 /* Initial state: hidden with opacity 0 */
 section {
@@ -85,7 +85,6 @@ section.visible {
     transform: translateY(0);
 }
 
-
 .hidden {
     display: none;
 }
@@ -98,4 +97,32 @@ section.visible {
 
 .toggle:hover {
     text-decoration: underline;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    body {
+        color: rgb(255, 255, 255);
+        background: linear-gradient(to bottom, rgb(18, 18, 18), rgb(48, 48, 48));
+    }
+
+    header img {
+        border: 5px solid #555;
+    }
+
+    .footit {
+        background: rgb(48, 48, 48);
+    }
+
+    footer a {
+        color: rgb(255, 255, 255);
+    }
+
+    footer a:hover {
+        text-decoration-color: rgb(255, 255, 255);
+    }
+
+    a {
+        color: rgb(173, 216, 230); /* Light blue for links in dark mode */
+    }
 }
