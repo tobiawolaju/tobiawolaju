@@ -20,3 +20,15 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", revealSections);
     revealSections();
 });
+
+
+//hide that shit 
+document.addEventListener("DOMContentLoaded", () => {
+    const toggles = document.querySelectorAll(".toggle");
+    toggles.forEach(toggle => {
+        toggle.addEventListener("click", () => {
+            const content = toggle.nextElementSibling;
+            content.classList.toggle("hidden");
+        });
+    });
+});

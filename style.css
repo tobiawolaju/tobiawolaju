@@ -21,6 +21,8 @@ header img {
 
 section {
     padding: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     max-width: 800px;
     margin: auto;
 }
@@ -81,4 +83,19 @@ section {
 section.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+.hidden {
+    display: none;
+}
+
+.toggle {
+    cursor: pointer;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.toggle:hover {
+    text-decoration: underline;
 }
