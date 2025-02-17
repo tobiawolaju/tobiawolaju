@@ -40,8 +40,6 @@ footer {
     border-radius: 10px;
     width: 90%;
     max-width: 800px;
-    position: fixed;
-    bottom: 0px;
 }
 
 footer a {
