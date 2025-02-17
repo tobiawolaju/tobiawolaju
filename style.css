@@ -37,9 +37,11 @@ footer {
     padding: 10px;
     margin: 20px;
     background: rgb(255, 255, 255);
-    border-radius: 50px;
+    border-radius: 10px;
     width: 90%;
     max-width: 800px;
+    position: fixed;
+    bottom: 0px;
 }
 
 footer a {
