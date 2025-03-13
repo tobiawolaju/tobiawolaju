@@ -140,7 +140,7 @@ section.visible {
 .project {
 border-radius: 5px;
 margin-bottom: 40px;
-border: solid 1px #00000069;
+border: solid 1px #8383837f;
 padding: 10px;
 padding-bottom: 20px;
 }
@@ -173,7 +173,7 @@ padding-bottom: 20px;
     background-color: #ffffff00;
     padding: 8px 15px;
     text-decoration: none;
-    border: solid 1px #00000069;
+    border: solid 1px #8383837f;
     font-weight: bold;
 }
 
