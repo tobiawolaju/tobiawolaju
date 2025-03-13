@@ -15,8 +15,8 @@ header {
 }
 
 header img {
-    border-radius: 50%;
-    width: 20vw;
+    border-radius:30px;
+    width: 100px;
     border: 5px solid #ececec;
 }
 
@@ -125,4 +125,61 @@ section.visible {
     a {
         color: rgb(173, 216, 230); /* Light blue for links in dark mode */
     }
+}
+
+
+
+
+
+
+
+
+
+
+/* General Project Styles */
+.project {
+border-radius: 5px;
+margin-bottom: 40px;
+border: solid 1px #00000069;
+padding: 10px;
+padding-bottom: 20px;
+}
+
+.project img {
+    width: 100%;  /* Make the image responsive */
+    height: 20vw;
+    object-fit: cover;
+}
+
+.project-info {
+    background-color: #81818115;
+}
+
+.project-info a {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+.project-info p {
+    opacity: 0.8;
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+.view-button {
+    position:fixed;
+    right:0px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 8px 15px;
+    text-decoration: none;
+    border: solid 1px #00000069;
+    font-weight: bold;
+}
+
+.view-button:hover {
+    border-bottom: solid 8px #000000;
+    border-right: solid 8px #000000;
 }
