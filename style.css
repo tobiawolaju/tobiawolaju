@@ -158,7 +158,6 @@ padding-bottom: 20px;
 .project-info a {
     font-size: 1.2em;
     font-weight: bold;
-    color: #000;
     text-decoration: none;
 }
 
@@ -171,8 +170,7 @@ padding-bottom: 20px;
 .view-button {
     position:fixed;
     right:0px;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
+    background-color: #ffffff00;
     padding: 8px 15px;
     text-decoration: none;
     border: solid 1px #00000069;
