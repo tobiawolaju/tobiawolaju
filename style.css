@@ -170,11 +170,20 @@ padding-bottom: 20px;
 .view-button {
     position:fixed;
     right:10px;
-    background-color: #ffffff00;
+    background-color: #ffffff;
     padding: 8px 15px;
     text-decoration: none;
     border: solid 1px #8383837f;
     font-weight: bold;
+    color: black;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    .view-button {
+    background-color: #272727;
+    color:white;
+    }
 }
 
 .view-button:hover {
