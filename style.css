@@ -79,7 +79,7 @@ footer a:hover {
 
 ul {
     padding: 0px;
-    text-decoration: underline;
+    text-decoration:none;
 }
 
 p {
@@ -113,6 +113,10 @@ section.visible {
     display: none;
 }
 
+.des{
+    color: #008f66;
+}
+
 .toggle {
     cursor: pointer;
     font-weight: bold;
@@ -126,6 +130,12 @@ section.visible {
 
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
+
+    .des{
+        color: #00ccff;
+    }
+
+    
     body {
         color: rgb(255, 255, 255);
         background: linear-gradient(to bottom, rgb(18, 18, 18), rgb(48, 48, 48));
