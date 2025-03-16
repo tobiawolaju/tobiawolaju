@@ -33,8 +33,6 @@ footer {
 }
 
 .footit {
-    position: fixed;
-    bottom: 0px;
     text-align: center;
     padding: 10px;
     margin: 20px;
