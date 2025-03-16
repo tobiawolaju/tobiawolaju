@@ -156,6 +156,18 @@ section.visible {
 
 
 
+.pjet {
+    display: flex;
+        }
+
+@media (max-width: 768px) { /* Adjust the width as needed */
+/* General Project Styles */
+.pjet {
+display: block;
+    }
+}
+
+
 
 
 
@@ -192,7 +204,7 @@ padding-bottom: 20px;
 }
 
 .view-button {
-    position:fixed;
+    position:inherit;
     right:10px;
     background-color: #ffffff;
     padding: 8px 15px;
