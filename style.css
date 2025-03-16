@@ -20,6 +20,30 @@ header img {
     border: 5px solid #ececec;
 }
 
+
+header .img2 {
+    border-radius:30px;
+    width: 100px;
+    border: none;
+    opacity: 0.2;
+    scale: 0.8;
+}
+
+
+header .img3 {
+    border-radius:30px;
+    width: 100px;
+    border: none;
+    opacity: 0.1;
+    scale: 0.6;
+}
+@media (max-width: 768px) { /* Adjust the width as needed */
+    .img3 {
+        display: none;
+    }
+}
+
+
 section {
     padding: 20px;
     padding-top: 5px;
