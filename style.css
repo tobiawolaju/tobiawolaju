@@ -215,8 +215,6 @@ padding-bottom: 20px;
 }
 
 .view-button {
-    position:inherit;
-    right:10px;
     background-color: #ffffff;
     padding: 8px 15px;
     text-decoration: none;
