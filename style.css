@@ -114,7 +114,8 @@ section.visible {
 }
 
 .des{
-    color: #008f66;
+    color: #000000;
+    font-weight: bold;
 }
 
 .toggle {
@@ -132,7 +133,7 @@ section.visible {
 @media (prefers-color-scheme: dark) {
 
     .des{
-        color: #00ccff;
+        color: #fcfcfc;
     }
 
     
@@ -194,9 +195,21 @@ padding-bottom: 20px;
 
 .project img {
     width: 100%;  /* Make the image responsive */
-    height: 20vw;
+    height: 25vw;
     object-fit: cover;
 }
+
+@media (max-width: 768px) { /* Adjust the width as needed */
+    /* General Project Styles */
+    .project img {
+        width: 100%;  /* Make the image responsive */
+        height: 100vw;
+        object-fit: cover;
+    }
+    }
+    
+
+
 
 .project-info {
     background-color: #81818115;
@@ -221,25 +234,33 @@ padding-bottom: 20px;
     border: solid 1px #8383837f;
     font-weight: bold;
     color: black;
+
+    border-bottom: solid 8px #000000;
+    border-right: solid 8px #000000;
 }
 
 
 @media (prefers-color-scheme: dark) {
     .view-button {
+        
+        border-bottom: solid 8px #828282;
+        border-right: solid 8px #828282;
     background-color: #272727;
     color:white;
     }
 }
 
+
+
 .view-button:hover {
-    border-bottom: solid 8px #000000;
-    border-right: solid 8px #000000;
+    border-bottom: solid 2px #000000;
+    border-right: solid 2px #000000;
 }
 
 @media (prefers-color-scheme: dark) {
 
     .view-button:hover {
-        border-bottom: solid 8px #828282;
-        border-right: solid 8px #828282;
+        border-bottom: solid 2px #828282;
+        border-right: solid 2px #828282;
     }
 }
