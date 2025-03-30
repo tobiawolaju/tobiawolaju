@@ -65,6 +65,11 @@ footer {
     width: 90%;
     max-width: 800px;
 }
+ .footit img{
+    width: 40px;
+    border: none;
+    scale: 0.6;
+ }
 
 footer a {
     color: rgb(0, 0, 0);
