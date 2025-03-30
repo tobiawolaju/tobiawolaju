@@ -80,7 +80,6 @@ footer a:hover {
 ul {
     padding: 0px;
     text-decoration:none;
-    font-size: x-large;
 }
 
 p {
@@ -187,6 +186,7 @@ display: block;
 
 /* General Project Styles */
 .project {
+text-align: right;
 border-radius: 5px;
 margin-bottom: 40px;
 border: solid 1px #8383837f;
@@ -213,6 +213,7 @@ padding-bottom: 20px;
 
 
 .project-info {
+    text-align: left;
     background-color: #81818115;
 }
 
