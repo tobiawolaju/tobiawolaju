@@ -197,6 +197,7 @@ margin-bottom: 40px;
 border: solid 1px #8383837f;
 padding: 10px;
 padding-bottom: 20px;
+scale: 0.8;
 }
 
 .project img {
@@ -325,5 +326,5 @@ padding-bottom: 20px;
 
 a{
     text-decoration-color: #3e00d0;
-    
+
 }
