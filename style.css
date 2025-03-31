@@ -271,3 +271,54 @@ padding-bottom: 20px;
         border-right: solid 2px #828282;
     }
 }
+
+
+.button1{
+    background-color: rgb(217, 217, 217);
+    border: none;
+    font-size: large;
+    margin: 4px;
+    color: #6f6f6f;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.button2{
+    background-color: rgb(218, 224, 255);
+    border: none;
+    font-size: large;
+    margin: 4px;
+    color: #3e00d0;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.button3{
+    background-color: rgb(240, 218, 255);
+    border: none;
+    font-size: large;
+    margin: 4px;
+    color: #9800d0;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.button4{
+    background-color: rgb(255, 218, 246);
+    border: none;
+    font-size: large;
+    margin: 4px;
+    color: #d000c9;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.button5{
+    background-color: rgb(255, 238, 218);
+    border: none;
+    font-size: large;
+    margin: 4px;
+    color: #d09500;
+    padding: 4px;
+    border-radius: 4px;
+}
