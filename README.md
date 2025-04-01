@@ -8,6 +8,6 @@ I specialize in building **immersive games** and **blockchain-powered experience
 - 🌎 Portfolio: [tobiawolaju.vercel.app](https://tobiawolaju.vercel.app/)  
 
 ### 📫 Let's Connect  
-- [GitHub](https://github.com/TobiAwolaju)  
+- [Gmail](tobiawolaju21@gmail.com)  
 - [Twitter/X](https://twitter.com/TobiAwolaju)  
-- [LinkedIn](https://linkedin.com/in/tobiawolaju)  
+- [LinkedIn](https://linkedin.com/in/awolaju)  
