@@ -1,16 +1,13 @@
-## Hi there 👋
+## Hi, I'm Tobi Awolaju 👋  
+**Blockchain Engineer & Game Developer**  
 
-<!--
-**tobiawolaju/tobiawolaju** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I specialize in building **immersive games** and **blockchain-powered experiences**, integrating smart contracts, decentralized economies, and innovative game mechanics.  
 
-Here are some ideas to get you started:
+- 🔭 **Open to Software Engineering roles** (Full-stack, Game Dev, Web3)  
+- 💡 Passionate about **blockchain gaming, decentralized applications, and game physics**  
+- 🌎 Portfolio: [tobiawolaju.vercel.app](https://tobiawolaju.vercel.app/)  
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### 📫 Let's Connect  
+- [GitHub](https://github.com/TobiAwolaju)  
+- [Twitter/X](https://twitter.com/TobiAwolaju)  
+- [LinkedIn](https://linkedin.com/in/tobiawolaju)  
