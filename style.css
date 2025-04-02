@@ -112,11 +112,11 @@ section.visible {
     opacity: 1;
     transform: translateY(0);
 }
-/*
+
 .hidden {
     display: none;
 }
-*/
+
 .des{
     color: #000000;
     font-weight: bold;
