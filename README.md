@@ -1,13 +1,3 @@
-## Hi, I'm Tobi Awolaju 👋  
-**Blockchain Engineer & Game Developer**  
-
-I specialize in building **immersive games** and **blockchain-powered experiences**, integrating smart contracts, decentralized economies, and innovative game mechanics.  
-
-- 🔭 **Open to Software Engineering roles** (Full-stack, Game Dev, Web3)  
-- 💡 Passionate about **blockchain gaming, decentralized applications, and game physics**  
-- 🌎 Portfolio: [tobiawolaju.vercel.app](https://tobiawolaju.vercel.app/)  
-
-### 📫 Let's Connect  
-- [Gmail](mailto:tobiawolaju21@gmail.com)  
-- [Twitter/X](https://twitter.com/TobiAwolaju)  
-- [LinkedIn](https://linkedin.com/in/awolaju)  
+## Hi, I'm Tobi Awolaju
+I'm a Software Engineer with a strong interest in Blockchain and Game Development. I have a degree in Electrical and Electronics Engineering, and my deep understanding of systems design has enhanced my problem-solving skills. I also enjoy creating digital art.
+[tobi's.portfolio](https://tobiawolaju.vercel.app/) 
