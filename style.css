@@ -59,15 +59,19 @@ footer {
 .footit {
     text-align: center;
     padding: 10px;
-    margin: 20px;
+    margin: 0;
     background: rgb(255, 255, 255);
+    width: 100vw;
+    position: fixed;
+    bottom:0px;
+    scale:0.85;
     border-radius: 12px;
     width: 90%;
     max-width: 800px;
     display:block;
 }
  .footit img{
-    width: 40px;
+    width: 35px;
     border: none;
     scale: 0.6;
  }
@@ -114,11 +118,11 @@ section.visible {
     opacity: 1;
     transform: translateY(0);
 }
-/*
+
 .hidden {
     display: none;
 }
-*/
+
 .des{
     color: #000000;
     font-weight: bold;
