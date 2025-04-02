@@ -64,6 +64,7 @@ footer {
     border-radius: 12px;
     width: 90%;
     max-width: 800px;
+    display:block;
 }
  .footit img{
     width: 40px;
