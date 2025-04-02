@@ -140,8 +140,7 @@ section.visible {
 
 .toggle:hover {
     opacity: 0.8;
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
+    text-decoration:wavy underline;
     text-decoration-color: blue;
 }
 
