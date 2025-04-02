@@ -59,10 +59,12 @@ footer {
 .footit {
     text-align: center;
     padding: 10px;
-    margin: 5vw;
+    margin: 0;
     background: rgb(255, 255, 255);
     border-radius: 12px;
     width: 90vw;
+    position: fixed;
+    bottom:10px;
 }
  .footit img{
     width: 35px;
