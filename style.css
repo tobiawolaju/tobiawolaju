@@ -59,27 +59,26 @@ footer {
 .footit {
     text-align: center;
     padding: 10px;
-    margin: 0;
+    margin: 0px;
     background: rgb(255, 255, 255);
     width: 100vw;
-    position: fixed;
-    bottom:0px;
+    position:static;
     scale:0.85;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 800px;
-    display:block;
+    width: 100vw;
 }
  .footit img{
     width: 35px;
     border: none;
     scale: 0.6;
+    position:relative;
+    top:12px
  }
 
-footer a {
+.footit a {
     color: rgb(0, 0, 0);
     text-decoration: solid;
     text-decoration-color: rgb(0, 0, 0);
+    margin: 20px;
 }
 
 footer a:hover {
