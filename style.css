@@ -74,6 +74,10 @@ footer {
     top:12px
  }
 
+ .footit span{
+    color: rgb(129, 129, 129);
+ }
+
 .footit a {
     color: rgb(0, 0, 0);
     text-decoration: solid;
