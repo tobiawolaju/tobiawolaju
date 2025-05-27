@@ -212,7 +212,7 @@ scale: 0.9;
 
 .project img {
     width: 100%;  /* Make the image responsive */
-    height: 25vw;
+    height: 15vw;
     object-fit: cover;
 }
 
@@ -220,7 +220,7 @@ scale: 0.9;
     /* General Project Styles */
     .project img {
         width: 100%;  /* Make the image responsive */
-        height: 100vw;
+        height: 20vh;
         object-fit: cover;
     }
     }
@@ -234,14 +234,13 @@ scale: 0.9;
 }
 
 .project-info a {
-    font-size: 1.2em;
-    font-weight: bold;
+    font-size: 1.3em;
     text-decoration: none;
 }
 
 .project-info p {
     opacity: 0.8;
-    font-size: 1em;
+    font-size: 1.8em;
     margin: 10px 0;
 }
 
@@ -255,6 +254,7 @@ scale: 0.9;
 
     border-bottom: solid 8px #000000;
     border-right: solid 8px #000000;
+    border-radius: 7px;
 }
 
 
@@ -265,6 +265,7 @@ scale: 0.9;
         border-right: solid 8px #828282;
     background-color: #272727;
     color:white;
+
     }
 }
 
