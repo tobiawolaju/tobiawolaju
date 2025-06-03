@@ -161,6 +161,11 @@ section.visible {
         border: 5px solid #555;
     }
 
+
+    .footer-content{
+        position: absolute;
+        top: 0px
+    }
     .footit {
         background: rgb(48, 48, 48);
     }
