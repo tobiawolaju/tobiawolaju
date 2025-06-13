@@ -6,13 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engineer Tobiloba Awolaju's Portfolio</title>
     <style>
-        /* Default styles (light mode) */
+        /* Base styles */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Light mode colors */
+        body {
             color: #000;
             background-color: #f4f4f4;
-            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Dark mode colors */
+        @media (prefers-color-scheme: dark) {
+            body {
+                color: #e0e0e0;
+                background-color: #1a1a1a;
+            }
+
+            a {
+                color: #8ab4f8; /* Lighter blue for links in dark mode */
+            }
+
+            .view-button {
+                background-color: #333;
+                color: #e0e0e0;
+            }
+
+            .view-button:hover {
+                background-color: #555;
+            }
+
+            .button-skill {
+                background-color: #333;
+                border: 1px solid #555;
+                color: #e0e0e0;
+            }
+
+            hr {
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .toggle a {
+                color: inherit; /* Inherit color for the arrow in dark mode */
+            }
+
+            p[style*="background-color: #8C8C8C"] {
+                background-color: #333 !important; /* Darker grey for the top bar */
+            }
         }
 
         a {
@@ -32,7 +75,7 @@
 
         h2.toggle {
             cursor: pointer;
-            font-size: 1.8em; /* Reduced font size */
+            font-size: 1.8em;
             font-weight: bold;
             margin-top: 20px;
             margin-bottom: 10px;
@@ -46,6 +89,13 @@
             padding-left: 20px;
             border-left: 2px solid #ccc;
         }
+
+        @media (prefers-color-scheme: dark) {
+            .hidden {
+                border-left: 2px solid #555; /* Darker border for hidden content */
+            }
+        }
+
 
         hr {
             border: none;
@@ -61,15 +111,27 @@
 
         .project {
             display: flex;
+            flex-direction: column; /* Changed to column for image/description/call to action */
             align-items: flex-start;
             gap: 15px;
+            border: 1px solid #ddd; /* Subtle border for each project */
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .project {
+                border: 1px solid #444; /* Darker border for projects */
+            }
         }
 
         .project img {
-            width: 80px; /* Adjusted image size */
-            height: 80px; /* Adjusted image size */
+            width: 100%; /* Image takes full width of the project container */
+            max-width: 250px; /* Max width for the image */
+            height: auto;
             object-fit: cover;
             border-radius: 8px;
+            margin-bottom: 10px; /* Space between image and description */
         }
 
         .project-info {
@@ -77,21 +139,24 @@
         }
 
         .project-info strong {
-            font-size: 1.1em; /* Adjusted font size */
+            font-size: 1.1em;
+            display: block; /* Ensures strong tag acts as a block for proper spacing */
+            margin-bottom: 5px;
         }
 
         .project-info p {
-            font-size: 0.95em; /* Adjusted paragraph font size */
+            font-size: 0.95em;
+            margin-bottom: 10px;
         }
 
         .view-button {
-            white-space: nowrap;
-            align-self: center;
+            display: inline-block; /* Make button behave like a block element */
             padding: 8px 12px;
             background-color: #e0e0e0;
             border-radius: 5px;
             color: black;
             font-weight: bold;
+            align-self: flex-start; /* Align button to the start of the flex container */
         }
 
         .view-button:hover {
@@ -108,7 +173,7 @@
             list-style: none;
             margin: 0 0 10px 0;
             font-weight: bold;
-            font-size: 1.1em; /* Adjusted font size */
+            font-size: 1.1em;
         }
 
         .skills-category .button-grid {
@@ -122,21 +187,21 @@
             border: 1px solid #dcdcdc;
             border-radius: 5px;
             padding: 8px 12px;
-            font-size: 0.9em; /* Adjusted font size */
+            font-size: 0.9em;
             cursor: default;
         }
 
         #intro p {
-            font-size: 1.1em; /* Adjusted font size for general text in intro */
+            font-size: 1.1em;
         }
 
         #intro p:first-of-type {
-            font-size: 1.5em; /* Adjusted font size for name */
+            font-size: 1.5em;
         }
 
         #intro img {
-            width: 20px; /* Adjusted image size */
-            height: 20px; /* Adjusted image size */
+            width: 20px;
+            height: 20px;
         }
 
         /* General paragraph font size */
@@ -144,9 +209,30 @@
             font-size: 1em;
         }
 
+        /* Responsive adjustments */
         @media (max-width: 768px) {
             .project {
-                flex-direction: column;
+                padding: 10px;
+            }
+
+            .project img {
+                max-width: 100%; /* Ensure images don't overflow on small screens */
+            }
+
+            .hidden {
+                padding-left: 10px;
+            }
+
+            h2.toggle {
+                font-size: 1.5em;
+            }
+
+            #intro p:first-of-type {
+                font-size: 1.3em;
+            }
+
+            #intro p {
+                font-size: 1em;
             }
         }
     </style>
@@ -195,11 +281,13 @@
         </div>
     </section>
 
+    ---
+
     <section id="about-me">
         <h2 class="toggle">About Me<a style="opacity: 0.4;">↗</a></h2>
         <div class="hidden" style="display: block;">
             <p>
-                I'm a systems thinker, robotics engineer, and software developer with deep interests in autonomous systems, embedded hardware, and applied AI. With a background in Electrical & Electronics Engineering and advanced skills in C++, Rust, and embedded development, I build complete robotics platforms—hardware, software, and intelligence—all from the ground up.
+                I'm a **systems thinker**, robotics engineer, and software developer with deep interests in autonomous systems, embedded hardware, and applied AI. With a background in Electrical & Electronics Engineering and advanced skills in C++, Rust, and embedded development, I build complete robotics platforms—hardware, software, and intelligence—all from the ground up.
             </p>
              <p>
                 My mission is to build intelligent machines that solve meaningful real-world problems—across agriculture, security, disaster response, and planetary exploration.
@@ -207,6 +295,8 @@
         </div>
         <hr>
     </section>
+
+    ---
 
     <section id="main-projects">
         <h2 class="toggle">Flagship Projects<a style="opacity: 0.4;">↗</a></h2>
@@ -235,6 +325,8 @@
         <hr>
     </section>
 
+    ---
+
     <section id="core-systems">
         <h2 class="toggle">Core Systems & Subprojects<a style="opacity: 0.4;">↗</a></h2>
         <div class="hidden">
@@ -250,6 +342,8 @@
         </div>
         <hr>
     </section>
+
+    ---
 
     <section id="archived-projects">
         <h2 class="toggle">Archived Projects (Legacy)<a style="opacity: 0.4;">↗</a></h2>
@@ -304,6 +398,8 @@
         </div>
         <hr>
     </section>
+
+    ---
 
     <section id="skills-stack">
         <h2 class="toggle">Skills & Stack<a style="opacity: 0.4;">↗</a></h2>
@@ -362,6 +458,8 @@
         <hr>
     </section>
 
+    ---
+
     <section id="experience">
         <h2 class="toggle">Experience<a style="opacity: 0.4;">↗</a></h2>
         <div class="hidden">
@@ -373,6 +471,8 @@
         <hr>
     </section>
 
+    ---
+
     <section id="writing">
         <h2 class="toggle">Thought & Writing<a style="opacity: 0.4;">↗</a></h2>
         <div class="hidden">
@@ -380,6 +480,8 @@
         </div>
         <hr>
     </section>
+
+    ---
 
     <section id="contributions">
         <h2 class="toggle">2025 Contributions<a style="opacity: 0.4;">↗</a></h2>
