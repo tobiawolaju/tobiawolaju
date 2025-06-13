@@ -49,8 +49,10 @@
                 border-top: 1px solid rgba(255, 255, 255, 0.2);
             }
 
-            .toggle a {
-                color: inherit; /* Inherit color for the arrow in dark mode */
+            /* Ensure the arrow color matches text in dark mode */
+            h2.toggle .external-link-arrow {
+                color: inherit;
+                opacity: 0.4;
             }
 
             p[style*="background-color: #8C8C8C"] {
@@ -84,6 +86,13 @@
             align-items: center;
         }
 
+        /* Style for the arrow to be immediately after the text */
+        h2.toggle span.section-title {
+            display: flex;
+            align-items: center;
+            gap: 5px; /* Small gap between text and arrow */
+        }
+
         .hidden {
             display: none;
             padding-left: 20px;
@@ -111,28 +120,34 @@
 
         .project {
             display: flex;
-            flex-direction: column; /* Changed to column for image/description/call to action */
+            flex-direction: column;
             align-items: flex-start;
             gap: 15px;
-            border: 1px solid #ddd; /* Subtle border for each project */
+            border: 1px solid #ddd;
             border-radius: 8px;
             padding: 15px;
         }
 
         @media (prefers-color-scheme: dark) {
             .project {
-                border: 1px solid #444; /* Darker border for projects */
+                border: 1px solid #444;
             }
         }
 
         .project img {
-            width: 100%; /* Image takes full width of the project container */
-            max-width: 250px; /* Max width for the image */
+            width: 100%;
+            max-width: 250px;
             height: auto;
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 10px; /* Space between image and description */
+            margin-bottom: 10px;
         }
+
+        /* Hide image for archived projects */
+        .archived-project-no-image img {
+            display: none;
+        }
+
 
         .project-info {
             flex-grow: 1;
@@ -140,7 +155,7 @@
 
         .project-info strong {
             font-size: 1.1em;
-            display: block; /* Ensures strong tag acts as a block for proper spacing */
+            display: block;
             margin-bottom: 5px;
         }
 
@@ -150,13 +165,13 @@
         }
 
         .view-button {
-            display: inline-block; /* Make button behave like a block element */
+            display: inline-block;
             padding: 8px 12px;
             background-color: #e0e0e0;
             border-radius: 5px;
             color: black;
             font-weight: bold;
-            align-self: flex-start; /* Align button to the start of the flex container */
+            align-self: flex-start;
         }
 
         .view-button:hover {
@@ -216,7 +231,7 @@
             }
 
             .project img {
-                max-width: 100%; /* Ensure images don't overflow on small screens */
+                max-width: 100%;
             }
 
             .hidden {
@@ -281,10 +296,8 @@
         </div>
     </section>
 
-    ---
-
     <section id="about-me">
-        <h2 class="toggle">About Me<a style="opacity: 0.4;">↗</a></h2>
+        <h2 class="toggle"><span class="section-title">About Me <span class="external-link-arrow">↗</span></span></h2>
         <div class="hidden" style="display: block;">
             <p>
                 I'm a **systems thinker**, robotics engineer, and software developer with deep interests in autonomous systems, embedded hardware, and applied AI. With a background in Electrical & Electronics Engineering and advanced skills in C++, Rust, and embedded development, I build complete robotics platforms—hardware, software, and intelligence—all from the ground up.
@@ -296,10 +309,8 @@
         <hr>
     </section>
 
-    ---
-
     <section id="main-projects">
-        <h2 class="toggle">Flagship Projects<a style="opacity: 0.4;">↗</a></h2>
+        <h2 class="toggle"><span class="section-title">Flagship Projects <span class="external-link-arrow">↗</span></span></h2>
         <div class="hidden" style="display: block;">
             <div class="pjet">
                 <div class="project">
@@ -325,10 +336,8 @@
         <hr>
     </section>
 
-    ---
-
     <section id="core-systems">
-        <h2 class="toggle">Core Systems & Subprojects<a style="opacity: 0.4;">↗</a></h2>
+        <h2 class="toggle"><span class="section-title">Core Systems & Subprojects <span class="external-link-arrow">↗</span></span></h2>
         <div class="hidden">
             <p>These components were developed independently and integrated into the above flagship systems:</p>
             <ul>
@@ -343,32 +352,27 @@
         <hr>
     </section>
 
-    ---
-
     <section id="archived-projects">
-        <h2 class="toggle">Archived Projects (Legacy)<a style="opacity: 0.4;">↗</a></h2>
+        <h2 class="toggle"><span class="section-title">Archived Projects (Legacy) <span class="external-link-arrow">↗</span></span></h2>
         <div class="hidden">
             <h4>Blockchain & Game Projects</h4>
             <div class="pjet">
-                <div class="project">
-                    <img src="wons.jpg" alt="World of NADs">
-                    <div class="project-info">
+                <div class="project archived-project-no-image">
+                    <img src="wons.jpg" alt="World of NADs"> <div class="project-info">
                         <a href="https://tobiawolaju.itch.io/floatingdaumen"><strong>World of NADs↗</strong></a>
                         <p>Multiplayer Web3 game where players race to grab airdrops and skins in real time. Fully on-chain logic ensures fairness.</p>
                     </div>
                     <a href="https://x.com/world_of_nads" class="view-button">WONs on X</a>
                 </div>
-                <div class="project">
-                    <img src="wobs.jpg" alt="World of Barios">
-                    <div class="project-info">
+                <div class="project archived-project-no-image">
+                    <img src="wobs.jpg" alt="World of Barios"> <div class="project-info">
                         <a href="https://x.com/world_of_barios"><strong>World of Barios ↗</strong></a>
                         <p>A 3D platform on-chain game built on Base with an on-chain leaderboard.</p>
                     </div>
                     <a href="https://x.com/world_of_barios" class="view-button">Barios on X</a>
                 </div>
-                <div class="project">
-                    <img src="brsports.jpg" alt="BRsports">
-                    <div class="project-info">
+                <div class="project archived-project-no-image">
+                    <img src="brsports.jpg" alt="BRsports"> <div class="project-info">
                         <a href="https://x.com/brsports_xyz"><strong>BRsports ↗</strong></a>
                         <p>Mobile-first matchmaking system for battle royale games. Smart contracts track match outcomes and distribute rewards fairly.</p>
                     </div>
@@ -378,17 +382,15 @@
             <br>
             <h4>Smart Contract Security</h4>
              <div class="pjet">
-                 <div class="project">
-                    <img src="wons.jpg" alt="Token Suite">
-                    <div class="project-info">
+                 <div class="project archived-project-no-image">
+                    <img src="wons.jpg" alt="Token Suite"> <div class="project-info">
                         <a href="#"><strong>NAD Token Suite↗</strong></a>
                         <p>ERC-20 + ERC-721 + staking contracts for Web3 gaming. Includes ownership controls, claimable airdrops, and full Foundry test suite.</p>
                     </div>
                     <a href="#" class="view-button">GitHub</a>
                 </div>
-                <div class="project">
-                    <img src="wobs.jpg" alt="MiniDEX">
-                    <div class="project-info">
+                <div class="project archived-project-no-image">
+                    <img src="wobs.jpg" alt="MiniDEX"> <div class="project-info">
                         <a href="#"><strong>MiniDEX ↗</strong></a>
                         <p>Lightweight Uniswap-style AMM with LP tokens, slippage math, and flash-loan-style attack simulations.</p>
                     </div>
@@ -399,10 +401,8 @@
         <hr>
     </section>
 
-    ---
-
     <section id="skills-stack">
-        <h2 class="toggle">Skills & Stack<a style="opacity: 0.4;">↗</a></h2>
+        <h2 class="toggle"><span class="section-title">Skills & Stack <span class="external-link-arrow">↗</span></span></h2>
         <div class="hidden">
             <div class="skills-category">
                 <ul>Languages:</ul>
@@ -458,10 +458,8 @@
         <hr>
     </section>
 
-    ---
-
     <section id="experience">
-        <h2 class="toggle">Experience<a style="opacity: 0.4;">↗</a></h2>
+        <h2 class="toggle"><span class="section-title">Experience <span class="external-link-arrow">↗</span></span></h2>
         <div class="hidden">
             <p style="font-size:1.1em;"><b>Freelance Robotics Developer</b></p>
             <p>Custom hardware/software builds, PCBs, and autonomous systems for researchers, hobbyists, and early-stage startups.</p>
@@ -471,20 +469,16 @@
         <hr>
     </section>
 
-    ---
-
     <section id="writing">
-        <h2 class="toggle">Thought & Writing<a style="opacity: 0.4;">↗</a></h2>
+        <h2 class="toggle"><span class="section-title">Thought & Writing <span class="external-link-arrow">↗</span></span></h2>
         <div class="hidden">
             <p><b>Coming soon:</b> A series on building autonomous systems from scratch (hardware + firmware + intelligence).</p>
         </div>
         <hr>
     </section>
 
-    ---
-
     <section id="contributions">
-        <h2 class="toggle">2025 Contributions<a style="opacity: 0.4;">↗</a></h2>
+        <h2 class="toggle"><span class="section-title">2025 Contributions <span class="external-link-arrow">↗</span></span></h2>
         <div class="hidden" style="display: block;">
             <ul>
                 <li>Launching open-source SkySwarm and AgroSwarm hardware kits + software API.</li>
@@ -502,3 +496,4 @@
 </body>
 
 </html>
+
