@@ -1,906 +1,379 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engineer Tobiloba Awolaju's Portfolio</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* Base styles */
-        body {
-            margin: 0;
-            font-family: 'Inter', Arial, sans-serif;
-            transition: background-color 0.3s, color 0.3s;
-            line-height: 1.6;
-            color: #333333; /* Default light mode text color */
-            background-color: #f8f8f8; /* Default light mode background */
-        }
-
-        a {
-            color: #007bff; /* Vibrant blue for links in light mode */
-            text-decoration: none;
-            transition: color 0.2s ease, text-decoration 0.2s ease;
-        }
-
-        a:hover {
-            text-decoration: underline;
-            color: #0056b3; /* Darker blue on hover */
-        }
-
-        section {
-            padding: 25px 20px; /* Increased padding for more breathing room */
-            margin: 0 auto;
-            max-width: 800px;
-        }
-
-        h2.toggle {
-            cursor: pointer;
-            font-size: 1.9em; /* Slightly larger heading */
-            font-weight: bold;
-            margin-top: 30px; /* More top margin */
-            margin-bottom: 15px; /* More bottom margin */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #222222; /* Darker heading for focus */
-        }
-
-        /* Style for the arrow/chevron to be immediately after the text */
-        h2.toggle span.section-title {
-            display: flex;
-            align-items: center;
-            gap: 10px; /* Increased gap */
-        }
-
-        /* Styling for the toggle arrow/chevron */
-        .toggle-arrow {
-            font-size: 0.9em;
-            transition: transform 0.2s ease-in-out;
-            opacity: 0.6;
-            color: inherit; /* Inherit color from parent h2 */
-        }
-
-        /* Rotate arrow when content is expanded */
-        h2.toggle[aria-expanded="true"] .toggle-arrow {
-            transform: rotate(90deg);
-        }
-        h2.toggle[aria-expanded="false"].rotate-down .toggle-arrow {
-            transform: rotate(90deg);
-        }
-        h2.toggle[aria-expanded="true"].rotate-down .toggle-arrow {
-            transform: rotate(0deg);
-        }
-
-        .hidden {
-            padding-left: 20px;
-            border-left: 2px solid #cccccc; /* Lighter border for hidden content */
-            overflow: hidden;
-            max-height: 0;
-            opacity: 0;
-            transition: max-height 0.4s ease-out, opacity 0.4s ease-out, padding-bottom 0.4s ease-out;
-            box-sizing: border-box; /* Include padding in height calculation */
-        }
-
-        .hidden.expanded {
-            max-height: 1000px; /* A value large enough to contain all content */
-            opacity: 1;
-            padding-bottom: 20px; /* More padding at the bottom when expanded */
-        }
-
-        hr {
-            border: none;
-            border-top: 1px solid rgba(0, 0, 0, 0.15); /* Subtle divider */
-            margin: 40px 0; /* Increased vertical margin */
-        }
-
-        .pjet {
-            display: flex;
-            flex-direction: column;
-            gap: 25px; /* Increased gap between projects */
-        }
-
-        .project {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 15px;
-            border: 1px solid #e0e0e0; /* Lighter border */
-            border-radius: 10px; /* Slightly more rounded corners */
-            padding: 20px; /* Increased padding */
-            background-color: #ffffff; /* Clean white background */
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* More noticeable shadow */
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .project:hover {
-            transform: translateY(-3px); /* Subtle lift effect */
-            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-        }
-
-        .project img {
-            width: 100%;
-            max-width: 320px; /* Larger max-width for project images */
-            height: auto;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Small shadow for images */
-        }
-
-        /* Hide image for archived projects */
-        .archived-project-no-image img {
-            display: none;
-        }
-
-        .project-info {
-            flex-grow: 1;
-        }
-
-        .project-info strong {
-            font-size: 1.2em;
-            display: block;
-            margin-bottom: 8px;
-            color: #0056b3; /* Project titles in light mode */
-        }
-
-        .project-info p {
-            font-size: 0.98em;
-            margin-bottom: 10px;
-            color: #555555; /* Slightly muted text color for descriptions */
-        }
-
-        .view-button {
-            display: inline-block;
-            padding: 10px 18px; /* Larger padding for buttons */
-            background-color: #e0e0e0;
-            border-radius: 5px;
-            color: #333333; /* Dark text for contrast */
-            font-weight: bold;
-            align-self: flex-start;
-            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-            border: 1px solid #c0c0c0; /* Subtle border */
-        }
-
-        .view-button:hover {
-            background-color: #d0d0d0;
-            text-decoration: none;
-            color: #111111;
-        }
-
-        .skills-category {
-            margin-bottom: 25px; /* More space between skill categories */
-        }
-
-        .skills-category ul {
-            padding-left: 0;
-            list-style: none;
-            margin: 0 0 15px 0; /* Adjusted margin */
-            font-weight: bold;
-            font-size: 1.15em;
-            color: #444444; /* Category titles color */
-        }
-
-        .skills-category .button-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px; /* Consistent gap for skills */
-        }
-
-        /* Changed to span for semantic correctness */
-        .skill-tag {
-            background-color: #ededed;
-            border: 1px solid #dcdcdc;
-            border-radius: 5px;
-            padding: 8px 12px;
-            font-size: 0.9em;
-            cursor: default;
-            display: inline-block;
-            white-space: nowrap;
-            color: #555555; /* Text color for skill tags */
-            transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-        }
-
-        .skill-tag:hover {
-            background-color: #dcdcdc; /* Subtle hover effect */
-            border-color: #cccccc;
-        }
-
-        /* Improved alignment for #intro section */
-        #intro p:first-of-type {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px; /* Increased gap */
-            font-size: 1.7em;
-            margin: 0px;
-            font-weight: bold;
-            color: #222222; /* Prominent name color */
-        }
-
-        #intro p {
-            font-size: 1.1em;
-            margin: 5px 0;
-            text-align: center;
-            color: #555555; /* Secondary text color */
-        }
-
-        #intro img {
-            width: 36px; /* Slightly larger profile picture */
-            height: 36px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #777777; /* Defined border */
-        }
-
-        /* General paragraph font size */
-        p {
-            font-size: 1em;
-            margin-bottom: 1em;
-        }
-
-        /* Top contact bar styling */
-        .top-contact-bar {
-            font-size: 0.95em;
-            background-color: #e9ecef; /* Light grey for the top bar */
-            text-align: center;
-            padding: 10px 15px; /* Adjusted padding */
-            margin: 0;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08); /* Subtle shadow */
-            border-bottom: 1px solid #dde1e5; /* Light border at bottom */
-        }
-
-        .top-contact-bar a {
-            color: #555555; /* Darker links for better contrast */
-            margin: 0 10px; /* More spacing between links */
-            display: inline-block;
-            font-weight: 500; /* Slightly bolder */
-        }
-
-        .top-contact-bar a:hover {
-            color: #000000; /* Pure black on hover */
-            text-decoration: none;
-        }
-
-        /* Subproject Links */
-        .subproject-link {
-            display: block;
-            padding: 8px 0;
-            color: #333333; /* Inherit main text color */
-            font-weight: normal;
-            transition: background-color 0.2s ease;
-            padding-left: 5px; /* Small indentation for clarity */
-        }
-
-        .subproject-link:hover {
-            background-color: rgba(0, 123, 255, 0.05); /* Light blue tint on hover */
-            text-decoration: none;
-            border-radius: 4px;
-            color: #007bff; /* Make text color match link color on hover */
-        }
-
-        /* Styling for the new detail sections (initially hidden) */
-        .subproject-detail-section {
-            padding: 30px; /* Increased padding */
-            margin: 50px auto; /* More margin above/below these sections */
-            max-width: 800px;
-            background-color: #ffffff; /* Clean background */
-            border-radius: 10px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.15); /* More prominent shadow */
-            border: 1px solid #e0e0e0; /* Subtle border */
-            display: none; /* Hidden by default. Removed 'hidden-detail' class, use 'display: none;' */
-        }
-
-        .subproject-detail-section h2 {
-            font-size: 2.2em; /* Larger heading */
-            margin-top: 0;
-            margin-bottom: 25px;
-            color: #007bff; /* Distinct color for sub-section titles */
-            text-align: center; /* Center align these titles */
-        }
-
-        .subproject-detail-section p {
-            color: #444444;
-            margin-bottom: 15px;
-        }
-
-        .subproject-detail-section ul {
-            list-style: disc; /* Ensure list bullets are visible */
-            margin-left: 20px;
-            color: #444444;
-        }
-
-        /* Styling for "Back to Core Systems" button */
-        .back-to-top-button {
-            display: inline-block;
-            margin-top: 35px; /* More margin above */
-            padding: 12px 20px; /* Larger padding */
-            background-color: #007bff;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.2s ease, transform 0.2s ease;
-            font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .back-to-top-button:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px); /* Lift effect on hover */
-            text-decoration: none;
-        }
-
-        .subproject-hr {
-            border: none;
-            border-top: 1px dashed rgba(0, 0, 0, 0.1); /* Lighter dashed line */
-            margin: 60px auto; /* More spacing */
-            max-width: 700px;
-        }
-
-        /* --- DARK MODE STYLES --- */
-        @media (prefers-color-scheme: dark) {
-            body {
-                color: #e0e0e0; /* Lighter text for dark mode */
-                background-color: #1e1e1e; /* Darker background */
-            }
-
-            a {
-                color: #8ab4f8; /* Google's dark mode blue for links */
-            }
-
-            a:hover {
-                color: #a7c7ff; /* Brighter blue on hover */
-            }
-
-            h2.toggle {
-                color: #f0f0f0; /* Lighter heading for dark mode */
-            }
-
-            .hidden {
-                border-left: 2px solid #555555; /* Darker border for hidden content */
-            }
-
-            hr {
-                border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider in dark mode */
-            }
-
-            .project {
-                border: 1px solid #444444;
-                background-color: #2a2a2a; /* Darker project background */
-                box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* Darker shadow for contrast */
-            }
-
-            .project:hover {
-                transform: translateY(-3px);
-                box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-            }
-
-            .project img {
-                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            }
-
-            .project-info strong {
-                color: #8ab4f8; /* Project titles in dark mode */
-            }
-
-            .project-info p {
-                color: #c0c0c0; /* Lighter description text */
-            }
-
-            .view-button {
-                background-color: #444444;
-                border: 1px solid #666666;
-                color: #e0e0e0;
-            }
-
-            .view-button:hover {
-                background-color: #5a5a5a;
-                color: #ffffff;
-                border-color: #888888;
-            }
-
-            .skills-category ul {
-                color: #d0d0d0; /* Lighter category titles */
-            }
-
-            .skill-tag {
-                background-color: #333333;
-                border: 1px solid #555555;
-                color: #e0e0e0;
-            }
-
-            .skill-tag:hover {
-                background-color: #444444;
-                border-color: #666666;
-            }
-
-            #intro p:first-of-type {
-                color: #f0f0f0;
-            }
-
-            #intro p {
-                color: #c0c0c0;
-            }
-
-            #intro img {
-                border: 2px solid #a0a0a0;
-            }
-
-            .top-contact-bar {
-                background-color: #282828;
-                box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-                border-bottom: 1px solid #3a3a3a;
-            }
-
-            .top-contact-bar a {
-                color: #b0b0b0;
-            }
-
-            .top-contact-bar a:hover {
-                color: #ffffff;
-            }
-
-            .subproject-link {
-                color: #e0e0e0;
-            }
-
-            .subproject-link:hover {
-                background-color: rgba(138, 180, 248, 0.1); /* Light blue tint in dark mode */
-                color: #8ab4f8;
-            }
-
-            .subproject-detail-section {
-                background-color: #2a2a2a;
-                border: 1px solid #444444;
-                box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-            }
-
-            .subproject-detail-section h2 {
-                color: #8ab4f8;
-            }
-
-            .subproject-detail-section p,
-            .subproject-detail-section ul {
-                color: #c0c0c0;
-            }
-
-            .back-to-top-button {
-                background-color: #8ab4f8;
-                color: #1a1a1a;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            }
-
-            .back-to-top-button:hover {
-                background-color: #a7c7ff;
-            }
-
-            .subproject-hr {
-                border-top: 1px dashed rgba(255, 255, 255, 0.08);
-            }
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            section {
-                padding: 15px;
-            }
-
-            .project {
-                padding: 15px;
-            }
-
-            h2.toggle {
-                font-size: 1.7em;
-            }
-
-            #intro p:first-of-type {
-                font-size: 1.5em;
-            }
-
-            #intro p {
-                font-size: 0.95em;
-            }
-
-            .skill-tag {
-                padding: 7px 10px;
-                font-size: 0.85em;
-            }
-
-            .subproject-detail-section {
-                padding: 20px;
-                margin: 30px auto;
-            }
-
-            .subproject-detail-section h2 {
-                font-size: 1.8em;
-            }
-        }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const toggles = document.querySelectorAll('.toggle');
-
-            toggles.forEach(toggle => {
-                const content = toggle.nextElementSibling;
-
-                // Ensure content has an ID for aria-controls
-                if (!content.id) {
-                    content.id = `content-${Math.random().toString(36).substring(2, 9)}`;
-                }
-
-                // Set initial ARIA attributes based on current display state
-                // If content has inline style 'display: block', assume it's expanded
-                const isInitiallyExpanded = content.style.display === 'block'; // Check for explicit inline style
-                toggle.setAttribute('aria-expanded', isInitiallyExpanded);
-                toggle.setAttribute('aria-controls', content.id);
-
-                // Initialize the expanded state for CSS transition
-                if (isInitiallyExpanded) {
-                    content.classList.add('expanded');
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                } else {
-                    content.classList.remove('expanded');
-                    content.style.maxHeight = '0';
-                }
-                // Remove inline display style if it's there, to let CSS control
-                content.style.display = '';
-
-                toggle.addEventListener('click', () => {
-                    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-
-                    if (isExpanded) {
-                        content.style.maxHeight = '0'; // Collapse
-                        content.classList.remove('expanded');
-                        toggle.setAttribute('aria-expanded', 'false');
-                    } else {
-                        content.style.maxHeight = content.scrollHeight + 'px'; // Expand
-                        content.classList.add('expanded');
-                        toggle.setAttribute('aria-expanded', 'true');
-                    }
-                });
-
-                // Adjust max-height on window resize for responsiveness if expanded
-                window.addEventListener('resize', () => {
-                    if (content.classList.contains('expanded')) {
-                        content.style.maxHeight = content.scrollHeight + 'px';
-                    }
-                });
-            });
-        });
-    </script>
+    <title>Tobi's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer=""></script>
+    <script async="" src="//www.instagram.com/embed.js"></script>
 </head>
 
 <body>
 
-    <p class="top-contact-bar">
-        <a href="mailto:tobiloba@email.com">Gmail</a> .
-        <a href="https://linkedin.com/in/tobilobaa" target="_blank" rel="noopener noreferrer">LinkedIn</a> .
-        <a href="https://twitter.com/engineertobi" target="_blank" rel="noopener noreferrer">X (Twitter)</a> .
-        <a href="https://farcaster.xyz/kawaiix621" target="_blank" rel="noopener noreferrer">Farcaster</a> .
-        <a href="https://github.com/tobilobaa" target="_blank" rel="noopener noreferrer">Github</a>
-    </p>
-
-    <section id="intro">
-        <div style="display: block; text-align: center; padding-top: 50px; padding-bottom: 20px;">
-            <div>
-                <p>
-                    <img src="jpg.jpg" alt="Tobiloba Awolaju's profile picture">
-                    Engineer Tobiloba Awolaju
-                </p>
-                <p>
-                    Electrical & Electronics Engineer | Robotics & AI Systems Developer
-                </p>
-                <p>
-                    EEE @ <a href="https://adelekeuniversity.edu.ng/" target="_blank" rel="noopener noreferrer">Adeleke University</a>
-                    | CS50x @ <a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener noreferrer">Harvard (online)</a>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="about-me">
-        <h2 class="toggle"><span class="section-title">About Me <span class="toggle-arrow">❯</span></span></h2>
-        <div class="hidden" id="about-me-content" style="display: block;"> <p>
-                I'm a **systems thinker**, robotics engineer, and software developer with deep interests in autonomous systems, embedded hardware, and applied AI. With a background in Electrical & Electronics Engineering and advanced skills in C++, Rust, and embedded development, I build complete robotics platforms—hardware, software, and intelligence—all from the ground up.
+    <p></p>
+            <p style="font-size:x-large; background-color: #b8ffcd; text-align: center;">
+                <a href="mailto:tobiawolaju21@gmail.com">Gmail</a> . 
+                <a href="https://www.linkedin.com/in/awolaju" target="_blank" rel="noopener noreferrer">LinkedIn</a> . 
+                <a href="https://x.com/tobiAWOL?s=09" target="_blank" rel="noopener noreferrer">X (Twitter)</a> . 
+                <a href="https://farcaster.xyz/kawaiix621" target="_blank" rel="noopener noreferrer">Farcaster</a> . 
+                <a href="https://github.com/tobiawolaju" target="_blank" rel="noopener noreferrer">Github</a>
             </p>
-             <p>
-                My mission is to build intelligent machines that solve meaningful real-world problems—across agriculture, security, disaster response, and planetary exploration.
-             </p>
-        </div>
-        <hr>
-    </section>
+            
+    <section id="about-me" class="visible">
 
-    <section id="main-projects">
-        <h2 class="toggle"><span class="section-title">Flagship Projects <span class="toggle-arrow">❯</span></span></h2>
-        <div class="hidden" id="flagship-projects-content" style="display: block;"> <div class="pjet">
-                <div class="project">
-                    <img src="https://plus.unsplash.com/premium_photo-1679589343384-554b9d1461a2?q=80&w=2070&auto=format&fit=crop" alt="Image of SkySwarm drone, an autonomous swarm drone platform.">
-                    <div class="project-info">
-                        <a href="#"><strong>SkySwarm — Autonomous Swarm Drone Platform</strong></a>
-                        <p>A fully custom-built drone system with real-time GPS tracking, onboard IMU navigation, and swarm coordination capabilities. The platform includes a custom PCB-based flight controller, real-time communication protocol (ESP-NOW/LoRa), autonomous flight software, and a React + FastAPI ground station for live telemetry, control, and geospatial tracking.</p>
-                        <p><b>Tech Stack:</b> C++ (ESP32), Rust (embedded), Fusion 360, KiCad, Mapbox, FastAPI, React</p>
-                    </div>
-                    <a href="#" class="view-button">Learn More &rarr;</a>
-                </div>
-                <div class="project">
-                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38AD449?q=80&w=2070&auto=format&fit=crop" alt="Image of AgroSwarm farming robot, an autonomous farming system.">
-                    <div class="project-info">
-                        <a href="#"><strong>AgroSwarm — Autonomous Swarm of Farming Robots</strong></a>
-                        <p>An end-to-end intelligent farming system of coordinated mobile robots that clear land, plant seeds, water crops, eliminate pests, and harvest produce—entirely autonomously. This project combines AI, robotics, embedded systems, and real-time software into a scalable agri-automation platform.</p>
-                         <p><b>Tech Stack:</b> C++/Rust (MCUs), Python (ROS2, CV), Fusion 360, OpenCV, LoRa Mesh, FastAPI</p>
-                    </div>
-                    <a href="#" class="view-button">Learn More &rarr;</a>
-                </div>
+        <div style="display: block; text-align: center; padding-top: 75px">
+         
+            <div>
+                <p style="font-size: xx-large; margin: 0px;">
+                    <img src="jpg.jpg" alt="Engineer" style="width: 25px; height: 25px; border-radius: 30%; margin: 0px;">
+                    Tobiloba Awolaju  
+                   </p>
+
+                <p style="font-size: x-large; margin: 0px;">
+                † engineer. 
+                </p>
+
+                <p style="font-size: large; margin: 0px;">
+                    EEE @
+                    <a href="https://adelekeuniversity.edu.ng/" target="_blank" rel="noopener noreferrer">
+                        Adeleke University
+                    </a>
+                     | CS50 @
+                    <a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener noreferrer">
+                        Harvard (online)
+                    </a>
+                </p>
             </div>
+
+
         </div>
-        <hr>
+
+        <h2 class="toggle">About me<a style="opacity: 0.4;">↗</a></h2>
+        <div class="hidden">
+      
+            <p style="font-size: xx-large;">
+I'm not passionate about software, art, or "building"—I’m just curious. Curiosity has always been my hobby. I didn't fall down a rabbit hole of tech; I just enjoy designing and building useful (and sometimes entertaining) things for myself and others.
+
+My interests lie in robotics, quantum computing, and applied AI—not LLMs, but the kind of AI that figures out how to fold a cloth using a chopstick. My work in games and blockchain development is just a short-term vehicle (fueled by cryptography and a monkey’s love for bananas) to support my long-term obsession with making things.
+
+I know I don’t know a lot—but I’ll learn whatever matters. And none of this would be possible without Christ, who enables me.
+ </p>
+</div>
+
+        <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
     </section>
 
-    <section id="core-systems">
-        <h2 class="toggle"><span class="section-title">Core Systems & Subprojects <span class="toggle-arrow">❯</span></span></h2>
-        <div class="hidden" id="core-systems-content">
-            <p>These components were developed independently and integrated into the above flagship systems. Click to learn more:</p>
-            <ul>
-                <li><a href="#self-driving-bot-nav" class="subproject-link"><b>Self-Driving Bot Navigation Stack:</b> GPS + IMU sensor fusion with PID-based path correction.</a></li>
-                <li><a href="#modular-chassis-design" class="subproject-link"><b>Modular Robot Chassis Design:</b> Custom designed in Fusion 360 for 3D/CNC fabrication.</a></li>
-                <li><a href="#swarm-comm-protocol" class="subproject-link"><b>Swarm Communication Protocol:</b> ESP-NOW and LoRa-based decentralized mesh messaging.</a></li>
-                <li><a href="#drone-flight-controller" class="subproject-link"><b>Drone Flight Controller (Custom PCB):</b> Designed, milled, and programmed for real-time control.</a></li>
-                <li><a href="#seed-dispenser-irrigation" class="subproject-link"><b>Seed Dispenser & Smart Irrigation:</b> Mechatronic designs for precision agriculture.</a></li>
-                <li><a href="#vision-crop-analysis" class="subproject-link"><b>Vision-Based Crop Analysis:</b> YOLOv8 model deployment on microcontrollers for plant health.</a></li>
-            </ul>
+
+    <section id="projects" class="visible">
+        <h2 class="toggle">Robotics &amp; Applied AI Projects<a style="opacity: 0.4;">↗</a></h2>
+        <div class="hidden">
+            
+                 <div class="pjet">
+
+                <div class="project">
+                    <img src="wons.jpg" alt="flyingdaumen">
+                    <div class="project-info">
+                        <a href="https://tobiawolaju.itch.io/floatingdaumen">
+                            <strong>NAD Token Suite↗</strong></a>
+                        <p>ERC-20 + ERC-721 + staking contracts for Web3 gaming.
+                             Includes ownership controls, 
+                            claimable airdrops, and full Foundry test suite.
+                        </p>
+
+                    </div>
+                    <a href="https://x.com/world_of_nads" class="view-button">GitHub → NAD Token Suite</a>
+                </div>
+
+                <div class="project">
+                    <img src="wobs.jpg" alt="TarotBalls">
+                    <div class="project-info">
+                        <a href="https://x.com/world_of_barios"><strong>MiniDEX ↗</strong></a>
+                        <p>Lightweight Uniswap-style AMM with LP tokens, slippage math, 
+                            and flash-loan-style attack simulations.</p>
+                    </div>
+                    <a href="https://x.com/world_of_barios" class="view-button">GitHub → MiniDEX</a>
+                </div>
+
+
+                <div class="project">
+                    <img src="brsports.jpg" alt="BRsports">
+                    <div class="project-info">
+                        <a href="https://x.com/brsports_xyz"><strong> Smart Contract Security Playground ↗</strong></a>
+                        <p>Simulates real-world attacks (reentrancy, delegatecall, overflow) and 
+                            walks through patched versions.</p>
+                    </div>
+                    <a href="https://x.com/brsports_xyz" class="view-button">Repo + Articles →</a>
+                </div>
+
+
+
+                
+            </div>
+
+
+        
+
+          
         </div>
-        <hr>
+        <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
     </section>
 
-    <section id="archived-projects">
-        <h2 class="toggle rotate-down"><span class="section-title">Archived Projects (Legacy) <span class="toggle-arrow">❯</span></span></h2>
-        <div class="hidden" id="archived-projects-content">
-            <p>These projects are archived as they represent a past focus (blockchain/web3 development). They showcase my versatility and foundational software engineering skills.</p>
-            <h4>Blockchain & Game Projects</h4>
+
+      <section id="projects" class="visible">
+        <h2 class="toggle">Quantum Computing Projects<a style="opacity: 0.4;">↗</a></h2>
+        <div class="hidden">
+            
+                 <div class="pjet">
+
+                <div class="project">
+                    <img src="wons.jpg" alt="flyingdaumen">
+                    <div class="project-info">
+                        <a href="https://tobiawolaju.itch.io/floatingdaumen">
+                            <strong>NAD Token Suite↗</strong></a>
+                        <p>ERC-20 + ERC-721 + staking contracts for Web3 gaming.
+                             Includes ownership controls, 
+                            claimable airdrops, and full Foundry test suite.
+                        </p>
+
+                    </div>
+                    <a href="https://x.com/world_of_nads" class="view-button">GitHub → NAD Token Suite</a>
+                </div>
+
+                <div class="project">
+                    <img src="wobs.jpg" alt="TarotBalls">
+                    <div class="project-info">
+                        <a href="https://x.com/world_of_barios"><strong>MiniDEX ↗</strong></a>
+                        <p>Lightweight Uniswap-style AMM with LP tokens, slippage math, 
+                            and flash-loan-style attack simulations.</p>
+                    </div>
+                    <a href="https://x.com/world_of_barios" class="view-button">GitHub → MiniDEX</a>
+                </div>
+
+
+                <div class="project">
+                    <img src="brsports.jpg" alt="BRsports">
+                    <div class="project-info">
+                        <a href="https://x.com/brsports_xyz"><strong> Smart Contract Security Playground ↗</strong></a>
+                        <p>Simulates real-world attacks (reentrancy, delegatecall, overflow) and 
+                            walks through patched versions.</p>
+                    </div>
+                    <a href="https://x.com/brsports_xyz" class="view-button">Repo + Articles →</a>
+                </div>
+
+
+
+                
+            </div>
+
+
+        
+
+          
+        </div>
+        <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
+    </section>
+
+    
+    <section id="projects" class="visible">
+        <h2 class="toggle">Blockchain &amp; Game Projects<a style="opacity: 0.4;">↗</a></h2>
+        <div class="hidden">
+            
+
             <div class="pjet">
-                <div class="project archived-project-no-image">
-                    <img src="wons.jpg" alt="Screenshot of World of NADs game interface.">
+
+                <div class="project">
+                    <img src="wons.jpg" alt="flyingdaumen">
                     <div class="project-info">
-                        <a href="https://tobiawolaju.itch.io/floatingdaumen" target="_blank" rel="noopener noreferrer"><strong>World of NADs &rarr;</strong></a>
-                        <p>Multiplayer Web3 game where players race to grab airdrops and skins in real time. Fully on-chain logic ensures fairness.</p>
+                        <a href="https://tobiawolaju.itch.io/floatingdaumen">
+                            <strong>World of NADs↗</strong></a>
+                        <p>Multiplayer Web3 game where players race to grab
+                            airdrops and skins in real time. Fully on-chain
+                            logic ensures fairness.
+                        </p>
+
                     </div>
-                    <a href="https://x.com/world_of_nads" class="view-button" target="_blank" rel="noopener noreferrer">View WONs on X</a>
+                    <a href="https://x.com/world_of_nads" class="view-button">WONs on X</a>
                 </div>
-                <div class="project archived-project-no-image">
-                    <img src="wobs.jpg" alt="Screenshot of World of Barios 3D platform game.">
+
+                <div class="project">
+                    <img src="wobs.jpg" alt="TarotBalls">
                     <div class="project-info">
-                        <a href="https://x.com/world_of_barios" target="_blank" rel="noopener noreferrer"><strong>World of Barios &rarr;</strong></a>
-                        <p>A 3D platform on-chain game built on Base with an on-chain leaderboard.</p>
+                        <a href="https://x.com/world_of_barios"><strong>World of Barios ↗</strong></a>
+                        <p>A 3d platfrom onchain game built on base with an unchain leaderboard</p>
                     </div>
-                    <a href="https://x.com/world_of_barios" class="view-button" target="_blank" rel="noopener noreferrer">View Barios on X</a>
+                    <a href="https://x.com/world_of_barios" class="view-button">Barios on X</a>
                 </div>
-                <div class="project archived-project-no-image">
-                    <img src="brsports.jpg" alt="Screenshot of BRsports mobile application.">
+
+
+                <div class="project">
+                    <img src="brsports.jpg" alt="BRsports">
                     <div class="project-info">
-                        <a href="https://x.com/brsports_xyz" target="_blank" rel="noopener noreferrer"><strong>BRsports &rarr;</strong></a>
-                        <p>Mobile-first matchmaking system for battle royale games. Smart contracts track match outcomes and distribute rewards fairly.</p>
+                        <a href="https://x.com/brsports_xyz"><strong>BRsports ↗</strong></a>
+                        <p>Mobile-first matchmaking system for battle royale games. Smart contracts track match outcomes
+                            and distribute rewards fairly.</p>
                     </div>
-                    <a href="https://x.com/brsports_xyz" class="view-button" target="_blank" rel="noopener noreferrer">View BRsports on X</a>
-                </div>
+                    <a href="https://x.com/brsports_xyz" class="view-button">BRsports on X</a>
+                </div>                
             </div>
-            <br>
-            <h4>Smart Contract Security</h4>
-             <div class="pjet">
-                 <div class="project archived-project-no-image">
-                    <img src="wons.jpg" alt="Icon representing NAD Token Suite.">
-                    <div class="project-info">
-                        <a href="#"><strong>NAD Token Suite &rarr;</strong></a>
-                        <p>ERC-20 + ERC-721 + staking contracts for Web3 gaming. Includes ownership controls, claimable airdrops, and full Foundry test suite.</p>
-                    </div>
-                    <a href="#" class="view-button">View on GitHub</a>
-                </div>
-                <div class="project archived-project-no-image">
-                    <img src="wobs.jpg" alt="Icon representing MiniDEX decentralized exchange.">
-                    <div class="project-info">
-                        <a href="#"><strong>MiniDEX &rarr;</strong></a>
-                        <p>Lightweight Uniswap-style AMM with LP tokens, slippage math, and flash-loan-style attack simulations.</p>
-                    </div>
-                    <a href="#" class="view-button">View on GitHub</a>
-                </div>
-             </div>
+
+          
         </div>
-        <hr>
+        <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
     </section>
 
-    <section id="skills-stack">
-        <h2 class="toggle"><span class="section-title">Skills & Stack <span class="toggle-arrow">❯</span></span></h2>
-        <div class="hidden" id="skills-content">
-            <div class="skills-category">
-                <ul>Languages:</ul>
-                <div class="button-grid">
-                    <span class="skill-tag">C++</span>
-                    <span class="skill-tag">Rust</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">JavaScript/TypeScript</span>
-                    <span class="skill-tag">MATLAB</span>
-                </div>
-            </div>
-            <div class="skills-category">
-                <ul>Platforms:</ul>
-                 <div class="button-grid">
-                    <span class="skill-tag">ESP32</span>
-                    <span class="skill-tag">STM32</span>
-                    <span class="skill-tag">Arduino</span>
-                    <span class="skill-tag">Raspberry Pi</span>
-                    <span class="skill-tag">ROS2</span>
-                </div>
-            </div>
-            <div class="skills-category">
-                <ul>Robotics:</ul>
-                <div class="button-grid">
-                    <span class="skill-tag">Path Planning</span>
-                    <span class="skill-tag">CV (YOLO, OpenCV)</span>
-                    <span class="skill-tag">Swarm Systems</span>
-                    <span class="skill-tag">Real-Time Control</span>
-                    <span class="skill-tag">Sensor Fusion</span>
-                </div>
-            </div>
-            <div class="skills-category">
-                <ul>PCB/Hardware:</ul>
-                <div class="button-grid">
-                    <span class="skill-tag">KiCad</span>
-                    <span class="skill-tag">Fusion 360</span>
-                    <span class="skill-tag">CNC 3018 PRO</span>
-                    <span class="skill-tag">Ender-3 V3 SE</span>
-                </div>
-            </div>
-             <div class="skills-category">
-                <ul>Cloud & APIs:</ul>
-                <div class="button-grid">
-                    <span class="skill-tag">FastAPI</span>
-                    <span class="skill-tag">REST</span>
-                    <span class="skill-tag">WebSockets</span>
-                    <span class="skill-tag">MQTT</span>
-                    <span class="skill-tag">Mapbox</span>
-                    <span class="skill-tag">Firebase</span>
-                </div>
-            </div>
-        </div>
-        <hr>
-    </section>
+    <section id="substack" class="visible">
+        <h2 class="toggle"> Thought &amp; Writing<a style="opacity: 0.4;">↗</a></h2>
+        <div class="hidden">
+            <ul>
+                <li>
+                    <a href="https://tobiawolaju21.substack.com/p/whats-reentrancy-attacks-in-smart?r=2hkadt">
+                        <strong>Reentrancy Attack in Smart Contracts (Substack)↗</strong>
+                    </a>
+                    <p style="opacity: 50%;">smart contract security.</p>
+                </li>
 
-    <section id="experience">
-        <h2 class="toggle"><span class="section-title">Experience <span class="toggle-arrow">❯</span></span></h2>
-        <div class="hidden" id="experience-content">
-            <p style="font-size:1.1em;"><b>Freelance Robotics Developer</b></p>
-            <p>Custom hardware/software builds, PCBs, and autonomous systems for researchers, hobbyists, and early-stage startups.</p>
-            <p style="font-size:1.1em;"><b>CS50x Graduate, Harvard Online</b></p>
-            <p>Mastered computer science foundations, including algorithms, data structures, systems, and web backend.</p>
-        </div>
-        <hr>
-    </section>
-
-    <section id="writing">
-        <h2 class="toggle"><span class="section-title">Thought & Writing <span class="toggle-arrow">❯</span></span></h2>
-        <div class="hidden" id="writing-content">
-            <p><b>Coming soon:</b> A series on building autonomous systems from scratch (hardware + firmware + intelligence).</p>
-        </div>
-        <hr>
-    </section>
-
-    <section id="contributions">
-        <h2 class="toggle rotate-down"><span class="section-title">2025 Contributions <span class="toggle-arrow">❯</span></span></h2>
-        <div class="hidden" id="contributions-content" style="display: block;"> <ul>
-                <li>Launching open-source SkySwarm and AgroSwarm hardware kits + software API.</li>
-                <li>Building content + tutorials on YouTube/LinkedIn to inspire robotics students globally.</li>
-                <li>Openly documenting the entire build and deployment process to help others learn.</li>
+                <li>
+                    <a href="https://open.substack.com/pub/tobiawolaju21/p/how-zkps-connect-ai-and-web3?r=2hkadt&amp;utm_campaign=post&amp;utm_medium=web&amp;showWelcomeOnShare=false">
+                        <strong>How ZKPs Connect AI and Web3 (Substack)↗</strong>
+                    </a>
+                    <p style="opacity: 50%;">Practical use cases for ZK-proofs</p>
+                </li>
             </ul>
-            <div style="display: flex; justify-content: center; margin-top: 20px;">
-                <img style="max-width: 100%;" src="https://ghchart.rshah.org/tobilobaa" alt="GitHub Contributions Chart" />
-            </div>
+
+            <ul>
+                <li><a href="https://open.substack.com/pub/tobiawolaju21/p/stack-based-computation?r=2hkadt&amp;utm_campaign=post&amp;utm_medium=web&amp;showWelcomeOnShare=true">
+                        <strong>Part 1: Stack-based Computation (Substack)↗</strong></a></li>
+                <p style="opacity: 50%;">EVM notebook 1</p>
+
+                <li><a href="https://open.substack.com/pub/tobiawolaju21/p/simple-memory-management?r=2hkadt&amp;utm_campaign=post&amp;utm_medium=web&amp;showWelcomeOnShare=true">
+                        <strong>Part 2: Simple Memory Management (Substack)↗</strong></a></li>
+                <p style="opacity: 50%;">EVM notebook 2</p>
+
+                <li><a href="https://open.substack.com/pub/tobiawolaju21/p/persistent-storage-in-the-ethereum?r=2hkadt&amp;utm_campaign=post&amp;utm_medium=web&amp;showWelcomeOnShare=true">
+                        <strong>Part 3: Persistent Storage (Substack)↗</strong></a></li>
+                <p style="opacity: 50%;">EVM notebook 3</p>
+
+                <li><a href="https://open.substack.com/pub/tobiawolaju21/p/instruction-decoding-and-execution?r=2hkadt&amp;utm_campaign=post&amp;utm_medium=web&amp;showWelcomeOnShare=true">
+                        <strong>Part 4: Instruction Decoding and Execution (Substack)↗</strong></a></li>
+                <p style="opacity: 50%;">EVM notebook 4</p>
+            </ul>
         </div>
-         <hr>
+        <hr style="border: none; border-top: 1px solid #00000050; margin: 0px;">
     </section>
 
-    <section id="self-driving-bot-nav" class="subproject-detail-section">
-        <h2>Self-Driving Bot Navigation Stack</h2>
-        <p>This core component focuses on robust autonomous navigation for ground robots. It integrates precise GPS data with Inertial Measurement Unit (IMU) readings using advanced sensor fusion techniques (e.g., Extended Kalman Filter) to achieve highly accurate pose estimation even in GPS-denied environments.</p>
-        <p>The system employs a multi-layered path planning algorithm (e.g., A* or Dijkstra for global path, DWA for local obstacle avoidance) and relies on finely tuned PID (Proportional-Integral-Derivative) controllers for precise velocity and heading control, enabling smooth and accurate path following. Comprehensive testing was conducted in various terrains to validate its performance and resilience to external disturbances.</p>
-        <p>Key aspects include:</p>
-        <ul>
-            <li>**Sensor Data Acquisition & Filtering:** Raw data from GPS, IMU (accelerometer, gyroscope, magnetometer) is pre-processed and filtered to reduce noise and enhance accuracy.</li>
-            <li>**State Estimation:** Implementation of Kalman Filters for optimal estimation of robot position, velocity, and orientation.</li>
-            <li>**Path Planning Algorithms:** Global and local path planning strategies for efficient navigation in dynamic environments.</li>
-            <li>**PID Control:** Fine-tuned PID loops for motor control, ensuring the robot adheres to planned trajectories with minimal error.</li>
-            <li>**Obstacle Avoidance:** Integration with ultrasonic or lidar sensors for real-time dynamic obstacle detection and avoidance.</li>
-        </ul>
-        <a href="#core-systems" class="back-to-top-button">&larr; Back to Core Systems</a>
-    </section>
-    <hr class="subproject-hr">
 
-    <section id="modular-chassis-design" class="subproject-detail-section">
-        <h2>Modular Robot Chassis Design</h2>
-        <p>The modular robot chassis was designed from the ground up in Fusion 360 with a focus on versatility, ease of fabrication, and rapid prototyping. Its modular nature allows for quick assembly and disassembly, making it ideal for experimental robotics platforms that require frequent component swaps or modifications.</p>
-        <p>The design prioritizes using common manufacturing methods like 3D printing (for lighter, complex parts) and CNC milling (for structural, high-strength components) to ensure accessibility and replicability. It features standardized mounting points and interchangeable sections, allowing the same base platform to be adapted for various applications (e.g., adding different sensor arrays, robotic arms, or mobility systems).</p>
-        <p>Key features include:</p>
-        <ul>
-            <li>**Universal Mounting Points:** Standardized bolt patterns for easy integration of electronics, motors, and sensors.</li>
-            <li>**Material Optimization:** Selection of appropriate materials (e.g., PLA/PETG for 3D printing, aluminum for CNC parts) for optimal strength-to-weight ratio.</li>
-            <li>**Cable Management:** Integrated channels and tie-down points for neat and secure wiring.</li>
-            <li>**Accessibility:** Designed for easy access to internal components for maintenance and troubleshooting.</li>
-            <li>**Scalability:** Ability to scale the chassis dimensions up or down to accommodate different payload requirements.</li>
-        </ul>
-        <a href="#core-systems" class="back-to-top-button">&larr; Back to Core Systems</a>
-    </section>
-    <hr class="subproject-hr">
+    <section id="projects" class="visible">
+        <h2 class="toggle">Skills &amp; Stack<a style="opacity: 0.4;">↗</a></h2>
+        <div class="hidden">
+            <ul class="des">Smart Contracts &amp; Protocols:</ul>
+            <button class="button3">Solidity</button>
+            <button class="button3">Rust</button>
+            <button class="button3">Hardhat</button>
+            <button class="button3">OpenZeppelin</button>
+            <button class="button3">Hardhat</button>
+            <button class="button3">OpenZeppelin</button>
+            <button class="button3">viem</button>
+            <button class="button3">wagmi</button>
 
-    <section id="swarm-comm-protocol" class="subproject-detail-section">
-        <h2>Swarm Communication Protocol</h2>
-        <p>Developed a custom, decentralized mesh communication protocol critical for coordinating autonomous swarm systems. This protocol leverages the strengths of both ESP-NOW (for ultra-low-latency, short-range broadcast) and LoRa (for long-range, low-power mesh networking) to ensure robust and efficient communication across multiple robot agents.</p>
-        <p>The protocol features a lightweight packet structure, dynamic routing capabilities, and built-in error checking mechanisms to maintain swarm cohesion and data integrity. It enables real-time data sharing (e.g., position, sensor readings, task assignments) and command dissemination, crucial for synchronized behaviors in complex environments.</p>
-        <p>Highlights:</p>
-        <ul>
-            <li>**Hybrid Communication:** Seamlessly switches between ESP-NOW for close-proximity, high-bandwidth needs and LoRa for maintaining long-range connectivity.</li>
-            <li>**Decentralized Mesh:** No single point of failure, enhancing system resilience.</li>
-            <li>**Real-time Data Exchange:** Optimized for quick transmission of critical information between agents.</li>
-            <li>**Scalability:** Designed to handle an increasing number of agents without significant performance degradation.</li>
-            <li>**Energy Efficiency:** LoRa's low-power characteristics ensure extended operational times for battery-powered robots.</li>
-        </ul>
-        <a href="#core-systems" class="back-to-top-button">&larr; Back to Core Systems</a>
-    </section>
-    <hr class="subproject-hr">
+            <ul class="des">Fullstack Web3 Development:</ul>
+            <button class="button5">React</button>
+            <button class="button5">Next.js</button>
+            <button class="button5">Node.js </button>
+            <button class="button5">TypeScript</button>
+            <button class="button5">WebAssembly</button>
 
-    <section id="drone-flight-controller" class="subproject-detail-section">
-        <h2>Drone Flight Controller (Custom PCB)</h2>
-        <p>Designed, fabricated, and programmed a custom Printed Circuit Board (PCB) to serve as the core flight controller for autonomous drones. This custom solution provides precise control over flight dynamics, integrating various sensors and actuators directly onto a compact, optimized board.</p>
-        <p>The PCB design in KiCad focuses on minimizing size, weight, and power consumption, while ensuring robust performance. The firmware, written primarily in C++, implements advanced control loops (e.g., cascaded PID for attitude and position), sensor calibration routines, and failsafe mechanisms, demonstrating deep understanding of embedded systems and real-time operating principles.</p>
-        <p>Key Aspects:</p>
-        <ul>
-            <li>**Integrated Sensors:** Onboard IMU (accelerometer, gyroscope), barometer, and magnetometer for comprehensive flight state estimation.</li>
-            <li>**Microcontroller Selection:** Chosen for optimal processing power and peripheral availability for real-time tasks.</li>
-            <li>**Power Distribution & Management:** Efficient power delivery to motors, sensors, and communication modules.</li>
-            <li>**Firmware Development:** Custom flight control algorithms, motor mixing, and radio communication protocols.</li>
-            <li>**Debugging & Calibration:** Built-in diagnostics and calibration routines for easy setup and maintenance.</li>
-        </ul>
-        <a href="#core-systems" class="back-to-top-button">&larr; Back to Core Systems</a>
-    </section>
-    <hr class="subproject-hr">
+            <ul class="des">Game Development:</ul>
+            <button class="button2">Godot Engine </button>
+            <button class="button2">Bevy Engine(Rust)</button>
 
-    <section id="seed-dispenser-irrigation" class="subproject-detail-section">
-        <h2>Seed Dispenser & Smart Irrigation</h2>
-        <p>Developed innovative mechatronic designs for precision agriculture, specifically a highly accurate seed dispensing mechanism and an intelligent irrigation system. The seed dispenser utilizes a custom-designed mechanical feeder driven by a micro-stepper motor, ensuring precise single-seed deployment at programmed intervals and depths.</p>
-        <p>The smart irrigation component integrates soil moisture sensors with solenoid-controlled water valves. An embedded algorithm analyzes moisture levels, weather forecasts, and crop-specific requirements to optimize water delivery, minimizing waste and promoting healthier plant growth. These systems are designed to be robust, energy-efficient, and easily integrated into mobile farming robots.</p>
-        <p>Components & Functionality:</p>
-        <ul>
-            <li>**Precision Seed Dispensing:** Mechanical design and control logic for accurate single-seed placement.</li>
-            <li>**Soil Moisture Sensing:** Integration of various moisture sensor types (capacitive, resistive) for accurate data.</li>
-            <li>**Automated Watering:** Solenoid valve control for targeted water delivery.</li>
-            <li>**Intelligent Scheduling:** Algorithms for optimizing watering frequency and volume based on environmental factors.</li>
-            <li>**Modular Design:** Components designed for easy integration with existing or new robotic platforms.</li>
-        </ul>
-        <a href="#core-systems" class="back-to-top-button">&larr; Back to Core Systems</a>
-    </section>
-    <hr class="subproject-hr">
 
-    <section id="vision-crop-analysis" class="subproject-detail-section">
-        <h2>Vision-Based Crop Analysis</h2>
-        <p>Implemented a highly efficient vision-based system for real-time crop analysis, utilizing a custom-trained YOLOv8 model deployed directly onto resource-constrained microcontrollers (e.g., ESP32-CAM or Raspberry Pi). This system enables autonomous robots to perform on-the-fly identification of plant health, pest infestations, and ripeness, critical for precision agriculture.</p>
-        <p>Challenges of on-device inference were addressed through model quantization, pruning, and optimization techniques, ensuring high inference speeds with minimal computational overhead. The integration with OpenCV allows for image pre-processing, post-processing, and visual feedback, providing a powerful tool for intelligent farming and early disease detection.</p>
-        <p>Key Technologies:</p>
-        <ul>
-            <li>**YOLOv8 Model Deployment:** Optimized inference of YOLOv8 for real-time object detection on embedded systems.</li>
-            <li>**Model Optimization:** Techniques like quantization and pruning to reduce model size and improve inference speed.</li>
-            <li>**OpenCV Integration:** Used for image capture, pre-processing (e.g., normalization, resizing), and post-processing (e.g., bounding box drawing, feature extraction).</li>
-            <li>**Hardware Acceleration:** Leveraging specific hardware capabilities of microcontrollers for faster AI operations.</li>
-            <li>**Actionable Insights:** Ability to trigger specific robotic actions (e.g., targeted spraying, harvesting) based on vision analysis results.</li>
-        </ul>
-        <a href="#core-systems" class="back-to-top-button">&larr; Back to Core Systems</a>
+
+        </div>
+        <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
     </section>
-    <hr class="subproject-hr">
+
+    <section id="projects">
+        <h2 class="toggle">Experience<a style="opacity: 0.4;">↗</a></h2>
+        <div class="hidden">
+
+
+            <p style="font-size:xx-large;">Open Source Contributor → <a style="font-size:x-large;"> Anything. Anywhere. Anytime.
+                    anywhere anytime </a></p>
+
+            <p style="font-size:xx-large;">BRsports → <a style="font-size:x-large;">Backend &amp; Smart Contract Engineer
+                    Contracts"</a></p>
+
+
+            <p style="font-size:xx-large;">Freelancing → <a style="font-size:x-large;"> Web3, Games, Fullstack</a></p>
+
+
+
+        </div>
+        <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
+    </section>
+
+    <section id="projects">
+        <h2 class="toggle">Latest Art piece<a style="opacity: 0.4;">↗</a></h2>
+        <div class="hidden">
+
+            <p style="font-size:xx-large;">
+                I'm something of An Artist in my freetime </p>
+            <style>
+                .instagram-grid {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 20px;
+                    margin: 20px;
+                }
+
+                .instagram-grid>div {
+                    flex: 1 1 calc(33.333% - 20px);
+                    display: flex;
+                    justify-content: center;
+                }
+
+                @media (max-width: 768px) {
+                    .instagram-grid>div {
+                        flex: 1 1 100%;
+                    }
+                }
+            </style>
+            <script async="" src="https://www.instagram.com/embed.js"></script>
+            
+
+            
+
+                <div class="instagram-grid">
+                    <div>
+                        <iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0" src="https://www.instagram.com/p/C77cW-dNm6j/embed/?cr=1&amp;v=14&amp;rd=https%3A%2F%2Ftobiawolaju-ocdc9uziy-got-sidots-projects.vercel.app&amp;rp=%2F#%7B%22ci%22%3A0%2C%22os%22%3A2397.9000000059605%2C%22ls%22%3A699.2999999970198%2C%22le%22%3A1875%7D" allowtransparency="true" allowfullscreen="true" frameborder="0" height="0" data-instgrm-payload-id="instagram-media-payload-0" scrolling="no" style="background: white; max-width: 540px; width: 99.375%; border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;"></iframe>
+                    </div>
+
+                    <div>
+                        <iframe class="instagram-media instagram-media-rendered" id="instagram-embed-1" src="https://www.instagram.com/p/Ct71BJwo_Q6/embed/?cr=1&amp;v=14&amp;rd=https%3A%2F%2Ftobiawolaju-ocdc9uziy-got-sidots-projects.vercel.app&amp;rp=%2F#%7B%22ci%22%3A1%2C%22os%22%3A2411%2C%22ls%22%3A699.2999999970198%2C%22le%22%3A1875%7D" allowtransparency="true" allowfullscreen="true" frameborder="0" height="0" data-instgrm-payload-id="instagram-media-payload-1" scrolling="no" style="background: white; max-width: 540px; width: calc(100% - 2px); border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;"></iframe>
+
+                    </div>
+                </div>
+        </div>
+        <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
+    </section>
+
+
+
+
+
+<section id="projects">
+        <h2 class="toggle">2025 <a style="opacity: 0.4;"> Contributions </a></h2>
+     
+<div style="display: flex; justify-content: center;">
+  <img style="max-width: 100%;" src="https://ghchart.rshah.org/tobiawolaju" alt="GitHub Contributions Chart">
+</div>
+
+</section>
+
+    <div style="height: 200px;"></div>
+
     <footer>
-        <p style="text-align: center; font-size: 0.9em; color: #888; padding: 20px 0;">
-            &copy; 2025 Tobiloba Awolaju. All rights reserved.
-        </p>
     </footer>
 
-</body>
-</html>
+
+</body></html>
