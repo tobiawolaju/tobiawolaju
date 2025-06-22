@@ -344,3 +344,39 @@ a{
     text-decoration-color: #3e00d0;
 
 }
+
+
+
+
+.filters {
+  margin: 1em 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+.filters button {
+  padding: 0.5em 1em;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 0.9em;
+}
+.filters button.active {
+  background: #565656;
+  color: #fff;
+}
+
+.resume {
+  background: #000000;
+  color: #fff;
+    padding: 1em 1.5em;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 0.9em;
+  height:fit-content;
+  position: absolute;
+  bottom: 24px;
+  right: 10px;
+}

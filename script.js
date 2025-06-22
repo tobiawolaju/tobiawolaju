@@ -32,3 +32,32 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+
+//projects
+
+  document.querySelectorAll('.filters button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+      document.querySelectorAll('.project').forEach(project => {
+        const categories = project.getAttribute('data-category') || "";
+        const isFavorite = project.getAttribute('data-favorite') === "true";
+
+        if (
+          filter === "all" ||
+          (filter === "favorite" && isFavorite) ||
+          categories.includes(filter)
+        ) {
+          project.style.display = "block";
+        } else {
+          project.style.display = "none";
+        }
+      });
+    });
+  });
+
+  // Trigger default filter
+  document.querySelector('[data-filter="favorite"]').click();
