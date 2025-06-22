@@ -374,9 +374,10 @@ a{
   border: 1px solid #ffffff;
   cursor: pointer;
   border-radius: 50px;
-  font-size: 0.9em;
+  font-size: 0.8em;
   height:fit-content;
   position: absolute;
   bottom: 24px;
   right: 10px;
+  text-decoration:none;
 }
