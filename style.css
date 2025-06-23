@@ -353,6 +353,8 @@ a{
   display: flex;
   flex-wrap: wrap;
   gap: 0.5em;
+background: #fff;
+  
 }
 .filters button {
   padding: 0.5em 1em;
