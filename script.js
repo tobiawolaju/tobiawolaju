@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-//projects
+// Project filters
 document.querySelectorAll('.filters button').forEach(btn => {
     btn.addEventListener('click', () => {
         document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
@@ -43,13 +43,7 @@ document.querySelectorAll('.filters button').forEach(btn => {
         const filter = btn.getAttribute('data-filter');
         document.querySelectorAll('.project').forEach(project => {
             const categories = project.getAttribute('data-category') || "";
-            const isFavorite = project.getAttribute('data-favorite') === "true";
-
-            if (
-                filter === "all" ||
-                (filter === "favorite" && isFavorite) ||
-                categories.includes(filter) // This line will correctly handle "robotics-ai" and "web3-game"
-            ) {
+            if (categories.includes(filter)) {
                 project.style.display = "block";
             } else {
                 project.style.display = "none";
@@ -59,4 +53,8 @@ document.querySelectorAll('.filters button').forEach(btn => {
 });
 
 // Trigger default filter to show 'All' projects on load
-document.querySelector('[data-filter="all"]').click(); // MODIFIED LINE
+document.querySelector('[data-filter="robotics"]').click(); // MODIFIED LINE
+
+
+
+

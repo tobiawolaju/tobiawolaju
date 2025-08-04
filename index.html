@@ -11,109 +11,115 @@
 
 <body> 
 
-    <section id="about-me" class="visible">
-        <div style="display: block; text-align: center; padding-top: 75px">
-            <div>
-                <p style="font-size: xx-large; margin: 0px;">
-                    <img src="jpg.jpg" alt="Engineer" style="width: 25px; height: 25px; border-radius: 30%; margin: 0px;">
-                    Tobiloba Awolaju
-                </p>
-                <p style="font-size: large; text-align: center; margin-top: 5px;">
-                    EEE Student & Aspiring Robotics Engineer | Web3 Developer | Bridging Hardware & Decentralized Systems
-                </p>
-            </div>
+  <section id="about-me" class="visible">
+    <div style="display: block; text-align: center; padding-top: 75px">
+        <div>
+            <p style="font-size: xx-large; margin: 0px;">
+                <img src="jpg.jpg" alt="Engineer" style="width: 25px; height: 25px; border-radius: 30%; margin: 0px;">
+                Tobiloba Awolaju
+            </p>
+            <p style="font-size: large; text-align: center; margin-top: 5px;">
+                Robotics Engineering | Systems Engineering
+            </p>
         </div>
-
-        <h2 class="toggle">About me<a style="opacity: 0.4;">↗</a></h2>
-   <div class="hidden">
-    <p style="font-size: x-large;">
-        I am an Electrical and Electronics Engineering student at Adeleke University, driven by a passion for creating impactful technology at the intersection of physical and digital worlds. My expertise spans both <em>Robotics & AI</em> and <em>Web3 Development</em>.
-    </p>
-
-    <p style="font-size: large; margin: 10px;">
-        <a style="font-weight: bold;">Education</a>
-        EEE @
-        <a href="https://adelekeuniversity.edu.ng/" target="_blank" rel="noopener noreferrer">Adeleke University</a>
-        | CS50 @
-        <a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener noreferrer">Harvard (online)</a>
-    </p>
-
-    <div style="display: flex; align-items: center;">
-        <p style="font-size: x-large; margin-right: 20px;">
-            As an <em>aspiring Robotics Engineer</em>, I design and build autonomous systems, focusing on areas like <em>sensor-AI integration, control systems, and embedded software</em>. My goal is to contribute to innovative robotics solutions at leading companies.
-            <br><br>
-            In <em>Web3 Development</em>, I'm deeply involved in decentralized systems, smart contract security, and DApp creation, leveraging blockchain technology to build the next generation of the internet.
-            <br><br>
-            I apply a full-stack approach, blending hardware prototyping with robust software development across both domains. I also share insights and research on these topics via my <a href="https://tobiawolaju21.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a>.
-        </p>
-        <a class="resume" href="https://docs.google.com/document/d/1rAaz1npJsNaA1Z4rRAQerH271eRiXhrEhwdmj5DxFQg/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
-            Résumé
-        </a>
     </div>
+
+    <h2 class="toggle">Bio<a style="opacity: 0.4;">↗</a></h2>
+    <div class="hidden">
+        <p style="font-size: x-large;">
+            Tobiloba Awolaju is an Electrical and Electronics Engineering student at Adeleke University, passionate about developing impactful technologies at the intersection of the physical and digital worlds. His expertise spans <em>Robotics, AI</em>, and <em>Systems Engineering</em>.
+        </p>
+
+        <p style="font-size: large; margin: 10px;">
+            <span style="font-weight: bold;">Education:</span>
+            EEE @ 
+            <a href="https://adelekeuniversity.edu.ng/" target="_blank" rel="noopener noreferrer">Adeleke University</a> |
+            CS50 @ 
+            <a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener noreferrer">Harvard (online)</a>
+        </p>
+
+        <div style="display: flex; align-items: center;">
+            <p style="font-size: x-large; margin-right: 20px;">
+                Tobi designs and builds autonomous systems, focusing on areas like <em>sensor-AI integration, control systems, and real-time OS security</em>. He aims to contribute to innovative engineering solutions that solve real-world problems.
+                <br><br>
+                In his free time, Tobi works on <em>DApps and experimental software/hardware projects</em>, either for research or to generate additional revenue to fund his major engineering goals.
+            </p>
+            <a class="resume" href="https://docs.google.com/document/d/1rAaz1npJsNaA1Z4rRAQerH271eRiXhrEhwdmj5DxFQg/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+                CV
+            </a>
+        </div>
+    </div>
+
+    <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
+</section>
+
+
+   <section id="projects" class="visible">
+    <h2 class="toggle">Projects<a style="opacity: 0.4;">↗</a></h2>
+    <div class="hidden">
+        
+      <div class="filters">
+  <button data-filter="robotics" class="active">Robotics & AI</button>
+  <button data-filter="web3">Web3 & DApps</button>
 </div>
 
-        <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
-    </section>
 
-    <section id="projects" class="visible">
-        <h2 class="toggle">Stints<a style="opacity: 0.4;">↗</a></h2>
-        <div class="hidden">
-          <div class="filters" style="position: sticky; top: 0px; z-index: 999; background-color: rgba(255, 255, 255, 0.4); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
- <button data-filter="all" class="active">All</button> 
-                <button data-filter="favorite">Favorites</button>
-                <button data-filter="robotics-ai">Robotics & AI</button>
-                <button data-filter="web3-game">Web3 & Game</button>
+        <div class="pjet">
+            <div class="project" data-category="web3">
+                <img src="ai-block.jpg" alt="AI Blockchain Tool">
+                <div class="project-info">
+                    <a href="#"><strong>NeuroDEX ↗</strong></a>
+                    <p>AI-driven price oracle and automated market-maker with on-chain learning models.</p>
+                </div>
+                <a href="#" class="view-button">View Project →</a>
             </div>
 
-            <div class="pjet">
-                <div class="project" data-category="web3-game robotics-ai" data-favorite="true">
-                    <img src="ai-block.jpg" alt="AI Blockchain Tool">
-                    <div class="project-info">
-                        <a href="#"><strong>NeuroDEX ↗</strong></a> <p>AI-driven price oracle and automated market-maker with on-chain learning models.</p>
-                    </div>
-                    <a href="#" class="view-button">View Project →</a> </div>
+            <div class="project" data-category="robotics">
+                <img src="qsense.jpg" alt="Quantum Sensing">
+                <div class="project-info">
+                    <a href="#"><strong>Q-Sense Node ↗</strong></a>
+                    <p>Experimental low-temp quantum sensor array with real-time visualization backend.</p>
+                </div>
+                <a href="#" class="view-button">Details →</a>
+            </div>
 
-                <div class="project" data-category="robotics-ai" data-favorite="true">
-                    <img src="qsense.jpg" alt="Quantum Sensing">
-                    <div class="project-info">
-                        <a href="#"><strong>Q-Sense Node ↗</strong></a> <p>Experimental low-temp quantum sensor array with real-time visualization backend.</p>
-                    </div>
-                    <a href="#" class="view-button">Details →</a> </div>
+            <div class="project" data-category="robotics">
+                <img src="andro-ai.jpg" alt="Android AI App">
+                <div class="project-info">
+                    <a href="#"><strong>VisionCompanion ↗</strong></a>
+                    <p>Offline Android assistant for visually impaired users using on-device models.</p>
+                </div>
+                <a href="#" class="view-button">Explore →</a>
+            </div>
 
-                <div class="project" data-category="robotics-ai" data-favorite="true">
-                    <img src="andro-ai.jpg" alt="Android AI App">
-                    <div class="project-info">
-                        <a href="#"><strong>VisionCompanion ↗</strong></a> <p>Offline Android assistant for visually impaired users using on-device models.</p>
-                    </div>
-                    <a href="#" class="view-button">Explore →</a> </div>
+            <div class="project" data-category="robotics">
+                <img src="quantum.jpg" alt="Quantum">
+                <div class="project-info">
+                    <a href="#"><strong>QCompute Lab ↗</strong></a>
+                    <p>Browser-based QASM visualizer and quantum gate simulator.</p>
+                </div>
+                <a href="#" class="view-button">Try Demo →</a>
+            </div>
 
-                <div class="project" data-category="all">
-                    <img src="ios-tool.jpg" alt="iOS Tool">
-                    <div class="project-info">
-                        <a href="#"><strong>iSecureChat ↗</strong></a> <p>iOS encrypted chat app with biometric unlock and self-destruct mode.</p>
-                    </div>
-                    <a href="#" class="view-button">See GitHub →</a> </div>
-
-                <div class="project" data-category="robotics-ai">
-                    <img src="quantum.jpg" alt="Quantum">
-                    <div class="project-info">
-                        <a href="#"><strong>QCompute Lab ↗</strong></a> <p>Browser-based QASM visualizer and quantum gate simulator.</p>
-                    </div>
-                    <a href="#" class="view-button">Try Demo →</a> </div>
-
-                <div class="project" data-category="robotics-ai">
-                    <img src="robot.jpg" alt="Robot">
-                    <div class="project-info">
-                        <a href="#"><strong>RoboMaze ↗</strong></a> <p>Self-learning robot that navigates mazes using ultrasonic and IR sensors.</p>
-                    </div>
-                    <a href="#" class="view-button">Build Log →</a> </div>
+            <div class="project" data-category="robotics">
+                <img src="robot.jpg" alt="Robot">
+                <div class="project-info">
+                    <a href="#"><strong>RoboMaze ↗</strong></a>
+                    <p>Self-learning robot that navigates mazes using ultrasonic and IR sensors.</p>
+                </div>
+                <a href="#" class="view-button">Build Log →</a>
             </div>
         </div>
-        <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
-    </section>
+    </div>
+
+    <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
+</section>
+
+
+
 
     <section id="substack" class="visible">
-        <h2 class="toggle">Research<a style="opacity: 0.4;">↗</a></h2>
+        <h2 class="toggle">Publications<a style="opacity: 0.4;">↗</a></h2>
         <div class="hidden">
             <ul>
                 <li>
@@ -150,7 +156,7 @@
         <hr style="border: none; border-top: 1px solid #00000050; margin: 0px;">
     </section>
 
-    <section id="projects"> <h2 class="toggle">Git <a style=" opacity: 0.4;">Chart</a></h2>
+    <section id="projects"> <h2 class="toggle">Git <a style=" opacity: 0.4;">Contributions</a></h2>
         <div style=" display: flex; justify-content: center;">
             <img style="max-width: 100%;" src ="https://ghchart.rshah.org/tobiawolaju" alt=" GitHub Contributions Chart">
         </div>
