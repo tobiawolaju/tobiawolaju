@@ -64,12 +64,20 @@ document.querySelector('[data-filter="robotics"]').click(); // MODIFIED LINE
 document.addEventListener("DOMContentLoaded", () => {
     const overlay = document.getElementById("overlay");
 
-    // Get the 'code' query parameter from the URL
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get("code");
 
-    // Check if the code matches
-    const allowAccess = (code === "1234");
+    let allowAccess = false;
+
+    if (code && !isNaN(code)) {
+        const codeTime = parseInt(code, 10);
+        const now = Date.now();
+        const oneHour = 60 * 60 * 1000; // ms in an hour
+
+        if (now - codeTime <= oneHour) {
+            allowAccess = true;
+        }
+    }
 
     if (allowAccess) {
         overlay.classList.add("hidden");
@@ -77,3 +85,4 @@ document.addEventListener("DOMContentLoaded", () => {
         overlay.classList.remove("hidden");
     }
 });
+
