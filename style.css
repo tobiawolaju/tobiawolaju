@@ -439,6 +439,10 @@ a{
     pointer-events: all;
 }
 
+.overlay.hidden {
+    display: none;
+}
+
 .overlay-message {
     color: rgba(0, 0, 0, 0.623);
     font-size: 1.5rem;

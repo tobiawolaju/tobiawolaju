@@ -61,35 +61,19 @@ document.querySelector('[data-filter="robotics"]').click(); // MODIFIED LINE
 
 
 
-
-// ====== PERMISSION TOGGLE ======
-let allowAccess = false; // change to true to allow viewing
-
 document.addEventListener("DOMContentLoaded", () => {
-    if (!allowAccess) {
-        const overlay = document.createElement("div");
-        overlay.innerHTML = `<div class="overlay-message">
-    <div class="message-wrapper">
-        <svg viewBox="0 0 24 24" aria-label="Protected portfolio" role="img" 
-             xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor">
-            <path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 
-                     2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 
-                     2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 
-                     5a3 3 0 1 1 6 0v3H9V7zm9 5v8H6v-8h12z"/>
-        </svg>
-         <p>Only approved visitors can view this portfolio.</p>
-    </div>
-   
-    <a class="requestaccess" href="https://x.com/tobiawolaju/" 
-       target="_blank" class="request-btn">
-       Request Permission
-    </a>
-</div>
+    const overlay = document.getElementById("overlay");
 
+    // Get the 'code' query parameter from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const code = urlParams.get("code");
 
-        `;
-        overlay.classList.add("overlay");
-        document.body.appendChild(overlay);
+    // Check if the code matches
+    const allowAccess = (code === "1234");
+
+    if (allowAccess) {
+        overlay.classList.add("hidden");
+    } else {
+        overlay.classList.remove("hidden");
     }
 });
-
