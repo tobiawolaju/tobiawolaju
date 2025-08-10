@@ -60,7 +60,6 @@ document.querySelector('[data-filter="robotics"]').click(); // MODIFIED LINE
 
 
 
-
 document.addEventListener("DOMContentLoaded", () => {
     const overlay = document.getElementById("overlay");
 
@@ -68,14 +67,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const code = urlParams.get("code");
 
     let allowAccess = false;
+    const masterCode = "hr"; // Master code
 
-    if (code && !isNaN(code)) {
-        const codeTime = parseInt(code, 10);
-        const now = Date.now();
-        const oneHour = 60 * 60 * 1000; // ms in an hour
-
-        if (now - codeTime <= oneHour) {
+    if (code) {
+        if (code === masterCode) {
+            // Always allow access if master code is entered
             allowAccess = true;
+        } else if (!isNaN(code)) {
+            // Check numeric time-based code
+            const codeTime = parseInt(code, 10);
+            const now = Date.now();
+            const oneHour = 60 * 60 * 1000; // ms in an hour
+
+            if (now - codeTime <= oneHour) {
+                allowAccess = true;
+            }
         }
     }
 
@@ -85,4 +91,3 @@ document.addEventListener("DOMContentLoaded", () => {
         overlay.classList.remove("hidden");
     }
 });
-
