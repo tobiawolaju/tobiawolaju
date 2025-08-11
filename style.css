@@ -418,6 +418,15 @@ a{
 
 
 
+.specs {
+    list-style: none; /* remove bullets */
+    padding-left: 0;  /* remove default indent */
+}
+
+.specs li::before {
+    content: " "; /* replace bullet with space */
+}
+
 
 
 
