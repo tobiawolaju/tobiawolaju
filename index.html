@@ -38,12 +38,12 @@
                         style="width: 50px; height: 50px; border-radius: 30%; margin: 0px;">
                     Tobiloba Awolaju
                 </p>
-                <p style="font-size: large; text-align: left; margin-top: 5px;">
-                    Robotics systems engineer • Building a 5’7 autonomous humanoid robot from scratch
+                <p style="font-size: large; text-align: center; margin-top: 5px;">
+                 I build autonomous robots end-to-end — from custom PCBs and BLDC motor 
+                 control to sensor fusion and AI-based perception. Currently leading the 
+                 design and construction of a full-scale humanoid platform for dynamic
+                  locomotion and manipulation research
                 </p>
-                <p style="font-size: large; text-align: left; margin-top: 5px;">
-                    From PCB design to gait control to perception AI — I design, build, and test full-stack robots for
-                    real-world deployment. </p>
             </div>
         </div>
 
@@ -78,8 +78,8 @@
         <div class="hidden">
 
             <div class="filters">
-                <button data-filter="robotics" class="active">Robotics & AI</button>
-                <button data-filter="web3">Web3 & DApps</button>
+                <button data-filter="robotics" class="active">Robotics & Systems</button>
+                <button data-filter="web3">AI & ML</button>
             </div>
 
 
@@ -154,33 +154,63 @@
                 </div>
 
 
-                <div class="project" data-category="web3">
-                    <img src="quantum.jpg" alt="Quantum">
-                    <div class="project-info">
-                        <a href="#"><strong>Nad Sports ↗</strong></a>
-                        <p>Match making for mobile brgames and rewarding players with mon/usdt. built on monad</p>
-                    </div>
-                    <a href="#" class="view-button">Find a Match →</a>
-                </div>
+       <!-- REAL-TIME LOCOMOTION POLICY LEARNING FOR HUMANOIDS -->
+<div class="project" data-category="web3">
+    <img src="locomotion.gif" alt="Real-Time Locomotion Policy Learning">
+    <div class="project-info">
+        <a href="#"><strong>Real-Time Locomotion Policy Learning for Humanoids ↗</strong></a>
+        <p class="mission">Reinforcement learning (PPO/SAC) gait controller trained in Isaac Gym and deployed to Atom humanoid via domain randomization.</p>
+        <ul class="specs">
+            <li><strong>*</strong> Achieved 2.3 km/h stable gait, ±5° torso pitch, <50 ms policy inference latency</li>
+            <li><strong>*</strong> Reduced gait cycle energy use by 17% vs. baseline PID gait</li>
+            <li><strong>*</strong> Demonstrated recovery from external disturbances with <0.8 s stabilization time</li>
+        </ul>
+        <div class="links">
+            <a href="locomotion-paper.pdf">[Paper PDF]</a>
+            <a href="https://github.com/you/locomotion-policy">[GitHub Repo]</a>
+            <a href="locomotion-demo.mp4">[Demo Video]</a>
+        </div>
+    </div>
+</div>
 
-                <div class="project" data-category="web3">
-                    <img src="robot.jpg" alt="Robot">
-                    <div class="project-info">
-                        <a href="#"><strong>Nad Garden ↗</strong></a>
-                        <p>An NFT market place built on monad.</p>
-                    </div>
-                    <a href="#" class="view-button">See listings →</a>
-                </div>
+<!-- MULTI-MODAL SENSOR FUSION FOR ADAPTIVE MANIPULATION -->
+<div class="project" data-category="web3">
+    <img src="sensorfusion.gif" alt="Multi-Modal Sensor Fusion for Adaptive Manipulation">
+    <div class="project-info">
+        <a href="#"><strong>Multi-Modal Sensor Fusion for Adaptive Manipulation ↗</strong></a>
+        <p class="mission">RGB-D, tactile, and proprioceptive data fused into a unified state estimator for real-time object interaction on Atom's manipulator.</p>
+        <ul class="specs">
+            <li><strong>*</strong> Achieved 94% grasp success rate across 12 object classes in cluttered scenes</li>
+            <li><strong>*</strong> Sensor fusion loop runs at 45 Hz on Jetson Orin Nano</li>
+            <li><strong>*</strong> Reduced grasp planning time by 23% via fused state-space optimization</li>
+        </ul>
+        <div class="links">
+            <a href="sensorfusion-paper.pdf">[Paper PDF]</a>
+            <a href="https://github.com/you/multimodal-fusion">[GitHub Repo]</a>
+            <a href="sensorfusion-demo.mp4">[Demo Video]</a>
+        </div>
+    </div>
+</div>
 
-                <div class="project" data-category="web3">
-                    <img src="quantum.jpg" alt="Quantum">
-                    <div class="project-info">
-                        <a href="#"><strong>World of Nads ↗</strong></a>
-                        <p>Play to win affilate's whitelist -- a decentrilized battle royal game built on monad,
-                            available on Android,ios and PC</p>
-                    </div>
-                    <a href="#" class="view-button">Play WON →</a>
-                </div>
+<!-- ON-DEVICE SEMANTIC MAPPING + TASK PLANNING -->
+<div class="project" data-category="web3">
+    <img src="semanticmapping.gif" alt="On-Device Semantic Mapping and Task Planning">
+    <div class="project-info">
+        <a href="#"><strong>On-Device Semantic Mapping + Task Planning ↗</strong></a>
+        <p class="mission">DeepLab semantic segmentation integrated with ORB-SLAM3 for high-level autonomy on Bettle rover.</p>
+        <ul class="specs">
+            <li><strong>*</strong> Map + object tagging updated at 8 Hz on embedded GPU</li>
+            <li><strong>*</strong> Completed semantic “find object” tasks in unstructured environments with 89% success rate</li>
+            <li><strong>*</strong> Inference and planning stack runs within 15 W power budget</li>
+        </ul>
+        <div class="links">
+            <a href="semanticmapping-paper.pdf">[Paper PDF]</a>
+            <a href="https://github.com/you/semantic-mapping">[GitHub Repo]</a>
+            <a href="semanticmapping-demo.mp4">[Demo Video]</a>
+        </div>
+    </div>
+</div>
+
 
             </div>
         </div>
