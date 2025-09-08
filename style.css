@@ -401,18 +401,55 @@ a{
 
 
 .resume {
-  background: #000000;
-  color: #fff;
-    padding: 1em 1.5em;
-  border: 1px solid #ffffff;
-  cursor: pointer;
+  background: #edf5ff;
+  color: #000000;
+  padding: 1em 1.5em;
   border-radius: 50px;
   font-size: 0.8em;
-  height:fit-content;
+  height: fit-content;
   position: absolute;
   bottom: 24px;
   right: 10px;
-  text-decoration:none;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 1;
+  overflow: hidden; /* hides glow overflow */
+}
+
+/* Rainbow glowing border */
+.resume::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50px;
+  background: linear-gradient(270deg, #ff0000, #ff9900, #33ff00, #00ffff, #0066ff, #cc00ff, #ff0066, #ff0000);
+  background-size: 400% 400%;
+  z-index: -1;
+  filter: blur(4px);
+  animation: rainbow 6s linear infinite;
+}
+
+/* Inner background layer so text stays on solid black */
+.resume::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border-radius: 48px;
+  background: #edf5ff;
+  z-index: -1;
+}
+
+/* Rainbow animation */
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 
