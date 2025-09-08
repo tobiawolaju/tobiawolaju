@@ -2,289 +2,255 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tobi's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <script async src="//www.instagram.com/embed.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tobi's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
-    <div id="overlay" class="overlay">
-        <div class="overlay-message">
-            <div class="message-wrapper">
-                <svg viewBox="0 0 24 24" aria-label="Protected portfolio" role="img" xmlns="http://www.w3.org/2000/svg"
-                    width="28" height="28" fill="currentColor">
-                    <path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 
-                             2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 
-                             2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 
-                             5a3 3 0 1 1 6 0v3H9V7zm9 5v8H6v-8h12z" />
-                </svg>
-                <p>Only approved visitors can view this portfolio.</p>
-            </div>
+  <!-- NOTE: Overlay access is NOT secure, just a visual block -->
+  <div id="overlay" class="overlay">
+    <div class="overlay-message">
+      <div class="message-wrapper">
+        <svg viewBox="0 0 24 24" aria-label="Protected portfolio" role="img" xmlns="http://www.w3.org/2000/svg"
+          width="28" height="28" fill="currentColor">
+          <path
+            d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 
+                 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 
+                 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 
+                 5a3 3 0 1 1 6 0v3H9V7zm9 5v8H6v-8h12z" />
+        </svg>
+        <p>Only approved visitors can view this portfolio.</p>
+      </div>
 
-            <a class="requestaccess" href="https://x.com/tobiawolaju/" target="_blank">
-                Request Permission
-            </a>
-        </div>
+      <a class="requestaccess" href="https://x.com/tobiawolaju/" target="_blank">
+        Request Permission
+      </a>
+    </div>
+  </div>
+
+  <section id="about-me" class="visible">
+    <div style="display: block; text-align: center; padding-top: 75px">
+      <div>
+        <p style="font-size: xx-large; margin: 0px;">
+          <img src="jpg.jpg" alt="Engineer"
+            style="width: 50px; height: 50px; border-radius: 30%; margin: 0px;">
+          Tobiloba Awolaju
+        </p>
+        <p style="font-size: large; text-align: center; margin-top: 5px;">
+          I build autonomous robots end-to-end — from custom PCBs and BLDC motor
+          control to sensor fusion and AI-based perception. Currently leading the
+          design and construction of a full-scale humanoid platform for dynamic
+          locomotion and manipulation research.
+        </p>
+      </div>
     </div>
 
-    <section id="about-me" class="visible">
-        <div style="display: block; text-align: center; padding-top: 75px">
-            <div>
-                <p style="font-size: xx-large; margin: 0px;">
-                    <img src="jpg.jpg" alt="Engineer"
-                        style="width: 50px; height: 50px; border-radius: 30%; margin: 0px;">
-                    Tobiloba Awolaju
-                </p>
-                <p style="font-size: large; text-align: center; margin-top: 5px;">
-                 I build autonomous robots end-to-end — from custom PCBs and BLDC motor 
-                 control to sensor fusion and AI-based perception. Currently leading the 
-                 design and construction of a full-scale humanoid platform for dynamic
-                  locomotion and manipulation research
-                </p>
-            </div>
-        </div>
+    <h2 class="toggle">Bio<a style="opacity: 0.4;">↗</a></h2>
 
-        <h2 class="toggle">Bio<a style="opacity: 0.4;">↗</a></h2>
+    <div class="hidden">
+      <p style=" font-size: x-large; padding-bottom: 5vw;">
+        Electrical &amp; Electronics Engineering major @
+        <a href="https://adelekeuniversity.edu.ng/" target="_blank" rel="noopener noreferrer">
+          Adeleke University
+        </a> specializing in robotics &amp; systems engineering.
+        Designing and building a 5’7 humanoid robot with a custom control stack,
+        sensor fusion, and AI-driven autonomy.<br>
+        Skilled in CAD, embedded C++/Python/JS, and real-time control systems.
+      </p>
 
-        <div class="hidden">
-            <p style=" font-size: x-large; padding-bottom: 5vw;">
-                Electrical &amp; Electronics Engineering major @
-                <a href="https://adelekeuniversity.edu.ng/" target="_blank" rel="noopener noreferrer">
-                    Adeleke University
-                </a> Specializing in robotics &amp; systems engineering.
-                Designing and building a 5’7 humanoid robot with a custom control stack,
-                sensor fusion, and AI-driven autonomy.<br>
-                Skilled in CAD, embedded C++/Python/JS, and real-time control systems.
-            </p>
+      <a class="resume"
+        href="https://docs.google.com/document/d/1rAaz1npJsNaA1Z4rRAQerH271eRiXhrEhwdmj5DxFQg/edit?usp=sharing"
+        target="_blank" rel="noopener noreferrer">
+        Download CV
+      </a>
+    </div>
 
+    <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
+  </section>
 
-            <a class="resume"
-                href="https://docs.google.com/document/d/1rAaz1npJsNaA1Z4rRAQerH271eRiXhrEhwdmj5DxFQg/edit?usp=sharing"
-                target="_blank" rel="noopener noreferrer">
-                Download CV
-            </a>
-        </div>
+  <section id="projects" class="visible">
+    <h2 class="toggle">Projects<a style="opacity: 0.4;">↗</a></h2>
+    <div class="hidden">
 
+      <div class="filters">
+        <button data-filter="robotics" class="active">Robotics & Systems</button>
+        <button data-filter="ai-ml">AI & ML</button>
+      </div>
 
-        <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
-    </section>
+     <div class="pjet">
 
-
-    <section id="projects" class="visible">
-        <h2 class="toggle">Projects<a style="opacity: 0.4;">↗</a></h2>
-        <div class="hidden">
-
-            <div class="filters">
-                <button data-filter="robotics" class="active">Robotics & Systems</button>
-                <button data-filter="web3">AI & ML</button>
-            </div>
-
-
-            <div class="pjet">
-
-                <!-- ATOM: HUMANOID ROBOT -->
-                <div class="project" data-category="robotics">
-                    <img src="atom.png" alt="Atom Humanoid Robot">
-                    <div class="project-info">
-                        <a href="#"><strong>Atom – Humanoid Robot ↗</strong></a>
-                        <p class="mission">Full-scale, 5’7" humanoid platform for locomotion research, manipulation, and
-                            human-robot
-                            interaction.</p>
-                        <ul class="specs">
-                            <li><strong>*</strong> Achieved 2.3 km/h stable biped gait over uneven terrain (5° torso
-                                pitch)</li>
-                            <li><strong>*</strong> Custom BLDC-FOC control reduced gait energy use by 17%</li>
-                            <li><strong>*</strong> Integrated stereo vision + IMU + TOF for adaptive foot placement</li>
-                        </ul>
-                        <div class="links">
-                            <a href="atom-cad.png">[CAD Render]</a>
-                            <a href="https://github.com/you/atom">[GitHub Repo]</a>
-                            <a href="atom-demo.mp4">[Demo Video]</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- BETTLE: AUTONOMOUS ROVER -->
-                <div class="project" data-category="robotics">
-                    <img src="beetle.gif" alt="Bettle Autonomous Rover">
-                    <div class="project-info">
-                        <a href="#"><strong>Bettle – Autonomous Rover ↗</strong></a>
-                        <p class="mission">Bio-inspired rover designed for autonomous navigation and mapping in
-                            unstructured terrain.</p>
-                        <ul class="specs">
-                            <li><strong>*</strong> Successfully navigated 1.2 km off-road course with 92% autonomous
-                                path completion</li>
-                            <li><strong>*</strong> Adaptive leg-wheel hybrid reduced traversal time by 28% vs.
-                                wheel-only baseline</li>
-                            <li><strong>*</strong> ROS-based navigation stack integrated LIDAR, GPS, IMU, and TOF for
-                                real-time obstacle avoidance</li>
-                        </ul>
-                        <div class="links">
-                            <a href="beetle-cad.png">[CAD Render]</a>
-                            <a href="https://github.com/you/bettle">[GitHub Repo]</a>
-                            <a href="beetle-demo.mp4">[Demo Video]</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- RECON BEE: DRONE SWARM -->
-                <div class="project" data-category="robotics">
-                    <img src="reconbee.gif" alt="Recon Bee Drone Swarm">
-                    <div class="project-info">
-                        <a href="#"><strong>Recon Bee – Drone Swarm ↗</strong></a>
-                        <p class="mission">Coordinated multi-drone swarm for reconnaissance, mapping, and perimeter
-                            patrol.</p>
-                        <ul class="specs">
-                            <li><strong>*</strong> Deployed 5-drone swarm achieving 85% mission coverage in 3 minutes
-                                over 4000 m² area</li>
-                            <li><strong>*</strong> Implemented mesh comms (LoRa + Wi-Fi) with <200 ms inter-drone sync
-                                    latency</li>
-                            <li><strong>*</strong> Distributed AI-based task allocation reduced redundant coverage by
-                                31%</li>
-                        </ul>
-                        <div class="links">
-                            <a href="reconbee-cad.png">[CAD Render]</a>
-                            <a href="https://github.com/you/reconbee">[GitHub Repo]</a>
-                            <a href="reconbee-demo.mp4">[Demo Video]</a>
-                        </div>
-                    </div>
-                </div>
-
-
-       <!-- REAL-TIME LOCOMOTION POLICY LEARNING FOR HUMANOIDS -->
-<div class="project" data-category="web3">
-    <img src="locomotion.gif" alt="Real-Time Locomotion Policy Learning">
+  <!-- HUMANOID ROBOT -->
+  <div class="project" data-category="robotics">
+    <img src="atom.png" alt="Humanoid Robot">
     <div class="project-info">
-        <a href="#"><strong>Real-Time Locomotion Policy Learning for Humanoids ↗</strong></a>
-        <p class="mission">Reinforcement learning (PPO/SAC) gait controller trained in Isaac Gym and deployed to Atom humanoid via domain randomization.</p>
-        <ul class="specs">
-            <li><strong>*</strong> Achieved 2.3 km/h stable gait, ±5° torso pitch, <50 ms policy inference latency</li>
-            <li><strong>*</strong> Reduced gait cycle energy use by 17% vs. baseline PID gait</li>
-            <li><strong>*</strong> Demonstrated recovery from external disturbances with <0.8 s stabilization time</li>
-        </ul>
-        <div class="links">
-            <a href="locomotion-paper.pdf">[Paper PDF]</a>
-            <a href="https://github.com/you/locomotion-policy">[GitHub Repo]</a>
-            <a href="locomotion-demo.mp4">[Demo Video]</a>
-        </div>
+      <a href="#"><strong>Humanoid Robot – 5'7", High Dexterity ↗</strong></a>
+      <p class="mission">Full-scale humanoid platform built from scratch with custom autonomy software stack (non-ROS), 
+        enabling real-time perception → planning → control for seamless motion.</p>
+      <ul class="specs">
+        <li><strong>*</strong> Achieved smooth, stable gait and dexterous manipulation</li>
+        <li><strong>*</strong> Custom BLDC-FOC motor drivers with adaptive energy optimization</li>
+        <li><strong>*</strong> Integrated stereo vision, IMU, and TOF for dynamic locomotion</li>
+      </ul>
+      <div class="links">
+        <a href="atom-cad.png">[CAD Render]</a>
+        <a href="https://github.com/you/humanoid">[GitHub Repo]</a>
+        <a href="atom-demo.mp4">[Demo Video]</a>
+      </div>
     </div>
-</div>
+  </div>
 
-<!-- MULTI-MODAL SENSOR FUSION FOR ADAPTIVE MANIPULATION -->
-<div class="project" data-category="web3">
-    <img src="sensorfusion.jpg" alt="Multi-Modal Sensor Fusion for Adaptive Manipulation">
+  <!-- PEBBLE-SIZED SWARM -->
+  <div class="project" data-category="robotics">
+    <img src="pebble.gif" alt="Pebble-Sized Swarm">
     <div class="project-info">
-        <a href="#"><strong>Multi-Modal Sensor Fusion for Adaptive Manipulation ↗</strong></a>
-        <p class="mission">RGB-D, tactile, and proprioceptive data fused into a unified state estimator for real-time object interaction on Atom's manipulator.</p>
-        <ul class="specs">
-            <li><strong>*</strong> Achieved 94% grasp success rate across 12 object classes in cluttered scenes</li>
-            <li><strong>*</strong> Sensor fusion loop runs at 45 Hz on Jetson Orin Nano</li>
-            <li><strong>*</strong> Reduced grasp planning time by 23% via fused state-space optimization</li>
-        </ul>
-        <div class="links">
-            <a href="sensorfusion-paper.pdf">[Paper PDF]</a>
-            <a href="https://github.com/you/multimodal-fusion">[GitHub Repo]</a>
-            <a href="sensor
-            fusion-demo.mp4">[Demo Video]</a>
-        </div>
+      <a href="#"><strong>Pebble-Sized Surveillance Swarm ↗</strong></a>
+      <p class="mission">Micro-robot swarm for real-time mass surveillance with distributed AI and 
+        multi-agent coordination.</p>
+      <ul class="specs">
+        <li><strong>*</strong> Designed sub-10cm “pebble” robots for distributed sensing</li>
+        <li><strong>*</strong> Mesh networking with low-latency sync across nodes</li>
+        <li><strong>*</strong> Embedded AI inference for decentralized decision-making</li>
+      </ul>
+      <div class="links">
+        <a href="pebble-cad.png">[CAD Render]</a>
+        <a href="https://github.com/you/pebble-swarm">[GitHub Repo]</a>
+        <a href="pebble-demo.mp4">[Demo Video]</a>
+      </div>
     </div>
-</div>
+  </div>
 
-<!-- ON-DEVICE SEMANTIC MAPPING + TASK PLANNING -->
-<div class="project" data-category="web3">
-    <img src="semanticmapping.jpg" alt="On-Device Semantic Mapping and Task Planning">
+  <!-- MULTI-TERRAIN ROVER + DRONE -->
+  <div class="project" data-category="robotics">
+    <img src="roverdrone.gif" alt="Rover Drone Hybrid">
     <div class="project-info">
-        <a href="#"><strong>On-Device Semantic Mapping + Task Planning ↗</strong></a>
-        <p class="mission">DeepLab semantic segmentation integrated with ORB-SLAM3 for high-level autonomy on Bettle rover.</p>
-        <ul class="specs">
-            <li><strong>*</strong> Map + object tagging updated at 8 Hz on embedded GPU</li>
-            <li><strong>*</strong> Completed semantic “find object” tasks in unstructured environments with 89% success rate</li>
-            <li><strong>*</strong> Inference and planning stack runs within 15 W power budget</li>
-        </ul>
-        <div class="links">
-            <a href="semanticmapping-paper.pdf">[Paper PDF]</a>
-            <a href="https://github.com/you/semantic-mapping">[GitHub Repo]</a>
-            <a href="semanticmapping-demo.mp4">[Demo Video]</a>
-        </div>
+      <a href="#"><strong>Multi-Terrain Rover + Drone Hybrid ↗</strong></a>
+      <p class="mission">Hybrid rover capable of terrain adaptation and aerial transitions, demonstrating 
+        cross-domain robotics.</p>
+      <ul class="specs">
+        <li><strong>*</strong> AI models classify terrain and trigger flight-control mode</li>
+        <li><strong>*</strong> Seamless transition between locomotion and aerial navigation</li>
+        <li><strong>*</strong> Tested on unstructured terrain and variable environments</li>
+      </ul>
+      <div class="links">
+        <a href="roverdrone-cad.png">[CAD Render]</a>
+        <a href="https://github.com/you/rover-drone">[GitHub Repo]</a>
+        <a href="roverdrone-demo.mp4">[Demo Video]</a>
+      </div>
     </div>
+  </div>
+
+  <!-- SLAM RESEARCH -->
+  <div class="project" data-category="ai-ml">
+    <img src="slam.png" alt="Novel SLAM Implementation">
+    <div class="project-info">
+      <a href="#"><strong>Novel SLAM Implementation (Research Paper) ↗</strong></a>
+      <p class="mission">Developed a new approach to Simultaneous Localization and Mapping (SLAM), 
+        moving beyond conventional EKF/Graph-based methods.</p>
+      <ul class="specs">
+        <li><strong>*</strong> Authored and published a research paper on methodology</li>
+        <li><strong>*</strong> Integrated into humanoid and rover autonomy stack</li>
+        <li><strong>*</strong> Targeted for research-focused recruiters (DeepMind, Google, NASA)</li>
+      </ul>
+      <div class="links">
+        <a href="slam-paper.pdf">[Paper PDF]</a>
+        <a href="https://github.com/you/slam">[GitHub Repo]</a>
+        <a href="slam-demo.mp4">[Demo Video]</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUPPORTING WORK -->
+  <div class="project" data-category="ai-ml">
+    <img src="ai-stack.png" alt="Custom AI Models and Middleware">
+    <div class="project-info">
+      <a href="#"><strong>Custom AI Models & Robotics Middleware ↗</strong></a>
+      <p class="mission">Built proprietary neural models for vision + autonomy and wrote 
+        a robotics middleware stack from scratch (non-ROS).</p>
+      <ul class="specs">
+        <li><strong>*</strong> Vision and terrain classification models trained in-house</li>
+        <li><strong>*</strong> Middleware designed for low-latency sensor fusion and planning</li>
+        <li><strong>*</strong> Demonstrates deep systems engineering mindset</li>
+      </ul>
+      <div class="links">
+        <a href="middleware-docs.pdf">[Docs PDF]</a>
+        <a href="https://github.com/you/middleware">[GitHub Repo]</a>
+        <a href="middleware-demo.mp4">[Demo Video]</a>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 
-            </div>
-        </div>
+    </div>
 
-        <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
-    </section>
+    <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
+  </section>
 
-
-
-
-    <section id="substack" class="visible">
-        <h2 class="toggle">Publications<a style="opacity: 0.4;">↗</a></h2>
-        <div class="hidden">
-            <!-- Robotics / Control Systems / FSD -->
-            <ul>
-                <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                        <strong>High-DOF Humanoid Gait Optimization (Substack) ↗</strong>
-                    </a>
-                    <p style="opacity: 50%;">Inverse kinematics + sensor fusion for multi-DOF humanoids.
-                </li>
-                <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                        <strong>Real-Time Sensor Fusion for Terrain-Adaptive Locomotion (Substack) ↗</strong>
-                    </a>
-                    <p style="opacity: 50%;">IMU, TOF, and vision data fusion for adaptive foot placement.
-                </li>
-                <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                        <strong>Distributed Drone Swarm Path Planning (Substack) ↗</strong>
-                    </a>
-                    <p style="opacity: 50%;">Decentralized control algorithms for autonomous reconnaissance drones.
-           
-                </li>
-            </ul>
-        </div>
-        <hr style="border: none; border-top: 1px solid #00000050; margin: 0px;">
-    </section>
-
-
-
-    <section id="projects">
-        <h2 class="toggle">Git <a style=" opacity: 0.4;">Contributions</a></h2>
-        <div style=" display: flex; justify-content: center;">
-            <img style="max-width: 100%;" src="https://ghchart.rshah.org/tobiawolaju" alt=" GitHub Contributions Chart">
-        </div>
-    </section>
-
-    <div style="height: 200px;"></div>
-
-    <footer
-        style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 999; background-color: rgba(83, 83, 83, 0.5); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); height: 60px; display: flex; align-items: center; justify-content: center; font-size: large; color: white; gap: 20px; flex-wrap: wrap;">
-        <a href="mailto:tobiawolaju21@gmail.com"
-            style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
-            <img src="https://img.icons8.com/ios-filled/24/ffffff/gmail.png" alt="Gmail" width="20" height="20" />
-            Gmail
+<section id="substack" class="visible">
+  <h2 class="toggle">Publications<a style="opacity: 0.4;">↗</a></h2>
+  <div class="hidden">
+    <ul>
+      <li>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <strong>Novel SLAM Architecture for High-DOF Humanoids (Substack) ↗</strong>
         </a>
-        <a href="https://www.linkedin.com/in/awolaju" target="_blank" rel="noopener noreferrer"
-            style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
-            <img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn" width="20" height="20" />
-            LinkedIn
+        <p style="opacity: 50%;">A custom SLAM approach integrating proprioception, vision, and IMUs for dexterous humanoid robots.</p>
+      </li>
+      <li>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <strong>Real-Time Terrain-Adaptive Locomotion (Substack) ↗</strong>
         </a>
-        <a href="https://x.com/tobiawolaju?s=09" target="_blank" rel="noopener noreferrer"
-            style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
-            <img src="https://img.icons8.com/ios-filled/24/ffffff/twitterx.png" alt="X" width="20" height="20" />
-            X
+        <p style="opacity: 50%;">Sensor fusion (IMU, ToF, depth vision) for stable humanoid walking on uneven terrain.</p>
+      </li>
+      <li>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <strong>Distributed Drone Swarm Path Planning (Substack) ↗</strong>
         </a>
-        <a href="https://github.com/tobiawolaju" target="_blank" rel="noopener noreferrer"
-            style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
-            <img src="https://img.icons8.com/ios-filled/24/ffffff/github.png" alt="GitHub" width="20" height="20" />
-            GitHub
-        </a>
-    </footer>
+        <p style="opacity: 50%;">Decentralized multi-agent algorithms for scalable autonomous reconnaissance swarms.</p>
+      </li>
+    </ul>
+  </div>
+  <hr style="border: none; border-top: 1px solid #00000050; margin: 0px;">
+</section>
+
+
+  <section id="projects">
+    <h2 class="toggle">Git <a style=" opacity: 0.4;">Contributions</a></h2>
+    <div style=" display: flex; justify-content: center;">
+      <img style="max-width: 100%;" src="https://ghchart.rshah.org/tobiawolaju"
+        alt=" GitHub Contributions Chart">
+    </div>
+  </section>
+
+  <div style="height: 200px;"></div>
+
+  <footer
+    style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 999; background-color: rgba(83, 83, 83, 0.5); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); height: 60px; display: flex; align-items: center; justify-content: center; font-size: large; color: white; gap: 20px; flex-wrap: wrap;">
+    <a href="mailto:tobiawolaju21@gmail.com"
+      style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/gmail.png" alt="Gmail" width="20" height="20" />
+      Gmail
+    </a>
+    <a href="https://www.linkedin.com/in/awolaju" target="_blank" rel="noopener noreferrer"
+      style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn" width="20" height="20" />
+      LinkedIn
+    </a>
+    <a href="https://x.com/tobiawolaju?s=09" target="_blank" rel="noopener noreferrer"
+      style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/twitterx.png" alt="X" width="20" height="20" />
+      X
+    </a>
+    <a href="https://github.com/tobiawolaju" target="_blank" rel="noopener noreferrer"
+      style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/github.png" alt="GitHub" width="20" height="20" />
+      GitHub
+    </a>
+  </footer>
 
 </body>
 
