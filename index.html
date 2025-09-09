@@ -34,9 +34,65 @@
         <div style="display: block; text-align: center; padding-top: 75px">
       <div style="text-align: center; margin-bottom: 20px;">
   <p style="font-size: x-large; margin: 0; font-weight: bold;">
-    <img src="jpg.jpg" alt="Engineer"
-      style="width: 60px; height: 60px; border-radius: 25%; vertical-align: middle; margin-right: 10px;">
-    Tobiloba Awolaju
+  <div style="position: relative; display: inline-block;">
+
+<div id="profile-pic" style="position: relative; display: inline-block;">
+  <img src="jpg.jpg" alt="Engineer"
+       style="width: 60px; height: 60px; border-radius: 25%; vertical-align: middle; margin-right: 10px;">
+
+  <span id="tooltip"
+        style="visibility: hidden; 
+               opacity: 0;
+               transition: opacity 0.3s;
+               background-color: rgb(69, 69, 69); 
+               color: #ffffff; 
+               text-align: center; 
+               border-radius: 5px; 
+               padding: 3px 6px; 
+               position: absolute; 
+               bottom: 70%; 
+               left: 130%; 
+               transform: translateX(-50%);
+               font-size: 12px;
+               white-space: nowrap;">
+ Background added with AI
+  </span>
+</div>
+
+<style>
+  #profile-pic:hover #tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+</style>
+
+
+<script>
+  const container = document.getElementById("profile-pic");
+  const tooltip = document.getElementById("tooltip");
+  let hideTimeout;
+
+  container.addEventListener("mouseenter", () => {
+    clearTimeout(hideTimeout);
+    tooltip.style.visibility = "visible";
+    tooltip.style.opacity = "1";
+
+    // Hide automatically after 2s
+    hideTimeout = setTimeout(() => {
+      tooltip.style.opacity = "0";
+      setTimeout(() => tooltip.style.visibility = "hidden", 300);
+    }, 2000);
+  });
+
+  container.addEventListener("mouseleave", () => {
+    clearTimeout(hideTimeout);
+    tooltip.style.opacity = "0";
+    setTimeout(() => tooltip.style.visibility = "hidden", 300);
+  });
+</script>
+
+
+ Tobiloba Awolaju
   </p>
   <p style="font-size: medium; color: gray; margin: 5px 0;">
     Robotics & AI Engineer | Humanoid Systems | Autonomy Research
