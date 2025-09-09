@@ -400,9 +400,10 @@ a{
 }
 
 
+/* Light mode (default) */
 .resume {
   background: #edf5ff;
-  color: #000000;
+  color: #000;
   padding: 1em 1.5em;
   border-radius: 50px;
   font-size: 0.8em;
@@ -413,7 +414,7 @@ a{
   text-decoration: none;
   cursor: pointer;
   z-index: 1;
-  overflow: hidden; /* hides glow overflow */
+  overflow: hidden;
 }
 
 /* Rainbow glowing border */
@@ -425,14 +426,24 @@ a{
   right: -2px;
   bottom: -2px;
   border-radius: 50px;
-  background: linear-gradient(270deg, #ffb4b4, #ffddab, #bbffaa, #cbfcfc, #c4dbff, #f2c0ff, #ffc0d9, #ffc1c1);
+  background: linear-gradient(
+    270deg,
+    #ffb4b4,
+    #ffddab,
+    #bbffaa,
+    #cbfcfc,
+    #c4dbff,
+    #f2c0ff,
+    #ffc0d9,
+    #ffc1c1
+  );
   background-size: 400% 400%;
   z-index: -1;
   filter: blur(4px);
   animation: rainbow 6s linear infinite;
 }
 
-/* Inner background layer so text stays on solid black */
+/* Inner layer (light mode) */
 .resume::after {
   content: "";
   position: absolute;
@@ -445,12 +456,40 @@ a{
   z-index: -1;
 }
 
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  .resume {
+    background: #1c1c1c;
+    color: #fff;
+  }
+
+  .resume::after {
+    background: #1c1c1c; /* inner bg dark */
+  }
+
+  .resume::before {
+    /* brighter rainbow for dark mode */
+    background: linear-gradient(
+      270deg,
+      #ff4d4d,
+      #ffae42,
+      #7dff7d,
+      #40e0d0,
+      #4d79ff,
+      #d580ff,
+      #ff66b3,
+      #ff4d4d
+    );
+  }
+}
+
 /* Rainbow animation */
 @keyframes rainbow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
 
 
 
