@@ -30,18 +30,17 @@
         </div>
     </div>
 
-    <section id="about-me" class="visible">
-        <div style="display: block; text-align: center; padding-top: 75px">
-      <div style="text-align: center; margin-bottom: 20px;">
-  <p style="font-size: x-large; margin: 0; font-weight: bold;">
-  <div style="position: relative; display: inline-block;">
 
-<div id="profile-pic" style="position: relative; display: inline-block;">
-  <img src="jpg.jpg" alt="Engineer"
-       style="width: 60px; height: 60px; border-radius: 25%; vertical-align: middle; margin-right: 10px;">
+    <div style="display: block; text-align: center; padding-top: 75px">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <p style="font-size: x-large; margin: 0; font-weight: bold;">
+            <div style="position: relative; display: inline-block;">
 
-  <span id="tooltip"
-        style="visibility: hidden; 
+                <div id="profile-pic" style="position: relative; display: inline-block;">
+                    <img src="jpg.jpg" alt="Engineer"
+                        style="width: 60px; height: 60px; border-radius: 25%; vertical-align: middle; margin-right: 10px;">
+
+                    <span id="tooltip" style="visibility: hidden; 
                opacity: 0;
                transition: opacity 0.3s;
                background-color: rgb(69, 69, 69); 
@@ -55,56 +54,63 @@
                transform: translateX(-50%);
                font-size: 12px;
                white-space: nowrap;">
- Background added with AI
-  </span>
-</div>
+                        Background added with AI
+                    </span>
+                </div>
 
-<style>
-  #profile-pic:hover #tooltip {
-    visibility: visible;
-    opacity: 1;
-  }
-</style>
-
-
-<script>
-  const container = document.getElementById("profile-pic");
-  const tooltip = document.getElementById("tooltip");
-  let hideTimeout;
-
-  container.addEventListener("mouseenter", () => {
-    clearTimeout(hideTimeout);
-    tooltip.style.visibility = "visible";
-    tooltip.style.opacity = "1";
-
-    // Hide automatically after 2s
-    hideTimeout = setTimeout(() => {
-      tooltip.style.opacity = "0";
-      setTimeout(() => tooltip.style.visibility = "hidden", 300);
-    }, 2000);
-  });
-
-  container.addEventListener("mouseleave", () => {
-    clearTimeout(hideTimeout);
-    tooltip.style.opacity = "0";
-    setTimeout(() => tooltip.style.visibility = "hidden", 300);
-  });
-</script>
+                <style>
+                    #profile-pic:hover #tooltip {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                </style>
 
 
- Tobiloba Awolaju
-  </p>
-  <p style="font-size: medium; color: gray; margin: 5px 0;">
-    Robotics & AI Engineer | Humanoid Systems | Autonomy Research
-  </p>
-  <p style="font-size: large; margin-top: 10px; max-width: 700px; margin-left: auto; margin-right: auto;">
-    I build autonomous robots end-to-end — from custom PCBs and BLDC motor control 
-    to sensor fusion and AI-driven perception — enabling machines to perceive, 
-    move, and act with human-like dexterity.
-  </p>
-</div>
+                <script>
+                    const container = document.getElementById("profile-pic");
+                    const tooltip = document.getElementById("tooltip");
+                    let hideTimeout;
+
+                    container.addEventListener("mouseenter", () => {
+                        clearTimeout(hideTimeout);
+                        tooltip.style.visibility = "visible";
+                        tooltip.style.opacity = "1";
+
+                        // Hide automatically after 2s
+                        hideTimeout = setTimeout(() => {
+                            tooltip.style.opacity = "0";
+                            setTimeout(() => tooltip.style.visibility = "hidden", 300);
+                        }, 2000);
+                    });
+
+                    container.addEventListener("mouseleave", () => {
+                        clearTimeout(hideTimeout);
+                        tooltip.style.opacity = "0";
+                        setTimeout(() => tooltip.style.visibility = "hidden", 300);
+                    });
+                </script>
+
+
+                Tobiloba Awolaju
+                </p>
+                <p style="font-size: medium; color: gray; margin: 5px 0;">
+                    Robotics & AI Engineer | Humanoid Systems | Autonomy Research
+                </p>
+                <p style="font-size: large; margin-top: 10px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    I build autonomous robots end-to-end — from custom PCBs and BLDC motor control
+                    to sensor fusion and AI-driven perception — enabling machines to perceive,
+                    move, and act with human-like dexterity.
+                </p>
+            </div>
 
         </div>
+
+
+    </div>
+
+
+    <section id="about-me" class="visible">
+
 
         <h2 class="toggle">About Me<a style="opacity: 0.4;">↗</a></h2>
 
@@ -125,19 +131,19 @@
                 (Robotics &amp; Artificial Intelligence Innovator) — RAIN Campus Lead, Adeleke University.
             </p>
 
-                 <a class="resume"
-            href="https://docs.google.com/document/d/1rAaz1npJsNaA1Z4rRAQerH271eRiXhrEhwdmj5DxFQg/edit?usp=sharing"
-            target="_blank" rel="noopener noreferrer">
-            View Resume ↗
-        </a>
-        </div>
-
-   
-
+            <a class="resume"
+                href="https://docs.google.com/document/d/1rAaz1npJsNaA1Z4rRAQerH271eRiXhrEhwdmj5DxFQg/edit?usp=sharing"
+                target="_blank" rel="noopener noreferrer">
+                View Resume ↗
+            </a>
         </div>
 
         <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
     </section>
+
+
+
+
 
     <section id="projects" class="visible">
         <h2 class="toggle">Projects<a style="opacity: 0.4;">↗</a></h2>
@@ -294,14 +300,12 @@
 
     <section id="projects">
         <h2 class="toggle">Git <a style=" opacity: 0.4;">Contributions</a></h2>
-      <div style="display: flex; justify-content: center;">
-  <a href="https://github.com/tobiawolaju" target="_blank" rel="noopener noreferrer">
-    <img 
-      style="max-width: 100%;" 
-      src="https://ghchart.rshah.org/tobiawolaju" 
-      alt="GitHub Contributions Chart">
-  </a>
-</div>
+        <div style="display: flex; justify-content: center;">
+            <a href="https://github.com/tobiawolaju" target="_blank" rel="noopener noreferrer">
+                <img style="max-width: 100%;" src="https://ghchart.rshah.org/tobiawolaju"
+                    alt="GitHub Contributions Chart">
+            </a>
+        </div>
 
     </section>
 
