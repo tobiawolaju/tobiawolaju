@@ -425,7 +425,7 @@ a{
   right: -2px;
   bottom: -2px;
   border-radius: 50px;
-  background: linear-gradient(270deg, #ff0000, #ff9900, #33ff00, #00ffff, #0066ff, #cc00ff, #ff0066, #ff0000);
+  background: linear-gradient(270deg, #ffb4b4, #ffddab, #bbffaa, #cbfcfc, #c4dbff, #f2c0ff, #ffc0d9, #ffc1c1);
   background-size: 400% 400%;
   z-index: -1;
   filter: blur(4px);
