@@ -239,13 +239,13 @@ scale: 0.9;
 }
 
 .project-info a {
-    font-size: 1.3em;
+    font-size:large;
     text-decoration: none;
 }
 
 .project-info p {
-    opacity: 0.8;
-    font-size: 1.8em;
+    opacity: 0.5;
+    font-size: large;
     margin: 10px 0;
 }
 
