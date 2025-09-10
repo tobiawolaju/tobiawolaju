@@ -91,3 +91,19 @@ document.addEventListener("DOMContentLoaded", () => {
         overlay.classList.remove("hidden");
     }
 });
+
+
+
+// --- JavaScript ---
+document.addEventListener("scroll", () => {
+  const footer = document.getElementById("site-footer");
+  const rect = footer.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  // Check if footer is in view
+  if (rect.top < windowHeight && rect.bottom > 0) {
+    footer.classList.add("visible");
+  } else {
+    footer.classList.remove("visible");
+  }
+});
