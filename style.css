@@ -578,13 +578,12 @@ a{
   padding: 24px 0;
   text-align: center;
   font-family: Arial, sans-serif;
-  position: relative;
   bottom: 40px;
   left: 0;
   width: 100%;
   
   opacity: 0;                 /* start hidden */
-  transform: translateY(100px); /* slide up effect */
+  transform: translateY(20px); /* slide up effect */
   transition: opacity 1s ease, transform 0.6s ease;
 }
 
