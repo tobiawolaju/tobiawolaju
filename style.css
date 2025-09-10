@@ -135,7 +135,7 @@ section.visible {
     cursor: pointer;
     font-weight: bold;
     margin: 10px 0;
-    opacity: 0.5;
+    opacity: 1;
 }
 
 .toggle:hover {
@@ -578,6 +578,7 @@ a{
   padding: 24px 0;
   text-align: center;
   font-family: Arial, sans-serif;
+  position: relative;
   bottom: 40px;
   left: 0;
   width: 100%;
