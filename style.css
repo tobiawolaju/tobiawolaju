@@ -77,15 +77,28 @@ ul {
   letter-spacing: -0.01em;
 }
 
-/* ---- Links ---- */
-a {
+/* ---- GitHub-style Pill Links ---- */
+a.pill-link {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
   color: var(--accent);
+  background-color: #f3f4f6; /* light gray pill background */
+  border: 1px solid #d1d5db;
+  border-radius: 9999px; /* full pill */
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: all 0.2s ease;
+  margin: 4px 4px 4px 0;
 }
-a:hover {
-  opacity: 0.7;
+
+a.pill-link:hover {
+  background-color: #e5e7eb;
+  border-color: #9ca3af;
+  color: #0366d6; /* GitHub blue accent */
+  transform: translateY(-1px);
 }
+
 
 /* ---- Stack tags ---- */
 .stack {
