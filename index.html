@@ -4,48 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tobi's Portfolio</title>
+    <title>Tobiloba Awolaju — Robotics & AI Engineer</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 
-    <body>
+<body>
 
 <!-- HEADER -->
 <header style="text-align:center; padding-top:80px;">
     <img src="AddText_09-25-07.48.31.png" 
-         alt="Tobi Awolaju"
+         alt="Tobiloba Awolaju portrait"
          style="width:70px; height:70px; border-radius:25%; margin-bottom:10px;">
          
     <h1 style="margin:0;">Tobiloba Awolaju</h1>
-    <p style="color:gray; margin:6px 0;">Robotics & AI Engineer</p>
+    <p style="color:gray; margin:6px 0;">Robotics • Mechatronics • Embedded AI</p>
 
     <p style="max-width:700px; margin:12px auto; font-size:18px;">
-        I build autonomous robotic systems end-to-end: 
-        perception, control, embedded electronics, and planning.
-        My work blends low-cost hardware, real-time control, and scalable autonomy.
+        I design and implement functional robotic systems from electronics to autonomous control.
+        My work spans sensor fusion, real-time actuation, motion planning, and scalable platform architecture.
+        I specialize in building robots that operate reliably under hardware constraints.
     </p>
 </header>
-
 
 <!-- ABOUT -->
 <section id="about-me" class="visible">
     <h2 class="toggle">About<a style="opacity:.4;">↗</a></h2>
     <div class="hidden">
         <p style="font-size: large; padding-bottom: 3rem;">
-            Electrical & Electronics Engineering  — Adeleke University.
+            Electrical & Electronics Engineering — Adeleke University.
             <br><br>
-
-            I specialize in:
+            My engineering strengths:
             <br><br>
-            • Whole-body control (torque, inverse dynamics, MPC)<br>
-            • Sensor fusion: IMU + depth + GPS + encoders<br>
-            • Distributed robotics & swarm cooperation<br>
-            • ROS 2 + MoveIt 2 + custom C++ motion plugins<br>
-            • Embedded BLDC drivers & actuator integration
+            • Whole-body control (inverse dynamics, MPC, torque control)<br>
+            • Sensor fusion: IMU + depth + encoder + GPS integration<br>
+            • Real-time embedded systems + BLDC motor drivers<br>
+            • ROS 2, MoveIt 2, RTOS control pipelines<br>
+            • Multi-agent robotic coordination and swarm autonomy
             <br><br>
-            My work focuses on human-scale humanoids and micro-robotic swarms
-            optimized for cost, reliability, and autonomy.
+            I build systems from scratch: CAD → electronics → firmware → perception → motion.
+            The goal is reproducible hardware and high-confidence control.
         </p>
 
         <a class="resume"
@@ -65,26 +63,23 @@
     <div class="hidden">
         <div class="pjet">
 
-
-            <!-- HUMANOID -->
+            <!-- HUMANOID PROJECT -->
             <div class="project">
-                <img src="atom.png" alt="Humanoid Robot">
+                <img src="atom.png" alt="ATOM Humanoid Robot">
                 <div class="project-info">
-
-                    <a href="#"><strong>ATOM — 5’7 Humanoid Platform ↗</strong></a>
+                    <a href="#"><strong>ATOM — 5’7 Autonomous Humanoid ↗</strong></a>
 
                     <p class="mission">
-                        Full-scale humanoid designed for low-cost fabrication and 
-                        software-heavy control. Multi-sensor fusion, torque-based whole-body
-                        control, and on-board autonomy.
+                        Full-size humanoid for research and real-world tasks.
+                        Focus on torque-based control, sensor fusion, and onboard autonomy.
                     </p>
 
                     <ul class="details">
-                        <li>Control: Whole-body torque control + MPC gait</li>
-                        <li>Sensing: IMU, encoders, ToF, GPS (sensor-limited design)</li>
-                        <li>Integration: ROS 2 + custom C++ controllers + MoveIt 2</li>
+                        <li>Control: Whole-body torque control + MPC gait generator</li>
+                        <li>Sensing: IMU, encoders, ToF, GPS (low-cost stack)</li>
+                        <li>Software: ROS2 + custom C++ controllers + Moveit2 plugins</li>
                         <li>Powertrain: Frameless BLDC + harmonic drives</li>
-                        <li>Focus: Performance under constrained hardware budget</li>
+                        <li>Outcome: Stable locomotion under hardware constraints</li>
                     </ul>
 
                     <div class="links">
@@ -92,30 +87,29 @@
                         <a href="atom-demo.mp4" target="_blank">Demo</a>
                         <a href="https://docs.google.com/document/d/1QIhkQC9t-uFdNQ6RrVjTdQ87bcWEQW3uIzC5s7zo_hw/edit"
                            target="_blank">
-                           Technical Design Document
+                           Technical Documentation
                         </a>
                     </div>
                 </div>
             </div>
 
 
-            <!-- SWARM -->
+            <!-- SWARM PROJECT -->
             <div class="project">
-                <img src="pebble.gif" alt="Pebble-Sized Swarm">
+                <img src="pebble.gif" alt="Micro Swarm Robots">
                 <div class="project-info">
+                    <a href="#"><strong>Pebble Swarm — Cooperative Micro-Robots ↗</strong></a>
 
-                    <a href="#"><strong>Pebble Swarm — Micro Robots for Mapping ↗</strong></a>
                     <p class="mission">
-                        Distributed micro-robotic platform for cooperative mapping and
-                        environment reconstruction. Nodes form a mesh using constrained
-                        wireless communication while maintaining collision-free motion.
+                        Distributed robotic nodes that coordinate mapping and motion through multi-hop communication.
+                        Designed for environmental reconstruction and collective autonomy.
                     </p>
 
                     <ul class="details">
-                        <li>Autonomy: decentralized pathfinding & consensus</li>
-                        <li>Comms: multi-hop relay + fallback leader mode</li>
-                        <li>Perception: live reconstruction using Gaussian splats</li>
-                        <li>Goal: human-scale situational awareness from micro-agents</li>
+                        <li>Autonomy: decentralized pathfinding + consensus control</li>
+                        <li>Networking: mesh routing + adaptive fallback leader nodes</li>
+                        <li>Vision: Gaussian splatting reconstruction in constrained bandwidth</li>
+                        <li>Outcome: Robust team behavior from hardware-limited units</li>
                     </ul>
 
                     <div class="links">
@@ -132,18 +126,17 @@
 </section>
 
 
-
-<!-- WRITINGS -->
+<!-- ARTICLES -->
 <section id="substack" class="visible">
     <h2 class="toggle">Technical Articles<a style="opacity:.4;">↗</a></h2>
     <div class="hidden">
         <ul>
             <li>
                 <a href="#"><strong>
-                    Humanoid Control Beyond EKF: A High-DOF Approach ↗
+                    Humanoid Control Beyond EKF: A High-DOF Framework ↗
                 </strong></a>
                 <p style="opacity: 50%;">
-                    A motion/prediction framework suited to dynamic humanoid bodies.
+                    Multi-sensor prediction models optimized for dynamic humanoid control.
                 </p>
             </li>
 
@@ -152,7 +145,7 @@
                     Distributed Coordination for Micro-Agents ↗
                 </strong></a>
                 <p style="opacity: 50%;">
-                    Path planning and resilience with limited bandwidth.
+                    Bandwidth-aware swarm path planning and safety guarantees.
                 </p>
             </li>
         </ul>
@@ -162,11 +155,11 @@
 
 
 <!-- GITHUB -->
-<section id="projects">
+<section id="github">
     <h2 class="toggle">GitHub</h2>
     <div style="display:flex; justify-content:center;">
         <a href="https://github.com/tobiawolaju" target="_blank">
-            <img src="https://ghchart.rshah.org/tobiawolaju" alt="GitHub Contributions Chart">
+            <img src="https://ghchart.rshah.org/tobiawolaju" alt="GitHub Contributions">
         </a>
     </div>
 </section>
@@ -181,14 +174,14 @@
             </strong>
         </p>
         <p class="cta-sub">
-            Interested in collaboration or engineering support?
-            <a href="mailto:tobiawolaju21@gmail.com">Email me</a>.
+            Interested in collaboration?
+            <a href="mailto:tobiawolaju21@gmail.com">Email</a>.
         </p>
     </div>
 </footer>
 
 
-<!-- SOCIAL BAR -->
+<!-- SOCIAL -->
 <footer style="position:fixed; bottom:0; width:100%;
 background-color:rgba(83,83,83,.5); backdrop-filter:blur(10px);
 height:60px; display:flex; align-items:center; justify-content:center;
@@ -200,5 +193,4 @@ font-size:Large; color:white; gap:20px;">
 </footer>
 
 </body>
-
 </html>
