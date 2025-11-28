@@ -1,196 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tobiloba Awolaju — Robotics & AI Engineer</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tobi Awolaju — Robotics Engineer</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- HEADER -->
-<header style="text-align:center; padding-top:80px;">
-    <img src="AddText_09-25-07.48.31.png" 
-         alt="Tobiloba Awolaju portrait"
-         style="width:70px; height:70px; border-radius:25%; margin-bottom:10px;">
-         
-    <h1 style="margin:0;">Tobiloba Awolaju</h1>
-    <p style="color:gray; margin:6px 0;">Robotics • Mechatronics • Embedded AI</p>
+  <main>
 
-    <p style="max-width:700px; margin:12px auto; font-size:18px;">
-        I design and implement functional robotic systems from electronics to autonomous control.
-        My work spans sensor fusion, real-time actuation, motion planning, and scalable platform architecture.
-        I specialize in building robots that operate reliably under hardware constraints.
-    </p>
-</header>
+    <!-- Hero -->
+    <header>
+      <h1>Tobi Awolaju</h1>
+      <p class="subtitle">Robotics Systems | Embedded | Real-Time Control</p>
+      <p class="muted">
+        Lagos, Nigeria — Open to Remote / Global Relocation
+      </p>
+    </header>
 
-<!-- ABOUT -->
-<section id="about-me" class="visible">
-    <h2 class="toggle">About<a style="opacity:.4;">↗</a></h2>
-    <div class="hidden">
-        <p style="font-size: large; padding-bottom: 3rem;">
-            Electrical & Electronics Engineering — Adeleke University.
-            <br><br>
-            My engineering strengths:
-            <br><br>
-            • Whole-body control (inverse dynamics, MPC, torque control)<br>
-            • Sensor fusion: IMU + depth + encoder + GPS integration<br>
-            • Real-time embedded systems + BLDC motor drivers<br>
-            • ROS 2, MoveIt 2, RTOS control pipelines<br>
-            • Multi-agent robotic coordination and swarm autonomy
-            <br><br>
-            I build systems from scratch: CAD → electronics → firmware → perception → motion.
-            The goal is reproducible hardware and high-confidence control.
-        </p>
+    <!-- About -->
+    <section>
+      <h2>About</h2>
+      <p>
+        I’m an Electrical & Electronics Engineering student focused on full-stack robotics systems that blend perception,
+        motion control, and real-world autonomy. I design humanoid and mobile robots from actuator selection to high-level
+        AI inference pipelines. My experience spans ROS 2, embedded firmware, microcontroller communication, and Jetson-class
+        compute. I’ve built end-to-end robotics stacks: sensor fusion, inverse kinematics, object tracking, and closed-loop
+        control. I value minimal, robust architectures: CAN bus for motors, real-time microcontrollers for control loops,
+        and Linux edge compute for AI. I thrive in high-pressure engineering environments where prototypes must survive
+        real-world constraints.
+      </p>
+    </section>
 
-        <a class="resume"
-           href="https://docs.google.com/document/d/1rAaz1npJsNaA1Z4rRAQerH271eRiXhrEhwdmj5DxFQg/edit?usp=sharing"
-           target="_blank">
-           View Resume ↗
-        </a>
-    </div>
-    <hr>
-</section>
+    <!-- Projects -->
+    <section>
+      <h2>Selected Projects</h2>
 
-
-<!-- PROJECTS -->
-<section id="projects" class="visible">
-    <h2 class="toggle">Projects<a style="opacity: .4;">↗</a></h2>
-
-    <div class="hidden">
-        <div class="pjet">
-
-            <!-- HUMANOID PROJECT -->
-            <div class="project">
-                <img src="atom.png" alt="ATOM Humanoid Robot">
-                <div class="project-info">
-                    <a href="#"><strong>ATOM — 5’7 Autonomous Humanoid ↗</strong></a>
-
-                    <p class="mission">
-                        Full-size humanoid for research and real-world tasks.
-                        Focus on torque-based control, sensor fusion, and onboard autonomy.
-                    </p>
-
-                    <ul class="details">
-                        <li>Control: Whole-body torque control + MPC gait generator</li>
-                        <li>Sensing: IMU, encoders, ToF, GPS (low-cost stack)</li>
-                        <li>Software: ROS2 + custom C++ controllers + Moveit2 plugins</li>
-                        <li>Powertrain: Frameless BLDC + harmonic drives</li>
-                        <li>Outcome: Stable locomotion under hardware constraints</li>
-                    </ul>
-
-                    <div class="links">
-                        <a href="https://github.com/tobiawolaju/humanoid" target="_blank">GitHub Repo</a>
-                        <a href="atom-demo.mp4" target="_blank">Demo</a>
-                        <a href="https://docs.google.com/document/d/1QIhkQC9t-uFdNQ6RrVjTdQ87bcWEQW3uIzC5s7zo_hw/edit"
-                           target="_blank">
-                           Technical Documentation
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- SWARM PROJECT -->
-            <div class="project">
-                <img src="pebble.gif" alt="Micro Swarm Robots">
-                <div class="project-info">
-                    <a href="#"><strong>Pebble Swarm — Cooperative Micro-Robots ↗</strong></a>
-
-                    <p class="mission">
-                        Distributed robotic nodes that coordinate mapping and motion through multi-hop communication.
-                        Designed for environmental reconstruction and collective autonomy.
-                    </p>
-
-                    <ul class="details">
-                        <li>Autonomy: decentralized pathfinding + consensus control</li>
-                        <li>Networking: mesh routing + adaptive fallback leader nodes</li>
-                        <li>Vision: Gaussian splatting reconstruction in constrained bandwidth</li>
-                        <li>Outcome: Robust team behavior from hardware-limited units</li>
-                    </ul>
-
-                    <div class="links">
-                        <a href="https://github.com/tobiawolaju/pebble-swarm" target="_blank">GitHub Repo</a>
-                        <a href="pebble-demo.mp4" target="_blank">Demo</a>
-                        <a href="pebble-cad.png" target="_blank">CAD</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <hr>
-</section>
-
-
-<!-- ARTICLES -->
-<section id="substack" class="visible">
-    <h2 class="toggle">Technical Articles<a style="opacity:.4;">↗</a></h2>
-    <div class="hidden">
+      <article class="card">
+        <h3>Full-Stack Humanoid Robotics Platform — Open Source</h3>
         <ul>
-            <li>
-                <a href="#"><strong>
-                    Humanoid Control Beyond EKF: A High-DOF Framework ↗
-                </strong></a>
-                <p style="opacity: 50%;">
-                    Multi-sensor prediction models optimized for dynamic humanoid control.
-                </p>
-            </li>
-
-            <li>
-                <a href="#"><strong>
-                    Distributed Coordination for Micro-Agents ↗
-                </strong></a>
-                <p style="opacity: 50%;">
-                    Bandwidth-aware swarm path planning and safety guarantees.
-                </p>
-            </li>
+          <li>Architected a humanoid robot using Jetson Orin/X86 compute, harmonic drives, and CAN-based distributed control.</li>
+          <li>Implemented real-time actuator control on STM32/Teensy with encoder feedback and FOC BLDC drivers.</li>
+          <li>Fused camera, IMU, GPS, and depth sensors via EKF/UKF for robot+environment localization.</li>
+          <li>Integrated YOLOv8 + ORB-SLAM3/RTAB-Map for navigation and object detection.</li>
+          <li>Designed ROS 2 pipelines for MPC, MoveIt 2, and BehaviorTree task execution.</li>
         </ul>
-    </div>
-    <hr>
-</section>
+      </article>
 
+      <article class="card">
+        <h3>Robotic Manipulation: 3D Spatial Awareness + Inverse Kinematics</h3>
+        <ul>
+          <li>Developed live 3D reconstruction from TOF depth, IMU, and encoder sensors for spatial awareness.</li>
+          <li>Implemented differential IK with collision avoidance and joint limit enforcement.</li>
+          <li>Calibrated multi-frame coordinate transformations between robot, camera, and world geometry.</li>
+          <li>Benchmarked motion planning latency and optimized constrained solvers for realtime stability.</li>
+        </ul>
+      </article>
 
-<!-- GITHUB -->
-<section id="github">
-    <h2 class="toggle">GitHub</h2>
-    <div style="display:flex; justify-content:center;">
-        <a href="https://github.com/tobiawolaju" target="_blank">
-            <img src="https://ghchart.rshah.org/tobiawolaju" alt="GitHub Contributions">
-        </a>
-    </div>
-</section>
+      <article class="card">
+        <h3>Robotics Control Dashboard — Web Native</h3>
+        <ul>
+          <li>Built a cross-platform dashboard for robotic units using Node.js + MQTT + ROS 2 APIs.</li>
+          <li>Delivered OTA firmware, telemetry, actuator command streams, and camera visualization.</li>
+          <li>Monitored BMS CAN frames, thermal sensors, and actuator fault flags for safety.</li>
+        </ul>
+      </article>
 
+      <article class="card">
+        <h3>Decentralized Forensics Swarm — JuliaOS Agent System</h3>
+        <ul>
+          <li>Created autonomous agents to trace cross-chain transactions and cluster fraudulent flows.</li>
+          <li>Implemented a modular state machine: scanning → clustering → attribution → escalation.</li>
+          <li>Connected on-chain triggers to off-chain graph analytics for actionable insights.</li>
+        </ul>
+      </article>
 
-<!-- CONTACT -->
-<footer class="site-footer" id="site-footer" style="margin-top:120px;">
-    <div class="container footer-inner">
-        <p class="cta-line">
-            <strong>
-                Open to internships and research roles in robotics, autonomy, and mechatronics.
-            </strong>
-        </p>
-        <p class="cta-sub">
-            Interested in collaboration?
-            <a href="mailto:tobiawolaju21@gmail.com">Email</a>.
-        </p>
-    </div>
-</footer>
+    </section>
 
+    <!-- Skills -->
+    <section>
+      <h2>Capabilities</h2>
+      <p class="stack">
+        Humanoid robotics · ROS 2 · Real-time motion control · Embedded firmware · CAN/RS485
+        · SLAM · MPC · MoveIt 2 · AI vision (YOLOv8) · Teensy · STM32 · Jetson · FOC BLDC
+        · Harmonic drives · Sensor fusion (EKF/UKF) · Depth perception · Telemetry systems
+      </p>
+    </section>
 
-<!-- SOCIAL -->
-<footer style="position:fixed; bottom:0; width:100%;
-background-color:rgba(83,83,83,.5); backdrop-filter:blur(10px);
-height:60px; display:flex; align-items:center; justify-content:center;
-font-size:Large; color:white; gap:20px;">
+    <!-- Contact -->
+    <section>
+      <h2>Contact</h2>
+      <p>
     <a href="mailto:tobiawolaju21@gmail.com" style="color:white;">Gmail</a>
     <a href="https://www.linkedin.com/in/tobiawolaju" style="color:white;" target="_blank">LinkedIn</a>
     <a href="https://x.com/tobiawolaju" style="color:white;" target="_blank">X</a>
     <a href="https://github.com/tobiawolaju" style="color:white;" target="_blank">GitHub</a>
-</footer>
+      </p>
+    </section>
+
+  </main>
 
 </body>
 </html>
+
