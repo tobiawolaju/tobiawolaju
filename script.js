@@ -33,17 +33,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
 // Project filters
 document.querySelectorAll('.filters button').forEach(btn => {
     btn.addEventListener('click', () => {
+        // remove active class from all buttons
         document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
         const filter = btn.getAttribute('data-filter');
+
         document.querySelectorAll('.project').forEach(project => {
             const categories = project.getAttribute('data-category') || "";
-            if (categories.includes(filter)) {
+
+            if (filter === "" || categories.includes(filter)) {
                 project.style.display = "block";
             } else {
                 project.style.display = "none";
@@ -52,8 +54,8 @@ document.querySelectorAll('.filters button').forEach(btn => {
     });
 });
 
-// Trigger default filter to show 'All' projects on load
-document.querySelector('[data-filter="robotics"]').click(); // MODIFIED LINE
+// Trigger default filter to show ALL projects on load
+document.querySelector('.filters button[data-filter=""]').click();
 
 
 
@@ -96,14 +98,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // --- JavaScript ---
 document.addEventListener("scroll", () => {
-  const footer = document.getElementById("site-footer");
-  const rect = footer.getBoundingClientRect();
-  const windowHeight = window.innerHeight;
+    const footer = document.getElementById("site-footer");
+    const rect = footer.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
 
-  // Check if footer is in view
-  if (rect.top < windowHeight && rect.bottom > 0) {
-    footer.classList.add("visible");
-  } else {
-    footer.classList.remove("visible");
-  }
+    // Check if footer is in view
+    if (rect.top < windowHeight && rect.bottom > 0) {
+        footer.classList.add("visible");
+    } else {
+        footer.classList.remove("visible");
+    }
 });
