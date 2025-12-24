@@ -376,6 +376,30 @@ a {
   z-index: 999;
 }
 
+@media (max-width: 768px) {
+  .filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .filters::-webkit-scrollbar {
+    display: none;
+    /* Chrome / Safari */
+  }
+
+  .filters button {
+    flex: 0 0 auto;
+    /* prevent shrinking */
+    white-space: nowrap;
+    /* keep labels on one line */
+  }
+}
+
+
 .filters button {
   padding: 0.5em 1em;
   border: 1px solid #ccc;
