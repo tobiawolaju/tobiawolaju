@@ -193,10 +193,13 @@ section.visible {
 
 
 
-
 .pjet {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  align-items: stretch;
 }
+
 
 @media (max-width: 768px) {
 
@@ -221,12 +224,11 @@ section.visible {
   padding: 10px;
   padding-bottom: 20px;
   scale: 0.9;
+  display: flex;
 }
 
 .project img {
   width: 100%;
-  /* Make the image responsive */
-  height: 15vw;
   object-fit: cover;
 }
 
@@ -236,8 +238,6 @@ section.visible {
   /* General Project Styles */
   .project img {
     width: 100%;
-    /* Make the image responsive */
-    height: 20vh;
     object-fit: cover;
   }
 }
@@ -622,7 +622,7 @@ a {
 }
 
 .site-footer .cta-block {
-  background: #00b27c;
+  background: #8c3ac2;
   padding: 16px 20px;
   border-radius: 10px;
   display: inline-block;
