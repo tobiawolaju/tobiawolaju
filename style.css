@@ -649,3 +649,13 @@ a {
 .site-footer .cta-sub a:hover {
   text-decoration: underline;
 }
+
+
+
+
+
+.links a {
+  font-weight: bold;
+  padding: 2px 8px;
+  background-color: rgba(131, 131, 131, 0.466);
+}
