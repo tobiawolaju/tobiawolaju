@@ -2,10 +2,6 @@
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=3000&pause=1000&color=6366F1&width=800&lines=Liquid+Biopsy+Enthusiast;Coffee-Fueled+Coder)](https://git.io/typing-svg)
 
-<p align="center">
-  <img src="https://media1.giphy.com/media/bGgsc5mWoryfgKBx1u/giphy.gif" width="50vw" />
-</p>
-
 ---
 
 ## 🧬 About Me
@@ -100,17 +96,17 @@ _[The landscape of cyclin-dependent kinase 4/6 inhibitors in solid malignancies:
 ---
 
 ## 📊 GitHub Achievements
-![GitHub Achievements](https://github-profile-trophy.vercel.app/?username=ahmedhesham47&theme=algolia)
+![GitHub Achievements](https://github-profile-trophy.vercel.app/?username=tobiawolaju&theme=algolia)
 
 <p align="center">
-  <a href="https://github.com/ahmedhesham47">
-    <img src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=ahmedhesham47&theme=github_dark" />
+  <a href="https://github.com/tobiawolaju">
+    <img src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=tobiawolaju&theme=github_dark" />
+  </a>
+  <a href="https://github.com/tobiawolaju">
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=tobiawolaju&hide_border=true&card_width=338&theme=github-dark-blue" />
   </a>
   <a href="https://github.com/ahmedhesham47">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=ahmedhesham47&hide_border=true&card_width=338&theme=github-dark-blue" />
-  </a>
-  <a href="https://github.com/ahmedhesham47">
-    <img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=ahmedhesham47&theme=github_dark" />
+    <img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=tobiawolaju&theme=github_dark" />
   </a>
 </p>
 
