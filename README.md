@@ -13,4 +13,3 @@
     <img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=tobiawolaju&theme=github_dark" />
   </a>
 </p>
-holar-4F46E5?style=flat&logo=google-scholar&logoColor=white)](https://scholar.google.com/citations?user=8hyvGuUAAAAJ&hl=en&authuser=1)
