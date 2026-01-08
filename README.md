@@ -3,7 +3,7 @@
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=3000&pause=1000&color=6366F1&width=800&lines=Liquid+Biopsy+Enthusiast;Coffee-Fueled+Coder)](https://git.io/typing-svg)
 
 <p align="center">
-  <img src="https://media1.giphy.com/media/bGgsc5mWoryfgKBx1u/giphy.gif" width="100vw" />
+  <img src="https://media1.giphy.com/media/bGgsc5mWoryfgKBx1u/giphy.gif" width="50vw" />
 </p>
 
 ---
