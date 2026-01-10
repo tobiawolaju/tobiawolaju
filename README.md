@@ -1,4 +1,9 @@
-# Hi, I'm Tobi 👋
+# Hi, I'm Tobi 👋 
+📌 [Maker Portfolio](https://tobiawolaju.vercel.app)  
+📌 [LinkedIn](https://www.linkedin.com/in/tobiawolaju)
+📌[X](https://www.linkedin.com/in/tobiawolaju)]
+
+---
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=3000&pause=1000&color=6366F1&width=800&lines=Systems+Thinker;Full-Stack+Web3+Dev;Smart+Contracts;Tooling;Robotics+&+Embedded)](https://git.io/typing-svg)
 
@@ -14,10 +19,7 @@ I specialize in building **hybrid systems** that integrate off-chain performance
 
 ---
 
-📌 [Full Portfolio](https://tobiawolaju.vercel.app)  
-📌 [LinkedIn](https://www.linkedin.com/in/tobiawolaju)
 
----
 
 ## What I Do Best
 - Architect **complex end-to-end systems** across Web3, gaming, and robotics  
