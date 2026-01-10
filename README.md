@@ -1,7 +1,7 @@
 # Hi, I'm Tobi 👋 
 📌 [Maker Portfolio](https://tobiawolaju.vercel.app)  
-📌 [LinkedIn](https://www.linkedin.com/in/tobiawolaju)]
-📌[X](https://www.linkedin.com/in/tobiawolaju)]
+📌 [LinkedIn](https://www.linkedin.com/in/tobiawolaju)
+📌 [X](https://www.linkedin.com/in/tobiawolaju)
 
 ---
 
