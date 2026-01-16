@@ -1,0 +1,91 @@
+{
+    "pageTitle": "Tobi's Portfolio - AI Researcher",
+    "theme": "ai-researcher",
+    "profile": {
+        "image": "pfp.jpg",
+        "name": "Tobiloba Awolaju",
+        "title": "AI Researcher | Generative Models & RL",
+        "bio": "<p style=\"font-size: large; padding-bottom: 3rem;\">Artificial Intelligence Researcher dedicated to advancing state-of-the-art machine learning algorithms. <br><br>My research focuses on Large Language Model alignment, efficient training methods, and Reinforcement Learning from Human Feedback (RLHF). I bridge the gap between theoretical research and scalable, real-world deployment. <br><br>Experienced with PyTorch, JAX, and distributed training on large-scale GPU clusters.</p>",
+        "resumeLink": "#"
+    },
+    "filters": [
+        {
+            "id": "all",
+            "label": "All"
+        },
+        {
+            "id": "llm",
+            "label": "Large Language Models"
+        },
+        {
+            "id": "cv",
+            "label": "Computer Vision"
+        },
+        {
+            "id": "rl",
+            "label": "Reinforcement Learning"
+        },
+        {
+            "id": "nlp",
+            "label": "NLP"
+        }
+    ],
+    "projects": [
+        {
+            "category": "llm",
+            "image": "grey.jpg",
+            "title": "Efficient Fine-Tuning of 70B Models ↗",
+            "description": "Novel PEFT technique reducing memory requirements by 40% while maintaining performance.",
+            "links": [
+                {
+                    "text": "[ArXiv Preprint]",
+                    "url": "#"
+                },
+                {
+                    "text": "[GitHub]",
+                    "url": "#"
+                }
+            ]
+        },
+        {
+            "category": "rl",
+            "image": "grey.jpg",
+            "title": "Multi-Agent RL for Autonomous Systems ↗",
+            "description": "Simulation framework for training cooperative agents in complex environments.",
+            "links": [
+                {
+                    "text": "[Paper]",
+                    "url": "#"
+                },
+                {
+                    "text": "[Demo]",
+                    "url": "#"
+                }
+            ]
+        },
+        {
+            "category": "cv",
+            "image": "grey.jpg",
+            "title": "Vision-Language Model Alignment ↗",
+            "description": "Aligning visual encoders with LLMs for improved multimodal reasoning.",
+            "links": [
+                {
+                    "text": "[Project Page]",
+                    "url": "#"
+                }
+            ]
+        }
+    ],
+    "docs": [
+        {
+            "link": "#",
+            "title": "Scaling Laws for Sparse Attention ↗",
+            "description": "Analysis of compute-optimal scaling for sparse attention mechanisms in transformers."
+        },
+        {
+            "link": "#",
+            "title": "Robustness in RLHF ↗",
+            "description": "Investigating reward hacking and mode collapse in reinforcement learning from human feedback."
+        }
+    ]
+}
