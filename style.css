@@ -555,53 +555,7 @@ a {
 
 
 
-/* Permission overlay */
-.overlay {
-  position: fixed;
-  inset: 0;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  z-index: 99999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: all;
-}
 
-.overlay.hidden {
-  display: none;
-}
-
-.overlay-message {
-  color: rgba(0, 0, 0, 0.623);
-  font-size: 1.5rem;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.3);
-  padding: 50px 20px;
-  border-radius: 20px;
-  text-align: center;
-  max-width: 80%;
-}
-
-.message-wrapper {
-  display: flex;
-  padding-bottom: 10px;
-}
-
-.requestaccess {
-  background-color: #00000000;
-  border-radius: 50px;
-  padding: 20px 30px;
-  text-decoration: none;
-  color: #000;
-  border: #000 solid 3px;
-}
-
-/* Stop scrolling when overlay is visible */
-.no-scroll {
-  overflow: hidden;
-}
 
 
 
