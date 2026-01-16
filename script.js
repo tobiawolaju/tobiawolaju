@@ -1,29 +1,145 @@
 // Wait until the DOM is fully loaded
-document.addEventListener("DOMContentLoaded", function () {
-    // Select all sections on the page
-    const sections = document.querySelectorAll("section");
+document.addEventListener("DOMContentLoaded", async function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const target = urlParams.get("target") || "engineering"; // Default to engineering
+    const jsonFile = `${target}.json`;
 
-    // Function to handle visibility based on scroll position
+    try {
+        const response = await fetch(jsonFile);
+        if (!response.ok) {
+            throw new Error(`Could not load ${jsonFile}`);
+        }
+        const data = await response.json();
+        renderPortfolio(data);
+    } catch (error) {
+        console.error(error);
+        alert("Failed to load portfolio content.");
+    }
+
+    // Initialize UI interactions after rendering
+    initInteractions();
+});
+
+function renderPortfolio(data) {
+    // 1. Page Title
+    document.title = data.pageTitle || "Tobi's Portfolio";
+
+    // 2. Profile
+    if (data.profile) {
+        const profileContainer = document.getElementById("profile-pic-container");
+        profileContainer.innerHTML = `
+            <img src="${data.profile.image}" alt="${data.profile.imageAlt || 'Profile'}"
+                style="width: 60px; height: 60px; border-radius: 25%; vertical-align: middle; margin-right: 10px;">
+            ${data.profile.tooltip ? `
+            <span id="tooltip" style="visibility: hidden; opacity: 0; transition: opacity 0.3s;
+                background-color: rgb(69, 69, 69); color: #ffffff; text-align: center; border-radius: 5px;
+                padding: 3px 6px; position: absolute; bottom: 70%; left: 130%; transform: translateX(-50%);
+                font-size: 12px; white-space: nowrap;">
+                ${data.profile.tooltip}
+            </span>
+            <style> #profile-pic-container:hover #tooltip { visibility: visible; opacity: 1; } </style>
+            ` : ''}
+        `;
+
+        // Add tooltip logic if tooltip exists
+        if (data.profile.tooltip) {
+            const container = document.getElementById("profile-pic-container");
+            const tooltip = document.getElementById("tooltip");
+            if (container && tooltip) {
+                let hideTimeout;
+                container.addEventListener("mouseenter", () => {
+                    clearTimeout(hideTimeout);
+                    tooltip.style.visibility = "visible";
+                    tooltip.style.opacity = "1";
+                    hideTimeout = setTimeout(() => {
+                        tooltip.style.opacity = "0";
+                        setTimeout(() => tooltip.style.visibility = "hidden", 300);
+                    }, 2000);
+                });
+                container.addEventListener("mouseleave", () => {
+                    clearTimeout(hideTimeout);
+                    tooltip.style.opacity = "0";
+                    setTimeout(() => tooltip.style.visibility = "hidden", 300);
+                });
+            }
+        }
+
+        document.getElementById("profile-name").textContent = data.profile.name;
+        document.getElementById("profile-title").textContent = data.profile.title;
+
+        // About Content
+        const aboutContent = document.getElementById("about-content");
+        aboutContent.innerHTML = data.profile.bio;
+        if (data.profile.resumeLink) {
+            const resumeBtn = document.createElement("a");
+            resumeBtn.className = "resume";
+            resumeBtn.href = data.profile.resumeLink;
+            resumeBtn.target = "_blank";
+            resumeBtn.rel = "noopener noreferrer";
+            resumeBtn.textContent = "View Resume ↗";
+            aboutContent.appendChild(resumeBtn);
+        }
+    }
+
+    // 3. Projects filters
+    const filterContainer = document.getElementById("project-filters");
+    if (data.filters) {
+        let filterHTML = "";
+        data.filters.forEach((filter, index) => {
+            // First one active by default
+            const activeClass = index === 0 ? "active" : "";
+            filterHTML += `<button data-filter="${filter.id === 'all' ? 'all' : filter.id}" class="${activeClass}">${filter.label}</button>`;
+        });
+        filterContainer.innerHTML = filterHTML;
+    }
+
+    // 4. Projects
+    const projectsList = document.getElementById("projects-list");
+    if (data.projects) {
+        projectsList.innerHTML = data.projects.map(project => `
+            <div class="project" data-category="${project.category}">
+                <img src="${project.image}" alt="${project.title}">
+                <div class="project-info">
+                    <a href="#"><strong>${project.title}</strong></a>
+                    <p class="mission">${project.description}</p>
+                    <div class="links">
+                        ${project.links.map(link => `<a href="${link.url}" target="_blank">${link.text}</a>`).join("")}
+                    </div>
+                </div>
+            </div>
+        `).join("");
+    }
+
+    // 5. Docs
+    const docsList = document.getElementById("docs-list");
+    if (data.docs) {
+        docsList.innerHTML = data.docs.map(doc => `
+            <li>
+                <a href="${doc.link}" target="_blank" rel="noopener noreferrer">
+                    <strong>${doc.title}</strong>
+                </a>
+                <p style="opacity: 50%;">${doc.description}</p>
+            </li>
+        `).join("");
+    }
+}
+
+function initInteractions() {
+    // --- Scroll Reveal ---
+    const sections = document.querySelectorAll("section");
     const revealSections = () => {
         sections.forEach(section => {
             const rect = section.getBoundingClientRect();
             const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-            // If the section is visible in the viewport, add the 'visible' class
             if (rect.top <= windowHeight - 100 && rect.bottom >= 100) {
                 section.classList.add("visible");
             }
         });
     };
-
-    // Add an event listener for scroll and run the reveal function initially
     window.addEventListener("scroll", revealSections);
     revealSections();
-});
 
-
-//hide that shit 
-document.addEventListener("DOMContentLoaded", () => {
+    // --- Toggles ---
     const toggles = document.querySelectorAll(".toggle");
     toggles.forEach(toggle => {
         toggle.addEventListener("click", () => {
@@ -31,51 +147,39 @@ document.addEventListener("DOMContentLoaded", () => {
             content.classList.toggle("hidden");
         });
     });
-});
 
-// Project filters
-document.querySelectorAll('.filters button').forEach(btn => {
-    btn.addEventListener('click', () => {
-        // remove active class from all buttons
-        document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filter = btn.getAttribute('data-filter');
-
-        document.querySelectorAll('.project').forEach(project => {
-            const categories = project.getAttribute('data-category') || "";
-
-            if (filter === "" || categories.includes(filter)) {
-                project.style.display = "block";
-            } else {
-                project.style.display = "none";
-            }
+    // --- Filters ---
+    document.querySelectorAll('.filters button').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.getAttribute('data-filter');
+            document.querySelectorAll('.project').forEach(project => {
+                const category = project.getAttribute('data-category');
+                if (filter === "all" || category === filter) {
+                    project.style.display = "block";
+                } else {
+                    project.style.display = "none";
+                }
+            });
         });
     });
-});
 
-// Trigger default filter to show ALL projects on load
-document.querySelector('.filters button[data-filter=""]').click();
+    // Trigger first filter click
+    const firstFilter = document.querySelector('.filters button');
+    if (firstFilter) firstFilter.click();
 
-
-
-
-
-
-
-
-
-
-// --- JavaScript ---
-document.addEventListener("scroll", () => {
+    // --- Footer Scroll ---
     const footer = document.getElementById("site-footer");
-    const rect = footer.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-
-    // Check if footer is in view
-    if (rect.top < windowHeight && rect.bottom > 0) {
-        footer.classList.add("visible");
-    } else {
-        footer.classList.remove("visible");
+    if (footer) {
+        window.addEventListener("scroll", () => {
+            const rect = footer.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            if (rect.top < windowHeight && rect.bottom > 0) {
+                footer.classList.add("visible");
+            } else {
+                footer.classList.remove("visible");
+            }
+        });
     }
-});
+}

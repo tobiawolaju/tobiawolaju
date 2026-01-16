@@ -1,0 +1,87 @@
+{
+    "pageTitle": "Tobi's Portfolio - Designer",
+    "theme": "designer",
+    "profile": {
+        "image": "pfp.jpg",
+        "name": "Tobiloba Awolaju",
+        "title": "Product Designer | UI/UX & Visual Experience",
+        "bio": "<p style=\"font-size: large; padding-bottom: 3rem;\">Passionate Product Designer crafting intuitive and visually stunning user experiences. <br><br>I specialize in translating complex requirements into elegant, user-centric designs. My work bridges the gap between functional engineering and aesthetic perfection, ensuring every interaction feels natural and engaging. <br><br>Capable of rapid prototyping, high-fidelity mockups, and building design systems that scale.</p>",
+        "resumeLink": "#"
+    },
+    "filters": [
+        {
+            "id": "all",
+            "label": "All"
+        },
+        {
+            "id": "ui-ux",
+            "label": "UI/UX Design"
+        },
+        {
+            "id": "branding",
+            "label": "Branding & Identity"
+        },
+        {
+            "id": "visual",
+            "label": "Visual Arts"
+        },
+        {
+            "id": "motion",
+            "label": "Motion Design"
+        }
+    ],
+    "projects": [
+        {
+            "category": "ui-ux",
+            "image": "grey.jpg",
+            "title": "E-Commerce Mobile App Redesign ↗",
+            "description": "Complete overhaul of a shopping app to improve conversion rates and user retention.",
+            "links": [
+                {
+                    "text": "[Figma Prototype]",
+                    "url": "#"
+                },
+                {
+                    "text": "[Case Study]",
+                    "url": "#"
+                }
+            ]
+        },
+        {
+            "category": "branding",
+            "image": "grey.jpg",
+            "title": "Tech Startup Brand Identity ↗",
+            "description": "Logo, typography, and color palette design for a new AI startup.",
+            "links": [
+                {
+                    "text": "[Brand Guidelines]",
+                    "url": "#"
+                }
+            ]
+        },
+        {
+            "category": "motion",
+            "image": "grey.jpg",
+            "title": "Interactive Data Dashboard ↗",
+            "description": "Animated data visualization interface for real-time analytics.",
+            "links": [
+                {
+                    "text": "[Live Demo]",
+                    "url": "#"
+                }
+            ]
+        }
+    ],
+    "docs": [
+        {
+            "link": "#",
+            "title": "The Future of Interface Design ↗",
+            "description": "Thoughts on spatial computing and gesture-based interfaces."
+        },
+        {
+            "link": "#",
+            "title": "Building Accessible Design Systems ↗",
+            "description": "A guide to creating inclusive digital products for everyone."
+        }
+    ]
+}

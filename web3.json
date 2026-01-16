@@ -1,0 +1,95 @@
+{
+    "pageTitle": "Tobi's Portfolio - Web3 Developer",
+    "theme": "web3",
+    "profile": {
+        "image": "pfp.jpg",
+        "name": "Tobiloba Awolaju",
+        "title": "Web3 Developer | Smart Contracts & DApps",
+        "bio": "<p style=\"font-size: large; padding-bottom: 3rem;\">Blockchain Developer building the decentralized future. <br><br>Deeply experienced in Solidity, Rust (Solana), and full-stack DApp development. I create secure smart contracts, defi protocols, and seamless web3 integrations. <br><br>Focused on scalability, security, and user experience in the blockchain space.</p>",
+        "resumeLink": "#"
+    },
+    "filters": [
+        {
+            "id": "all",
+            "label": "All"
+        },
+        {
+            "id": "defi",
+            "label": "DeFi"
+        },
+        {
+            "id": "nft",
+            "label": "NFTs"
+        },
+        {
+            "id": "infrastructure",
+            "label": "Infrastructure"
+        },
+        {
+            "id": "audits",
+            "label": "Smart Contract Audits"
+        }
+    ],
+    "projects": [
+        {
+            "category": "defi",
+            "image": "grey.jpg",
+            "title": "Decentralized Exchange Aggregator ↗",
+            "description": "Smart routing algorithm finding the best prices across multiple DEXs.",
+            "links": [
+                {
+                    "text": "[GitHub Repo]",
+                    "url": "#"
+                },
+                {
+                    "text": "[Live DApp]",
+                    "url": "#"
+                }
+            ]
+        },
+        {
+            "category": "nft",
+            "image": "grey.jpg",
+            "title": "Generative Art NFT Marketplace ↗",
+            "description": "Marketplace with low-gas minting and custom royalty standards.",
+            "links": [
+                {
+                    "text": "[Contract]",
+                    "url": "#"
+                },
+                {
+                    "text": "[Website]",
+                    "url": "#"
+                }
+            ]
+        },
+        {
+            "category": "infrastructure",
+            "image": "grey.jpg",
+            "title": "Cross-Chain Bridge ↗",
+            "description": "Secure bridge focusing on asset wrapping and message passing between L1 and L2.",
+            "links": [
+                {
+                    "text": "[Whitepaper]",
+                    "url": "#"
+                },
+                {
+                    "text": "[GitHub Repo]",
+                    "url": "#"
+                }
+            ]
+        }
+    ],
+    "docs": [
+        {
+            "link": "#",
+            "title": "Optimizing Gas Costs in Solidity ↗",
+            "description": "Deep dive into EVM storage layout and gas optimization techniques."
+        },
+        {
+            "link": "#",
+            "title": "ZK-Rollups vs Optimistic Rollups ↗",
+            "description": "Comparative analysis of scaling solutions for Ethereum."
+        }
+    ]
+}

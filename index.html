@@ -12,229 +12,46 @@
 <body>
 
 
-  <div style="display: block; text-align: center; padding-top: 75px">
+  <section id="bio-section" style="display: block; text-align: center; padding-top: 75px">
     <div style="text-align: center; margin-bottom: 20px;">
       <p style="font-size: x-large; margin: 0; font-weight: bold;">
       <div style="position: relative; display: inline-block;">
 
-        <div id="profile-pic" style="position: relative; display: inline-block;">
-          <img src="pfp.jpg" alt="Engineer"
-            style="width: 60px; height: 60px; border-radius: 25%; vertical-align: middle; margin-right: 10px;">
-
-          <span id="tooltip" style="visibility: hidden; 
-               opacity: 0;
-               transition: opacity 0.3s;
-               background-color: rgb(69, 69, 69); 
-               color: #ffffff; 
-               text-align: center; 
-               border-radius: 5px; 
-               padding: 3px 6px; 
-               position: absolute; 
-               bottom: 70%; 
-               left: 130%; 
-               transform: translateX(-50%);
-               font-size: 12px;
-               white-space: nowrap;">
-            Background added with AI
-          </span>
+        <div id="profile-pic-container" style="position: relative; display: inline-block;">
+          <!-- Image injected by JS -->
         </div>
 
-        <style>
-          #profile-pic:hover #tooltip {
-            visibility: visible;
-            opacity: 1;
-          }
-        </style>
-
-
-        <script>
-          const container = document.getElementById("profile-pic");
-          const tooltip = document.getElementById("tooltip");
-          let hideTimeout;
-
-          container.addEventListener("mouseenter", () => {
-            clearTimeout(hideTimeout);
-            tooltip.style.visibility = "visible";
-            tooltip.style.opacity = "1";
-
-            // Hide automatically after 2s
-            hideTimeout = setTimeout(() => {
-              tooltip.style.opacity = "0";
-              setTimeout(() => tooltip.style.visibility = "hidden", 300);
-            }, 2000);
-          });
-
-          container.addEventListener("mouseleave", () => {
-            clearTimeout(hideTimeout);
-            tooltip.style.opacity = "0";
-            setTimeout(() => tooltip.style.visibility = "hidden", 300);
-          });
-        </script>
-
-
         </p>
-        <h3>Tobiloba Awolaju</h3>
-        <p style="font-size: medium; color: gray; margin: 5px 0;">
-          Robotics Research Engineer | Perception, Control & Learning Systems
-          </a>
+        <h3 id="profile-name"></h3>
+        <p id="profile-title" style="font-size: medium; color: gray; margin: 5px 0;">
         </p>
 
       </div>
 
     </div>
-
-
-  </div>
+  </section>
 
 
   <section id="about-me" class="visible">
-
-
     <h2 class="toggle">About<a style="opacity: 0.4;">↗</a></h2>
-
-    <div class="hidden">
-      <p style="font-size: large; padding-bottom: 3rem;">
-        Electrical &amp; Electronics Engineering student @
-        <a href="https://adelekeuniversity.edu.ng/" target="_blank" rel="noopener noreferrer">
-          Adeleke University
-        </a> focused on robotics research, perception, and &amp; real-time systems. <br><br>
-
-
-        I design and build robotic systems end-to-end—mechanics, control, sensing, and learning—with an emphasis on
-        high-DOF robots, SLAM, and constrained embedded platforms.
-        <br><br>
-        Currently architecting a full-scale humanoid robot and developing custom control and planning algorithms in ROS
-        2. My work spans C++, Python, real-time control, embedded systems, and experimental learning-based approaches
-        for perception and mapping.
-        <br><br>
-
-        I’m particularly interested in robotics at the intersection of control theory, state estimation, and learning.
-      </p>
-
-      <a class="resume"
-        href="https://docs.google.com/document/d/1rAaz1npJsNaA1Z4rRAQerH271eRiXhrEhwdmj5DxFQg/edit?usp=sharing"
-        target="_blank" rel="noopener noreferrer">
-        View Resume ↗
-      </a>
+    <div class="hidden" id="about-content">
+      <!-- Content injected by JS -->
     </div>
-
     <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
   </section>
 
 
-
-  <section id="projects" class="visible">
+  <section id="projects-section" class="visible">
     <h2 class="toggle">Projects<a style="opacity: 0.4;">↗</a></h2>
     <div class="hidden">
 
-      <div class="filters">
-        <button data-filter="" class="active">Top 5yy</button>
-        <button data-filter="all" class="active">All</button>
-        <button data-filter="robotics">Robotics & Systems</button>
-        <button data-filter="ai-ml">Machine Learning / Artificial Intelligence</button>
-        <button data-filter="ai-ml">Networking & Cloud Computing</button>
-        <button data-filter="ai-ml">Microservice / Backend Systems</button>
-        <button data-filter="ai-ml">Hardware Engineering Integrations</button>
-        <button data-filter="ai-ml">Frontend & UI Development</button>
-        <button data-filter="ai-ml">Libraries / Packages</button>
+      <div class="filters" id="project-filters">
+        <!-- Filters injected by JS -->
       </div>
 
 
-      <div class="pjet">
-
-        <!-- PEBBLE-SIZED MICRO DRONE -->
-        <div class="project" data-category="robotics">
-          <img src="grey.jpg" alt="Pebble-Sized Micro Drone">
-          <div class="project-info">
-            <a href="#"><strong>Pebble-Sized Microscale Surveillance Drone ↗</strong></a>
-            <p class="mission">Single-motor, compact surveillance drone demonstrating extreme control under severe size
-              and power constraints.</p>
-            <div class="links">
-              <a href="pebble-3d-files.zip">[3D Files]</a>
-              <a href="https://github.com/tobiawolaju/microscale-drone" target="_blank">[GitHub Repo]</a>
-              <a href="pebble-demo.mp4" target="_blank">[Demo Video]</a>
-              <a href="pebble-testing.pdf">[Testing Results]</a>
-              <a href="pebble-paper.pdf">[Docs]</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- HUMANOID ROBOT SLEEVE -->
-        <div class="project" data-category="robotics">
-          <img src="grey.jpg" alt="Capstan-Driven Humanoid Robot Sleeve">
-          <div class="project-info">
-            <a href="#"><strong>Capstan-Driven, Gimbal-Jointed Humanoid Robot Sleeve ↗</strong></a>
-            <p class="mission">Low-cost, high-performance humanoid sleeve featuring capstan-driven actuation and
-              advanced joint control.</p>
-            <div class="links">
-              <a href="humanoid-3d-files.zip">[3D Files]</a>
-              <a href="https://github.com/tobiawolaju/humanoid-sleeve" target="_blank">[GitHub Repo]</a>
-              <a href="humanoid-demo.mp4" target="_blank">[Demo Video]</a>
-              <a href="humanoid-testing.pdf">[Testing Results]</a>
-              <a href="humanoid-paper.pdf">[Docs]</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- NN ON PHOTOSENSITIVE GELS -->
-        <div class="project" data-category="ai-ml">
-          <img src="grey.jpg" alt="NN on Photosensitive Gels">
-          <div class="project-info">
-            <a href="#"><strong>Neural Networks on Photosensitive Gels ↗</strong></a>
-            <p class="mission">Exploration of low-cost, universal-speed-limit computation via alternative physical
-              substrates.</p>
-            <div class="links">
-              <a href="neuralgel-demo.mp4" target="_blank">[Demo Video]</a>
-              <a href="neuralgel-results.pdf">[Results]</a>
-              <a href="neuralgel-paper.pdf">[Docs]</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- MODEL COMPOSER ARCHITECTURE -->
-        <div class="project" data-category="ai-ml">
-          <img src="grey.jpg" alt="Model Composer Architecture">
-          <div class="project-info">
-            <a href="#"><strong>Model Composer Architecture ↗</strong></a>
-            <p class="mission">Composable ML architecture for modular model construction, with optional photosensitive
-              gel acceleration.</p>
-            <div class="links">
-              <a href="modelcomposer-demo.mp4" target="_blank">[Demo Video]</a>
-              <a href="modelcomposer-results.pdf">[Results]</a>
-              <a href="modelcomposer-paper.pdf">[Docs]</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- SLAM -->
-        <div class="project" data-category="ai-ml">
-          <img src="grey.jpg" alt="SLAM Algorithm">
-          <div class="project-info">
-            <a href="#"><strong>SLAM with Novel Algorithm (Camera + IMU + AI/Math) ↗</strong></a>
-            <p class="mission">New SLAM approach for high-DOF robots, demonstrated on ESP32 and Android APK.</p>
-            <div class="links">
-              <a href="slam-paper.pdf">[Docs]</a>
-              <a href="slam-apk-demo.apk">[APK Demo]</a>
-              <a href="slam-esp32-demo.mp4" target="_blank">[ESP32 Demo]</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- MULTI-SLAM -->
-        <div class="project" data-category="ai-ml">
-          <img src="grey.jpg" alt="Multi-SLAM">
-          <div class="project-info">
-            <a href="#"><strong>Multi-SLAM: Real-Time Map Stitching ↗</strong></a>
-            <p class="mission">Multi-agent SLAM system enabling real-time stitching of maps from different observers.
-            </p>
-            <div class="links">
-              <a href="multislam-paper.pdf">[Docs]</a>
-              <a href="multislam-demo.mp4" target="_blank">[Demo Video]</a>
-              <a href="multislam-results.pdf">[Results]</a>
-            </div>
-          </div>
-        </div>
-
+      <div class="pjet" id="projects-list">
+        <!-- Projects injected by JS -->
       </div>
 
     </div>
@@ -243,58 +60,11 @@
   </section>
 
 
-  <section id="substack" class="visible">
+  <section id="docs-section" class="visible">
     <h2 class="toggle">Docs<a style="opacity: 0.4;">↗</a></h2>
     <div class="hidden">
-      <ul>
-        <li>
-          <a href="pebble-paper.pdf" target="_blank" rel="noopener noreferrer">
-            <strong>Pebble-Sized Microscale Drone ↗</strong>
-          </a>
-          <p style="opacity: 50%;">
-            Control under extreme size and power constraints for single-motor surveillance drones.
-          </p>
-        </li>
-        <li>
-          <a href="humanoid-paper.pdf" target="_blank" rel="noopener noreferrer">
-            <strong>Capstan-Driven Humanoid Robot Sleeve ↗</strong>
-          </a>
-          <p style="opacity: 50%;">
-            Low-cost, high-performance humanoid actuation with gimbal-jointed mechanics and advanced control.
-          </p>
-        </li>
-        <li>
-          <a href="neuralgel-paper.pdf" target="_blank" rel="noopener noreferrer">
-            <strong>Neural Networks on Photosensitive Gels ↗</strong>
-          </a>
-          <p style="opacity: 50%;">
-            Exploring alternative physical substrates for low-cost, universal-speed-limit neural computation.
-          </p>
-        </li>
-        <li>
-          <a href="modelcomposer-paper.pdf" target="_blank" rel="noopener noreferrer">
-            <strong>Model Composer Architecture ↗</strong>
-          </a>
-          <p style="opacity: 50%;">
-            Modular ML architecture design, with optional acceleration via photosensitive gels.
-          </p>
-        </li>
-        <li>
-          <a href="slam-paper.pdf" target="_blank" rel="noopener noreferrer">
-            <strong>SLAM with Novel Algorithm ↗</strong>
-          </a>
-          <p style="opacity: 50%;">
-            New SLAM method integrating camera, IMU, and AI/math for real-time high-DOF robot mapping.
-          </p>
-        </li>
-        <li>
-          <a href="multislam-paper.pdf" target="_blank" rel="noopener noreferrer">
-            <strong>Multi-SLAM: Real-Time Map Stitching ↗</strong>
-          </a>
-          <p style="opacity: 50%;">
-            Multi-agent SLAM system enabling real-time stitching of maps from multiple observers.
-          </p>
-        </li>
+      <ul id="docs-list">
+        <!-- Docs injected by JS -->
       </ul>
     </div>
     <hr style="border: none; border-top: 1px solid #00000050; margin: 0px;">
