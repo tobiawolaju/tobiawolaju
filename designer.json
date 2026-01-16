@@ -8,6 +8,10 @@
         "bio": "<p style=\"font-size: large; padding-bottom: 3rem;\">Passionate Product Designer crafting intuitive and visually stunning user experiences. <br><br>I specialize in translating complex requirements into elegant, user-centric designs. My work bridges the gap between functional engineering and aesthetic perfection, ensuring every interaction feels natural and engaging. <br><br>Capable of rapid prototyping, high-fidelity mockups, and building design systems that scale.</p>",
         "resumeLink": "#"
     },
+    "sectionLabels": {
+        "docs": "Case Studies",
+        "activity": "Design Contributions"
+    },
     "filters": [
         {
             "id": "all",

@@ -8,6 +8,10 @@
         "bio": "<p style=\"font-size: large; padding-bottom: 3rem;\">Artificial Intelligence Researcher dedicated to advancing state-of-the-art machine learning algorithms. <br><br>My research focuses on Large Language Model alignment, efficient training methods, and Reinforcement Learning from Human Feedback (RLHF). I bridge the gap between theoretical research and scalable, real-world deployment. <br><br>Experienced with PyTorch, JAX, and distributed training on large-scale GPU clusters.</p>",
         "resumeLink": "#"
     },
+    "sectionLabels": {
+        "docs": "Publications & Research",
+        "activity": "Git Contributions"
+    },
     "filters": [
         {
             "id": "all",

@@ -113,6 +113,13 @@ function renderPortfolio(data) {
     // 5. Docs
     const docsList = document.getElementById("docs-list");
     if (data.docs) {
+        // Set dynamic title
+        if (data.sectionLabels && data.sectionLabels.docs) {
+            document.getElementById("docs-header").innerHTML = `${data.sectionLabels.docs}<a style="opacity: 0.4;">↗</a>`;
+        } else {
+            document.getElementById("docs-header").innerHTML = `Docs<a style="opacity: 0.4;">↗</a>`;
+        }
+
         docsList.innerHTML = data.docs.map(doc => `
             <li>
                 <a href="${doc.link}" target="_blank" rel="noopener noreferrer">
@@ -121,6 +128,11 @@ function renderPortfolio(data) {
                 <p style="opacity: 50%;">${doc.description}</p>
             </li>
         `).join("");
+    }
+
+    // 6. Activity / Contributions
+    if (data.sectionLabels && data.sectionLabels.activity) {
+        document.getElementById("activity-header").innerHTML = `${data.sectionLabels.activity} <a style=" opacity: 0.4;">Contributions</a>`;
     }
 }
 

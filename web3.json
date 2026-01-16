@@ -8,6 +8,10 @@
         "bio": "<p style=\"font-size: large; padding-bottom: 3rem;\">Blockchain Developer building the decentralized future. <br><br>Deeply experienced in Solidity, Rust (Solana), and full-stack DApp development. I create secure smart contracts, defi protocols, and seamless web3 integrations. <br><br>Focused on scalability, security, and user experience in the blockchain space.</p>",
         "resumeLink": "#"
     },
+    "sectionLabels": {
+        "docs": "Audits & Research",
+        "activity": "Git Contributions"
+    },
     "filters": [
         {
             "id": "all",

@@ -8,15 +8,43 @@
     "bio": "<p style=\"font-size: large; padding-bottom: 3rem;\">Electrical &amp; Electronics Engineering student @ <a href=\"https://adelekeuniversity.edu.ng/\" target=\"_blank\" rel=\"noopener noreferrer\">Adeleke University</a> focused on robotics research, perception, and &amp; real-time systems. <br><br>I design and build robotic systems end-to-end—mechanics, control, sensing, and learning—with an emphasis on high-DOF robots, SLAM, and constrained embedded platforms. <br><br>Currently architecting a full-scale humanoid robot and developing custom control and planning algorithms in ROS 2. My work spans C++, Python, real-time control, embedded systems, and experimental learning-based approaches for perception and mapping. <br><br>I’m particularly interested in robotics at the intersection of control theory, state estimation, and learning.</p>",
     "resumeLink": "https://docs.google.com/document/d/1rAaz1npJsNaA1Z4rRAQerH271eRiXhrEhwdmj5DxFQg/edit?usp=sharing"
   },
+  "sectionLabels": {
+    "docs": "Technical Write-ups",
+    "activity": "Git Contributions"
+  },
   "filters": [
-    { "id": "all", "label": "All" },
-    { "id": "robotics", "label": "Robotics & Systems" },
-    { "id": "ai-ml", "label": "Machine Learning / Artificial Intelligence" },
-    { "id": "networking", "label": "Networking & Cloud Computing" },
-    { "id": "backend", "label": "Microservice / Backend Systems" },
-    { "id": "hardware", "label": "Hardware Engineering Integrations" },
-    { "id": "frontend", "label": "Frontend & UI Development" },
-    { "id": "libraries", "label": "Libraries / Packages" }
+    {
+      "id": "all",
+      "label": "All"
+    },
+    {
+      "id": "robotics",
+      "label": "Robotics & Systems"
+    },
+    {
+      "id": "ai-ml",
+      "label": "Machine Learning / Artificial Intelligence"
+    },
+    {
+      "id": "networking",
+      "label": "Networking & Cloud Computing"
+    },
+    {
+      "id": "backend",
+      "label": "Microservice / Backend Systems"
+    },
+    {
+      "id": "hardware",
+      "label": "Hardware Engineering Integrations"
+    },
+    {
+      "id": "frontend",
+      "label": "Frontend & UI Development"
+    },
+    {
+      "id": "libraries",
+      "label": "Libraries / Packages"
+    }
   ],
   "projects": [
     {
@@ -25,11 +53,26 @@
       "title": "Pebble-Sized Microscale Surveillance Drone ↗",
       "description": "Single-motor, compact surveillance drone demonstrating extreme control under severe size and power constraints.",
       "links": [
-        { "text": "[3D Files]", "url": "pebble-3d-files.zip" },
-        { "text": "[GitHub Repo]", "url": "https://github.com/tobiawolaju/microscale-drone" },
-        { "text": "[Demo Video]", "url": "pebble-demo.mp4" },
-        { "text": "[Testing Results]", "url": "pebble-testing.pdf" },
-        { "text": "[Docs]", "url": "pebble-paper.pdf" }
+        {
+          "text": "[3D Files]",
+          "url": "pebble-3d-files.zip"
+        },
+        {
+          "text": "[GitHub Repo]",
+          "url": "https://github.com/tobiawolaju/microscale-drone"
+        },
+        {
+          "text": "[Demo Video]",
+          "url": "pebble-demo.mp4"
+        },
+        {
+          "text": "[Testing Results]",
+          "url": "pebble-testing.pdf"
+        },
+        {
+          "text": "[Docs]",
+          "url": "pebble-paper.pdf"
+        }
       ]
     },
     {
@@ -38,11 +81,26 @@
       "title": "Capstan-Driven, Gimbal-Jointed Humanoid Robot Sleeve ↗",
       "description": "Low-cost, high-performance humanoid sleeve featuring capstan-driven actuation and advanced joint control.",
       "links": [
-        { "text": "[3D Files]", "url": "humanoid-3d-files.zip" },
-        { "text": "[GitHub Repo]", "url": "https://github.com/tobiawolaju/humanoid-sleeve" },
-        { "text": "[Demo Video]", "url": "humanoid-demo.mp4" },
-        { "text": "[Testing Results]", "url": "humanoid-testing.pdf" },
-        { "text": "[Docs]", "url": "humanoid-paper.pdf" }
+        {
+          "text": "[3D Files]",
+          "url": "humanoid-3d-files.zip"
+        },
+        {
+          "text": "[GitHub Repo]",
+          "url": "https://github.com/tobiawolaju/humanoid-sleeve"
+        },
+        {
+          "text": "[Demo Video]",
+          "url": "humanoid-demo.mp4"
+        },
+        {
+          "text": "[Testing Results]",
+          "url": "humanoid-testing.pdf"
+        },
+        {
+          "text": "[Docs]",
+          "url": "humanoid-paper.pdf"
+        }
       ]
     },
     {
@@ -51,9 +109,18 @@
       "title": "Neural Networks on Photosensitive Gels ↗",
       "description": "Exploration of low-cost, universal-speed-limit computation via alternative physical substrates.",
       "links": [
-        { "text": "[Demo Video]", "url": "neuralgel-demo.mp4" },
-        { "text": "[Results]", "url": "neuralgel-results.pdf" },
-        { "text": "[Docs]", "url": "neuralgel-paper.pdf" }
+        {
+          "text": "[Demo Video]",
+          "url": "neuralgel-demo.mp4"
+        },
+        {
+          "text": "[Results]",
+          "url": "neuralgel-results.pdf"
+        },
+        {
+          "text": "[Docs]",
+          "url": "neuralgel-paper.pdf"
+        }
       ]
     },
     {
@@ -62,9 +129,18 @@
       "title": "Model Composer Architecture ↗",
       "description": "Composable ML architecture for modular model construction, with optional photosensitive gel acceleration.",
       "links": [
-        { "text": "[Demo Video]", "url": "modelcomposer-demo.mp4" },
-        { "text": "[Results]", "url": "modelcomposer-results.pdf" },
-        { "text": "[Docs]", "url": "modelcomposer-paper.pdf" }
+        {
+          "text": "[Demo Video]",
+          "url": "modelcomposer-demo.mp4"
+        },
+        {
+          "text": "[Results]",
+          "url": "modelcomposer-results.pdf"
+        },
+        {
+          "text": "[Docs]",
+          "url": "modelcomposer-paper.pdf"
+        }
       ]
     },
     {
@@ -73,9 +149,18 @@
       "title": "SLAM with Novel Algorithm (Camera + IMU + AI/Math) ↗",
       "description": "New SLAM approach for high-DOF robots, demonstrated on ESP32 and Android APK.",
       "links": [
-        { "text": "[Docs]", "url": "slam-paper.pdf" },
-        { "text": "[APK Demo]", "url": "slam-apk-demo.apk" },
-        { "text": "[ESP32 Demo]", "url": "slam-esp32-demo.mp4" }
+        {
+          "text": "[Docs]",
+          "url": "slam-paper.pdf"
+        },
+        {
+          "text": "[APK Demo]",
+          "url": "slam-apk-demo.apk"
+        },
+        {
+          "text": "[ESP32 Demo]",
+          "url": "slam-esp32-demo.mp4"
+        }
       ]
     },
     {
@@ -84,9 +169,18 @@
       "title": "Multi-SLAM: Real-Time Map Stitching ↗",
       "description": "Multi-agent SLAM system enabling real-time stitching of maps from different observers.",
       "links": [
-        { "text": "[Docs]", "url": "multislam-paper.pdf" },
-        { "text": "[Demo Video]", "url": "multislam-demo.mp4" },
-        { "text": "[Results]", "url": "multislam-results.pdf" }
+        {
+          "text": "[Docs]",
+          "url": "multislam-paper.pdf"
+        },
+        {
+          "text": "[Demo Video]",
+          "url": "multislam-demo.mp4"
+        },
+        {
+          "text": "[Results]",
+          "url": "multislam-results.pdf"
+        }
       ]
     }
   ],
