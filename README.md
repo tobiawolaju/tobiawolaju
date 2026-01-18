@@ -6,3 +6,8 @@
 
 [LinkedIn](https://linkedin.com/in/tobiawolaju)
 [Twitter](https://www.x.com/tobiawolaju)
+
+
+---
+#ML projects
+#Blockchain projects
