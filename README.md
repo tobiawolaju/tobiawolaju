@@ -8,9 +8,6 @@ Building scalable blockchain solutions and intelligent systems at the intersecti
 [![Design Portfolio](https://img.shields.io/badge/Designs-Portfolio-6366F1?)](https://tobiawolaju.vercel.app/?=designer)
 [![EE engineering / Robotics](https://img.shields.io/badge/Engineering-Portfolio-6366F1)](https://tobiawolaju.vercel.app/?engineering)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/tobiawolaju)  
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://www.x.com/tobiawolaju)  
-
 ---
 
 ## ML Projects  
