@@ -1,4 +1,4 @@
-# Tobia Wolaju  
+# Tobi Awolaju  
 **System-Scale Thinker | Polymath**  
 
 Building scalable blockchain solutions and intelligent systems at the intersection of Web3 and AI.  
