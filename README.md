@@ -2,7 +2,7 @@
 
 
 [Web3 Portfolio](https://tobiawolaju.vercel.app/?=web3)
-[AI/ML Research Portfolio](https://tobiawolaju.vercel.app/?=web3)
+[AI/ML Research Portfolio](https://tobiawolaju.vercel.app/?=ai)
 
 [LinkedIn](https://linkedin.com/in/tobiawolaju)
 [Twitter](https://www.x.com/tobiawolaju)
