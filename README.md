@@ -1,11 +1,12 @@
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=200&pause=900&color=6366F1&width=950&lines=System++Scale+Thinker;Blockchain;Machine+Learning)](https://git.io/typing-svg)
 
 
-[Web3 Portfolio](https://tobiawolaju.vercel.app/?=web3)
-[AI/ML Research Portfolio](https://tobiawolaju.vercel.app/?=ai-researcher)
+[![Web3 Portfolio](https://img.shields.io/badge/Web3-Portfolio-6366F1?style=for-the-badge&logo=vercel&logoColor=white)](https://tobiawolaju.vercel.app/?=web3)
+[![AI/ML Research](https://img.shields.io/badge/AI/ML-Research-FCA311?style=for-the-badge&logo=python&logoColor=white)](https://tobiawolaju.vercel.app/?=ai-researcher)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/tobiawolaju)
+[![Twitter](https://img.shields.io/badge/Twitter-Follow-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://www.x.com/tobiawolaju)
 
-[LinkedIn](https://linkedin.com/in/tobiawolaju)
-[Twitter](https://www.x.com/tobiawolaju)
+
 
 
 ---
