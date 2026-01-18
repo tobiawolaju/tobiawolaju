@@ -5,8 +5,8 @@ Building scalable blockchain solutions and intelligent systems at the intersecti
 
 [![Web3 Portfolio](https://img.shields.io/badge/Web3-Portfolio-6366F1?style=for-the-badge&logo=vercel&logoColor=white)](https://tobiawolaju.vercel.app/?=web3)
 [![AI/ML Research](https://img.shields.io/badge/AI/ML-Research-6366F1?style=for-the-badge&logo=python&logoColor=white)](https://tobiawolaju.vercel.app/?=ai-researcher)
-[![Design Portfolio](https://img.shields.io/badge/Web3-Portfolio-6366F1?style=for-the-badge&logo=vercel&logoColor=white)](https://tobiawolaju.vercel.app/?=designer)
-[![EE engineering / Robotics](https://img.shields.io/badge/AI/ML-Research-6366F1?style=for-the-badge&logo=python&logoColor=white)](https://tobiawolaju.vercel.app/?engineering)
+[![Design Portfolio](https://img.shields.io/badge/Designs-6366F1?)](https://tobiawolaju.vercel.app/?=designer)
+[![EE engineering / Robotics](https://img.shields.io/badge/Engineering-6366F1)](https://tobiawolaju.vercel.app/?engineering)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/tobiawolaju)  
 [![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://www.x.com/tobiawolaju)  
