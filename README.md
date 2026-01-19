@@ -43,5 +43,6 @@ Building scalable blockchain solutions and intelligent systems at the intersecti
 ## Design Projects
 | Project | Description | Tech | Updated | Link |
 |---------|------------|------|---------|------|
-| **LogicGateAIModel** | Interactive AI logic gates demo running purely in CSS | CSS | 2 days ago | [Repo](https://github.com/tobiawolaju/LogicGateAIModel) |
-| **Prediction-Market-Aggregator** | Aggregates cross-market prediction data, normalizes odds & liquidity | TypeScript | 4 days ago | [Repo](https://github.com/tobiawolaju/Prediction-Market-Aggregator) |
+| **Mobile App Redesign** | Conversion-focused overhaul of e-commerce user experience | UI/UX | Today | [Figma](#) |
+| **Tech Startup Identity** | Brand system, logo, and visual guidelines for AI startup | Branding | Today | [Guidelines](#) |
+| **Interactive Dashboard** | Animated real-time data visualization interface | Motion | Today | [Demo](#) |
