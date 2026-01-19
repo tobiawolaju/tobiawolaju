@@ -9,18 +9,23 @@ Building scalable blockchain solutions and intelligent systems at the intersecti
 [![EE engineering / Robotics](https://img.shields.io/badge/Engineering-Portfolio-6366F1)](https://tobiawolaju.vercel.app/?engineering)
 
 ---
-
 ## AI/ML Projects  
-
 | Project | Description | Tech | Updated | Link |
 |---------|------------|------|---------|------|
 | **LogicGateAIModel** | Interactive AI logic gates demo running purely in CSS | CSS | 2 days ago | [Repo](https://github.com/tobiawolaju/LogicGateAIModel) |
 | **Prediction-Market-Aggregator** | Aggregates cross-market prediction data, normalizes odds & liquidity | TypeScript | 4 days ago | [Repo](https://github.com/tobiawolaju/Prediction-Market-Aggregator) |
 
+
 ---
+## Engineering Projects
+| Project | Description | Tech | Updated | Link |
+|---------|------------|------|---------|------|
+| **LogicGateAIModel** | Interactive AI logic gates demo running purely in CSS | CSS | 2 days ago | [Repo](https://github.com/tobiawolaju/LogicGateAIModel) |
+| **Prediction-Market-Aggregator** | Aggregates cross-market prediction data, normalizes odds & liquidity | TypeScript | 4 days ago | [Repo](https://github.com/tobiawolaju/Prediction-Market-Aggregator) |
 
+
+---
 ## Blockchain Projects  
-
 | Project | Description | Tech | Updated | Link |
 |---------|------------|------|---------|------|
 | **OpenPoll** | Privacy-focused zero-knowledge voting enforcing one-person-one-vote | Solidity | 1 week ago | [Repo](https://github.com/tobiawolaju/OpenPoll) |
@@ -32,3 +37,9 @@ Building scalable blockchain solutions and intelligent systems at the intersecti
 | **Monad Trading Bot** | Automated trading leveraging Monad APIs | JavaScript | Nov 27, 2025 | [Repo](https://github.com/tobiawolaju/monad-trading-bot) |
 | **Learn-EVM** | Educational Ethereum Virtual Machine simulator & guide | JavaScript | Nov 12, 2024 | [Repo](https://github.com/tobiawolaju/Learn-EVM) |
 
+---
+## Design Projects
+| Project | Description | Tech | Updated | Link |
+|---------|------------|------|---------|------|
+| **LogicGateAIModel** | Interactive AI logic gates demo running purely in CSS | CSS | 2 days ago | [Repo](https://github.com/tobiawolaju/LogicGateAIModel) |
+| **Prediction-Market-Aggregator** | Aggregates cross-market prediction data, normalizes odds & liquidity | TypeScript | 4 days ago | [Repo](https://github.com/tobiawolaju/Prediction-Market-Aggregator) |
