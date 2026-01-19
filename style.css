@@ -633,9 +633,78 @@ a {
 
 
 .links a {
-  font-weight: bold;
-  padding: 2px 8px;
-  background-color: rgba(131, 131, 131, 0.466);
+  text-decoration: none;
+}
+
+/* GitHub-Style Link Tags */
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75em;
+  font-weight: 600;
+  line-height: 1.2;
+  border-radius: 2em;
+  text-decoration: none !important;
+  margin-right: 0.4rem;
+  margin-bottom: 0.4rem;
+  transition: filter 0.2s;
+  border: 1px solid transparent;
+}
+
+.tag:hover {
+  filter: brightness(0.95);
+}
+
+.tag-blue {
+  background-color: #ddf4ff;
+  color: #0969da;
+}
+
+.tag-green {
+  background-color: #dafbe1;
+  color: #1a7f37;
+}
+
+.tag-yellow {
+  background-color: #fff8c5;
+  color: #9a6700;
+}
+
+.tag-purple {
+  background-color: #f5f0ff;
+  color: #8250df;
+}
+
+.tag-red {
+  background-color: #ffebe9;
+  color: #cf222e;
+}
+
+@media (prefers-color-scheme: dark) {
+  .tag-blue {
+    background-color: #033d8b;
+    color: #58a6ff;
+  }
+
+  .tag-green {
+    background-color: #116329;
+    color: #3fb950;
+  }
+
+  .tag-yellow {
+    background-color: #6e4e00;
+    color: #d29922;
+  }
+
+  .tag-purple {
+    background-color: #4c2889;
+    color: #bc8cff;
+  }
+
+  .tag-red {
+    background-color: #82071e;
+    color: #ffa198;
+  }
 }
 
 /* Technical Write-up UI */

@@ -104,7 +104,16 @@ function renderPortfolio(data) {
                     <p class="mission">${project.description}</p>
                     
                     <div class="links" style="margin-top: 1rem;">
-                        ${project.links.map(link => `<a href="${link.url}" target="_blank">${link.text}</a>`).join("")}
+                        ${project.links.map(link => {
+            let tagClass = 'tag-blue';
+            const text = link.text.toLowerCase();
+            if (text.includes('github')) tagClass = 'tag-purple';
+            else if (text.includes('demo') || text.includes('video')) tagClass = 'tag-green';
+            else if (text.includes('3d') || text.includes('files')) tagClass = 'tag-yellow';
+            else if (text.includes('docs') || text.includes('paper')) tagClass = 'tag-blue';
+            else if (text.includes('testing') || text.includes('results')) tagClass = 'tag-red';
+            return `<a href="${link.url}" class="tag ${tagClass}" target="_blank">${link.text}</a>`;
+        }).join("")}
                     </div>
 
                     ${project.writeup ? `
