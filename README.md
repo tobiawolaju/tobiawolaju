@@ -10,7 +10,7 @@ Building scalable blockchain solutions and intelligent systems at the intersecti
 
 ---
 
-## ML Projects  
+## AI/ML Projects  
 
 | Project | Description | Tech | Updated | Link |
 |---------|------------|------|---------|------|
