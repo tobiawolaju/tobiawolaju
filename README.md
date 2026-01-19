@@ -20,8 +20,10 @@ Building scalable blockchain solutions and intelligent systems at the intersecti
 ## Engineering Projects
 | Project | Description | Tech | Updated | Link |
 |---------|------------|------|---------|------|
-| **LogicGateAIModel** | Interactive AI logic gates demo running purely in CSS | CSS | 2 days ago | [Repo](https://github.com/tobiawolaju/LogicGateAIModel) |
-| **Prediction-Market-Aggregator** | Aggregates cross-market prediction data, normalizes odds & liquidity | TypeScript | 4 days ago | [Repo](https://github.com/tobiawolaju/Prediction-Market-Aggregator) |
+| **Full-Body Humanoid** | High-performance humanoid with capstan-driven gimbal joints and PID/MPC control | ROS2, C++ | Today | [Repo](https://github.com/tobiawolaju/humanoid-control) |
+| **SLAM & Perception Stack** | Monocular SLAM system for high-DOF robots with AI-driven state estimation | C++, Python | Today | [Repo](https://github.com/tobiawolaju/slam-perception) |
+| **World Model Engine** | Digital twin with LLM-guided task planning and force-aware IK planning | Python, ROS2 | Today | [Repo](https://github.com/tobiawolaju/world-representation-engine) |
+| **Microscale Drone** | Extreme control and sensor fusion for sub-50g single-motor platforms | C, Firmware | Today | [Repo](https://github.com/tobiawolaju/microscale-drone) |
 
 
 ---
