@@ -102,7 +102,59 @@ function renderPortfolio(data) {
                 <div class="project-info">
                     <a href="#"><strong>${project.title}</strong></a>
                     <p class="mission">${project.description}</p>
-                    <div class="links">
+                    
+                    ${project.writeup ? `
+                    <div class="technical-writeup" style="margin-top: 1.5rem; font-size: 0.9em; border-left: 2px solid #ccc; padding-left: 1rem;">
+                        <div class="writeup-section">
+                            <strong>1. Motivation:</strong>
+                            <p>${project.writeup.motivation}</p>
+                        </div>
+                        <div class="writeup-section">
+                            <strong>2. Objectives:</strong>
+                            <ul>${project.writeup.objectives.map(obj => `<li>${obj}</li>`).join("")}</ul>
+                        </div>
+                        <div class="writeup-section">
+                            <strong>3. Architecture:</strong>
+                            <p>${project.writeup.architecture}</p>
+                        </div>
+                        <div class="writeup-section">
+                            <strong>4. Hardware:</strong>
+                            <p>${project.writeup.hardware}</p>
+                        </div>
+                        <div class="writeup-section">
+                            <strong>5. Software:</strong>
+                            <p>${project.writeup.software}</p>
+                        </div>
+                        ${project.writeup.perception ? `
+                        <div class="writeup-section">
+                            <strong>6. Perception:</strong>
+                            <p>${project.writeup.perception}</p>
+                        </div>
+                        ` : ''}
+                        <div class="writeup-section">
+                            <strong>7. Challenges:</strong>
+                            <p>${project.writeup.challenges}</p>
+                        </div>
+                        <div class="writeup-section">
+                            <strong>8. Results:</strong>
+                            <p>${project.writeup.results}</p>
+                        </div>
+                        <div class="writeup-section">
+                            <strong>9. Lessons:</strong>
+                            <p>${project.writeup.lessons}</p>
+                        </div>
+                        <div class="writeup-section">
+                            <strong>10. Future:</strong>
+                            <p>${project.writeup.future}</p>
+                        </div>
+                        <div class="writeup-section">
+                            <strong>11. References:</strong>
+                            <p>${project.writeup.references}</p>
+                        </div>
+                    </div>
+                    ` : ''}
+
+                    <div class="links" style="margin-top: 1rem;">
                         ${project.links.map(link => `<a href="${link.url}" target="_blank">${link.text}</a>`).join("")}
                     </div>
                 </div>

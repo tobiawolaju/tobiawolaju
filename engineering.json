@@ -1,11 +1,11 @@
 {
-  "pageTitle": "Tobi's Portfolio - Engineering",
+  "pageTitle": "Tobiloba Awolaju - Robotics Engineering Portfolio",
   "theme": "engineering",
   "profile": {
     "image": "pfp.jpg",
     "name": "Tobiloba Awolaju",
     "title": "Robotics Research Engineer | Perception, Control & Learning Systems",
-    "bio": "<p style=\"font-size: large; padding-bottom: 3rem;\">Electrical &amp; Electronics Engineering student @ <a href=\"https://adelekeuniversity.edu.ng/\" target=\"_blank\" rel=\"noopener noreferrer\">Adeleke University</a> focused on robotics research, perception, and &amp; real-time systems. <br><br>I design and build robotic systems end-to-end—mechanics, control, sensing, and learning—with an emphasis on high-DOF robots, SLAM, and constrained embedded platforms. <br><br>Currently architecting a full-scale humanoid robot and developing custom control and planning algorithms in ROS 2. My work spans C++, Python, real-time control, embedded systems, and experimental learning-based approaches for perception and mapping. <br><br>I’m particularly interested in robotics at the intersection of control theory, state estimation, and learning.</p>",
+    "bio": "<p style=\"font-size: large; padding-bottom: 3rem;\">Systems-level engineer focused on the intersection of control theory, perception, and embodied AI. <br><br>I design and build robotic systems end-to-end—mechanics, control, sensing, and learning—with an emphasis on high-DOF robots, SLAM, and constrained embedded platforms. <br><br>Currently architecting full-scale humanoid systems and developing real-time control algorithms in ROS 2. My philosophy centers on modular architecture, hierarchical control, and measurable engineering results.</p>",
     "resumeLink": "https://docs.google.com/document/d/1rAaz1npJsNaA1Z4rRAQerH271eRiXhrEhwdmj5DxFQg/edit?usp=sharing"
   },
   "sectionLabels": {
@@ -18,202 +18,201 @@
       "label": "All"
     },
     {
-      "id": "robotics",
-      "label": "Robotics & Systems"
+      "id": "control",
+      "label": "Control & Actuation"
     },
     {
-      "id": "ai-ml",
-      "label": "Machine Learning / Artificial Intelligence"
+      "id": "perception",
+      "label": "Perception & SLAM"
     },
     {
-      "id": "networking",
-      "label": "Networking & Cloud Computing"
+      "id": "planning",
+      "label": "Planning / Learning"
     },
     {
-      "id": "backend",
-      "label": "Microservice / Backend Systems"
-    },
-    {
-      "id": "hardware",
-      "label": "Hardware Engineering Integrations"
-    },
-    {
-      "id": "frontend",
-      "label": "Frontend & UI Development"
-    },
-    {
-      "id": "libraries",
-      "label": "Libraries / Packages"
+      "id": "embedded",
+      "label": "Embedded Systems"
     }
   ],
   "projects": [
     {
-      "category": "robotics",
+      "category": "control",
       "image": "grey.jpg",
-      "title": "Pebble-Sized Microscale Surveillance Drone ↗",
-      "description": "Single-motor, compact surveillance drone demonstrating extreme control under severe size and power constraints.",
+      "title": "Full-Body Humanoid (Control + Actuation) ↗",
+      "description": "Low-cost, high-performance humanoid actuation featuring capstan-driven gimbal joints and hierarchical PID/MPC control.",
       "links": [
         {
           "text": "[3D Files]",
-          "url": "pebble-3d-files.zip"
+          "url": "#"
         },
         {
           "text": "[GitHub Repo]",
-          "url": "https://github.com/tobiawolaju/microscale-drone"
+          "url": "#"
         },
         {
           "text": "[Demo Video]",
-          "url": "pebble-demo.mp4"
-        },
-        {
-          "text": "[Testing Results]",
-          "url": "pebble-testing.pdf"
+          "url": "#"
         },
         {
           "text": "[Docs]",
-          "url": "pebble-paper.pdf"
+          "url": "#"
         }
-      ]
+      ],
+      "writeup": {
+        "motivation": "Designed a low-cost, high-DOF humanoid sleeve to test capstan-driven actuation and gimbal-jointed mechanics for scalable humanoid control.",
+        "objectives": [
+          "Enable 6 DOF per limb with smooth motion",
+          "Maintain stability under ±10° perturbations",
+          "Run on <50 W power budget",
+          "Demonstrate integration with ROS2 planning stack"
+        ],
+        "architecture": "Hierarchical structure: ROS2 Gait Planner → PID Controller → Joint Encoders & Capstan Drives.",
+        "hardware": "Capstan-driven gimbal joints for zero-backlash motion. Fusion 360 designed mechanics, optimized for weight/torque ratio.",
+        "software": "Real-time PID control on firmware, integrated with MPC for gait stabilization in ROS2.",
+        "perception": "Absolute magnetic encoders for state estimation; IMU integration for balance feedback.",
+        "challenges": "Motor backlash compensated with high-tension capstan feedforward; custom PID tuning for low-cost actuators.",
+        "results": "Measured <0.1° repeatability; successful 20-minute stability tests under perturbation.",
+        "lessons": "Trade-off between mechanical complexity and control reliability; capstan drives provide superior stiffness.",
+        "future": "Full-body bipedal locomotion integration and structural battery reinforcement.",
+        "references": "Open-source ROS2 Control, EtherCAT protocols."
+      }
     },
     {
-      "category": "robotics",
+      "category": "perception",
       "image": "grey.jpg",
-      "title": "Capstan-Driven, Gimbal-Jointed Humanoid Robot Sleeve ↗",
-      "description": "Low-cost, high-performance humanoid sleeve featuring capstan-driven actuation and advanced joint control.",
-      "links": [
-        {
-          "text": "[3D Files]",
-          "url": "humanoid-3d-files.zip"
-        },
-        {
-          "text": "[GitHub Repo]",
-          "url": "https://github.com/tobiawolaju/humanoid-sleeve"
-        },
-        {
-          "text": "[Demo Video]",
-          "url": "humanoid-demo.mp4"
-        },
-        {
-          "text": "[Testing Results]",
-          "url": "humanoid-testing.pdf"
-        },
-        {
-          "text": "[Docs]",
-          "url": "humanoid-paper.pdf"
-        }
-      ]
-    },
-    {
-      "category": "ai-ml",
-      "image": "grey.jpg",
-      "title": "Neural Networks on Photosensitive Gels ↗",
-      "description": "Exploration of low-cost, universal-speed-limit computation via alternative physical substrates.",
-      "links": [
-        {
-          "text": "[Demo Video]",
-          "url": "neuralgel-demo.mp4"
-        },
-        {
-          "text": "[Results]",
-          "url": "neuralgel-results.pdf"
-        },
-        {
-          "text": "[Docs]",
-          "url": "neuralgel-paper.pdf"
-        }
-      ]
-    },
-    {
-      "category": "ai-ml",
-      "image": "grey.jpg",
-      "title": "Model Composer Architecture ↗",
-      "description": "Composable ML architecture for modular model construction, with optional photosensitive gel acceleration.",
-      "links": [
-        {
-          "text": "[Demo Video]",
-          "url": "modelcomposer-demo.mp4"
-        },
-        {
-          "text": "[Results]",
-          "url": "modelcomposer-results.pdf"
-        },
-        {
-          "text": "[Docs]",
-          "url": "modelcomposer-paper.pdf"
-        }
-      ]
-    },
-    {
-      "category": "ai-ml",
-      "image": "grey.jpg",
-      "title": "SLAM with Novel Algorithm (Camera + IMU + AI/Math) ↗",
-      "description": "New SLAM approach for high-DOF robots, demonstrated on ESP32 and Android APK.",
+      "title": "SLAM & Perception Stack ↗",
+      "description": "Novel monocular SLAM system for high-DOF robots integrating camera, IMU, and AI-driven state estimation.",
       "links": [
         {
           "text": "[Docs]",
-          "url": "slam-paper.pdf"
+          "url": "#"
         },
         {
           "text": "[APK Demo]",
-          "url": "slam-apk-demo.apk"
+          "url": "#"
         },
         {
           "text": "[ESP32 Demo]",
-          "url": "slam-esp32-demo.mp4"
+          "url": "#"
         }
-      ]
+      ],
+      "writeup": {
+        "motivation": "Providing high-DOF robots with real-time mapping and localization using low-cost monocular sensors and compute.",
+        "objectives": [
+          "Enable real-time 3D mapping on edge devices",
+          "Achieve <5cm drift over 100m trajectories",
+          "Integrate monocular cues with IMU state estimation"
+        ],
+        "architecture": "Monocular Camera + IMU → AI-assisted Feature Extraction → State Estimation → Global Digital Twin.",
+        "hardware": "ESP32-CAM and Android-based deployment for handheld testing and robot mounting.",
+        "software": "Custom SLAM backend in C++ with learned depth priors for scale initialization.",
+        "perception": "Hybrid signal processing: EKF-based IMU fusion + visual odometry.",
+        "challenges": "IMU drift mitigation via optical flow integration and global loop closure.",
+        "results": "Demonstrated real-time operation on mobile compute with high-DOF tracking accuracy.",
+        "lessons": "The importance of robust scale recovery in monocular systems.",
+        "future": "Multi-agent map stitching and multi-modal sensor fusion (Lidar/Sonar).",
+        "references": "ORB-SLAM3, VINS-Mono documentation."
+      }
     },
     {
-      "category": "ai-ml",
+      "category": "planning",
       "image": "grey.jpg",
-      "title": "Multi-SLAM: Real-Time Map Stitching ↗",
-      "description": "Multi-agent SLAM system enabling real-time stitching of maps from different observers.",
+      "title": "World Representation Engine / Planning ↗",
+      "description": "Game-engine style digital twin with LLM-guided high-level task planning and force-aware motion abstraction.",
       "links": [
         {
           "text": "[Docs]",
-          "url": "multislam-paper.pdf"
+          "url": "#"
         },
         {
           "text": "[Demo Video]",
-          "url": "multislam-demo.mp4"
+          "url": "#"
         },
         {
-          "text": "[Results]",
-          "url": "multislam-results.pdf"
+          "text": "[Simulation]",
+          "url": "#"
         }
-      ]
+      ],
+      "writeup": {
+        "motivation": "Bridging the gap between high-level LLM reasoning and low-level reactive control through a robust world model.",
+        "objectives": [
+          "Separate intelligence from low-level balance",
+          "Implement action-token based task execution",
+          "Enable time and force aware IK planning"
+        ],
+        "architecture": "LLM Planner → Action Token Parser → IK Engine → Digital Twin → Physical Robot.",
+        "hardware": "Simulated in Gazebo/Webots; validated on humanoid sleeve hardware.",
+        "software": "Kinematics engine with force constraints; Python-based LLM interface.",
+        "perception": "World state represented as object-oriented entities; semantic scene understanding.",
+        "challenges": "Synchronizing high-latency LLM decisions with real-time control constraints.",
+        "results": "Autonomous multi-step task completion in semi-structured environments.",
+        "lessons": "Abstraction layers are critical for scaling robotic intelligence.",
+        "future": "Reinforcement learning for policy optimization within the world model.",
+        "references": "MoveIt2, Transformer-based planning papers."
+      }
+    },
+    {
+      "category": "embedded",
+      "image": "grey.jpg",
+      "title": "Pebble-Sized Microscale Drone ↗",
+      "description": "Extreme control and sensor fusion under severe size and power constraints for single-motor surveillance drones.",
+      "links": [
+        {
+          "text": "[3D Files]",
+          "url": "#"
+        },
+        {
+          "text": "[GitHub Repo]",
+          "url": "#"
+        },
+        {
+          "text": "[Demo Video]",
+          "url": "#"
+        },
+        {
+          "text": "[Docs]",
+          "url": "#"
+        }
+      ],
+      "writeup": {
+        "motivation": "Demonstrating engineering creativity and efficiency by achieving stable flight in a sub-50g drone platform.",
+        "objectives": [
+          "Maintain active stabilization at <30W power",
+          "Implement sensor fusion on ultra-efficient compute",
+          "Maximize flight endurance through weight optimization"
+        ],
+        "architecture": "Single-motor actuator → Embedded Control Loop → IMU Feedback → TinyCompute.",
+        "hardware": "Custom PCB design; 3D printed ultra-lightweight chassis; efficient motor selection.",
+        "software": "Firmware optimized for real-time constraints; efficient fixed-point math for control.",
+        "perception": "Integrated IMU and optical flow for altitude and position hold.",
+        "challenges": "Extreme power constraints requiring custom low-level PID tuning and efficient firmware.",
+        "results": "Stable hover achieved; 8-minute flight time on minimal battery capacity.",
+        "lessons": "Every gram and milliwatt matters in microscale robotics.",
+        "future": "Autonomous swarm behaviors and integrated micro-cameras.",
+        "references": "Crazyflie open-source firmware, KiCad design standards."
+      }
     }
   ],
   "docs": [
     {
-      "link": "pebble-paper.pdf",
-      "title": "Pebble-Sized Microscale Drone ↗",
-      "description": "Control under extreme size and power constraints for single-motor surveillance drones."
+      "link": "#",
+      "title": "Capstan-Driven Humanoid Control ↗",
+      "description": "Deep dive into the mechanics and control of high-DOF humanoid joints."
     },
     {
-      "link": "humanoid-paper.pdf",
-      "title": "Capstan-Driven Humanoid Robot Sleeve ↗",
-      "description": "Low-cost, high-performance humanoid actuation with gimbal-jointed mechanics and advanced control."
+      "link": "#",
+      "title": "Real-Time SLAM on the Edge ↗",
+      "description": "Technical analysis of monocular perception stacks for robotics."
     },
     {
-      "link": "neuralgel-paper.pdf",
-      "title": "Neural Networks on Photosensitive Gels ↗",
-      "description": "Exploring alternative physical substrates for low-cost, universal-speed-limit neural computation."
+      "link": "#",
+      "title": "World Models for Robotics ↗",
+      "description": "Integrating LLMs and IK for intelligent robot behavior."
     },
     {
-      "link": "modelcomposer-paper.pdf",
-      "title": "Model Composer Architecture ↗",
-      "description": "Modular ML architecture design, with optional acceleration via photosensitive gels."
-    },
-    {
-      "link": "slam-paper.pdf",
-      "title": "SLAM with Novel Algorithm ↗",
-      "description": "New SLAM method integrating camera, IMU, and AI/math for real-time high-DOF robot mapping."
-    },
-    {
-      "link": "multislam-paper.pdf",
-      "title": "Multi-SLAM: Real-Time Map Stitching ↗",
-      "description": "Multi-agent SLAM system enabling real-time stitching of maps from multiple observers."
+      "link": "#",
+      "title": "Microscale Embedded Systems ↗",
+      "description": "Engineering for extreme efficiency in small-scale robotics."
     }
   ]
 }
