@@ -103,8 +103,13 @@ function renderPortfolio(data) {
                     <a href="#"><strong>${project.title}</strong></a>
                     <p class="mission">${project.description}</p>
                     
+                    <div class="links" style="margin-top: 1rem;">
+                        ${project.links.map(link => `<a href="${link.url}" target="_blank">${link.text}</a>`).join("")}
+                    </div>
+
                     ${project.writeup ? `
-                    <div class="technical-writeup" style="margin-top: 1.5rem; font-size: 0.9em; border-left: 2px solid #ccc; padding-left: 1rem;">
+                    <button class="writeup-toggle">Engineering Log ▾</button>
+                    <div class="technical-writeup" style="border-left: 2px solid #ccc; padding-left: 1rem;">
                         <div class="writeup-section">
                             <strong>1. Motivation:</strong>
                             <p>${project.writeup.motivation}</p>
@@ -153,10 +158,6 @@ function renderPortfolio(data) {
                         </div>
                     </div>
                     ` : ''}
-
-                    <div class="links" style="margin-top: 1rem;">
-                        ${project.links.map(link => `<a href="${link.url}" target="_blank">${link.text}</a>`).join("")}
-                    </div>
                 </div>
             </div>
         `).join("");
@@ -210,6 +211,16 @@ function initInteractions() {
             const content = toggle.nextElementSibling;
             content.classList.toggle("hidden");
         });
+    });
+
+    // --- Engineering Log Toggles ---
+    document.addEventListener("click", (e) => {
+        if (e.target.classList.contains("writeup-toggle")) {
+            const toggle = e.target;
+            const content = toggle.nextElementSibling;
+            const isExpanded = content.classList.toggle("expanded");
+            toggle.textContent = isExpanded ? "Engineering Log ▴" : "Engineering Log ▾";
+        }
     });
 
     // --- Filters ---

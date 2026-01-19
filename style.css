@@ -637,3 +637,60 @@ a {
   padding: 2px 8px;
   background-color: rgba(131, 131, 131, 0.466);
 }
+
+/* Technical Write-up UI */
+.technical-writeup {
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+}
+
+.technical-writeup.expanded {
+  max-height: 2000px;
+  /* Large enough to accommodate content */
+  opacity: 1;
+  margin-top: 1.5rem;
+}
+
+.writeup-toggle {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px dashed #838383;
+  color: inherit;
+  font-weight: bold;
+  padding: 0.5rem 0;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-size: 0.9em;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.writeup-toggle:hover {
+  opacity: 1;
+}
+
+.writeup-section {
+  margin-bottom: 1rem;
+}
+
+.writeup-section strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: #555;
+}
+
+@media (prefers-color-scheme: dark) {
+  .writeup-section strong {
+    color: #ccc;
+  }
+
+  .writeup-toggle {
+    border-bottom: 1px dashed #666;
+  }
+}
