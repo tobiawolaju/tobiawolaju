@@ -4,7 +4,7 @@
     "profile": {
         "image": "pfp.jpg",
         "name": "Tobiloba Awolaju",
-        "title": "Web3 Developer | Smart Contracts & DApps",
+        "title": "Blockchain Infrastructure Engineer / Protocol Engineer",
         "bio": "<p style=\"font-size: large; padding-bottom: 3rem;\">Blockchain Developer building the decentralized future. <br><br>Deeply experienced in Solidity, Rust (Solana), and full-stack DApp development. I create secure smart contracts, defi protocols, and seamless web3 integrations. <br><br>Focused on scalability, security, and user experience in the blockchain space.</p>",
         "resumeLink": "#"
     },
@@ -79,6 +79,22 @@
                 },
                 {
                     "text": "[GitHub Repo]",
+                    "url": "#"
+                }
+            ]
+        },
+        {
+            "category": "infrastructure",
+            "image": "grey.jpg",
+            "title": "RPC micro-provider for Monad ↗",
+            "description": "High-performance RPC gateway featuring load balancing, caching, rate limits, and reorg awareness.",
+            "links": [
+                {
+                    "text": "[GitHub Repo]",
+                    "url": "#"
+                },
+                {
+                    "text": "[Docs]",
                     "url": "#"
                 }
             ]
