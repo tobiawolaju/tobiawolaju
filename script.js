@@ -93,6 +93,15 @@ function renderPortfolio(data) {
         filterContainer.innerHTML = filterHTML;
     }
 
+    // Projects Header Description
+    const projectsHeaderDescription = document.getElementById("projects-header-description");
+    if (projectsHeaderDescription && data.sectionLabels && data.sectionLabels.projectsDescription) {
+        projectsHeaderDescription.innerHTML = `<p style="opacity: 0.6; margin-bottom: 2rem;">${data.sectionLabels.projectsDescription}</p>`;
+        projectsHeaderDescription.style.display = "block";
+    } else if (projectsHeaderDescription) {
+        projectsHeaderDescription.style.display = "none";
+    }
+
     // 4. Projects
     const projectsList = document.getElementById("projects-list");
     if (data.projects) {
@@ -170,6 +179,24 @@ function renderPortfolio(data) {
                 </div>
             </div>
         `).join("");
+    }
+
+    // 4.5 Future Projects
+    const futureProjectsSection = document.getElementById("future-projects-section");
+    const futureProjectsList = document.getElementById("future-projects-list");
+    if (data.futureProjects && futureProjectsSection && futureProjectsList) {
+        futureProjectsSection.style.display = "block";
+        futureProjectsList.innerHTML = data.futureProjects.map(project => `
+            <div class="project-future" style="margin-bottom: 2rem; opacity: 0.7;">
+                <strong>${project.title}</strong>
+                <p class="mission" style="font-size: 0.9rem;">${project.description}</p>
+                <div class="links" style="margin-top: 0.5rem;">
+                    ${project.links.map(link => `<a href="${link.url}" class="tag tag-blue" style="font-size: 0.8rem;" target="_blank">${link.text}</a>`).join("")}
+                </div>
+            </div>
+        `).join("");
+    } else if (futureProjectsSection) {
+        futureProjectsSection.style.display = "none";
     }
 
     // 5. Docs

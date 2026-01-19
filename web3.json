@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Tobi's Portfolio - Web3 Developer",
+    "pageTitle": "Tobi's Portfolio - Blockchain Infrastructure Engineer",
     "theme": "web3",
     "profile": {
         "image": "pfp.jpg",
@@ -10,7 +10,8 @@
     },
     "sectionLabels": {
         "docs": "Audits & Research",
-        "activity": "Git"
+        "activity": "Git",
+        "projectsDescription": "High-throughput, low-latency systems for on-chain analytics, execution tracing, and market intelligence."
     },
     "filters": [
         {
@@ -18,51 +19,35 @@
             "label": "All"
         },
         {
-            "id": "defi",
-            "label": "DeFi"
-        },
-        {
-            "id": "nft",
-            "label": "NFTs"
-        },
-        {
             "id": "infrastructure",
             "label": "Infrastructure"
         },
         {
-            "id": "audits",
-            "label": "Smart Contract Audits"
+            "id": "analytics",
+            "label": "Analytics"
+        },
+        {
+            "id": "voting",
+            "label": "ZK-Voting"
+        },
+        {
+            "id": "nft",
+            "label": "NFTs"
         }
     ],
     "projects": [
         {
-            "category": "defi",
+            "category": "infrastructure",
             "image": "grey.jpg",
-            "title": "Decentralized Exchange Aggregator ↗",
-            "description": "Smart routing algorithm finding the best prices across multiple DEXs.",
+            "title": "RPC micro-provider for Monad ↗",
+            "description": "High-performance RPC gateway featuring load balancing, caching, rate limits, and reorg awareness.",
             "links": [
                 {
                     "text": "[GitHub Repo]",
                     "url": "#"
                 },
                 {
-                    "text": "[Live DApp]",
-                    "url": "#"
-                }
-            ]
-        },
-        {
-            "category": "nft",
-            "image": "grey.jpg",
-            "title": "Generative Art NFT Marketplace ↗",
-            "description": "Marketplace with low-gas minting and custom royalty standards.",
-            "links": [
-                {
-                    "text": "[Contract]",
-                    "url": "#"
-                },
-                {
-                    "text": "[Website]",
+                    "text": "[Docs]",
                     "url": "#"
                 }
             ]
@@ -70,7 +55,72 @@
         {
             "category": "infrastructure",
             "image": "grey.jpg",
-            "title": "Cross-Chain Bridge ↗",
+            "title": "Monad Execution Trace Indexer ↗",
+            "description": "Reorg-aware block ingestion producing opcode-level execution traces.",
+            "tech": "TypeScript",
+            "links": [
+                {
+                    "text": "[GitHub Repo]",
+                    "url": "#"
+                }
+            ]
+        },
+        {
+            "category": "analytics",
+            "image": "grey.jpg",
+            "title": "Prediction Market Aggregator ↗",
+            "description": "Cross-market aggregation and normalization of odds, liquidity, and probabilities.",
+            "tech": "TypeScript",
+            "links": [
+                {
+                    "text": "[GitHub Repo]",
+                    "url": "#"
+                }
+            ]
+        },
+        {
+            "category": "voting",
+            "image": "grey.jpg",
+            "title": "OpenPoll ↗",
+            "description": "Zero-knowledge voting enforcing one-person-one-vote with unlinkable ballots.",
+            "tech": "Solidity",
+            "links": [
+                {
+                    "text": "[GitHub Repo]",
+                    "url": "#"
+                }
+            ]
+        },
+        {
+            "category": "nft",
+            "image": "grey.jpg",
+            "title": "Flipwire ↗",
+            "description": "Automated NFT aggregation and relisting across marketplaces.",
+            "tech": "Solidity",
+            "links": [
+                {
+                    "text": "[GitHub Repo]",
+                    "url": "#"
+                }
+            ]
+        },
+        {
+            "category": "infrastructure",
+            "image": "grey.jpg",
+            "title": "Monad Dashboard ↗",
+            "description": "Live on-chain/off-chain observability for the Monad ecosystem.",
+            "tech": "HTML",
+            "links": [
+                {
+                    "text": "[GitHub Repo]",
+                    "url": "#"
+                }
+            ]
+        }
+    ],
+    "futureProjects": [
+        {
+            "title": "Cross-Chain Bridge",
             "description": "Secure bridge focusing on asset wrapping and message passing between L1 and L2.",
             "links": [
                 {
@@ -84,17 +134,29 @@
             ]
         },
         {
-            "category": "infrastructure",
-            "image": "grey.jpg",
-            "title": "RPC micro-provider for Monad ↗",
-            "description": "High-performance RPC gateway featuring load balancing, caching, rate limits, and reorg awareness.",
+            "title": "Generative Art NFT Marketplace",
+            "description": "Marketplace with low-gas minting and custom royalty standards.",
+            "links": [
+                {
+                    "text": "[Contract]",
+                    "url": "#"
+                },
+                {
+                    "text": "[Website]",
+                    "url": "#"
+                }
+            ]
+        },
+        {
+            "title": "Decentralized Exchange Aggregator",
+            "description": "Smart routing algorithm finding the best prices across multiple DEXs.",
             "links": [
                 {
                     "text": "[GitHub Repo]",
                     "url": "#"
                 },
                 {
-                    "text": "[Docs]",
+                    "text": "[Live DApp]",
                     "url": "#"
                 }
             ]
