@@ -5,9 +5,9 @@ I design and build end-to-end systems that operate under real-world constraints 
 
 My work sits at the intersection of **robotics, AI, and distributed systems**, with a focus on scalability, reliability, and asymmetric performance gains.
 
-[![Robotics & Engineering](https://img.shields.io/badge/Robotics-Engineering-6366F1)](https://tobiawolaju.vercel.app/?engineering)
-[![Blockchain Infrastructure](https://img.shields.io/badge/Blockchain-Infrastructure-6366F1)](https://tobiawolaju.vercel.app/?=web3)
-[![Research & Experiments](https://img.shields.io/badge/Research-Experiments-6366F1)](https://tobiawolaju.vercel.app/?=ai-researcher)
+[![Robotics & Engineering](https://img.shields.io/badge/Robotics-Engineering-6366F1)](https://tobiawolaju.vercel.app/?target=engineering)
+[![Blockchain Infrastructure](https://img.shields.io/badge/Blockchain-Infrastructure-6366F1)](https://tobiawolaju.vercel.app/?target=web3)
+[![Research & Experiments](https://img.shields.io/badge/Research-Experiments-6366F1)](https://tobiawolaju.vercel.app/?target=ai-researcher)
 
 ---
 
