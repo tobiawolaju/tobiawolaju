@@ -181,24 +181,6 @@ function renderPortfolio(data) {
         `).join("");
     }
 
-    // 4.5 Future Projects
-    const futureProjectsSection = document.getElementById("future-projects-section");
-    const futureProjectsList = document.getElementById("future-projects-list");
-    if (data.futureProjects && futureProjectsSection && futureProjectsList) {
-        futureProjectsSection.style.display = "block";
-        futureProjectsList.innerHTML = data.futureProjects.map(project => `
-            <div class="project-future" style="margin-bottom: 2rem; opacity: 0.7;">
-                <strong>${project.title}</strong>
-                <p class="mission" style="font-size: 0.9rem;">${project.description}</p>
-                <div class="links" style="margin-top: 0.5rem;">
-                    ${project.links.map(link => `<a href="${link.url}" class="tag tag-blue" style="font-size: 0.8rem;" target="_blank">${link.text}</a>`).join("")}
-                </div>
-            </div>
-        `).join("");
-    } else if (futureProjectsSection) {
-        futureProjectsSection.style.display = "none";
-    }
-
     // 5. Docs
     const docsList = document.getElementById("docs-list");
     if (data.docs) {

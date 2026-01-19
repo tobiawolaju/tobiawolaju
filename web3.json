@@ -5,7 +5,7 @@
         "image": "pfp.jpg",
         "name": "Tobiloba Awolaju",
         "title": "Blockchain Infrastructure Engineer / Protocol Engineer",
-        "bio": "<p style=\"font-size: large; padding-bottom: 3rem;\">Blockchain Developer building the decentralized future. <br><br>Deeply experienced in Solidity, Rust (Solana), and full-stack DApp development. I create secure smart contracts, defi protocols, and seamless web3 integrations. <br><br>Focused on scalability, security, and user experience in the blockchain space.</p>",
+        "bio": "<p style=\"font-size: large; padding-bottom: 3rem;\">I design and build the core infrastructure that blockchains, protocols, and developers depend on.</p>",
         "resumeLink": "#"
     },
     "sectionLabels": {
@@ -113,50 +113,6 @@
             "links": [
                 {
                     "text": "[GitHub Repo]",
-                    "url": "#"
-                }
-            ]
-        }
-    ],
-    "futureProjects": [
-        {
-            "title": "Cross-Chain Bridge",
-            "description": "Secure bridge focusing on asset wrapping and message passing between L1 and L2.",
-            "links": [
-                {
-                    "text": "[Whitepaper]",
-                    "url": "#"
-                },
-                {
-                    "text": "[GitHub Repo]",
-                    "url": "#"
-                }
-            ]
-        },
-        {
-            "title": "Generative Art NFT Marketplace",
-            "description": "Marketplace with low-gas minting and custom royalty standards.",
-            "links": [
-                {
-                    "text": "[Contract]",
-                    "url": "#"
-                },
-                {
-                    "text": "[Website]",
-                    "url": "#"
-                }
-            ]
-        },
-        {
-            "title": "Decentralized Exchange Aggregator",
-            "description": "Smart routing algorithm finding the best prices across multiple DEXs.",
-            "links": [
-                {
-                    "text": "[GitHub Repo]",
-                    "url": "#"
-                },
-                {
-                    "text": "[Live DApp]",
                     "url": "#"
                 }
             ]
