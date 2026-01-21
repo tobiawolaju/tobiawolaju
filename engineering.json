@@ -121,12 +121,12 @@
     {
       "link": "#",
       "title": "Mono-Camera SLAM & Collaborative World Models ↗",
-      "description": "Research-level approach to world generation with minimal sensors, SLAM semantic fusion, and LLM-guided planning."
+      "description": "Research-level approach to real-time 3D world generation using minimal sensors, semantic fusion, and multi-robot collaborative mapping."
     },
     {
       "link": "#",
-      "title": "World Models for Robotics ↗",
-      "description": "Integrating mono-camera collaborative SLAM with LLM interfaces for intelligent robot behavior."
+      "title": "Action Implementation & Replication via Visual Input and Natural Language ↗",
+      "description": "Demonstrates how generated world models, motion planning algorithms, and LLM-guided reasoning can be combined to enable robots to interpret natural language commands, plan paths, and replicate tasks in a continuously updated 3D environment."
     }
   ]
 }
