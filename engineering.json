@@ -23,11 +23,7 @@
     },
     {
       "id": "perception",
-      "label": "Perception & SLAM"
-    },
-    {
-      "id": "planning",
-      "label": "Planning / Learning"
+      "label": "Perception & World Modeling"
     },
     {
       "id": "embedded",
@@ -80,8 +76,8 @@
     {
       "category": "perception",
       "image": "grey.jpg",
-      "title": "SLAM & Perception Stack ↗",
-      "description": "Novel monocular SLAM system for high-DOF robots integrating camera, IMU, and AI-driven state estimation.",
+      "title": "Mono-Camera World Generator / Collaborative Digital Twin ↗",
+      "description": "Real-time, low-cost world generator that builds continuous 3D semantic maps from a single camera, optionally augmented with IMU/GPS, enabling multi-robot collaboration and high-level reasoning through LLM-guided task planning.",
       "links": [
         {
           "text": "[Docs]",
@@ -92,104 +88,27 @@
           "url": "#"
         },
         {
-          "text": "[ESP32 Demo]",
+          "text": "[Engineering Log / GitHub]",
           "url": "#"
         }
       ],
       "writeup": {
-        "motivation": "Providing high-DOF robots with real-time mapping and localization using low-cost monocular sensors and compute.",
+        "motivation": "Bridging the gap between low-cost sensors and high-level intelligence by creating a robust, shared digital twin from mono-camera data.",
         "objectives": [
-          "Enable real-time 3D mapping on edge devices",
-          "Achieve <5cm drift over 100m trajectories",
-          "Integrate monocular cues with IMU state estimation"
+          "Generate continuous 3D semantic maps from single camera input",
+          "Enable multi-robot collaboration and cloud map synchronization",
+          "Provide a sparse, semantic 3D map for LLM-guided task planning",
+          "Extensible for planning & digital twin applications"
         ],
-        "architecture": "Monocular Camera + IMU → AI-assisted Feature Extraction → State Estimation → Global Digital Twin.",
-        "hardware": "ESP32-CAM and Android-based deployment for handheld testing and robot mounting.",
-        "software": "Custom SLAM backend in C++ with learned depth priors for scale initialization.",
-        "perception": "Hybrid signal processing: EKF-based IMU fusion + visual odometry.",
-        "challenges": "IMU drift mitigation via optical flow integration and global loop closure.",
-        "results": "Demonstrated real-time operation on mobile compute with high-DOF tracking accuracy.",
-        "lessons": "The importance of robust scale recovery in monocular systems.",
-        "future": "Multi-agent map stitching and multi-modal sensor fusion (Lidar/Sonar).",
-        "references": "ORB-SLAM3, VINS-Mono documentation."
-      }
-    },
-    {
-      "category": "planning",
-      "image": "grey.jpg",
-      "title": "World Representation Engine / Planning ↗",
-      "description": "Game-engine style digital twin with LLM-guided high-level task planning and force-aware motion abstraction.",
-      "links": [
-        {
-          "text": "[Docs]",
-          "url": "#"
-        },
-        {
-          "text": "[Demo Video]",
-          "url": "#"
-        },
-        {
-          "text": "[Simulation]",
-          "url": "#"
-        }
-      ],
-      "writeup": {
-        "motivation": "Bridging the gap between high-level LLM reasoning and low-level reactive control through a robust world model.",
-        "objectives": [
-          "Separate intelligence from low-level balance",
-          "Implement action-token based task execution",
-          "Enable time and force aware IK planning"
-        ],
-        "architecture": "LLM Planner → Action Token Parser → IK Engine → Digital Twin → Physical Robot.",
-        "hardware": "Simulated in Gazebo/Webots; validated on humanoid sleeve hardware.",
-        "software": "Kinematics engine with force constraints; Python-based LLM interface.",
-        "perception": "World state represented as object-oriented entities; semantic scene understanding.",
-        "challenges": "Synchronizing high-latency LLM decisions with real-time control constraints.",
-        "results": "Autonomous multi-step task completion in semi-structured environments.",
-        "lessons": "Abstraction layers are critical for scaling robotic intelligence.",
-        "future": "Reinforcement learning for policy optimization within the world model.",
-        "references": "MoveIt2, Transformer-based planning papers."
-      }
-    },
-    {
-      "category": "embedded",
-      "image": "grey.jpg",
-      "title": "Pebble-Sized Microscale Drone ↗",
-      "description": "Extreme control and sensor fusion under severe size and power constraints for single-motor surveillance drones.",
-      "links": [
-        {
-          "text": "[3D Files]",
-          "url": "#"
-        },
-        {
-          "text": "[GitHub Repo]",
-          "url": "#"
-        },
-        {
-          "text": "[Demo Video]",
-          "url": "#"
-        },
-        {
-          "text": "[Docs]",
-          "url": "#"
-        }
-      ],
-      "writeup": {
-        "motivation": "Demonstrating engineering creativity and efficiency by achieving stable flight in a sub-50g drone platform.",
-        "objectives": [
-          "Maintain active stabilization at <30W power",
-          "Implement sensor fusion on ultra-efficient compute",
-          "Maximize flight endurance through weight optimization"
-        ],
-        "architecture": "Single-motor actuator → Embedded Control Loop → IMU Feedback → TinyCompute.",
-        "hardware": "Custom PCB design; 3D printed ultra-lightweight chassis; efficient motor selection.",
-        "software": "Firmware optimized for real-time constraints; efficient fixed-point math for control.",
-        "perception": "Integrated IMU and optical flow for altitude and position hold.",
-        "challenges": "Extreme power constraints requiring custom low-level PID tuning and efficient firmware.",
-        "results": "Stable hover achieved; 8-minute flight time on minimal battery capacity.",
-        "lessons": "Every gram and milliwatt matters in microscale robotics.",
-        "future": "Autonomous swarm behaviors and integrated micro-cameras.",
-        "references": "Crazyflie open-source firmware, KiCad design standards."
+        "architecture": "Mono Camera → Visual SLAM → Semantic Labeling → World Model → LLM Planner → Robot Commands.",
+        "hardware": "Android device (Single Camera + IMU) or Custom ESP32-CAM nodes.",
+        "software": "Custom SLAM backend, Semantic Segmentation Network, Cloud Sync Server, LLM Interface.",
+        "perception": "Real-time monocular SLAM fused with semantic segmentation to build object-oriented world representations.",
+        "challenges": "Drift mitigation in long-term mapping; synchronizing maps from multiple agents; real-time semantic inference on edge.",
+        "results": "Successful live mapping on single device; multi-robot collaboration/cloud sync demonstrated; LLM task planning integration.",
+        "lessons": "Hybridizing classical SLAM with semantic understanding enables far richer robot-environment interaction.",
+        "future": "Integration with live humanoid actuation for closed-loop visual navigation in the generated world.",
+        "references": "ORB-SLAM3, NeRF, LLM-based Planning research."
       }
     }
   ],
@@ -201,18 +120,13 @@
     },
     {
       "link": "#",
-      "title": "Real-Time SLAM on the Edge ↗",
-      "description": "Technical analysis of monocular perception stacks for robotics."
+      "title": "Mono-Camera SLAM & Collaborative World Models ↗",
+      "description": "Research-level approach to world generation with minimal sensors, SLAM semantic fusion, and LLM-guided planning."
     },
     {
       "link": "#",
       "title": "World Models for Robotics ↗",
-      "description": "Integrating LLMs and IK for intelligent robot behavior."
-    },
-    {
-      "link": "#",
-      "title": "Microscale Embedded Systems ↗",
-      "description": "Engineering for extreme efficiency in small-scale robotics."
+      "description": "Integrating mono-camera collaborative SLAM with LLM interfaces for intelligent robot behavior."
     }
   ]
 }

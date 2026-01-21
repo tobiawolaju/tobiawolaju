@@ -5,7 +5,7 @@
         "image": "pfp.jpg",
         "name": "Tobiloba Awolaju",
         "title": "Blockchain Infrastructure Engineer / Protocol Engineer",
-        "bio": "<p style=\"font-size: large; padding-bottom: 3rem;\">I design and build the core infrastructure that blockchains, protocols, and developers depend on.</p>",
+        "bio": "<p style=\"font-size: large; padding-bottom: 3rem;\">I design and build high-throughput, reorg-aware blockchain infrastructure used for RPC services, indexing pipelines, execution tracing, and on-chain analytics. <br><br>My work focuses on scalability, reliability, and protocol-level correctness for next-generation blockchains.</p>",
         "resumeLink": "#"
     },
     "sectionLabels": {
