@@ -1,10 +1,9 @@
 # Tobi Awolaju  
-**Systems Engineer building real-time intelligent machines and infrastructure**
+**Systems Engineer — Robotics × Distributed Systems**
 
-I design and build end-to-end systems that operate under real-world constraints — from perception and control in embodied robots to high-throughput, low-latency blockchain infrastructure.
+I build real-time systems that operate under constraint — from embodied machines to execution-layer blockchain infrastructure.
 
-My work sits at the intersection of **robotics, AI, and distributed systems**, with a focus on scalability, reliability, and asymmetric performance gains.
-
+Focus: **deterministic control, observability, and performance under load.**
 
 [![Robotics & Engineering](https://img.shields.io/badge/Robotics-Engineering-6366F1)](https://tobiawolaju.vercel.app/?target=engineering)
 [![Blockchain Infrastructure](https://img.shields.io/badge/Blockchain-Infrastructure-6366F1)](https://tobiawolaju.vercel.app/?target=web3)
@@ -12,52 +11,75 @@ My work sits at the intersection of **robotics, AI, and distributed systems**, w
 
 ---
 
-## Robotics & Embodied AI (Primary)
+## Robotics & Physical Systems
 
-Systems for perception, control, and world modeling in high-DOF, resource-constrained robots.
+### 1) Ultra-Cheap Humanoid  
+Low-cost humanoid platform exploring actuation, mechanics, and control tradeoffs.
 
-| Project | What it solves | Tech | Link |
-|-------|---------------|------|------|
-| **Full-Body Humanoid** | High-performance humanoid platform with capstan-driven joints and real-time PID/MPC control | C++, ROS2 | [Repo](https://github.com/tobiawolaju/humanoid-control) |
-| **SLAM & Perception Stack** | Monocular + IMU SLAM designed for high-DOF robots without LiDAR | C++, Python | [Repo](https://github.com/tobiawolaju/slam-perception) |
-| **World Model Engine** | Digital twin with task planning, force-aware IK, and LLM-guided reasoning | Python, ROS2 | [Repo](https://github.com/tobiawolaju/world-representation-engine) |
-| **Microscale Drone** | Control and sensor fusion for sub-50g single-motor aerial platforms | C, Firmware | [Repo](https://github.com/tobiawolaju/microscale-drone) |
+- Joint architecture experimentation  
+- Mechanical design under cost constraints  
+- Scalable actuation strategy  
+- Open hardware direction  
+
+🔗 https://github.com/tobiawolaju/Ultra-cheap-humanoid  
+
+---
+
+### 2) LogicGateAIModel  
+Visual systems experiment modeling logical computation through pure CSS.
+
+- Systems abstraction thinking  
+- State modeling without JavaScript  
+- Constraint-based computation design  
+
+🔗 https://github.com/tobiawolaju/LogicGateAIModel  
 
 ---
 
 ## Blockchain Infrastructure
 
-High-throughput, low-latency systems for on-chain analytics, execution tracing, and market intelligence.
+### 3) Monad Execution Trace Indexer  
+Reorg-aware ingestion system producing opcode-level execution traces.
 
-| Project | What it solves | Tech | Link |
-|-------|---------------|------|------|
-| **Monad Execution Trace Indexer** | Reorg-aware block ingestion producing opcode-level execution traces | TypeScript | [Repo](https://github.com/tobiawolaju/Monad-Execution-Trace-Indexer) |
-| **Prediction Market Aggregator** | Cross-market aggregation and normalization of odds, liquidity, and probabilities | TypeScript | [Repo](https://github.com/tobiawolaju/Prediction-Market-Aggregator) |
-| **OpenPoll** | Zero-knowledge voting enforcing one-person-one-vote with unlinkable ballots | Solidity | [Repo](https://github.com/tobiawolaju/OpenPoll) |
-| **Flipwire** | Automated NFT aggregation and relisting across marketplaces | Solidity | [Repo](https://github.com/tobiawolaju/Flipwire) |
-| **Monad Dashboard** | Live on-chain/off-chain observability for the Monad ecosystem | HTML | [Repo](https://github.com/tobiawolaju/Monad-Situation-Dashboard) |
+- Deterministic block ingestion  
+- Transaction trace reconstruction  
+- Parallel execution metadata extraction  
+- Infrastructure-grade observability  
 
----
-
-## Applied Systems & Experiments
-
-Explorations in fairness, automation, and system design.
-
-| Project | Focus | Tech | Link |
-|-------|------|------|------|
-| **Monad Trading Bot** | Automated execution strategies leveraging Monad APIs | JavaScript | [Repo](https://github.com/tobiawolaju/monad-trading-bot) |
-| **VRF Game Engine** | Verifiable randomness patterns for multiplayer systems | JavaScript | [Repo](https://github.com/tobiawolaju/vrf) |
-| **WorldOfNads** | Hybrid Web2/Web3 real-time competitive browser game | TypeScript | [Repo](https://github.com/tobiawolaju/WorldOfNads) |
-| **LogicGateAIModel** | Visual experiment exploring logic gates through pure CSS | CSS | [Repo](https://github.com/tobiawolaju/LogicGateAIModel) |
+🔗 https://github.com/tobiawolaju/Monad-Execution-Trace-Indexer  
 
 ---
 
-## Design (Supporting Skill)
+### 4) Prediction Market Aggregator  
+Cross-market aggregation engine for liquidity and probability normalization.
 
-Design systems used to communicate and deploy technical products.
+- Odds normalization  
+- Liquidity aggregation  
+- Signal extraction for automation systems  
+- Research-grade analytics backend  
 
-| Project | Description | Link |
-|-------|-------------|------|
-| **Mobile App Redesign** | Conversion-focused UX overhaul | Figma |
-| **Tech Startup Identity** | Brand system and visual guidelines | Guidelines |
-| **Interactive Dashboard** | Animated real-time data visualization | Demo |
+🔗 https://github.com/tobiawolaju/Prediction-Market-Aggregator  
+
+---
+
+## Selected Systems
+
+### WorldOfNads  
+Hybrid Web2/Web3 competitive game with on-chain match settlement.  
+🔗 https://github.com/tobiawolaju/WorldOfNads  
+
+### OpenPoll  
+Zero-knowledge voting enforcing one-person-one-vote with unlinkable ballots.  
+🔗 https://github.com/tobiawolaju/OpenPoll  
+
+### Monad Trading Bot  
+Automated execution strategies using gas logs and observability APIs.  
+🔗 https://github.com/tobiawolaju/monad-trading-bot  
+
+### VRF Game Engine  
+Verifiable randomness architecture for multiplayer systems.  
+🔗 https://github.com/tobiawolaju/vrf  
+
+### Monad Situation Dashboard  
+Real-time on-chain and off-chain observability layer for the Monad ecosystem.  
+🔗 https://github.com/tobiawolaju/Monad-Situation-Dashboard
