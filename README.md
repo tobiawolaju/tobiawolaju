@@ -16,7 +16,7 @@ Focus: **deterministic control, observability, and performance under load.**
 | Project | What It Focuses On | Link |
 |----------|-------------------|------|
 | **Ultra-Cheap Humanoid** | Cost-optimized humanoid platform exploring joint architecture, actuation tradeoffs, and scalable mechanical design | [Repo](https://github.com/tobiawolaju/Ultra-cheap-humanoid) |
-| A minimal end‑to‑end neural network system that learns conditional logic (OR / AND), exports to ONNX, and runs entirely in the browser using `onnxruntime-web` (WASM).| [Repo](https://github.com/tobiawolaju/LogicGateAIModel) |
+| **LogicGateAIModel** | A minimal end‑to‑end neural network system that learns conditional logic (OR / AND), exports to ONNX, and runs entirely in the browser using `onnxruntime-web` (WASM).| [Repo](https://github.com/tobiawolaju/LogicGateAIModel) |
 
 ---
 
