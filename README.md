@@ -13,73 +13,28 @@ Focus: **deterministic control, observability, and performance under load.**
 
 ## Robotics & Physical Systems
 
-### 1) Ultra-Cheap Humanoid  
-Low-cost humanoid platform exploring actuation, mechanics, and control tradeoffs.
-
-- Joint architecture experimentation  
-- Mechanical design under cost constraints  
-- Scalable actuation strategy  
-- Open hardware direction  
-
-🔗 https://github.com/tobiawolaju/Ultra-cheap-humanoid  
-
----
-
-### 2) LogicGateAIModel  
-Visual systems experiment modeling logical computation through pure CSS.
-
-- Systems abstraction thinking  
-- State modeling without JavaScript  
-- Constraint-based computation design  
-
-🔗 https://github.com/tobiawolaju/LogicGateAIModel  
+| Project | What It Focuses On | Link |
+|----------|-------------------|------|
+| **Ultra-Cheap Humanoid** | Cost-optimized humanoid platform exploring joint architecture, actuation tradeoffs, and scalable mechanical design | [Repo](https://github.com/tobiawolaju/Ultra-cheap-humanoid) |
+| **LogicGateAIModel** | Constraint-based computation experiment modeling logic systems purely in CSS without JavaScript | [Repo](https://github.com/tobiawolaju/LogicGateAIModel) |
 
 ---
 
 ## Blockchain Infrastructure
 
-### 3) Monad Execution Trace Indexer  
-Reorg-aware ingestion system producing opcode-level execution traces.
-
-- Deterministic block ingestion  
-- Transaction trace reconstruction  
-- Parallel execution metadata extraction  
-- Infrastructure-grade observability  
-
-🔗 https://github.com/tobiawolaju/Monad-Execution-Trace-Indexer  
-
----
-
-### 4) Prediction Market Aggregator  
-Cross-market aggregation engine for liquidity and probability normalization.
-
-- Odds normalization  
-- Liquidity aggregation  
-- Signal extraction for automation systems  
-- Research-grade analytics backend  
-
-🔗 https://github.com/tobiawolaju/Prediction-Market-Aggregator  
+| Project | What It Solves | Link |
+|----------|----------------|------|
+| **Monad Execution Trace Indexer** | Reorg-aware ingestion system producing opcode-level traces and execution metadata for deep observability | [Repo](https://github.com/tobiawolaju/Monad-Execution-Trace-Indexer) |
+| **Prediction Market Aggregator** | Cross-market liquidity aggregation and probability normalization engine for analytics and automation | [Repo](https://github.com/tobiawolaju/Prediction-Market-Aggregator) |
 
 ---
 
 ## Selected Systems
 
-### WorldOfNads  
-Hybrid Web2/Web3 competitive game with on-chain match settlement.  
-🔗 https://github.com/tobiawolaju/WorldOfNads  
-
-### OpenPoll  
-Zero-knowledge voting enforcing one-person-one-vote with unlinkable ballots.  
-🔗 https://github.com/tobiawolaju/OpenPoll  
-
-### Monad Trading Bot  
-Automated execution strategies using gas logs and observability APIs.  
-🔗 https://github.com/tobiawolaju/monad-trading-bot  
-
-### VRF Game Engine  
-Verifiable randomness architecture for multiplayer systems.  
-🔗 https://github.com/tobiawolaju/vrf  
-
-### Monad Situation Dashboard  
-Real-time on-chain and off-chain observability layer for the Monad ecosystem.  
-🔗 https://github.com/tobiawolaju/Monad-Situation-Dashboard
+| Project | Description | Link |
+|----------|-------------|------|
+| **WorldOfNads** | Hybrid Web2/Web3 competitive arena with on-chain match settlement and off-chain real-time gameplay | [Repo](https://github.com/tobiawolaju/WorldOfNads) |
+| **OpenPoll** | Zero-knowledge voting system enforcing one-person-one-vote with unlinkable ballots | [Repo](https://github.com/tobiawolaju/OpenPoll) |
+| **Monad Trading Bot** | Automated execution strategies using gas logs and observability APIs | [Repo](https://github.com/tobiawolaju/monad-trading-bot) |
+| **VRF Game Engine** | Verifiable randomness architecture demonstrating oracle-backed fairness patterns | [Repo](https://github.com/tobiawolaju/vrf) |
+| **Monad Situation Dashboard** | Real-time on-chain and off-chain ecosystem observability dashboard | [Repo](https://github.com/tobiawolaju/Monad-Situation-Dashboard) |
