@@ -1,19 +1,41 @@
-# Tobi Awolaju  
-**Random Aaah dev**
-Slightly creative,failed 2d,3d artist cause I lost intrest, Eee major, intrested in  robotics and applied ml, useful usecases for evms and exploying ideas via implimentation. also a big fan of PUBGm
+# Tobi Awolaju
+**Systems Engineer | Web3 & Applied ML Specialist** *EEE Major focused on Robotics, EVM Internals, and Neural Architectures.*
 
 ---
 
-## ⭐ Favourite projects
-| Project | Description | Link | Status | Users |
-|----------|-------------|------|----|----|
-| **WorldOfNads** | browser-based competitive arena game built on a hybrid web2/web3 architecture, using monad for instant, trustless match settlement while keeping real-time gameplay off-chain for performance. | [Repo](https://github.com/tobiawolaju/WorldOfNads) | Ongoing | 1 |
-| **IF-Then** |  A personal consequence simulator that turns daily decisions into visible futures. other features includes daily routing crafting, direct routing query in natural language, auto synch with google calender | [Repo](https://github.com/tobiawolaju/if-then) | Ongoing | 1 | 
-| **Citadel** | A persistent hybrid (on/off chain) civilization for ai agents | [Repo](https://github.com/tobiawolaju/citadel) | Ongoing | 0 |
+### 🛠️ Technical Profile
+| Category | Stack |
+|:---|:---|
+| **Core Systems** | Monad, EVM Indexing, Hybrid Web2/Web3 Architectures |
+| **Artificial Intelligence** | Applied ML, ONNX Runtime, Browser-based Inference |
+| **Design & Robotics** | 3D Visualization Systems, Robotics, Control Systems |
 
 ---
-## Experiments 
-| Project | What It Solves | Link |
-|----------|----------------|------|
-| **Monad Execution Trace Indexer** | Reorg-aware ingestion system producing opcode-level traces and execution metadata for deep observability | [Repo](https://github.com/tobiawolaju/Monad-Execution-Trace-Indexer) |
-| **LogicGateAIModel** |A minimal end‑to‑end neural network system that learns conditional logic (OR / AND), exports to ONNX, and runs entirely in the browser using onnxruntime-web. | [Repo](https://github.com/tobiawolaju/LogicGateAIModel) |
+
+## ⭐ Featured Engineering Projects
+| Project | Technical Innovation | Stack | Status |
+|:---|:---|:---|:---|
+| **[WorldOfNads](https://github.com/tobiawolaju/WorldOfNads)** | High-concurrency arena game using Monad for trustless settlement with off-chain real-time synchronization. | Monad, WebSockets | Active |
+| **[IF-Then](https://github.com/tobiawolaju/if-then)** | Decision-consequence simulator featuring natural language routing queries and Google Calendar synchronization. | ML, API Integrations | Ongoing |
+| **[Citadel](https://github.com/tobiawolaju/citadel)** | A persistent, hybrid environment for autonomous AI agents operating across on-chain and off-chain layers. | AI Agents, EVM | Research |
+
+---
+
+## 🔬 Systems & ML Experiments
+| Project | Problem Solved | Core Technology |
+|:---|:---|:---|
+| **[Monad Execution Indexer](https://github.com/tobiawolaju/Monad-Execution-Trace-Indexer)** | Reorg-aware ingestion for opcode-level traces; provides deep observability for high-throughput chains. | Rust / EVM Tracing |
+| **[LogicGateAIModel](https://github.com/tobiawolaju/LogicGateAIModel)** | Browser-native neural network for conditional logic, optimized for zero-server inference via ONNX. | ONNX, Web-Inference |
+
+---
+
+### 📈 Current Focus
+* **Infrastructure:** Building reorg-resistant indexing for high-performance L1s (Monad).
+* **Applied ML:** Porting neural models to edge environments and browser-based inference.
+* **Collaboration:** Seeking high-stakes engineering roles in the Monad or AI agent ecosystems.
+
+---
+
+### 📬 Contact & Interests
+* **Interests:** Robotics, EVM utility, and Competitive Gaming (PUBGm).
+* **Availability:** Open for immediate hire / Technical bounties.
