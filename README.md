@@ -36,6 +36,4 @@ I build high-performance decentralized systems, focusing on EVM observability, h
 I am currently deep-diving into **Monad's parallel execution environment** and building tools to improve developer observability on high-throughput networks.
 
 ---
-
-### 📬 Connect with Me
 * **Available for:** Senior Engineering roles, Protocol Security Audits, and Ecosystem Tooling.
