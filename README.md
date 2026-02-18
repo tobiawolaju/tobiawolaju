@@ -1,6 +1,6 @@
 # Tobi Awolaju  
 **Random Aaah dev**
-Slightly creative,failed 2d,3d artist cause I lost intrest, Eee major, intrested in  robotics and applied ml, useful usecases for evms and exploying ideas via implimentation. also a big fan of pubgm
+Slightly creative,failed 2d,3d artist cause I lost intrest, Eee major, intrested in  robotics and applied ml, useful usecases for evms and exploying ideas via implimentation. also a big fan of PUBGm
 
 ---
 
