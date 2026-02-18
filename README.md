@@ -7,7 +7,7 @@ Slightly creative,failed 2d,3d artist cause I lost intrest, Eee major, intrested
 ## ⭐ Favourite projects
 | Project | Description | Link |
 |----------|-------------|------|
-| **WorldOfNads** | Hybrid Web2/Web3 competitive arena with on-chain match settlement and off-chain real-time gameplay | [Repo](https://github.com/tobiawolaju/WorldOfNads) |
+| **WorldOfNads** | browser-based competitive arena game built on a hybrid web2/web3 architecture, using monad for instant, trustless match settlement while keeping real-time gameplay off-chain for performance. | [Repo](https://github.com/tobiawolaju/WorldOfNads) |
 | **IF-Then** | Verifiable randomness architecture demonstrating oracle-backed fairness patterns | [Repo](https://github.com/tobiawolaju/vrf) |
 | **Citidel** | Real-time on-chain and off-chain ecosystem observability dashboard | [Repo](https://github.com/tobiawolaju/Monad-Situation-Dashboard) |
 
