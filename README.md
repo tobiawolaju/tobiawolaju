@@ -1,10 +1,10 @@
 # Tobi Awolaju  
-**Random Aaah dev. **
+**Random Aaah dev**
 Slightly creative,failed 2d,3d artist cause I lost intrest, Eee major, intrested in  robotics and applied ml, useful usecases for evms and exploying ideas via implimentation. also a big fan of pubgm
 
 ---
 
-## ⭐ Side projects 
+## ⭐ Favourite projects
 | Project | Description | Link |
 |----------|-------------|------|
 | **WorldOfNads** | Hybrid Web2/Web3 competitive arena with on-chain match settlement and off-chain real-time gameplay | [Repo](https://github.com/tobiawolaju/WorldOfNads) |
