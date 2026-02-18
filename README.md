@@ -1,13 +1,6 @@
 # Tobi Awolaju  
-**Systems Engineer — Robotics × Distributed Systems**
-
-I build real-time systems that operate under constraint — from embodied machines to execution-layer blockchain infrastructure.
-
-Focus: **deterministic control, observability, and performance under load.**
-
-[![LinkedIN](https://img.shields.io/badge/Robotics-Engineering-6366F1)](https://linkedin.com/tobiawolaju)
-[![Blockchain Infrastructure](https://img.shields.io/badge/Blockchain-Infrastructure-6366F1)](https://tobiawolaju.vercel.app/?target=web3)
-[![Research & Experiments](https://img.shields.io/badge/Research-Experiments-6366F1)](https://tobiawolaju.vercel.app/?target=ai-researcher)
+**Random Aaah dev. **
+Slightly creative,failed 2d,3d artist cause I lost intrest, Eee major, intrested in  robotics and applied ml, useful usecases for evms and exploying ideas via implimentation. also a big fan of pubgm
 
 ---
 
