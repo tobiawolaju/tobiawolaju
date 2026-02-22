@@ -1,7 +1,5 @@
 # Tobi Awolaju
-### Systems Engineer | Web3 Infrastructure & Applied ML
-
-I build high-performance decentralized systems, focusing on EVM observability, high-concurrency environments, and browser-native AI inference. My work bridges the gap between low-level execution traces and real-time user experiences.
+### Electrical & Electronics Engineer | Systems & Intelligent Infrastructure 🏛️
 
 ---
 
