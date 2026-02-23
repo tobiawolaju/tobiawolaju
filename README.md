@@ -1,5 +1,5 @@
 # Tobi Awolaju
-### Electrical & Electronics Engineer | Systems & Intelligent Infrastructure
+### Electrical & Electronics Engineer | Systems & Intelligent Infrastructure 🏛️
 
 ---
 ## Projects
