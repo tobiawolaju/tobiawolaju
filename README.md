@@ -9,7 +9,3 @@
 | **[WorldOfNads](https://github.com/tobiawolaju/WorldOfNads)** | High-concurrency arena engine utilizing Monad for trustless settlement with real-time off-chain sync. | Monad, WebSockets, Node.js | **Active** |
 | **[IF-Then](https://github.com/tobiawolaju/if-then)** | Decision-consequence simulator with natural language routing and Google Calendar sync. | TypeScript, ML, API Integrations | **Ongoing** |
 ---
-
-## About Me
-**dev
----
