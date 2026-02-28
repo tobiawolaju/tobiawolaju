@@ -5,7 +5,7 @@
 ## Projects
 | Project | Technical Innovation | Tech Stack | Status |
 |:--- |:--- |:--- |:---|
-| **[Dominus Quant (DQuant)](https://github.com/tobiawolaju/Dominus-Quant)** | Narrative-driven, AI-assisted crypto trading platform with optional automated spot execution and distributed signal aggregation. Demonstrates full-stack Web3 infrastructure, real-time analytics, and behavioral AI. | Next.js 16, Tailwind, Zustand, Solana/Monad Web3.js, AI Layer, Edge/Distributed Nodes | **Active / Live Prototype** |
+| **[Dominus Quant (DQuant)](https://github.com/tobiawolaju/DominusQuant)** | Narrative-driven, AI-assisted crypto trading platform with optional automated spot execution and distributed signal aggregation. Demonstrates full-stack Web3 infrastructure, real-time analytics, and behavioral AI. | Next.js 16, Tailwind, Zustand, Solana/Monad Web3.js, AI Layer, Edge/Distributed Nodes | **Active / Live Prototype** |
 | **[WorldOfNads](https://github.com/tobiawolaju/WorldOfNads)** | High-concurrency arena engine utilizing Monad for trustless settlement with real-time off-chain sync. | Monad, WebSockets, Node.js | **Active** |
 | **[Monad Execution Indexer](https://github.com/tobiawolaju/Monad-Execution-Trace-Indexer)** | Reorg-aware ingestion of opcode-level traces providing deep observability for high-throughput chains. | Rust, EVM Tracing, Postgres | **Ongoing** |
 | **[Citadel](https://github.com/tobiawolaju/citadel)** | Persistent, hybrid environment for autonomous AI agents operating across on-chain and off-chain layers. Researching agentic EVM interactions. | TypeScript, ML, API Integrations | **Ongoing** |
