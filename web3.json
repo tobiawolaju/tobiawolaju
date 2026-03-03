@@ -1,120 +1,84 @@
 {
-    "pageTitle": "Tobi's Portfolio - Blockchain Infrastructure Engineer",
+    "pageTitle": "Tobi's Portfolio - Web3 & Blockchain Systems Engineer",
     "theme": "web3",
     "profile": {
         "image": "pfp.jpg",
         "name": "Tobiloba Awolaju",
-        "title": "Blockchain Infrastructure Engineer / Protocol Engineer",
-        "bio": "<p style=\"font-size: large; padding-bottom: 3rem;\">I design and build high-throughput, reorg-aware blockchain infrastructure used for RPC services, indexing pipelines, execution tracing, and on-chain analytics. <br><br>My work focuses on scalability, reliability, and protocol-level correctness for next-generation blockchains.</p>",
+        "title": "Web3 Full-Stack & Systems Engineer",
+        "bio": "<p style=\"font-size: large; padding-bottom: 3rem;\">I build high-performance Web3 infrastructure, hybrid on-chain/off-chain systems, and analytics pipelines. <br><br>My work focuses on scalable, production-ready systems for blockchain indexing, trading infrastructure, and dApp engineering, enabling teams to ship fast and safely.</p>",
         "resumeLink": "https://docs.google.com/document/d/1PnD1JnPN4_dunRGlKE8qNg5aQrP1O-R3XqFPdMXQ3PE/edit?usp=sharing"
     },
     "sectionLabels": {
         "docs": "Audits & Research",
         "activity": "Git",
-        "projectsDescription": "High-throughput, low-latency systems for on-chain analytics, execution tracing, and market intelligence."
+        "projectsDescription": "High-throughput systems for blockchain indexing, execution tracing, Web3 games, and AI-assisted trading."
     },
     "filters": [
-        {
-            "id": "all",
-            "label": "All"
-        },
-        {
-            "id": "infrastructure",
-            "label": "Infrastructure"
-        },
-        {
-            "id": "analytics",
-            "label": "Analytics"
-        },
-        {
-            "id": "voting",
-            "label": "ZK-Voting"
-        },
-        {
-            "id": "nft",
-            "label": "NFTs"
-        }
+        { "id": "all", "label": "All" },
+        { "id": "infrastructure", "label": "Infrastructure" },
+        { "id": "analytics", "label": "Analytics" },
+        { "id": "gaming", "label": "Web3 Games" },
+        { "id": "trading", "label": "Trading Infrastructure" }
     ],
     "projects": [
         {
             "category": "infrastructure",
             "image": "grey.jpg",
-            "title": "RPC micro-provider for Monad ↗",
-            "description": "High-performance RPC gateway featuring load balancing, caching, rate limits, and reorg awareness.",
+            "title": "MonadTraceEngine ↗",
+            "description": "Multi-node blockchain indexing engine with reorg detection, rate-limit resilience, and real-time execution trace streaming for on-chain analytics.",
+            "tech": "JavaScript, Node.js",
             "links": [
-                {
-                    "text": "[GitHub Repo]",
-                    "url": "#"
-                },
-                {
-                    "text": "[Docs]",
-                    "url": "#"
-                }
+                { "text": "[GitHub Repo]", "url": "https://github.com/tobiawolaju/MonadTraceEngine" }
+            ]
+        },
+        {
+            "category": "trading",
+            "image": "grey.jpg",
+            "title": "DominusQuant ↗",
+            "description": "AI-assisted crypto trading infrastructure with distributed signal aggregation and optional automated execution for high-frequency strategies.",
+            "tech": "TypeScript, Node.js",
+            "links": [
+                { "text": "[GitHub Repo]", "url": "https://github.com/tobiawolaju/DominusQuant" }
+            ]
+        },
+        {
+            "category": "gaming",
+            "image": "grey.jpg",
+            "title": "WorldOfNads ↗",
+            "description": "Browser-based competitive arena game using hybrid Web2/Web3 architecture with instant on-chain settlement and real-time off-chain gameplay.",
+            "tech": "TypeScript, Node.js",
+            "links": [
+                { "text": "[GitHub Repo]", "url": "https://github.com/tobiawolaju/WorldOfNads" }
             ]
         },
         {
             "category": "infrastructure",
             "image": "grey.jpg",
-            "title": "Monad Execution Trace Indexer ↗",
-            "description": "Reorg-aware block ingestion producing opcode-level execution traces.",
+            "title": "Citadel ↗",
+            "description": "Persistent hybrid civilization for AI agents, featuring synchronized on/off-chain state, modular agent logic, and scalable backend infrastructure.",
             "tech": "TypeScript",
             "links": [
-                {
-                    "text": "[GitHub Repo]",
-                    "url": "#"
-                }
+                { "text": "[GitHub Repo]", "url": "https://github.com/tobiawolaju/citadel" }
             ]
         },
         {
             "category": "analytics",
             "image": "grey.jpg",
-            "title": "Prediction Market Aggregator ↗",
-            "description": "Cross-market aggregation and normalization of odds, liquidity, and probabilities.",
+            "title": "Superyap ↗",
+            "description": "Decentralized, anonymous, peer-to-peer encrypted chat app with in-chat transaction support, designed for Web3 social interactions and financial messaging.",
             "tech": "TypeScript",
             "links": [
-                {
-                    "text": "[GitHub Repo]",
-                    "url": "#"
-                }
+                { "text": "[GitHub Repo]", "url": "https://github.com/tobiawolaju/Superyap" }
             ]
         },
         {
-            "category": "voting",
+            "category": "analytics",
             "image": "grey.jpg",
-            "title": "OpenPoll ↗",
-            "description": "Zero-knowledge voting enforcing one-person-one-vote with unlinkable ballots.",
-            "tech": "Solidity",
+            "title": "if-then ↗",
+            "description": "Personal consequence simulator designed to stop procrastination by modeling decisions and outcomes, showcasing real-time logic computation in TypeScript.",
+            "tech": "TypeScript",
             "links": [
-                {
-                    "text": "[GitHub Repo]",
-                    "url": "#"
-                }
-            ]
-        },
-        {
-            "category": "nft",
-            "image": "grey.jpg",
-            "title": "Flipwire ↗",
-            "description": "Automated NFT aggregation and relisting across marketplaces.",
-            "tech": "Solidity",
-            "links": [
-                {
-                    "text": "[GitHub Repo]",
-                    "url": "#"
-                }
-            ]
-        },
-        {
-            "category": "infrastructure",
-            "image": "grey.jpg",
-            "title": "Monad Dashboard ↗",
-            "description": "Live on-chain/off-chain observability for the Monad ecosystem.",
-            "tech": "HTML",
-            "links": [
-                {
-                    "text": "[GitHub Repo]",
-                    "url": "#"
-                }
+                { "text": "[GitHub Repo]", "url": "https://github.com/tobiawolaju/if-then" }
             ]
         }
     ],
