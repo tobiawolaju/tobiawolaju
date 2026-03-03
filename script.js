@@ -28,16 +28,12 @@ function renderPortfolio(data) {
     if (data.profile) {
         const profileContainer = document.getElementById("profile-pic-container");
         profileContainer.innerHTML = `
-            <img src="${data.profile.image}" alt="${data.profile.imageAlt || 'Profile'}"
-                style="width: 60px; height: 60px; border-radius: 25%; vertical-align: middle; margin-right: 10px;">
+            <img class="profile-image" src="${data.profile.image}" alt="${data.profile.imageAlt || 'Profile'}">
             ${data.profile.tooltip ? `
-            <span id="tooltip" style="visibility: hidden; opacity: 0; transition: opacity 0.3s;
-                background-color: rgb(69, 69, 69); color: #ffffff; text-align: center; border-radius: 5px;
-                padding: 3px 6px; position: absolute; bottom: 70%; left: 130%; transform: translateX(-50%);
-                font-size: 12px; white-space: nowrap;">
+            <span id="tooltip" class="profile-tooltip">
                 ${data.profile.tooltip}
             </span>
-            <style> #profile-pic-container:hover #tooltip { visibility: visible; opacity: 1; } </style>
+            
             ` : ''}
         `;
 
