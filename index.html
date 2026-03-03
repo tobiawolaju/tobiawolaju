@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,55 +11,116 @@
 
 <body>
 
-  <!-- Bio Section -->
-  <section id="bio-section" class="glass-section">
-    <div class="bio-container">
-      <div id="profile-pic-container"></div>
-      <h3 id="profile-name"></h3>
-      <p id="profile-title"></p>
+
+  <section id="bio-section" style="display: block; text-align: center; padding-top: 75px">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <p style="font-size: x-large; margin: 0; font-weight: bold;">
+      <div style="position: relative; display: inline-block;">
+
+        <div id="profile-pic-container" style="position: relative; display: inline-block;">
+          <!-- Image injected by JS -->
+        </div>
+
+        </p>
+        <h3 id="profile-name"></h3>
+        <p id="profile-title" style="font-size: medium; color: gray; margin: 5px 0;">
+        </p>
+
+      </div>
+
     </div>
   </section>
 
-  <!-- About Me -->
-  <section id="about-me" class="glass-section visible">
-    <h2 class="toggle">About<a class="arrow">↗</a></h2>
-    <div class="hidden" id="about-content"></div>
+
+  <section id="about-me" class="visible">
+    <h2 class="toggle">About<a style="opacity: 0.4;">↗</a></h2>
+    <div class="hidden" id="about-content">
+      <!-- Content injected by JS -->
+    </div>
+    <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
   </section>
 
-  <!-- Projects -->
-  <section id="projects-section" class="glass-section visible">
-    <h2 class="toggle">Projects<a class="arrow">↗</a></h2>
+
+  <section id="projects-section" class="visible">
+    <h2 class="toggle">Projects<a style="opacity: 0.4;">↗</a></h2>
     <div class="hidden">
-      <div class="filters" id="project-filters"></div>
-      <div class="pjet" id="projects-list"></div>
+
+      <div id="projects-header-description" style="display: none;"></div>
+
+      <div class="filters" id="project-filters">
+        <!-- Filters injected by JS -->
+      </div>
+
+
+      <div class="pjet" id="projects-list">
+        <!-- Projects injected by JS -->
+      </div>
+
     </div>
+
+    <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
   </section>
 
-  <!-- Docs -->
-  <section id="docs-section" class="glass-section visible">
-    <h2 class="toggle">Docs<a class="arrow">↗</a></h2>
+  <section id="docs-section" class="visible">
+    <h2 class="toggle" id="docs-header">Docs<a style="opacity: 0.4;">↗</a></h2>
     <div class="hidden">
-      <ul id="docs-list"></ul>
+      <ul id="docs-list">
+        <!-- Docs injected by JS -->
+      </ul>
     </div>
+    <hr style="border: none; border-top: 1px solid #00000050; margin: 0px;">
   </section>
 
-  <!-- GitHub Activity -->
-  <section id="activity-section" class="glass-section">
-    <h2 class="toggle">Git<a class="arrow">↗</a></h2>
-    <div class="activity-container">
-      <a href="https://github.com/tobiawolaju" target="_blank">
-        <img src="https://ghchart.rshah.org/tobiawolaju" alt="GitHub Contributions Chart">
+
+
+
+
+
+
+  <section id="activity-section">
+
+    <h2 class="toggle" id="activity-header">Git
+      <a style="opacity: Contributions;">↗</a>
+    </h2>
+
+
+
+    <div style="display: flex; justify-content: center;">
+      <a href="https://github.com/tobiawolaju" target="_blank" rel="noopener noreferrer">
+        <img style="max-width: 100%;" src="https://ghchart.rshah.org/tobiawolaju" alt="GitHub Contributions Chart">
       </a>
     </div>
+
   </section>
 
-  <!-- Footer -->
-  <footer class="glass-footer">
-    <a href="mailto:tobiawolaju21@gmail.com"><img src="https://img.icons8.com/ios-filled/24/ffffff/gmail.png" alt="Gmail" />Gmail</a>
-    <a href="https://www.linkedin.com/in/tobiawolaju" target="_blank"><img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn" />LinkedIn</a>
-    <a href="https://x.com/tobiawolaju?s=09" target="_blank"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitterx.png" alt="X" />X</a>
-    <a href="https://github.com/tobiawolaju" target="_blank"><img src="https://img.icons8.com/ios-filled/24/ffffff/github.png" alt="GitHub" />GitHub</a>
+  <div style="height: 200px;"></div>
+
+
+
+  <footer
+    style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 999; background-color: rgba(83, 83, 83, 0.5); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); height: 60px; display: flex; align-items: center; justify-content: center; font-size: large; color: white; gap: 20px; flex-wrap: wrap;">
+    <a href="mailto:tobiawolaju21@gmail.com"
+      style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/gmail.png" alt="Gmail" width="20" height="20" />
+      Gmail
+    </a>
+    <a href="https://www.linkedin.com/in/tobiawolaju" target="_blank" rel="noopener noreferrer"
+      style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn" width="20" height="20" />
+      LinkedIn
+    </a>
+    <a href="https://x.com/tobiawolaju?s=09" target="_blank" rel="noopener noreferrer"
+      style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/twitterx.png" alt="X" width="20" height="20" />
+      X
+    </a>
+    <a href="https://github.com/tobiawolaju" target="_blank" rel="noopener noreferrer"
+      style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/github.png" alt="GitHub" width="20" height="20" />
+      GitHub
+    </a>
   </footer>
 
 </body>
+
 </html>
