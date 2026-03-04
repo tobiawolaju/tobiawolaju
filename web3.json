@@ -5,14 +5,8 @@
     "image": "pfp.jpg",
     "name": "Tobiloba Awolaju",
     "title": "Web3 Systems Engineer | Blockchain Infrastructure",
-    "bio": "<p style=\"font-size: large; padding-bottom: 3rem;\">I design and build distributed Web3 systems including multi-node blockchain indexers, reorg-aware ingestion pipelines, and hybrid on-chain/off-chain architectures.<br><br>My focus is reliability engineering, explicit concurrency control, and production-style backend infrastructure for crypto-native teams.</p>",
+    "bio": "<p style=\"font-size: large; padding-bottom: 3rem;\">I design and build distributed Web3 systems including multi-node blockchain indexers, reorg-aware ingestion pipelines, and hybrid on-chain/off-chain architectures.<br><br>I am a final-year Electrical & Electronic Engineering student at Adeleke University (Expected 2026), with academic focus in Digital Communications, Signals & Systems, Control Systems, and Embedded Systems. My engineering foundation informs my approach to reliability, concurrency control, and scalable backend architecture for crypto-native teams.</p>",
     "resumeLink": "https://docs.google.com/document/d/1PnD1JnPN4_dunRGlKE8qNg5aQrP1O-R3XqFPdMXQ3PE/edit?usp=sharing"
-  },
-  "education": {
-    "degree": "B.Eng. Electrical & Electronic Engineering",
-    "institution": "Adeleke University",
-    "graduation": "Expected 2026",
-    "focus": "Digital Communications, Signals & Systems, Control Systems, Embedded Systems"
   },
   "sectionLabels": {
     "docs": "Research & Technical Writing",
@@ -63,7 +57,7 @@
   "docs": [
     {
       "link": "#",
-      "title": "Optimizing Gas Costs in Solidity 😜 ↗",
+      "title": "Optimizing Gas Costs in Solidity ↗",
       "description": "Deep dive into EVM storage layout, SLOAD/SSTORE cost mechanics, and gas optimization strategies."
     },
     {
