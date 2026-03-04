@@ -33,7 +33,7 @@
     },
     {
       "category": "gaming",
-      "image": "2.gif",
+      "image": "GIF_20260304_012045_148.gif",
       "title": "WorldOfNads ↗",
       "description": "Hybrid Web2/Web3 multiplayer arena game with 20-player real-time synchronization (20Hz server tick) and trustless on-chain match settlement.",
       "tech": "TypeScript, Node.js, WebSockets, Godot (WASM), EVM Integration",
