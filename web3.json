@@ -63,7 +63,7 @@
   "docs": [
     {
       "link": "#",
-      "title": "Optimizing Gas Costs in Solidity ↗",
+      "title": "Optimizing Gas Costs in Solidity 😜 ↗",
       "description": "Deep dive into EVM storage layout, SLOAD/SSTORE cost mechanics, and gas optimization strategies."
     },
     {
