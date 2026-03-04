@@ -1,97 +1,75 @@
 {
-    "pageTitle": "Tobi's Portfolio - Web3 & Blockchain Systems Engineer",
-    "theme": "web3",
-    "profile": {
-        "image": "pfp.jpg",
-        "name": "Tobiloba Awolaju",
-        "title": "Web3 Full-Stack & Systems Engineer",
-        "bio": "<p style=\"font-size: large; padding-bottom: 3rem;\">I build high-performance Web3 infrastructure, hybrid on-chain/off-chain systems, and analytics pipelines. <br><br>My work focuses on scalable, production-ready systems for blockchain indexing, trading infrastructure, and dApp engineering, enabling teams to ship fast and safely.</p>",
-        "resumeLink": "https://docs.google.com/document/d/1PnD1JnPN4_dunRGlKE8qNg5aQrP1O-R3XqFPdMXQ3PE/edit?usp=sharing"
+  "pageTitle": "Tobi Awolaju | Web3 Systems Engineer",
+  "theme": "web3",
+  "profile": {
+    "image": "pfp.jpg",
+    "name": "Tobiloba Awolaju",
+    "title": "Web3 Systems Engineer | Blockchain Infrastructure",
+    "bio": "<p style=\"font-size: large; padding-bottom: 3rem;\">I design and build distributed Web3 systems including multi-node blockchain indexers, reorg-aware ingestion pipelines, and hybrid on-chain/off-chain architectures.<br><br>My focus is reliability engineering, explicit concurrency control, and production-style backend infrastructure for crypto-native teams.</p>",
+    "resumeLink": "https://docs.google.com/document/d/1PnD1JnPN4_dunRGlKE8qNg5aQrP1O-R3XqFPdMXQ3PE/edit?usp=sharing"
+  },
+  "education": {
+    "degree": "B.Eng. Electrical & Electronic Engineering",
+    "institution": "Adeleke University",
+    "graduation": "Expected 2026",
+    "focus": "Digital Communications, Signals & Systems, Control Systems, Embedded Systems"
+  },
+  "sectionLabels": {
+    "docs": "Research & Technical Writing",
+    "activity": "Git Activity",
+    "projectsDescription": "Production-style blockchain infrastructure, distributed ingestion pipelines, and hybrid Web3 systems."
+  },
+  "filters": [
+    { "id": "all", "label": "All" },
+    { "id": "infrastructure", "label": "Infrastructure" },
+    { "id": "gaming", "label": "Web3 Games" },
+    { "id": "trading", "label": "Trading Infrastructure" }
+  ],
+  "projects": [
+    {
+      "category": "infrastructure",
+      "image": "grey.jpg",
+      "title": "MonadTraceEngine ↗",
+      "description": "3-node EVM RPC ingestion engine with consensus comparison, reorg detection, token-bucket rate limiting (40 req/sec/node), rollback handling, and real-time execution trace streaming via WebSockets.",
+      "tech": "Node.js, WebSockets, EVM RPC, Firebase RTDB",
+      "links": [
+        { "text": "[Live Demo]", "url": "https://monadtraceengine.vercel.app" },
+        { "text": "[GitHub Repo]", "url": "https://github.com/tobiawolaju/MonadTraceEngine" }
+      ]
     },
-    "sectionLabels": {
-        "docs": "Audits & Research",
-        "activity": "Git",
-        "projectsDescription": "High-throughput systems for blockchain indexing, execution tracing, Web3 games, and AI-assisted trading."
+    {
+      "category": "gaming",
+      "image": "grey.jpg",
+      "title": "WorldOfNads ↗",
+      "description": "Hybrid Web2/Web3 multiplayer arena game with 20-player real-time synchronization (20Hz server tick) and trustless on-chain match settlement.",
+      "tech": "TypeScript, Node.js, WebSockets, Godot (WASM), EVM Integration",
+      "links": [
+        { "text": "[Live Build]", "url": "https://worldofnads.xyz" },
+        { "text": "[GitHub Repo]", "url": "https://github.com/tobiawolaju/WorldOfNads" }
+      ]
     },
-    "filters": [
-        { "id": "all", "label": "All" },
-        { "id": "infrastructure", "label": "Infrastructure" },
-        { "id": "analytics", "label": "Analytics" },
-        { "id": "gaming", "label": "Web3 Games" },
-        { "id": "trading", "label": "Trading Infrastructure" }
-    ],
-    "projects": [
-        {
-            "category": "infrastructure",
-            "image": "grey.jpg",
-            "title": "MonadTraceEngine ↗",
-            "description": "Multi-node blockchain indexing engine with reorg detection, rate-limit resilience, and real-time execution trace streaming for on-chain analytics.",
-            "tech": "JavaScript, Node.js",
-            "links": [
-                { "text": "[GitHub Repo]", "url": "https://github.com/tobiawolaju/MonadTraceEngine" }
-            ]
-        },
-        {
-            "category": "trading",
-            "image": "grey.jpg",
-            "title": "DominusQuant ↗",
-            "description": "AI-assisted crypto trading infrastructure with distributed signal aggregation and optional automated execution for high-frequency strategies.",
-            "tech": "TypeScript, Node.js",
-            "links": [
-                { "text": "[GitHub Repo]", "url": "https://github.com/tobiawolaju/DominusQuant" }
-            ]
-        },
-        {
-            "category": "gaming",
-            "image": "grey.jpg",
-            "title": "WorldOfNads ↗",
-            "description": "Browser-based competitive arena game using hybrid Web2/Web3 architecture with instant on-chain settlement and real-time off-chain gameplay.",
-            "tech": "TypeScript, Node.js",
-            "links": [
-                { "text": "[GitHub Repo]", "url": "https://github.com/tobiawolaju/WorldOfNads" }
-            ]
-        },
-        {
-            "category": "infrastructure",
-            "image": "grey.jpg",
-            "title": "Citadel ↗",
-            "description": "Persistent hybrid civilization for AI agents, featuring synchronized on/off-chain state, modular agent logic, and scalable backend infrastructure.",
-            "tech": "TypeScript",
-            "links": [
-                { "text": "[GitHub Repo]", "url": "https://github.com/tobiawolaju/citadel" }
-            ]
-        },
-        {
-            "category": "analytics",
-            "image": "grey.jpg",
-            "title": "Superyap ↗",
-            "description": "Decentralized, anonymous, peer-to-peer encrypted chat app with in-chat transaction support, designed for Web3 social interactions and financial messaging.",
-            "tech": "TypeScript",
-            "links": [
-                { "text": "[GitHub Repo]", "url": "https://github.com/tobiawolaju/Superyap" }
-            ]
-        },
-        {
-            "category": "analytics",
-            "image": "grey.jpg",
-            "title": "if-then ↗",
-            "description": "Personal consequence simulator designed to stop procrastination by modeling decisions and outcomes, showcasing real-time logic computation in TypeScript.",
-            "tech": "TypeScript",
-            "links": [
-                { "text": "[GitHub Repo]", "url": "https://github.com/tobiawolaju/if-then" }
-            ]
-        }
-    ],
-    "docs": [
-        {
-            "link": "#",
-            "title": "Optimizing Gas Costs in Solidity ↗",
-            "description": "Deep dive into EVM storage layout and gas optimization techniques."
-        },
-        {
-            "link": "#",
-            "title": "ZK-Rollups vs Optimistic Rollups ↗",
-            "description": "Comparative analysis of scaling solutions for Ethereum."
-        }
-    ]
+    {
+      "category": "trading",
+      "image": "grey.jpg",
+      "title": "DominusQuant ↗",
+      "description": "AI-assisted crypto trading infrastructure with modular signal aggregation, behavioral analytics, and optional automated execution architecture with risk guardrails.",
+      "tech": "TypeScript, Next.js, Node.js, Solana Web3.js",
+      "links": [
+        { "text": "[Live Demo]", "url": "https://dquant.vercel.app" },
+        { "text": "[GitHub Repo]", "url": "https://github.com/tobiawolaju/DominusQuant" }
+      ]
+    }
+  ],
+  "docs": [
+    {
+      "link": "#",
+      "title": "Optimizing Gas Costs in Solidity ↗",
+      "description": "Deep dive into EVM storage layout, SLOAD/SSTORE cost mechanics, and gas optimization strategies."
+    },
+    {
+      "link": "#",
+      "title": "ZK-Rollups vs Optimistic Rollups ↗",
+      "description": "Comparative analysis of Ethereum scaling models, trade-offs, and security assumptions."
+    }
+  ]
 }
