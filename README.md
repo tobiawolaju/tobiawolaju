@@ -5,15 +5,6 @@ I build high-concurrency infrastructure and autonomous systems. I view code as a
 
 ---
 
-## 🛠 The Stack (Polyglot by Necessity)
-- **Low-Level/Performance:** Rust, Zig, C++
-- **Infrastructure/Backend:** Node.js, Go, TypeScript, Makefile
-- **Smart Contracts:** Solidity (EVM internals enthusiast)
-- **AI/ML:** Autonomous agents, Neural Jacobian Fields, Computer Vision
-- **Frontend/Art:** Svelte, Godot, iOS-style Liquid Glass UI/UX
-
----
-
 ## 🏗 High-Throughput Engineering
 I specialize in building systems that handle massive data flows and real-time state synchronization.
 
@@ -30,13 +21,6 @@ I specialize in building systems that handle massive data flows and real-time st
 
 ---
 
-## 🎨 Aesthetics
-I believe in **Neo-Brutalist** and **Liquid Glass** UI. Engineering is incomplete without a premium user experience. If it doesn't look like art, it's not finished.
-
----
-
-## 📈 Activity & Stats
-![Tobi's GitHub stats](https://github-readme-stats.vercel.app/api?username=tobiawolaju&show_icons=true&theme=transparent)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=tobiawolaju&layout=compact&theme=transparent)
 
-[ 𝕏 / Twitter ](https://x.com/tobiawolaju) | [ LinkedIn ](https://linkedin.com/in/tobiawolaju) | [ Portfolio ](https://tobiawolaju.vercel.app)
+[ 𝕏 / Twitter ](https://x.com/tobiawolaju) | [ LinkedIn ](https://linkedin.com/in/tobiawolaju) 
