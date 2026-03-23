@@ -1,8 +1,6 @@
 // Wait until the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", async function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    const target = urlParams.get("target") || "engineering"; // Default to engineering
-    const jsonFile = `${target}.json`;
+    const jsonFile = "engineering.json";
 
     try {
         const response = await fetch(jsonFile);

@@ -1,11 +1,11 @@
 {
-  "pageTitle": "Tobiloba Awolaju - Robotics Engineering Portfolio",
+  "pageTitle": "Tobiloba Awolaju - Full-Stack Developer Portfolio",
   "theme": "engineering",
   "profile": {
     "image": "pfp.jpg",
     "name": "Tobiloba Awolaju",
-    "title": "Robotics Research Engineer | Perception, Control & Learning Systems",
-    "bio": "<p style=\"font-size: large; padding-bottom: 3rem;\">Systems-level robotics engineer focused on perception, control, and learning for high-DOF robots. <br><br>I design and build end-to-end robotic systems—mechanics, control, sensing, and embedded AI—optimized for real-time performance and modularity. <br><br>Currently architecting a full-scale humanoid robot with AI-based state estimation and task execution. <br><br>I aim to develop intelligent, low-cost robotic systems that bridge research and practical applications.</p>",
+    "title": "Web3 Developer (Game + AI) | TypeScript + Solidity + Godot + AI Agents",
+    "bio": "<p style='font-size: large; padding-bottom: 1rem;'>Remote full-stack roles. I ship complete products — art, modeling, smart contracts, deployment.</p><p style='font-size: large; padding-bottom: 3rem;'>Full-stack Web3 Developer specializing in games, AI agents, and blockchain infrastructure.<br><br>Built and deployed a live Web3 game (World of Nads) with 20-player real-time multiplayer. Created AI agents that operate computers like humans (Noogler). Smart contract experience with Monad/EVM, on-chain settlement and prize payouts.<br><br>Complete product dev — did all art, modeling, and smart contracts solo. B.Eng Electrical & Electronics Engineering (Graduating Q2 2027).</p><h3>Beyond Code</h3><ul style='list-style-type: none; padding-left: 0; padding-bottom: 3rem;'><li style='margin-bottom: 0.5rem;'><b>🎨 Digital Art:</b> Creating artwork in my free time — all the art in World of Nads is mine.</li><li style='margin-bottom: 0.5rem;'><b>🧪 Experimental Projects:</b> Always exploring ideas. Building things just to see if they work.</li><li style='margin-bottom: 0.5rem;'><b>📚 Research & Learning:</b> Reading papers on robotics, ML, and weird tech — recently dove deep into \"seeing through walls via wifi\" research.</li><li style='margin-bottom: 0.5rem;'><b>🤖 Robotics & ML:</b> EEE background means I enjoy digging into robotics and machine learning papers.</li></ul>",
     "resumeLink": "https://docs.google.com/document/d/1PnD1JnPN4_dunRGlKE8qNg5aQrP1O-R3XqFPdMXQ3PE/edit?usp=sharing"
   },
   "sectionLabels": {
@@ -13,120 +13,99 @@
     "activity": "Git"
   },
   "filters": [
-    {
-      "id": "all",
-      "label": "All"
-    },
-    {
-      "id": "control",
-      "label": "Control & Actuation"
-    },
-    {
-      "id": "perception",
-      "label": "Perception & World Modeling"
-    },
-    {
-      "id": "embedded",
-      "label": "Embedded Systems"
-    }
+    { "id": "all", "label": "All" },
+    { "id": "games", "label": "Games & Interactive" },
+    { "id": "ai", "label": "AI & Agents" },
+    { "id": "blockchain", "label": "Blockchain" }
   ],
   "projects": [
     {
-      "category": "control",
+      "category": "games",
       "image": "grey.jpg",
-      "title": "Full-Body Humanoid (Control + Actuation) ↗",
-      "description": "Low-cost, high-performance humanoid actuation featuring capstan-driven gimbal joints and hierarchical PID/MPC control.",
+      "title": "World of Nads ↗",
+      "description": "Browser-based competitive arena game with hybrid web2/web3 architecture on Monad. 20-player King of the Hill matches with on-chain prize payouts.",
       "links": [
-        {
-          "text": "[3D Files]",
-          "url": "#"
-        },
-        {
-          "text": "[GitHub Repo]",
-          "url": "#"
-        },
-        {
-          "text": "[Demo Video]",
-          "url": "#"
-        },
-        {
-          "text": "[Docs]",
-          "url": "#"
-        }
+        { "text": "[Live Site]", "url": "https://worldofnads.xyz" },
+        { "text": "[GitHub]", "url": "https://github.com/tobiawolaju" }
       ],
       "writeup": {
-        "motivation": "Designed a low-cost, high-DOF humanoid sleeve to test capstan-driven actuation and gimbal-jointed mechanics for scalable humanoid control.",
+        "motivation": "Built a complete Web3 game from scratch — all art, modeling, smart contracts, and deployment solo.",
         "objectives": [
-          "Enable 6 DOF per limb with smooth motion",
-          "Maintain stability under ±10° perturbations",
-          "Run on <50 W power budget",
-          "Demonstrate integration with ROS2 planning stack"
+          "Create 20-player real-time multiplayer browser game",
+          "Integrate blockchain for on-chain prize payouts",
+          "Seamless Web3 onboarding with embedded wallets"
         ],
-        "architecture": "Hierarchical structure: ROS2 Gait Planner → PID Controller → Joint Encoders & Capstan Drives.",
-        "hardware": "Capstan-driven gimbal joints for zero-backlash motion. Fusion 360 designed mechanics, optimized for weight/torque ratio.",
-        "software": "Real-time PID control on firmware, integrated with MPC for gait stabilization in ROS2.",
-        "perception": "Absolute magnetic encoders for state estimation; IMU integration for balance feedback.",
-        "challenges": "Motor backlash compensated with high-tension capstan feedforward; custom PID tuning for low-cost actuators.",
-        "results": "Measured <0.1° repeatability; successful 20-minute stability tests under perturbation.",
-        "lessons": "Trade-off between mechanical complexity and control reliability; capstan drives provide superior stiffness.",
-        "future": "Full-body bipedal locomotion integration and structural battery reinforcement.",
-        "references": "Open-source ROS2 Control, EtherCAT protocols."
+        "architecture": "Godot → WASM + React/Vite frontend, Node.js WebSocket server @20Hz, Firebase RTDB + PostgreSQL, Monad smart contracts.",
+        "hardware": "Cloud infrastructure (Vercel, Render)",
+        "software": "Godot Engine, TypeScript, React, Node.js, Solidity, Monad, Firebase, PostgreSQL",
+        "perception": "Real-time state sync with 20Hz WebSocket server, Privy embedded wallets for user authentication",
+        "challenges": "Real-time multiplayer sync, blockchain integration, creating all art solo",
+        "results": "Live game with real users, on-chain prize distribution working",
+        "lessons": "Full-stack product development from concept to deployment",
+        "future": "More game modes, expanded blockchain features",
+        "references": "Monad, EVM, Godot WASM"
       }
     },
     {
-      "category": "perception",
+      "category": "ai",
       "image": "grey.jpg",
-      "title": "Mono-Camera World Generator / Collaborative Digital Twin ↗",
-      "description": "Real-time, low-cost world generator that builds continuous 3D semantic maps from a single camera, optionally augmented with IMU/GPS, enabling multi-robot collaboration and high-level reasoning through LLM-guided task planning.",
+      "title": "Noogler - Embodied AI Agent ↗",
+      "description": "Closed-loop embodied AI agent that operates computers like a human — sees screen, controls mouse/keyboard, autonomously completes tasks.",
       "links": [
-        {
-          "text": "[Docs]",
-          "url": "#"
-        },
-        {
-          "text": "[APK Demo]",
-          "url": "#"
-        },
-        {
-          "text": "[Engineering Log / GitHub]",
-          "url": "#"
-        }
+        { "text": "[GitHub]", "url": "https://github.com/tobiawolaju/Noogler" }
       ],
       "writeup": {
-        "motivation": "Bridging the gap between low-cost sensors and high-level intelligence by creating a robust, shared digital twin from mono-camera data.",
+        "motivation": "Build an AI agent that can operate computers like a human — seeing screens, navigating interfaces, completing complex tasks autonomously.",
         "objectives": [
-          "Generate continuous 3D semantic maps from single camera input",
-          "Enable multi-robot collaboration and cloud map synchronization",
-          "Provide a sparse, semantic 3D map for LLM-guided task planning",
-          "Extensible for planning & digital twin applications"
+          "Screen capture and computer control",
+          "Integrate Gemini 2.0 Live API for reasoning",
+          "Persistent memory across sessions"
         ],
-        "architecture": "Mono Camera → Visual SLAM → Semantic Labeling → World Model → LLM Planner → Robot Commands.",
-        "hardware": "Android device (Single Camera + IMU) or Custom ESP32-CAM nodes.",
-        "software": "Custom SLAM backend, Semantic Segmentation Network, Cloud Sync Server, LLM Interface.",
-        "perception": "Real-time monocular SLAM fused with semantic segmentation to build object-oriented world representations.",
-        "challenges": "Drift mitigation in long-term mapping; synchronizing maps from multiple agents; real-time semantic inference on edge.",
-        "results": "Successful live mapping on single device; multi-robot collaboration/cloud sync demonstrated; LLM task planning integration.",
-        "lessons": "Hybridizing classical SLAM with semantic understanding enables far richer robot-environment interaction.",
-        "future": "Integration with live humanoid actuation for closed-loop visual navigation in the generated world.",
-        "references": "ORB-SLAM3, NeRF, LLM-based Planning research."
+        "architecture": "Cloud backend (Node.js) + Gemini 2.0 API, Svelte frontend, Rust local agent for Windows automation.",
+        "hardware": "Local Windows machine with screen capture capabilities",
+        "software": "Svelte, Node.js, Rust, Google Gemini 2.0, Firebase",
+        "perception": "Screen capture, computer vision for UI element detection",
+        "challenges": "Real-time screen capture, reliable input simulation, handling diverse applications",
+        "results": "Can open software, navigate interfaces, fix errors autonomously. Works in browsers, IDEs, Excel, games.",
+        "lessons": "Integration of LLMs with real-world computer control",
+        "future": "More robust automation, broader application support",
+        "references": "Gemini Live API, Windows Automation API"
       }
+    },
+    {
+      "category": "blockchain",
+      "image": "grey.jpg",
+      "title": "MoyakiTraceEngine ↗",
+      "description": "Production blockchain indexing engine with reorg detection, rate-limit resilience, and real-time execution trace streaming.",
+      "links": [
+        { "text": "[GitHub]", "url": "https://github.com/tobiawolaju/MoyakiTraceEngine" }
+      ]
+    },
+    {
+      "category": "ai",
+      "image": "grey.jpg",
+      "title": "DominusQuant ↗",
+      "description": "AI-assisted crypto trading infrastructure with distributed signal aggregation and optional automated execution.",
+      "links": [
+        { "text": "[GitHub]", "url": "https://github.com/tobiawolaju" }
+      ]
     }
   ],
   "docs": [
     {
-      "link": "#",
-      "title": "Capstan-Driven Humanoid Control ↗",
-      "description": "Deep dive into the mechanics and control of high-DOF humanoid joints."
+      "link": "https://worldofnads.xyz",
+      "title": "World of Nads - Web3 Multiplayer Game ↗",
+      "description": "Complete breakdown of building a real-time Web3 game with Godot, React, and Monad smart contracts."
     },
     {
-      "link": "#",
-      "title": "Mono-Camera SLAM & Collaborative World Models ↗",
-      "description": "Research-level approach to real-time 3D world generation using minimal sensors, semantic fusion, and multi-robot collaborative mapping."
+      "link": "https://github.com/tobiawolaju/Noogler",
+      "title": "Noogler - Embodied AI Agent ↗",
+      "description": "How to build an AI agent that operates computers using Gemini Live API and Rust automation."
     },
     {
-      "link": "#",
-      "title": "Action Implementation & Replication via Visual Input and Natural Language ↗",
-      "description": "Demonstrates how generated world models, motion planning algorithms, and LLM-guided reasoning can be combined to enable robots to interpret natural language commands, plan paths, and replicate tasks in a continuously updated 3D environment."
+      "link": "https://github.com/tobiawolaju/MoyakiTraceEngine",
+      "title": "MoyakiTraceEngine - Blockchain Indexing ↗",
+      "description": "Production blockchain indexing engine with reorg detection and real-time trace streaming."
     }
   ]
 }
