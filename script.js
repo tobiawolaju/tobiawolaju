@@ -1,5 +1,13 @@
 // Wait until the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", async function () {
+    // Splash screen timeout
+    setTimeout(() => {
+        const splash = document.getElementById("splash-screen");
+        if (splash) {
+            splash.classList.add("splash-hidden");
+        }
+    }, 2500);
+
     const jsonFile = "engineering.json";
 
     try {

@@ -1,3 +1,36 @@
+/* Splash Screen Styles */
+#splash-screen {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  transition: opacity 0.5s ease-out, visibility 0.5s;
+}
+
+#splash-screen h1 {
+  font-size: 4rem;
+  letter-spacing: 2px;
+}
+
+#splash-screen.splash-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  #splash-screen {
+    background-color: #121212;
+    color: #fff;
+  }
+}
+
 /* Default styles (light mode) */
 body {
   margin: 0;
