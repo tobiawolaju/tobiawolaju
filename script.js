@@ -124,32 +124,32 @@ function renderPortfolio(data) {
                     </div>
 
                     ${project.writeup ? `
-                    <button class="writeup-toggle">Engineering Log ▾</button>
+                    <button class="writeup-toggle">Project Breakdown ▾</button>
                     <div class="technical-writeup" style="border-left: 2px solid #ccc; padding-left: 1rem;">
                         <div class="writeup-section">
-                            <strong>1. Motivation:</strong>
-                            <p>${project.writeup.motivation}</p>
+                            <strong>1. Overview:</strong>
+                            <p>${project.writeup.overview}</p>
                         </div>
                         <div class="writeup-section">
-                            <strong>2. Objectives:</strong>
-                            <ul>${project.writeup.objectives.map(obj => `<li>${obj}</li>`).join("")}</ul>
+                            <strong>2. Core Features:</strong>
+                            <ul>${project.writeup.features.map(feat => `<li>${feat}</li>`).join("")}</ul>
                         </div>
                         <div class="writeup-section">
                             <strong>3. Architecture:</strong>
                             <p>${project.writeup.architecture}</p>
                         </div>
                         <div class="writeup-section">
-                            <strong>4. Hardware:</strong>
-                            <p>${project.writeup.hardware}</p>
+                            <strong>4. Tech Stack:</strong>
+                            <p>${project.writeup.techStack}</p>
                         </div>
                         <div class="writeup-section">
-                            <strong>5. Software:</strong>
-                            <p>${project.writeup.software}</p>
+                            <strong>5. Infrastructure:</strong>
+                            <p>${project.writeup.infrastructure}</p>
                         </div>
-                        ${project.writeup.perception ? `
+                        ${project.writeup.web3 ? `
                         <div class="writeup-section">
-                            <strong>6. Perception:</strong>
-                            <p>${project.writeup.perception}</p>
+                            <strong>6. Web3 & Smart Contracts:</strong>
+                            <p>${project.writeup.web3}</p>
                         </div>
                         ` : ''}
                         <div class="writeup-section">
@@ -157,20 +157,12 @@ function renderPortfolio(data) {
                             <p>${project.writeup.challenges}</p>
                         </div>
                         <div class="writeup-section">
-                            <strong>8. Results:</strong>
-                            <p>${project.writeup.results}</p>
+                            <strong>8. Outcomes:</strong>
+                            <p>${project.writeup.outcomes}</p>
                         </div>
                         <div class="writeup-section">
-                            <strong>9. Lessons:</strong>
-                            <p>${project.writeup.lessons}</p>
-                        </div>
-                        <div class="writeup-section">
-                            <strong>10. Future:</strong>
+                            <strong>9. Future Scope:</strong>
                             <p>${project.writeup.future}</p>
-                        </div>
-                        <div class="writeup-section">
-                            <strong>11. References:</strong>
-                            <p>${project.writeup.references}</p>
                         </div>
                     </div>
                     ` : ''}
@@ -229,13 +221,13 @@ function initInteractions() {
         });
     });
 
-    // --- Engineering Log Toggles ---
+    // --- Project Breakdown Toggles ---
     document.addEventListener("click", (e) => {
         if (e.target.classList.contains("writeup-toggle")) {
             const toggle = e.target;
             const content = toggle.nextElementSibling;
             const isExpanded = content.classList.toggle("expanded");
-            toggle.textContent = isExpanded ? "Engineering Log ▴" : "Engineering Log ▾";
+            toggle.textContent = isExpanded ? "Project Breakdown ▴" : "Project Breakdown ▾";
         }
     });
 

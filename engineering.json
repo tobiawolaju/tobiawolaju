@@ -29,21 +29,19 @@
         { "text": "[GitHub]", "url": "https://github.com/tobiawolaju" }
       ],
       "writeup": {
-        "motivation": "Built a complete Web3 game from scratch — all art, modeling, smart contracts, and deployment solo.",
-        "objectives": [
+        "overview": "Built a complete Web3 game from scratch — all art, modeling, smart contracts, and deployment solo.",
+        "features": [
           "Create 20-player real-time multiplayer browser game",
           "Integrate blockchain for on-chain prize payouts",
           "Seamless Web3 onboarding with embedded wallets"
         ],
         "architecture": "Godot → WASM + React/Vite frontend, Node.js WebSocket server @20Hz, Firebase RTDB + PostgreSQL, Monad smart contracts.",
-        "hardware": "Cloud infrastructure (Vercel, Render)",
-        "software": "Godot Engine, TypeScript, React, Node.js, Solidity, Monad, Firebase, PostgreSQL",
-        "perception": "Real-time state sync with 20Hz WebSocket server, Privy embedded wallets for user authentication",
+        "infrastructure": "Cloud infrastructure (Vercel, Render)",
+        "techStack": "Godot Engine, TypeScript, React, Node.js, Solidity, Monad, Firebase, PostgreSQL",
+        "web3": "Real-time state sync with 20Hz WebSocket server, Privy embedded wallets for user authentication. EVM & Monad integration.",
         "challenges": "Real-time multiplayer sync, blockchain integration, creating all art solo",
-        "results": "Live game with real users, on-chain prize distribution working",
-        "lessons": "Full-stack product development from concept to deployment",
-        "future": "More game modes, expanded blockchain features",
-        "references": "Monad, EVM, Godot WASM"
+        "outcomes": "Live game with real users, on-chain prize distribution working. Built full-stack product from concept to deployment.",
+        "future": "More game modes, expanded blockchain features"
       }
     },
     {
@@ -55,21 +53,18 @@
         { "text": "[GitHub]", "url": "https://github.com/tobiawolaju/Noogler" }
       ],
       "writeup": {
-        "motivation": "Build an AI agent that can operate computers like a human — seeing screens, navigating interfaces, completing complex tasks autonomously.",
-        "objectives": [
+        "overview": "Build an AI agent that can operate computers like a human — seeing screens, navigating interfaces, completing complex tasks autonomously.",
+        "features": [
           "Screen capture and computer control",
           "Integrate Gemini 2.0 Live API for reasoning",
           "Persistent memory across sessions"
         ],
         "architecture": "Cloud backend (Node.js) + Gemini 2.0 API, Svelte frontend, Rust local agent for Windows automation.",
-        "hardware": "Local Windows machine with screen capture capabilities",
-        "software": "Svelte, Node.js, Rust, Google Gemini 2.0, Firebase",
-        "perception": "Screen capture, computer vision for UI element detection",
+        "infrastructure": "Local Windows machine with screen capture capabilities",
+        "techStack": "Svelte, Node.js, Rust, Google Gemini 2.0, Firebase",
         "challenges": "Real-time screen capture, reliable input simulation, handling diverse applications",
-        "results": "Can open software, navigate interfaces, fix errors autonomously. Works in browsers, IDEs, Excel, games.",
-        "lessons": "Integration of LLMs with real-world computer control",
-        "future": "More robust automation, broader application support",
-        "references": "Gemini Live API, Windows Automation API"
+        "outcomes": "Can open software, navigate interfaces, fix errors autonomously. Works in browsers, IDEs, Excel, games. Great integration of LLMs with real-world computer control.",
+        "future": "More robust automation, broader application support. Advanced Gemini Live & Windows Automation API integrations."
       }
     },
     {
