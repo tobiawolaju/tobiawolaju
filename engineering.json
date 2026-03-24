@@ -1,10 +1,10 @@
 {
-  "pageTitle": "Tobiloba Awolaju - Full-Stack Developer Portfolio",
+  "pageTitle": "Tobiloba “Tobi (Barron)” Awolaju - Full-Stack Developer Portfolio",
   "theme": "engineering",
   "profile": {
     "image": "pfp.jpg",
-    "name": "Tobiloba Awolaju",
-    "title": "Web3 Developer (Game + AI) | TypeScript + Solidity + Godot + AI Agents",
+    "name": "Tobiloba “Tobi (Barron)” Awolaju",
+    "title": "Web3 Developer (Games + AI) | TypeScript + Solidity + Godot + AI Agents",
     "bio": "<p style='font-size: large; padding-bottom: 1.5rem;'>I am a Full-Stack Web3 Developer who ships complete products end-to-end—from 3D modeling and digital art to smart contracts and deployment.</p><p style='font-size: large; padding-bottom: 1.5rem;'>I specialize in blockchain infrastructure, EVM/Monad smart contracts, and AI agents. Currently, I am the solo builder behind World of Nads, a live 20-player real-time Web3 multiplayer game. I successfully built and shipped the MVP entirely from scratch, handling all game architecture, on-chain prize payouts, and visual assets.</p><p style='font-size: large; padding-bottom: 3rem;'><b>My Current Objective:</b><br>I am a Systems-focused Product Engineer looking to contribute to high-performance Web3 infrastructure or Agentic AI teams. I bring a relentless builder mentality and a proven track record of shipping end-to-end production code, from EVM indexing engines to real-time multiplayer games.</p>",
     "resumeLink": "https://docs.google.com/document/d/1PnD1JnPN4_dunRGlKE8qNg5aQrP1O-R3XqFPdMXQ3PE/edit?usp=sharing"
   },
