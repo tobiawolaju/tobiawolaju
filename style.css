@@ -14,11 +14,21 @@
   transition: opacity 0.5s ease-out, visibility 0.5s;
 }
 
+.splash-content {
+  text-align: center;
+  padding: 0 1rem;
+}
+
 .splash-text {
-  font-size: 6rem;
+  font-size: clamp(2.5rem, 8vw, 6rem);
   font-weight: 900;
-  display: flex;
-  gap: 0.1rem;
+  margin: 0;
+}
+
+.splash-subtitle {
+  margin-top: 0.8rem;
+  font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+  opacity: 0.8;
 }
 
 .splash-text span {
