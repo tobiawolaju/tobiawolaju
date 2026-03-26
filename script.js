@@ -111,9 +111,14 @@ function renderPortfolio(data) {
     // 4. Projects
     const projectsList = document.getElementById("projects-list");
     if (data.projects) {
-        projectsList.innerHTML = data.projects.map(project => `
+        projectsList.innerHTML = data.projects.map(project => {
+            const gifSequence = Array.isArray(project.gifSequence) && project.gifSequence.length
+                ? ` data-gif-sequence="${project.gifSequence.join(",")}"`
+                : "";
+
+            return `
             <div class="project" data-category="${project.category}">
-                <img src="${project.image}" alt="${project.title}">
+                <img src="${project.image}" alt="${project.title}"${gifSequence}>
                 <div class="project-info">
                     <a href="#"><strong>${project.title}</strong></a>
                     <p class="mission">${project.description}</p>
@@ -176,7 +181,10 @@ function renderPortfolio(data) {
                     ` : ''}
                 </div>
             </div>
-        `).join("");
+        `;
+        }).join("");
+
+        initProjectGifLoops();
     }
 
     // 5. Docs
@@ -203,6 +211,27 @@ function renderPortfolio(data) {
     if (data.sectionLabels && data.sectionLabels.activity) {
         document.getElementById("activity-header").innerHTML = `${data.sectionLabels.activity} <a style=" opacity: 0.4;">Contributions</a>`;
     }
+}
+
+function initProjectGifLoops() {
+    const gifImages = document.querySelectorAll(".project img[data-gif-sequence]");
+
+    gifImages.forEach((image) => {
+        const frames = image.dataset.gifSequence
+            .split(",")
+            .map(frame => frame.trim())
+            .filter(Boolean);
+
+        if (frames.length < 2) return;
+
+        let frameIndex = 0;
+        const frameDurationMs = 1500;
+
+        setInterval(() => {
+            frameIndex = (frameIndex + 1) % frames.length;
+            image.src = frames[frameIndex];
+        }, frameDurationMs);
+    });
 }
 
 function initInteractions() {
