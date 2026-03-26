@@ -20,11 +20,11 @@
 }
 
 .splash-content {
-  color: #1e66ff;
+  color: #111;
 }
 
 .splash-text {
-  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-size: clamp(1.875rem, 6vw, 4.5rem);
   font-weight: 900;
   margin: 0;
   display: flex;
@@ -74,6 +74,10 @@
 @media (prefers-color-scheme: dark) {
   #splash-screen {
     background-color: #121212;
+    color: #fff;
+  }
+
+  .splash-content {
     color: #fff;
   }
 }
