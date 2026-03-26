@@ -5,7 +5,7 @@
     "image": "pfp.jpg",
     "name": "Tobi Awolaju",
     "title": "Systems Engineer (Real-time + Web3 Infrastructure)",
-    "bio": "<p style='font-size: large; padding-bottom: 1.5rem;'><b>\"I build production-grade systems end-to-end \u2014 from real-time engines to blockchain infrastructure and AI agents.\"</b></p><p style='font-size: large; padding-bottom: 1.5rem;'>I am a systems-focused engineer who ships complete products end-to-end\u2014from 3D modeling and digital art to smart contracts, backend infrastructure, and deployment.</p><p style='font-size: large; padding-bottom: 1.5rem;'><b>Hire Me For:</b><br>\u2022 Real-time systems (WebSockets, multiplayer) \u2014 <a href='https://github.com/tobiawolaju' target='_blank' rel='noopener noreferrer'>GitHub proof</a><br>\u2022 Blockchain infrastructure (indexing, smart contracts) \u2014 <a href='https://github.com/tobiawolaju/MoyakiTraceEngine' target='_blank' rel='noopener noreferrer'>MoyakiTraceEngine</a><br>\u2022 AI agents (automation + LLM integration) \u2014 <a href='https://github.com/tobiawolaju/Noogler' target='_blank' rel='noopener noreferrer'>Noogler</a></p><p style='font-size: large; padding-bottom: 3rem;'><b>Current Objective:</b><br>I am looking to contribute to high-performance Web3 infrastructure or agentic AI teams, bringing a relentless builder mentality and a proven track record of shipping production systems.</p>",
+    "bio": "<p style='font-size: large; padding-bottom: 1.5rem;'><b>\"I build production-grade systems end-to-end — from real-time engines to blockchain infrastructure and AI agents.\"</b></p><p style='font-size: large; padding-bottom: 1.5rem;'>I am a systems-focused engineer who ships complete products end-to-end—from 3D modeling and digital art to smart contracts, backend infrastructure, and deployment.</p><p style='font-size: large; padding-bottom: 1.5rem;'><b>Hire Me For:</b><br>• Real-time systems (WebSockets, multiplayer) — <a href='https://github.com/tobiawolaju' target='_blank' rel='noopener noreferrer'>GitHub proof</a><br>• Blockchain infrastructure (indexing, smart contracts) — <a href='https://github.com/tobiawolaju/MoyakiTraceEngine' target='_blank' rel='noopener noreferrer'>MoyakiTraceEngine</a><br>• AI agents (automation + LLM integration) — <a href='https://github.com/tobiawolaju/Noogler' target='_blank' rel='noopener noreferrer'>Noogler</a></p><p style='font-size: large; padding-bottom: 3rem;'><b>Current Objective:</b><br>I am looking to contribute to high-performance Web3 infrastructure or agentic AI teams, bringing a relentless builder mentality and a proven track record of shipping production systems.</p>",
     "resumeLink": "https://docs.google.com/document/d/1PnD1JnPN4_dunRGlKE8qNg5aQrP1O-R3XqFPdMXQ3PE/edit?usp=sharing"
   },
   "sectionLabels": {
@@ -34,7 +34,7 @@
     {
       "category": "games",
       "image": "grey.jpg",
-      "title": "World of Nads \u2197",
+      "title": "World of Nads ↗",
       "description": "Browser-based competitive arena game with hybrid web2/web3 architecture on Monad. 20-player King of the Hill matches with on-chain prize payouts.",
       "links": [
         {
@@ -47,13 +47,13 @@
         }
       ],
       "writeup": {
-        "overview": "Built a complete Web3 game from scratch \u2014 all art, modeling, smart contracts, and deployment solo.",
+        "overview": "Built a complete Web3 game from scratch — all art, modeling, smart contracts, and deployment solo.",
         "features": [
           "Create 20-player real-time multiplayer browser game",
           "Integrate blockchain for on-chain prize payouts",
           "Seamless Web3 onboarding with embedded wallets"
         ],
-        "architecture": "Godot \u2192 WASM + React/Vite frontend, Node.js WebSocket server @20Hz, Firebase RTDB + PostgreSQL, Monad smart contracts.",
+        "architecture": "Godot → WASM + React/Vite frontend, Node.js WebSocket server @20Hz, Firebase RTDB + PostgreSQL, Monad smart contracts.",
         "infrastructure": "Cloud infrastructure (Vercel, Render)",
         "techStack": "Godot Engine, TypeScript, React, Node.js, Solidity, Monad, Firebase, PostgreSQL",
         "web3": "Real-time state sync with 20Hz WebSocket server, Privy embedded wallets for user authentication. EVM & Monad integration.",
@@ -65,8 +65,8 @@
     {
       "category": "ai",
       "image": "grey.jpg",
-      "title": "Noogler - Embodied AI Agent \u2197",
-      "description": "Closed-loop embodied AI agent that operates computers like a human \u2014 sees screen, controls mouse/keyboard, autonomously completes tasks.",
+      "title": "Noogler - Embodied AI Agent ↗",
+      "description": "Closed-loop embodied AI agent that operates computers like a human — sees screen, controls mouse/keyboard, autonomously completes tasks.",
       "links": [
         {
           "text": "[GitHub]",
@@ -74,7 +74,7 @@
         }
       ],
       "writeup": {
-        "overview": "Build an AI agent that can operate computers like a human \u2014 seeing screens, navigating interfaces, completing complex tasks autonomously.",
+        "overview": "Build an AI agent that can operate computers like a human — seeing screens, navigating interfaces, completing complex tasks autonomously.",
         "features": [
           "Screen capture and computer control",
           "Integrate Gemini 2.0 Live API for reasoning",
@@ -91,7 +91,7 @@
     {
       "category": "blockchain",
       "image": "grey.jpg",
-      "title": "MoyakiTraceEngine \u2197",
+      "title": "MoyakiTraceEngine ↗",
       "description": "Production blockchain indexing engine with reorg detection, rate-limit resilience, and real-time execution trace streaming.",
       "links": [
         {
@@ -103,7 +103,7 @@
     {
       "category": "ai",
       "image": "grey.jpg",
-      "title": "DominusQuant \u2197",
+      "title": "DominusQuant ↗",
       "description": "AI-assisted crypto trading infrastructure with distributed signal aggregation and optional automated execution.",
       "links": [
         {
@@ -115,23 +115,23 @@
   ],
   "docs": [
     {
-      "link": "https://worldofnads.xyz",
-      "title": "How I Built a 20-Player Real-Time Multiplayer Game at 20Hz (With WebSockets) \u2197",
+      "link": "https://tobiawolaju21.substack.com/p/how-i-built-a-20-player-real-time?r=2hkadt",
+      "title": "How I Built a 20-Player Real-Time Multiplayer Game at 20Hz (With WebSockets) ↗",
       "description": "Engineering deep-dive into architecture, sync strategy, and backend decisions behind a 20-player real-time game server."
     },
     {
-      "link": "https://github.com/tobiawolaju/MoyakiTraceEngine",
-      "title": "Inside a Production Blockchain Indexer: Handling Reorgs and Real-Time Data \u2197",
+      "link": "https://tobiawolaju21.substack.com/p/inside-a-production-blockchain-indexer?r=2hkadt",
+      "title": "Inside a Production Blockchain Indexer: Handling Reorgs and Real-Time Data ↗",
       "description": "Breakdown of reorg handling, resilience strategies, and real-time data pipelines in a production blockchain indexer."
     },
     {
-      "link": "https://github.com/tobiawolaju/Noogler",
-      "title": "Building an AI That Uses Your Computer Like a Human (Architecture + Lessons) \u2197",
+      "link": "https://tobiawolaju21.substack.com/p/building-an-ai-that-uses-your-computer?r=2hkadt",
+      "title": "Building an AI That Uses Your Computer Like a Human (Architecture + Lessons) ↗",
       "description": "Architecture notes and lessons from building an embodied AI agent that can see screens and control mouse/keyboard."
     },
     {
-      "link": "https://github.com/tobiawolaju",
-      "title": "What It Takes to Ship a Full Web3 Product Solo (From Smart Contracts to Frontend) \u2197",
+      "link": "https://tobiawolaju21.substack.com/p/what-it-takes-to-ship-a-full-web3?r=2hkadt",
+      "title": "What It Takes to Ship a Full Web3 Product Solo (From Smart Contracts to Frontend) ↗",
       "description": "End-to-end playbook for designing, building, and launching a complete solo Web3 product stack."
     }
   ]
