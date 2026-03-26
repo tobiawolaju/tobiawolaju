@@ -225,13 +225,119 @@ function initProjectGifLoops() {
         if (frames.length < 2) return;
 
         let frameIndex = 0;
-        const frameDurationMs = 1500;
+        image.src = frames[frameIndex];
 
-        setInterval(() => {
-            frameIndex = (frameIndex + 1) % frames.length;
-            image.src = frames[frameIndex];
-        }, frameDurationMs);
+        const playNextGif = async () => {
+            const activeGif = frames[frameIndex];
+            const durationMs = await getGifDurationMs(activeGif);
+
+            setTimeout(() => {
+                frameIndex = (frameIndex + 1) % frames.length;
+                image.src = frames[frameIndex];
+                playNextGif();
+            }, durationMs);
+        };
+
+        playNextGif();
     });
+}
+
+const gifDurationCache = new Map();
+const GIF_DURATION_FALLBACK_MS = 2000;
+
+async function getGifDurationMs(gifUrl) {
+    if (gifDurationCache.has(gifUrl)) {
+        return gifDurationCache.get(gifUrl);
+    }
+
+    try {
+        const response = await fetch(gifUrl);
+        if (!response.ok) {
+            throw new Error(`Could not load GIF: ${gifUrl}`);
+        }
+
+        const buffer = await response.arrayBuffer();
+        const durationMs = parseGifDurationMs(buffer);
+        gifDurationCache.set(gifUrl, durationMs);
+        return durationMs;
+    } catch (error) {
+        console.warn(`Falling back to default GIF duration for ${gifUrl}`, error);
+        gifDurationCache.set(gifUrl, GIF_DURATION_FALLBACK_MS);
+        return GIF_DURATION_FALLBACK_MS;
+    }
+}
+
+function parseGifDurationMs(arrayBuffer) {
+    const bytes = new Uint8Array(arrayBuffer);
+    let pointer = 0;
+    let totalMs = 0;
+
+    // Skip GIF Header + Logical Screen Descriptor
+    pointer += 13;
+
+    // Global Color Table
+    const packedFields = bytes[10];
+    const hasGlobalColorTable = (packedFields & 0x80) !== 0;
+    if (hasGlobalColorTable) {
+        const gctSize = 3 * (2 ** ((packedFields & 0x07) + 1));
+        pointer += gctSize;
+    }
+
+    while (pointer < bytes.length) {
+        const blockId = bytes[pointer];
+
+        // Graphic Control Extension
+        if (blockId === 0x21 && bytes[pointer + 1] === 0xF9) {
+            const delayCs = bytes[pointer + 4] | (bytes[pointer + 5] << 8);
+            // GIF delay is in centiseconds; clamp tiny values to 10ms-equivalent browser behavior.
+            const frameDelayMs = Math.max(delayCs, 1) * 10;
+            totalMs += frameDelayMs;
+            pointer += 8; // 21 F9 04 [packed] [delay lo] [delay hi] [trans index] 00
+            continue;
+        }
+
+        // Extension block (other than GCE)
+        if (blockId === 0x21) {
+            pointer += 2; // Skip introducer + label
+            while (pointer < bytes.length) {
+                const size = bytes[pointer];
+                pointer += 1;
+                if (size === 0) break;
+                pointer += size;
+            }
+            continue;
+        }
+
+        // Image Descriptor
+        if (blockId === 0x2C) {
+            pointer += 10; // Descriptor block
+            const localPacked = bytes[pointer - 1];
+            const hasLocalColorTable = (localPacked & 0x80) !== 0;
+            if (hasLocalColorTable) {
+                const lctSize = 3 * (2 ** ((localPacked & 0x07) + 1));
+                pointer += lctSize;
+            }
+
+            pointer += 1; // LZW minimum code size
+            while (pointer < bytes.length) {
+                const size = bytes[pointer];
+                pointer += 1;
+                if (size === 0) break;
+                pointer += size;
+            }
+            continue;
+        }
+
+        // GIF Trailer
+        if (blockId === 0x3B) {
+            break;
+        }
+
+        // Unknown block; stop parsing to avoid infinite loops
+        break;
+    }
+
+    return totalMs > 0 ? totalMs : GIF_DURATION_FALLBACK_MS;
 }
 
 function initInteractions() {
