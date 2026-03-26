@@ -19,6 +19,10 @@
   padding: 0 1rem;
 }
 
+.splash-content {
+  color: #1e66ff;
+}
+
 .splash-text {
   font-size: clamp(2.5rem, 8vw, 6rem);
   font-weight: 900;
