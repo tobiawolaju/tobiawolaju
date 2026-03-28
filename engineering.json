@@ -1,33 +1,33 @@
 {
-  "pageTitle": "Tobi Awolaju - Full-Stack Developer Portfolio",
-  "theme": "engineering",
+  "pageTitle": "Tobi Awolaju | Builder & Systems Engineer",
+  "theme": "curiosity-driven",
   "profile": {
     "image": "pfp.jpg",
     "name": "Tobi Awolaju",
     "title": "Systems Engineer (Real-time + Web3 Infrastructure)",
-    "bio": "<p style='font-size: large; padding-bottom: 1.5rem;'><b>\"I build production-grade systems end-to-end \u2014 from real-time engines to blockchain infrastructure and AI agents.\"</b></p><p style='font-size: large; padding-bottom: 1.5rem;'>I am a systems-focused engineer who ships complete products end-to-end\u2014from 3D modeling and digital art to smart contracts, backend infrastructure, and deployment.</p><p style='font-size: large; padding-bottom: 1.5rem;'><b>Hire Me For:</b><br>\u2022 Real-time systems (WebSockets, multiplayer) \u2014 <a href='https://github.com/tobiawolaju' target='_blank' rel='noopener noreferrer'>GitHub proof</a><br>\u2022 Blockchain infrastructure (indexing, smart contracts) \u2014 <a href='https://github.com/tobiawolaju/MoyakiTraceEngine' target='_blank' rel='noopener noreferrer'>MoyakiTraceEngine</a><br>\u2022 AI agents (automation + LLM integration) \u2014 <a href='https://github.com/tobiawolaju/Noogler' target='_blank' rel='noopener noreferrer'>Noogler</a></p><p style='font-size: large; padding-bottom: 3rem;'><b>Current Objective:</b><br>I am looking to contribute to high-performance Web3 infrastructure or agentic AI teams, bringing a relentless builder mentality and a proven track record of shipping production systems.</p>",
+    "bio": "<p style='font-size: large; padding-bottom: 1.5rem;'><b>\"I build because I am curious. I ship because I don't believe in 'impossible' \u2014 I only see a lack of information.\"</b></p><p style='font-size: large; padding-bottom: 1.5rem;'>I don't just use tech stacks; I inhabit them. To me, computers are the ultimate leverage for curiosity. Whether it's 3D modeling, real-time math, or decentralized economics, I dive in to see if I can make the machine dance.</p><p style='font-size: large; padding-bottom: 1.5rem;'><b>Areas of Obsession:</b><br>\u2022 <b>Real-time Systems:</b> Making 20 players move in sync at 20Hz.<br>\u2022 <b>On-chain Truth:</b> Building resilient infra that understands blockchains better than they understand themselves.<br>\u2022 <b>Digital Agency:</b> Giving AI 'hands' to navigate the world just like we do.</p><p style='font-size: large; padding-bottom: 3rem;'><b>Current Mission:</b><br>I'm looking for teams working on the high-performance edge of Web3 or agentic AI. If you're building something that 'can't be done,' let's talk.</p>",
     "resumeLink": "https://docs.google.com/document/d/1PnD1JnPN4_dunRGlKE8qNg5aQrP1O-R3XqFPdMXQ3PE/edit?usp=sharing"
   },
   "sectionLabels": {
-    "docs": "Substacks",
-    "activity": "Git"
+    "docs": "Writing & Deep Dives",
+    "activity": "Live Contributions"
   },
   "filters": [
     {
       "id": "all",
-      "label": "All"
+      "label": "All Artifacts"
     },
     {
       "id": "games",
-      "label": "Games & Interactive"
+      "label": "Interactive Worlds"
     },
     {
       "id": "ai",
-      "label": "AI & Agents"
+      "label": "Agentic AI"
     },
     {
       "id": "blockchain",
-      "label": "Blockchain"
+      "label": "Blockchain Tech"
     }
   ],
   "projects": [
@@ -35,7 +35,7 @@
       "category": "games",
       "image": "worldofnads1.gif",
       "title": "World of Nads \u2197",
-      "description": "Browser-based competitive arena game with hybrid web2/web3 architecture on Monad. 20-player King of the Hill matches with on-chain prize payouts.",
+      "description": "What happens when you bridge high-speed gaming and Monad? I built this entire world\u2014from the 3D assets to the 20Hz WebSocket server.",
       "links": [
         {
           "text": "[Live Site]",
@@ -47,19 +47,19 @@
         }
       ],
       "writeup": {
-        "overview": "Built a complete Web3 game from scratch \u2014 all art, modeling, smart contracts, and deployment solo.",
+        "overview": "A solo experiment in end-to-end creation: 3D modeling, smart contracts, and real-time multiplayer architecture.",
         "features": [
-          "Create 20-player real-time multiplayer browser game",
-          "Integrate blockchain for on-chain prize payouts",
-          "Seamless Web3 onboarding with embedded wallets"
+          "20-player real-time sync in the browser",
+          "Automated on-chain prize distribution",
+          "Low-friction Web3 onboarding via embedded wallets"
         ],
-        "architecture": "Godot \u2192 WASM + React/Vite frontend, Node.js WebSocket server @20Hz, Firebase RTDB + PostgreSQL, Monad smart contracts.",
-        "infrastructure": "Cloud infrastructure (Vercel, Render)",
-        "techStack": "Godot Engine, TypeScript, React, Node.js, Solidity, Monad, Firebase, PostgreSQL",
-        "web3": "Real-time state sync with 20Hz WebSocket server, Privy embedded wallets for user authentication. EVM & Monad integration.",
-        "challenges": "Real-time multiplayer sync, blockchain integration, creating all art solo",
-        "outcomes": "Live game with real users, on-chain prize distribution working. Built full-stack product from concept to deployment.",
-        "future": "More game modes, expanded blockchain features"
+        "architecture": "Godot \u2192 WASM + React, Node.js WebSocket server @20Hz, Monad Smart Contracts.",
+        "infrastructure": "High-performance deployment on Vercel and Render.",
+        "techStack": "Godot, TypeScript, Solidity, Monad, Node.js, PostgreSQL.",
+        "web3": "Real-time state sync coupled with Privy for seamless identity and on-chain payouts.",
+        "challenges": "Solving the 'impossible' task of keeping 20 players perfectly synced while handling blockchain state.",
+        "outcomes": "A live, functional product used by real people, proving that a solo builder can ship a complete Web3 ecosystem.",
+        "future": "Expanding the physical laws of the game and deeper Monad integration."
       },
       "gifSequence": [
         "worldofnads1.gif",
@@ -73,8 +73,8 @@
     {
       "category": "ai",
       "image": "grey.jpg",
-      "title": "Noogler - Embodied AI Agent \u2197",
-      "description": "Closed-loop embodied AI agent that operates computers like a human \u2014 sees screen, controls mouse/keyboard, autonomously completes tasks.",
+      "title": "Noogler - Embodied AI \u2197",
+      "description": "Giving the ghost a body. An AI agent that doesn't just call APIs, but actually sees the screen and moves the mouse like a human.",
       "links": [
         {
           "text": "[GitHub]",
@@ -82,25 +82,25 @@
         }
       ],
       "writeup": {
-        "overview": "Build an AI agent that can operate computers like a human \u2014 seeing screens, navigating interfaces, completing complex tasks autonomously.",
+        "overview": "An obsession with 'Digital Agency': building an agent that can operate software autonomously by observing and interacting.",
         "features": [
-          "Screen capture and computer control",
-          "Integrate Gemini 2.0 Live API for reasoning",
-          "Persistent memory across sessions"
+          "Real-time screen capture and visual reasoning",
+          "Gemini 2.0 Live API for high-level decision making",
+          "Rust-based local agent for direct OS-level control"
         ],
-        "architecture": "Cloud backend (Node.js) + Gemini 2.0 API, Svelte frontend, Rust local agent for Windows automation.",
-        "infrastructure": "Local Windows machine with screen capture capabilities",
-        "techStack": "Svelte, Node.js, Rust, Google Gemini 2.0, Firebase",
-        "challenges": "Real-time screen capture, reliable input simulation, handling diverse applications",
-        "outcomes": "Can open software, navigate interfaces, fix errors autonomously. Works in browsers, IDEs, Excel, games. Great integration of LLMs with real-world computer control.",
-        "future": "More robust automation, broader application support. Advanced Gemini Live & Windows Automation API integrations."
+        "architecture": "Node.js Cloud Backend + Gemini 2.0, Svelte UI, and a local Rust agent for automation.",
+        "infrastructure": "Local automation layer optimized for Windows environments.",
+        "techStack": "Rust, Google Gemini 2.0, Svelte, Node.js.",
+        "challenges": "Ensuring the agent can handle errors and navigate diverse software interfaces autonomously.",
+        "outcomes": "A working prototype that can fix its own errors in IDEs, Excel, and browsers.",
+        "future": "Advancing toward a fully autonomous companion that learns from user behavior."
       }
     },
     {
       "category": "blockchain",
       "image": "grey.jpg",
       "title": "MoyakiTraceEngine \u2197",
-      "description": "Production blockchain indexing engine with reorg detection, rate-limit resilience, and real-time execution trace streaming.",
+      "description": "Blockchains are messy. I built this indexer to make them legible, featuring reorg detection and real-time execution trace streaming.",
       "links": [
         {
           "text": "[GitHub]",
@@ -112,7 +112,7 @@
       "category": "ai",
       "image": "dominusquant.gif",
       "title": "DominusQuant \u2197",
-      "description": "AI-assisted crypto trading infrastructure with distributed signal aggregation and optional automated execution.",
+      "description": "A deep dive into behavioral analytics and signal aggregation for crypto trading. Building the brain behind the trade.",
       "links": [
         {
           "text": "[GitHub]",
@@ -124,23 +124,23 @@
   "docs": [
     {
       "link": "https://tobiawolaju21.substack.com/p/how-i-built-a-20-player-real-time?r=2hkadt",
-      "title": "How I Built a 20-Player Real-Time Multiplayer Game at 20Hz (With WebSockets) \u2197",
-      "description": "Engineering deep-dive into architecture, sync strategy, and backend decisions behind a 20-player real-time game server."
+      "title": "20 Players, 20Hz: The Physics of Real-Time Sync \u2197",
+      "description": "An exploration of how I solved the multiplayer puzzle using WebSockets."
     },
     {
       "link": "https://tobiawolaju21.substack.com/p/inside-a-production-blockchain-indexer?r=2hkadt",
-      "title": "Inside a Production Blockchain Indexer: Handling Reorgs and Real-Time Data \u2197",
-      "description": "Breakdown of reorg handling, resilience strategies, and real-time data pipelines in a production blockchain indexer."
+      "title": "Teaching Engines to Handle Blockchain Reorgs \u2197",
+      "description": "A deep dive into building infrastructure that survives the chaos of a live chain."
     },
     {
       "link": "https://tobiawolaju21.substack.com/p/building-an-ai-that-uses-your-computer?r=2hkadt",
-      "title": "Building an AI That Uses Your Computer Like a Human (Architecture + Lessons) \u2197",
-      "description": "Architecture notes and lessons from building an embodied AI agent that can see screens and control mouse/keyboard."
+      "title": "Giving AI a Body: The Noogler Architecture \u2197",
+      "description": "How I combined Rust and LLMs to create a computer-operating agent."
     },
     {
       "link": "https://tobiawolaju21.substack.com/p/what-it-takes-to-ship-a-full-web3?r=2hkadt",
-      "title": "What It Takes to Ship a Full Web3 Product Solo (From Smart Contracts to Frontend) \u2197",
-      "description": "End-to-end playbook for designing, building, and launching a complete solo Web3 product stack."
+      "title": "The Solo Builder's Playbook \u2197",
+      "description": "Going from a blank canvas to a full-stack Web3 product alone."
     }
   ]
 }
