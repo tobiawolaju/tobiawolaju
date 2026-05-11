@@ -157,12 +157,13 @@ body {
 }
 
 .skill-icon.rust:hover {
-  filter: none; /* Original Rust is orange */
+  filter: brightness(1) !important; /* Force original color and brightness */
+  opacity: 1;
 }
 
 .skill-icon.solidity:hover {
-  /* Force vibrant purple for Solidity */
-  filter: invert(31%) sepia(97%) saturate(1900%) hue-rotate(250deg) brightness(95%) contrast(100%);
+  filter: invert(31%) sepia(97%) saturate(1900%) hue-rotate(250deg) brightness(95%) contrast(100%) !important;
+  opacity: 1;
 }
 
 @media (prefers-color-scheme: dark) {
