@@ -868,4 +868,12 @@ a {
     8px 8px 0 rgba(0, 0, 0, 0.05);
 }
 
-@media (
+@media (prefers-color-scheme: dark) {
+  #profile-name {
+    color: rgb(226, 226, 226);
+    -webkit-text-stroke: 0.1px rgb(48, 48, 48);
+    text-shadow:
+      4px 4px 0 rgba(255, 255, 255, 0.5),
+      8px 8px 0 rgba(255, 255, 255, 0.1);
+  }
+}
