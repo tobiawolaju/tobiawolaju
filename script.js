@@ -203,7 +203,7 @@ function renderPortfolio(data) {
         docsList.innerHTML = data.docs.map(doc => `
             <li>
                 <a href="${doc.link}" target="_blank" rel="noopener noreferrer">
-                    <strong>${doc.title}</strong>
+                    <strong><span style="color: #FFD700;">{</span> ${doc.title} <span style="color: #FFD700;">}</span></strong>
                 </a>
                 <p style="opacity: 50%;">${doc.description}</p>
             </li>
