@@ -431,25 +431,29 @@ function initSkillScrollSync() {
         const rect = skillsSection.getBoundingClientRect();
         const windowHeight = window.innerHeight;
         
-        // If section is roughly in the middle of the screen or becoming visible
-        if (rect.top < windowHeight * 0.8 && rect.bottom > windowHeight * 0.2) {
-            // Calculate progress: 0 when top enters bottom, 1 when bottom leaves top
-            const sectionHeight = rect.height;
-            const scrollDepth = (windowHeight * 0.8) - rect.top; 
-            const totalScrollRange = (windowHeight * 0.6) + sectionHeight;
-            const progress = Math.min(Math.max(scrollDepth / totalScrollRange, 0), 1);
-            
-            // Map progress to icon index
-            // Using a slightly wider range to ensure first/last icons get their moment
-            const indexToActivate = Math.floor(progress * (skillIcons.length + 1)) - 1; 
-            
-            skillIcons.forEach((icon, i) => {
-                if (i === indexToActivate) {
-                    icon.classList.add('active');
-                } else {
-                    icon.classList.remove('active');
+        // If section is roughly in view
+        if (rect.top < windowHeight && rect.bottom > 0) {
+            const centerY = windowHeight / 2;
+            let closestIcon = null;
+            let minDistance = Infinity;
+
+            // Find the icon closest to the vertical center of the screen
+            skillIcons.forEach((icon) => {
+                const iconRect = icon.getBoundingClientRect();
+                const iconCenterY = iconRect.top + iconRect.height / 2;
+                const distance = Math.abs(centerY - iconCenterY);
+
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestIcon = icon;
                 }
+                icon.classList.remove('active');
             });
+
+            // Only activate the closest icon if it's within a reasonable focus range
+            if (closestIcon && minDistance < windowHeight * 0.3) {
+                closestIcon.classList.add('active');
+            }
         } else {
             skillIcons.forEach(icon => icon.classList.remove('active'));
         }
