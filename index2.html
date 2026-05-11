@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tobi Awolaju — Systems Engineer</title>
+    <meta name="description"
+        content="Systems Engineer specialising in real-time Web3 infrastructure and agentic AI. Builder of World of Nads, Noogler, ProofForge and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --bg: #050508;
+            --surf: #0d0d12;
+            --surf2: #13131c;
+            --acc: #FF3300;
+            --acc2: #00FF88;
+            --text: #EFEFEF;
+            --muted: #55556a;
+            --border: #1a1a28;
+            --Fd: 'Bebas Neue', sans-serif;
+            --Fh: 'Syne', sans-serif;
+            --Fm: 'JetBrains Mono', monospace;
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--Fm);
+            font-size: 14px;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9000;
+            background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0, 0, 0, 0.025) 3px, rgba(0, 0, 0, 0.025) 4px);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        button {
+            cursor: pointer;
+            font-family: var(--Fm)
+        }
+
+        /* ── STATUS BAR ── */
+        #statusbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: var(--acc);
+            color: #000;
+            font-family: var(--Fm);
+            font-size: 11px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            gap: 20px;
+            z-index: 8000;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        #statusbar .blink {
+            animation: blink 1.2s step-end infinite
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0
+            }
+        }
+
+        #statusbar .sep {
+            opacity: .35;
+            font-weight: 400
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 54px;
+            background: rgba(5, 5, 8, .96);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            z-index: 7000;
+        }
+
+        .nav-logo {
+            font-family: var(--Fh);
+            font-weight: 800;
+            font-size: 15px;
+            letter-spacing: .06em
+        }
+
+        .nav-logo span {
+            color: var(--acc)
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none
+        }
+
+        .nav-links a {
+            font-size: 11px;
+            color: var(--muted);
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            transition: color .2s
+        }
+
+        .nav-links a:hover {
+            color: var(--acc)
+        }
+
+        .hire-badge {
+            background: var(--acc);
+            color: #000;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 12px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            margin-left: 8px;
+        }
+
+        /* ── HERO ── */
+        #hero {
+            min-height: 100vh;
+            padding: 130px 32px 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 72px 72px;
+            opacity: .25;
+            pointer-events: none;
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(255, 51, 0, .07) 0%, transparent 65%);
+            top: 50%;
+            right: -80px;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            position: relative;
+            max-width: 1140px;
+            margin: 0 auto;
+            width: 100%
+        }
+
+        .hero-eye {
+            font-size: 11px;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: var(--acc);
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeUp .5s .1s forwards;
+        }
+
+        .hero-name {
+            font-family: var(--Fd);
+            font-size: clamp(72px, 13vw, 176px);
+            line-height: .88;
+            letter-spacing: .01em;
+            margin-bottom: 28px;
+            opacity: 0;
+            animation: fadeUp .7s .3s forwards;
+        }
+
+        .hero-name .stroke {
+            color: transparent;
+            -webkit-text-stroke: 1.5px rgba(239, 239, 239, .18);
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 36px;
+            opacity: 0;
+            animation: fadeUp .5s .5s forwards;
+        }
+
+        .htag {
+            background: var(--surf2);
+            border: 1px solid var(--border);
+            padding: 5px 14px;
+            font-size: 11px;
+            color: var(--acc2);
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+        .hero-bio {
+            max-width: 580px;
+            font-size: 15px;
+            line-height: 1.9;
+            color: #999;
+            margin-bottom: 48px;
+            opacity: 0;
+            animation: fadeUp .5s .7s forwards;
+        }
+
+        .hero-bio strong {
+            color: var(--text)
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp .5s .9s forwards;
+        }
+
+        .btn-p {
+            background: var(--acc);
+            color: #000;
+            padding: 13px 30px;
+            font-family: var(--Fm);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            border: none;
+            transition: transform .15s, box-shadow .15s;
+            display: inline-block;
+        }
+
+        .btn-p:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 4px 4px 0 rgba(255, 51, 0, .25)
+        }
+
+        .btn-s {
+            background: transparent;
+            color: var(--text);
+            padding: 13px 30px;
+            font-family: var(--Fm);
+            font-size: 12px;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            border: 1px solid var(--border);
+            transition: border-color .2s;
+            display: inline-block;
+        }
+
+        .btn-s:hover {
+            border-color: var(--muted)
+        }
+
+        /* ── SHARED SECTION ── */
+        .section {
+            padding: 96px 32px;
+            max-width: 1140px;
+            margin: 0 auto
+        }
+
+        .sh {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            margin-bottom: 60px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+        }
+
+        .sh-prompt {
+            font-size: 13px;
+            color: var(--acc);
+            font-weight: 700
+        }
+
+        .sh-title {
+            font-family: var(--Fh);
+            font-size: clamp(28px, 4.5vw, 52px);
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -.02em;
+        }
+
+        .sh-meta {
+            margin-left: auto;
+            font-size: 11px;
+            color: var(--muted)
+        }
+
+        /* ── ABOUT ── */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 72px;
+            align-items: start
+        }
+
+        .about-text p {
+            font-size: 15px;
+            color: #999;
+            line-height: 1.9;
+            margin-bottom: 18px
+        }
+
+        .about-text p strong {
+            color: var(--text)
+        }
+
+        .obs-box {
+            border: 1px solid var(--border);
+            background: var(--surf)
+        }
+
+        .obs-header {
+            padding: 14px 24px;
+            border-bottom: 1px solid var(--border);
+            font-size: 10px;
+            letter-spacing: .22em;
+            color: var(--acc2);
+            text-transform: uppercase;
+        }
+
+        .obs-item {
+            display: flex;
+            gap: 16px;
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--border)
+        }
+
+        .obs-item:last-child {
+            border-bottom: none
+        }
+
+        .obs-n {
+            font-size: 10px;
+            color: var(--acc);
+            font-weight: 700;
+            min-width: 20px;
+            padding-top: 2px
+        }
+
+        .obs-l {
+            font-size: 13px;
+            color: var(--text);
+            font-weight: 500;
+            margin-bottom: 4px
+        }
+
+        .obs-d {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.6
+        }
+
+        /* ── PROJECTS ── */
+        .filter-bar {
+            display: flex;
+            margin-bottom: 44px;
+            border: 1px solid var(--border);
+            width: fit-content
+        }
+
+        .ftab {
+            padding: 10px 22px;
+            font-family: var(--Fm);
+            font-size: 11px;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            background: transparent;
+            color: var(--muted);
+            border: none;
+            border-right: 1px solid var(--border);
+            transition: all .2s;
+        }
+
+        .ftab:last-child {
+            border-right: none
+        }
+
+        .ftab.active {
+            background: var(--acc);
+            color: #000;
+            font-weight: 700
+        }
+
+        .ftab:not(.active):hover {
+            color: var(--text);
+            background: var(--surf2)
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2px;
+        }
+
+        .pcard {
+            background: var(--surf);
+            border: 1px solid var(--border);
+            transition: transform .2s, border-color .2s;
+            position: relative;
+        }
+
+        .pcard:hover {
+            border-color: var(--acc);
+            transform: translate(-3px, -3px);
+            box-shadow: 4px 4px 0 rgba(255, 51, 0, .12);
+            z-index: 2;
+        }
+
+        .pcard.hidden {
+            display: none
+        }
+
+        .card-bar {
+            background: var(--surf2);
+            border-bottom: 1px solid var(--border);
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%
+        }
+
+        .dr {
+            background: #FF5F57
+        }
+
+        .dy {
+            background: #FEBC2E
+        }
+
+        .dg {
+            background: #28C840
+        }
+
+        .bar-name {
+            font-size: 11px;
+            color: var(--muted);
+            margin-left: 6px;
+            letter-spacing: .04em
+        }
+
+        .card-body {
+            padding: 22px 24px
+        }
+
+        .card-cat {
+            font-size: 10px;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--acc2);
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-family: var(--Fh);
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+
+        .card-desc {
+            font-size: 13px;
+            color: #888;
+            line-height: 1.7;
+            margin-bottom: 18px
+        }
+
+        .card-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 18px
+        }
+
+        .stag {
+            font-size: 10px;
+            padding: 3px 10px;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            letter-spacing: .06em;
+        }
+
+        .card-links {
+            display: flex;
+            gap: 14px
+        }
+
+        .clink {
+            font-size: 11px;
+            color: var(--acc);
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            transition: opacity .2s;
+        }
+
+        .clink:hover {
+            opacity: .65
+        }
+
+        .card-toggle {
+            padding: 11px 24px;
+            font-size: 11px;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            background: transparent;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            width: 100%;
+            text-align: left;
+            transition: color .2s;
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .card-toggle:hover {
+            color: var(--text)
+        }
+
+        .tarrow {
+            transition: transform .3s;
+            display: inline-block
+        }
+
+        .card-expand {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .35s ease, padding .35s ease;
+        }
+
+        .card-expand.open {
+            max-height: 700px;
+            padding: 0 24px 24px
+        }
+
+        .exp-sec {
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
+            margin-bottom: 14px
+        }
+
+        .exp-label {
+            font-size: 10px;
+            color: var(--acc);
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .exp-text {
+            font-size: 12px;
+            color: #888;
+            line-height: 1.7
+        }
+
+        .exp-list {
+            list-style: none;
+            padding: 0
+        }
+
+        .exp-list li::before {
+            content: '▸ ';
+            color: var(--acc2)
+        }
+
+        .exp-list li {
+            font-size: 12px;
+            color: #888;
+            line-height: 1.8
+        }
+
+        /* ── WRITING ── */
+        .writing-list {
+            display: flex;
+            flex-direction: column
+        }
+
+        .witem {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            padding: 22px 0;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+            transition: padding-left .2s;
+        }
+
+        .witem:first-child {
+            border-top: 1px solid var(--border)
+        }
+
+        .witem:hover {
+            padding-left: 14px
+        }
+
+        .witem:hover .warr {
+            color: var(--acc)
+        }
+
+        .wnum {
+            font-size: 11px;
+            color: var(--muted);
+            min-width: 26px
+        }
+
+        .wcontent {
+            flex: 1
+        }
+
+        .wtitle {
+            font-family: var(--Fh);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 5px
+        }
+
+        .wdesc {
+            font-size: 12px;
+            color: var(--muted)
+        }
+
+        .warr {
+            font-size: 20px;
+            color: var(--border);
+            transition: color .2s, transform .2s
+        }
+
+        .witem:hover .warr {
+            transform: translateX(5px)
+        }
+
+        /* ── CONTACT ── */
+        #contact {
+            padding: 96px 32px 120px;
+            border-top: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start
+        }
+
+        .contact-hl {
+            font-family: var(--Fd);
+            font-size: clamp(56px, 10vw, 110px);
+            line-height: .9;
+            margin-bottom: 20px;
+        }
+
+        .contact-sub {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.9;
+            max-width: 420px
+        }
+
+        .clinks {
+            display: flex;
+            flex-direction: column;
+            margin-top: 16px
+        }
+
+        .clk {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--text);
+            transition: color .2s;
+        }
+
+        .clk:first-child {
+            border-top: 1px solid var(--border)
+        }
+
+        .clk:hover {
+            color: var(--acc)
+        }
+
+        .clk-label {
+            font-size: 12px;
+            letter-spacing: .12em;
+            text-transform: uppercase
+        }
+
+        .clk-handle {
+            font-size: 12px;
+            color: var(--muted);
+            transition: color .2s
+        }
+
+        .clk:hover .clk-handle {
+            color: var(--acc)
+        }
+
+        .clk-arrow {
+            font-size: 16px;
+            transition: transform .2s
+        }
+
+        .clk:hover .clk-arrow {
+            transform: translateX(4px)
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            padding: 36px 32px 56px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1140px;
+            margin: 0 auto;
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        /* ── ANIMATIONS ── */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(22px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity .6s ease, transform .6s ease
+        }
+
+        .reveal.vis {
+            opacity: 1;
+            transform: none
+        }
+
+        /* ── RESPONSIVE ── */
+        @media(max-width:768px) {
+            nav {
+                padding: 0 18px
+            }
+
+            .nav-links {
+                display: none
+            }
+
+            #hero {
+                padding: 100px 18px 80px
+            }
+
+            .section {
+                padding: 60px 18px
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr
+            }
+
+            .contact-inner {
+                grid-template-columns: 1fr;
+                gap: 40px
+            }
+
+            #contact {
+                padding: 60px 18px 100px
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- STATUS BAR -->
+    <div id="statusbar">
+        <span class="blink">●</span>
+        <span>AVAILABLE FOR HIRE</span>
+        <span class="sep">|</span>
+        <span>REMOTE · WEB3 / AI</span>
+        <span class="sep">|</span>
+        <span>$500 – $2K / MO</span>
+        <span class="sep">|</span>
+        <span>tobi@tobiawolaju.xyz</span>
+    </div>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logo">TOBI<span>.</span>DEV</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#writing">Writing</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://docs.google.com/document/d/1PnD1JnPN4_dunRGlKE8qNg5aQrP1O-R3XqFPdMXQ3PE/edit?usp=sharing"
+                    target="_blank" class="hire-badge">View CV ↗</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="hero-grid-bg"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-inner">
+            <p class="hero-eye">> Systems Engineer · Real-time + Web3 Infrastructure</p>
+            <h1 class="hero-name">
+                TOBI<br>
+                <span class="stroke">AWOLAJU</span>
+            </h1>
+            <div class="hero-tags">
+                <span class="htag">Real-time Systems</span>
+                <span class="htag">On-chain Infra</span>
+                <span class="htag">Agentic AI</span>
+                <span class="htag">Godot / WASM</span>
+                <span class="htag">Monad</span>
+            </div>
+            <p class="hero-bio">
+                <strong>"I build because I am curious. I ship because I don't believe in 'impossible' — I only see a
+                    lack of information."</strong><br><br>
+                Solo full-stack builder. I've shipped a 20-player real-time Web3 battle royale, an embodied AI agent, a
+                reorg-aware blockchain indexer, and a tamper-evident commit verification system — all from scratch.
+            </p>
+            <div class="hero-ctas">
+                <a href="#projects" class="btn-p">View Projects</a>
+                <a href="https://docs.google.com/document/d/1PnD1JnPN4_dunRGlKE8qNg5aQrP1O-R3XqFPdMXQ3PE/edit?usp=sharing"
+                    target="_blank" class="btn-s">Download CV ↗</a>
+                <a href="#contact" class="btn-s">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <div class="sh">
+            <span class="sh-prompt">//</span>
+            <h2 class="sh-title">About</h2>
+            <span class="sh-meta">01 / 04</span>
+        </div>
+        <div class="about-grid reveal">
+            <div class="about-text">
+                <p>I don't just use tech stacks — I <strong>inhabit them</strong>. Whether it's 3D modeling, real-time
+                    network math, or decentralised economics, I dive in to see if I can make the machine dance.</p>
+                <p>Based in Ibadan, Nigeria. <strong>Open to remote roles</strong> in Web3 engineering, DevRel, or
+                    agentic AI infrastructure. I work fast, document clearly, and ship things that actually run in
+                    production.</p>
+                <p>My builds span game engines (Godot), blockchain infra (Monad, EVM), AI agents (Rust + LLM), and
+                    full-stack web (Next.js / Node.js). I'm not a generalist who touches everything lightly — I go
+                    <strong>deep on every layer</strong> of a system.</p>
+            </div>
+            <div class="obs-box">
+                <div class="obs-header">// areas_of_obsession.json</div>
+                <div class="obs-item">
+                    <div class="obs-n">01</div>
+                    <div>
+                        <div class="obs-l">Real-time Systems</div>
+                        <div class="obs-d">Making 20 players move in sync at 20Hz. Deterministic state, delta
+                            compression, rollback netcode.</div>
+                    </div>
+                </div>
+                <div class="obs-item">
+                    <div class="obs-n">02</div>
+                    <div>
+                        <div class="obs-l">On-chain Truth</div>
+                        <div class="obs-d">Building resilient infra that understands blockchains better than they
+                            understand themselves. Reorg detection, tamper-evident anchoring.</div>
+                    </div>
+                </div>
+                <div class="obs-item">
+                    <div class="obs-n">03</div>
+                    <div>
+                        <div class="obs-l">Digital Agency</div>
+                        <div class="obs-d">Giving AI hands to navigate the world like a human. Screen-capture, visual
+                            reasoning, OS-level control.</div>
+                    </div>
+                </div>
+                <div class="obs-item">
+                    <div class="obs-n">04</div>
+                    <div>
+                        <div class="obs-l">Solo Builder Velocity</div>
+                        <div class="obs-d">Full product shipped in days, not sprints. From blank canvas to live URL,
+                            alone, repeatedly.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+        <div class="sh">
+            <span class="sh-prompt">//</span>
+            <h2 class="sh-title">Projects</h2>
+            <span class="sh-meta">02 / 04</span>
+        </div>
+
+        <div class="filter-bar">
+            <button class="ftab active" data-filter="all">All Artifacts</button>
+            <button class="ftab" data-filter="games">Interactive Worlds</button>
+            <button class="ftab" data-filter="ai">Agentic AI</button>
+            <button class="ftab" data-filter="blockchain">Blockchain Tech</button>
+        </div>
+
+        <div class="projects-grid" id="pgrid">
+
+            <!-- World of Nads -->
+            <div class="pcard reveal" data-cat="games">
+                <div class="card-bar">
+                    <span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span>
+                    <span class="bar-name">world-of-nads/</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-cat">Interactive World · Battle Royale</div>
+                    <div class="card-title">World of Nads ↗</div>
+                    <p class="card-desc">What happens when you bridge high-speed gaming and Monad? I built this entire
+                        world — from 3D assets to the 20Hz WebSocket server.</p>
+                    <div class="card-stack">
+                        <span class="stag">Godot</span><span class="stag">TypeScript</span><span
+                            class="stag">Solidity</span>
+                        <span class="stag">Monad</span><span class="stag">Node.js</span><span
+                            class="stag">PostgreSQL</span>
+                    </div>
+                    <div class="card-links">
+                        <a class="clink" href="https://worldofnads.xyz" target="_blank">[Play Live]</a>
+                        <a class="clink" href="https://github.com/tobiawolaju" target="_blank">[GitHub]</a>
+                    </div>
+                </div>
+                <button class="card-toggle" onclick="toggleCard(this)">
+                    <span class="tarrow">▾</span> Project Breakdown
+                </button>
+                <div class="card-expand">
+                    <div class="exp-sec">
+                        <div class="exp-label">Overview</div>
+                        <p class="exp-text">A solo experiment in end-to-end creation: 3D modeling, smart contracts, and
+                            real-time multiplayer architecture.</p>
+                    </div>
+                    <div class="exp-sec">
+                        <div class="exp-label">Core Features</div>
+                        <ul class="exp-list">
+                            <li>20-player real-time sync in the browser at 20Hz</li>
+                            <li>Automated on-chain prize distribution via Monad</li>
+                            <li>Low-friction Web3 onboarding via Privy embedded wallets</li>
+                        </ul>
+                    </div>
+                    <div class="exp-sec">
+                        <div class="exp-label">Architecture</div>
+                        <p class="exp-text">Godot → WASM + React shell, Node.js WebSocket server @20Hz, Monad Smart
+                            Contracts, deployed on Vercel + Render.</p>
+                    </div>
+                    <div class="exp-sec">
+                        <div class="exp-label">Outcome</div>
+                        <p class="exp-text">A live, functional product proving a solo builder can ship a complete Web3
+                            ecosystem in production.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terra Engine -->
+            <div class="pcard reveal" data-cat="games">
+                <div class="card-bar">
+                    <span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span>
+                    <span class="bar-name">terra-engine/</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-cat">Interactive World · Survival</div>
+                    <div class="card-title">Terra Engine ↗</div>
+                    <p class="card-desc">A 3D browser survival game built in 72 hours for Gamedev.js Jam 2026.
+                        Biological machines narrative, full Wavedash SDK integration.</p>
+                    <div class="card-stack">
+                        <span class="stag">Godot 4</span><span class="stag">GDScript</span>
+                        <span class="stag">HTML5 Export</span><span class="stag">Wavedash SDK</span>
+                    </div>
+                    <div class="card-links">
+                        <a class="clink" href="https://github.com/tobiawolaju" target="_blank">[GitHub]</a>
+                    </div>
+                </div>
+                <button class="card-toggle" onclick="toggleCard(this)">
+                    <span class="tarrow">▾</span> Project Breakdown
+                </button>
+                <div class="card-expand">
+                    <div class="exp-sec">
+                        <div class="exp-label">Overview</div>
+                        <p class="exp-text">Built for Gamedev.js Jam 2026 targeting the Wavedash $2,500 prize pool,
+                            GitHub Open Source, and YouTube Playables challenges.</p>
+                    </div>
+                    <div class="exp-sec">
+                        <div class="exp-label">Core Features</div>
+                        <ul class="exp-list">
+                            <li>Full Wavedash SDK integration across all 7 platform features</li>
+                            <li>3D procedural survival environment in the browser</li>
+                            <li>"Biological machines" narrative theme</li>
+                        </ul>
+                    </div>
+                    <div class="exp-sec">
+                        <div class="exp-label">Outcome</div>
+                        <p class="exp-text">Jam submission with judge engagement. Proof that production-grade 3D games
+                            can be shipped to browser without downloads.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Noogler -->
+            <div class="pcard reveal" data-cat="ai">
+                <div class="card-bar">
+                    <span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span>
+                    <span class="bar-name">noogler-agent/</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-cat">Agentic AI · Embodied</div>
+                    <div class="card-title">Noogler — Embodied AI ↗</div>
+                    <p class="card-desc">Giving the ghost a body. An AI agent that doesn't just call APIs — it sees the
+                        screen and moves the mouse like a human.</p>
+                    <div class="card-stack">
+                        <span class="stag">Rust</span><span class="stag">Gemini 2.0</span>
+                        <span class="stag">Svelte</span><span class="stag">Node.js</span>
+                    </div>
+                    <div class="card-links">
+                        <a class="clink" href="https://github.com/tobiawolaju/Noogler" target="_blank">[Watch Agent]</a>
+                        <a class="clink" href="https://github.com/tobiawolaju/Noogler" target="_blank">[GitHub]</a>
+                    </div>
+                </div>
+                <button class="card-toggle" onclick="toggleCard(this)">
+                    <span class="tarrow">▾</span> Project Breakdown
+                </button>
+                <div class="card-expand">
+                    <div class="exp-sec">
+                        <div class="exp-label">Overview</div>
+                        <p class="exp-text">An obsession with Digital Agency — building an agent that operates software
+                            autonomously by observing and interacting at the OS level.</p>
+                    </div>
+                    <div class="exp-sec">
+                        <div class="exp-label">Core Features</div>
+                        <ul class="exp-list">
+                            <li>Real-time screen capture and visual reasoning</li>
+                            <li>Gemini 2.0 Live API for high-level decision making</li>
+                            <li>Rust-based local agent for direct OS-level control</li>
+                        </ul>
+                    </div>
+                    <div class="exp-sec">
+                        <div class="exp-label">Outcome</div>
+                        <p class="exp-text">Working prototype that self-corrects errors in IDEs, Excel, and browsers.
+                            Foundation for a fully autonomous OS companion.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HARE -->
+            <div class="pcard reveal" data-cat="ai">
+                <div class="card-bar">
+                    <span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span>
+                    <span class="bar-name">HARE/</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-cat">Agentic AI · Autonomous</div>
+                    <div class="card-title">HARE — Headless Autonomous Relay Engine ↗</div>
+                    <p class="card-desc">Headless agent infrastructure that executes multi-step tasks without a human in
+                        the loop — for both execution and quality control.</p>
+                    <div class="card-stack">
+                        <span class="stag">Node.js</span><span class="stag">TypeScript</span>
+                        <span class="stag">AI APIs</span><span class="stag">Automation</span>
+                    </div>
+                    <div class="card-links">
+                        <a class="clink" href="https://github.com/tobiawolaju" target="_blank">[GitHub]</a>
+                    </div>
+                </div>
+                <button class="card-toggle" onclick="toggleCard(this)">
+                    <span class="tarrow">▾</span> Project Breakdown
+                </button>
+                <div class="card-expand">
+                    <div class="exp-sec">
+                        <div class="exp-label">Overview</div>
+                        <p class="exp-text">Built around a strict definition of AGI — autonomy plus reliability. HARE
+                            removes the human from both execution and quality control loops.</p>
+                    </div>
+                    <div class="exp-sec">
+                        <div class="exp-label">Core Features</div>
+                        <ul class="exp-list">
+                            <li>Headless task relay — no UI required to operate</li>
+                            <li>Multi-step autonomous workflows with self-evaluation</li>
+                            <li>Modular connector architecture for any external service</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ProofForge -->
+            <div class="pcard reveal" data-cat="blockchain">
+                <div class="card-bar">
+                    <span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span>
+                    <span class="bar-name">proof-forge/</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-cat">Blockchain Tech · DevTools</div>
+                    <div class="card-title">ProofForge ↗</div>
+                    <p class="card-desc">Tamper-evident development timelines. Git commit verification anchored on Monad
+                        testnet — unforgeable build history via HMAC-signed webhooks.</p>
+                    <div class="card-stack">
+                        <span class="stag">Node.js</span><span class="stag">Solidity</span>
+                        <span class="stag">Monad</span><span class="stag">GitHub Webhooks</span>
+                    </div>
+                    <div class="card-links">
+                        <a class="clink" href="https://github.com/tobiawolaju" target="_blank">[GitHub]</a>
+                    </div>
+                </div>
+                <button class="card-toggle" onclick="toggleCard(this)">
+                    <span class="tarrow">▾</span> Project Breakdown
+                </button>
+                <div class="card-expand">
+                    <div class="exp-sec">
+                        <div class="exp-label">Overview</div>
+                        <p class="exp-text">The GitHub webhook bridge (HMAC-signed push payloads) is the only
+                            trustworthy anchor point — making the product "tamper-evident development timelines."</p>
+                    </div>
+                    <div class="exp-sec">
+                        <div class="exp-label">Core Features</div>
+                        <ul class="exp-list">
+                            <li>On-chain commit hashing anchored to Monad testnet</li>
+                            <li>HMAC-signed webhook verification pipeline</li>
+                            <li>Immutable audit trail for any Git repository</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MoyakiTraceEngine -->
+            <div class="pcard reveal" data-cat="blockchain">
+                <div class="card-bar">
+                    <span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span>
+                    <span class="bar-name">moyaki-trace/</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-cat">Blockchain Tech · Indexer</div>
+                    <div class="card-title">MoyakiTraceEngine ↗</div>
+                    <p class="card-desc">Blockchains are messy. I built this indexer to make them legible — reorg
+                        detection, real-time execution trace streaming, 3-node consensus.</p>
+                    <div class="card-stack">
+                        <span class="stag">Rust</span><span class="stag">TypeScript</span>
+                        <span class="stag">PostgreSQL</span><span class="stag">EVM RPC</span>
+                    </div>
+                    <div class="card-links">
+                        <a class="clink" href="https://github.com/tobiawolaju/MoyakiTraceEngine" target="_blank">[Trace
+                            Blocks]</a>
+                        <a class="clink" href="https://github.com/tobiawolaju/MoyakiTraceEngine"
+                            target="_blank">[GitHub]</a>
+                    </div>
+                </div>
+                <button class="card-toggle" onclick="toggleCard(this)">
+                    <span class="tarrow">▾</span> Project Breakdown
+                </button>
+                <div class="card-expand">
+                    <div class="exp-sec">
+                        <div class="exp-label">Overview</div>
+                        <p class="exp-text">Built for a clearer view of blockchain execution. This engine ingests and
+                            indexes EVM data with absolute resilience against network reorgs.</p>
+                    </div>
+                    <div class="exp-sec">
+                        <div class="exp-label">Core Features</div>
+                        <ul class="exp-list">
+                            <li>3-node RPC ingestion engine for consensus comparison</li>
+                            <li>Reorg-aware rollback and state correction</li>
+                            <li>Rate-limit resilient data streaming to TimescaleDB</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DominusQuant -->
+            <div class="pcard reveal" data-cat="ai">
+                <div class="card-bar">
+                    <span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span>
+                    <span class="bar-name">dominus-quant/</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-cat">Agentic AI · Trading</div>
+                    <div class="card-title">DominusQuant ↗</div>
+                    <p class="card-desc">A deep dive into behavioural analytics and signal aggregation for crypto
+                        trading on Monad. Building the brain behind the trade.</p>
+                    <div class="card-stack">
+                        <span class="stag">Node.js</span><span class="stag">Python</span>
+                        <span class="stag">Next.js</span><span class="stag">Monad</span><span class="stag">viem</span>
+                    </div>
+                    <div class="card-links">
+                        <a class="clink" href="https://github.com/tobiawolaju" target="_blank">[Trade Live]</a>
+                        <a class="clink" href="https://github.com/tobiawolaju" target="_blank">[GitHub]</a>
+                    </div>
+                </div>
+                <button class="card-toggle" onclick="toggleCard(this)">
+                    <span class="tarrow">▾</span> Project Breakdown
+                </button>
+                <div class="card-expand">
+                    <div class="exp-sec">
+                        <div class="exp-label">Overview</div>
+                        <p class="exp-text">Crypto trading terminal on Monad testnet. Next.js frontend, Privy wallet
+                            auth, live MON balance via viem/ethers.js.</p>
+                    </div>
+                    <div class="exp-sec">
+                        <div class="exp-label">Core Features</div>
+                        <ul class="exp-list">
+                            <li>Distributed signal aggregation from multiple sources</li>
+                            <li>AI-assisted sentiment and behavioural analysis</li>
+                            <li>Modular architecture for custom trading strategies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /projects-grid -->
+    </section>
+
+    <!-- WRITING -->
+    <section id="writing" class="section">
+        <div class="sh">
+            <span class="sh-prompt">//</span>
+            <h2 class="sh-title">Writing & Deep Dives</h2>
+            <span class="sh-meta">03 / 04</span>
+        </div>
+        <div class="writing-list reveal">
+            <a class="witem" href="https://tobiawolaju21.substack.com/p/how-i-built-a-20-player-real-time?r=2hkadt"
+                target="_blank">
+                <span class="wnum">01</span>
+                <div class="wcontent">
+                    <div class="wtitle">20 Players, 20Hz: The Physics of Real-Time Sync ↗</div>
+                    <div class="wdesc">An exploration of how I solved the multiplayer puzzle using WebSockets.</div>
+                </div>
+                <span class="warr">→</span>
+            </a>
+            <a class="witem" href="https://tobiawolaju21.substack.com/p/inside-a-production-blockchain-indexer?r=2hkadt"
+                target="_blank">
+                <span class="wnum">02</span>
+                <div class="wcontent">
+                    <div class="wtitle">Teaching Engines to Handle Blockchain Reorgs ↗</div>
+                    <div class="wdesc">A deep dive into building infrastructure that survives the chaos of a live chain.
+                    </div>
+                </div>
+                <span class="warr">→</span>
+            </a>
+            <a class="witem" href="https://tobiawolaju21.substack.com/p/building-an-ai-that-uses-your-computer?r=2hkadt"
+                target="_blank">
+                <span class="wnum">03</span>
+                <div class="wcontent">
+                    <div class="wtitle">Giving AI a Body: The Noogler Architecture ↗</div>
+                    <div class="wdesc">How I combined Rust and LLMs to create a computer-operating agent.</div>
+                </div>
+                <span class="warr">→</span>
+            </a>
+            <a class="witem" href="https://tobiawolaju21.substack.com/p/what-it-takes-to-ship-a-full-web3?r=2hkadt"
+                target="_blank">
+                <span class="wnum">04</span>
+                <div class="wcontent">
+                    <div class="wtitle">The Solo Builder's Playbook ↗</div>
+                    <div class="wdesc">Going from a blank canvas to a full-stack Web3 product alone.</div>
+                </div>
+                <span class="warr">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="contact-inner">
+            <div>
+                <div class="contact-hl reveal">LET'S<br>TALK.</div>
+                <p class="contact-sub reveal">
+                    Looking for teams building on the high-performance edge of Web3 or agentic AI. Remote, async-first,
+                    $500–$2K/mo range. If you're building something that "can't be done," let's talk.
+                </p>
+            </div>
+            <div class="clinks reveal">
+                <a class="clk" href="mailto:tobi@tobiawolaju.xyz">
+                    <span class="clk-label">Email</span>
+                    <span class="clk-handle">tobi@tobiawolaju.xyz</span>
+                    <span class="clk-arrow">→</span>
+                </a>
+                <a class="clk" href="https://x.com/tobiawolaju" target="_blank">
+                    <span class="clk-label">Twitter / X</span>
+                    <span class="clk-handle">@tobiawolaju</span>
+                    <span class="clk-arrow">→</span>
+                </a>
+                <a class="clk" href="https://linkedin.com/in/tobiawolaju" target="_blank">
+                    <span class="clk-label">LinkedIn</span>
+                    <span class="clk-handle">linkedin.com/in/tobiawolaju</span>
+                    <span class="clk-arrow">→</span>
+                </a>
+                <a class="clk" href="https://github.com/tobiawolaju" target="_blank">
+                    <span class="clk-label">GitHub</span>
+                    <span class="clk-handle">github.com/tobiawolaju</span>
+                    <span class="clk-arrow">→</span>
+                </a>
+                <a class="clk"
+                    href="https://docs.google.com/document/d/1PnD1JnPN4_dunRGlKE8qNg5aQrP1O-R3XqFPdMXQ3PE/edit?usp=sharing"
+                    target="_blank">
+                    <span class="clk-label">Curriculum Vitae</span>
+                    <span class="clk-handle">Download PDF ↗</span>
+                    <span class="clk-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span>Tobi Awolaju · 2025</span>
+        <span>Built with curiosity. Deployed with speed.</span>
+        <span style="color:var(--acc)">● Available for hire</span>
+    </footer>
+
+    <script>
+        /* filter */
+        document.querySelectorAll('.ftab').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.ftab').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const f = btn.dataset.filter;
+                document.querySelectorAll('.pcard').forEach(c => {
+                    if (f === 'all' || c.dataset.cat === f) { c.classList.remove('hidden') }
+                    else { c.classList.add('hidden') }
+                });
+            });
+        });
+
+        /* toggle expand */
+        function toggleCard(btn) {
+            const arrow = btn.querySelector('.tarrow');
+            const expand = btn.nextElementSibling;
+            const open = expand.classList.toggle('open');
+            arrow.style.transform = open ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+
+        /* scroll reveal */
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target) } });
+        }, { threshold: .12 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    </script>
+</body>
+
+</html>

@@ -886,3 +886,27 @@ a {
   .cv-icon-dark { display: inline; }
   .cv-icon-light { display: none; }
 }
+
+/* ── REVEAL ANIMATION ── */
+.reveal2 {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal2.vis {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── CONTACT LINKS ── */
+.clk2:hover {
+  padding-left: 12px;
+  opacity: 0.8;
+}
+
+@media (prefers-color-scheme: dark) {
+  .clk2 {
+    border-bottom-color: #ffffff20 !important;
+  }
+}

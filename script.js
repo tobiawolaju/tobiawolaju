@@ -352,6 +352,17 @@ function initInteractions() {
     const firstFilter = document.querySelector('.filters button');
     if (firstFilter) firstFilter.click();
 
+    // --- Contact Section Reveal ---
+    const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('vis');
+                revealObs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal2').forEach(el => revealObs.observe(el));
+
     // --- Footer Scroll ---
     const footer = document.getElementById("site-footer");
     if (footer) {
