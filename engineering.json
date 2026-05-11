@@ -36,6 +36,28 @@
   ],
   "projects": [
     {
+      "category": "blockchain",
+      "image": "grey.jpg",
+      "title": "MoyakiTraceEngine \u2197",
+      "description": "Web3 Infra & Backend",
+      "links": [
+        {
+          "text": "[Trace Blocks]",
+          "url": "https://moyakitraceengine.vercel.app/"
+        },
+        {
+          "text": "[GitHub]",
+          "url": "https://github.com/tobiawolaju/MoyakiTraceEngine"
+        }
+      ],
+      "writeup": {
+        "goal": "Build a resilient EVM indexer that never drops data, even when the blockchain reorganizes.",
+        "hardPart": "Public RPCs are unreliable. I built a multi-node ingestion engine that cross-references 3 different Monad nodes, with a custom 'ReorgManager' that detects parent-hash mismatches and automatically rolls back bad state.",
+        "stack": "Node.js, Express, Svelte, Firebase RTDB, EVM RPCs.",
+        "value": "Proves I can build production-grade, fault-tolerant infrastructure and streaming data pipelines. I don't just query blockchains; I know how they fail."
+      }
+    },
+    {
       "category": "games",
       "image": "worldofnads1.gif",
       "title": "World of Nads \u2197",
@@ -76,6 +98,28 @@
     },
     {
       "category": "ai",
+      "image": "dominusquant.gif",
+      "title": "DominusQuant: Monad Keeper & Algo-Trading Bot \u2197",
+      "description": "Automated trading infrastructure leveraging Monad's gas pricing logs and distributed behavioral signals for healthy, non-toxic execution.",
+      "links": [
+        {
+          "text": "[trade on dquant]",
+          "url": "https://github.com/tobiawolaju"
+        },
+        {
+          "text": "[GitHub]",
+          "url": "https://github.com/tobiawolaju"
+        }
+      ],
+      "writeup": {
+        "goal": "Automate complex DeFi strategies (like liquidations, statistical arbitrage, and tokenomic rebalancing) on a high-speed chain.",
+        "hardPart": "Monad's architecture is designed to prevent traditional mempool sniping and sandwich attacks. To find an edge, I had to build a system that parses confirmed on-chain state, gas pricing logs, and AI-aggregated behavioral signals in real-time to execute trades strictly based on speed and statistical advantage.",
+        "stack": "TypeScript, Monad Situation Dashboard APIs, Distributed Node.js Microservices, Firebase.",
+        "value": "Proves I understand modern DeFi mechanism design, protocol health (Keeper networks), and how to programmatically interact with liquidity pools within the constraints of an MEV-resistant blockchain."
+      }
+    },
+    {
+      "category": "ai",
       "image": "grey.jpg",
       "title": "Noogler - Embodied AI \u2197",
       "description": "Giving the ghost a body. An AI agent that doesn't just call APIs, but actually sees the screen and moves the mouse like a human.",
@@ -107,45 +151,37 @@
     {
       "category": "blockchain",
       "image": "grey.jpg",
-      "title": "MoyakiTraceEngine \u2197",
-      "description": "Web3 Infra & Backend",
+      "title": "ProofForge \u2197",
+      "description": "Tamper-evident development timelines. Every Git commit, anchored on-chain.",
       "links": [
         {
-          "text": "[Trace Blocks]",
-          "url": "https://moyakitraceengine.vercel.app/"
-        },
-        {
           "text": "[GitHub]",
-          "url": "https://github.com/tobiawolaju/MoyakiTraceEngine"
+          "url": "https://github.com/tobiawolaju"
         }
       ],
       "writeup": {
-        "goal": "Build a resilient EVM indexer that never drops data, even when the blockchain reorganizes.",
-        "hardPart": "Public RPCs are unreliable. I built a multi-node ingestion engine that cross-references 3 different Monad nodes, with a custom 'ReorgManager' that detects parent-hash mismatches and automatically rolls back bad state.",
-        "stack": "Node.js, Express, Svelte, Firebase RTDB, EVM RPCs.",
-        "value": "Proves I can build production-grade, fault-tolerant infrastructure and streaming data pipelines. I don't just query blockchains; I know how they fail."
+        "goal": "Make build history unforgeable. Prove what was built, when, and by whom \u2014 without trusting GitHub, a repo host, or any single party.",
+        "hardPart": "The trust problem is subtle. GitHub repos can be force-pushed. History can be rewritten. The only moment you can't fake is the HMAC-signed webhook payload \u2014 that's when GitHub itself attests a push happened. I built the entire anchoring system around that specific event, not around repo state. The Monad contract only ever sees payloads that passed HMAC-SHA256 verification. That's the difference between 'tamper-resistant' and actually tamper-evident.",
+        "stack": "Node.js, Solidity, Monad Testnet, GitHub Webhooks, HMAC-SHA256.",
+        "value": "Demonstrates the ability to bridge Web2 events with Web3 state in a trustless manner, specifically addressing the integrity of software supply chains."
       }
     },
     {
       "category": "ai",
-      "image": "dominusquant.gif",
-      "title": "DominusQuant: Monad Keeper & Algo-Trading Bot \u2197",
-      "description": "Automated trading infrastructure leveraging Monad's gas pricing logs and distributed behavioral signals for healthy, non-toxic execution.",
+      "image": "grey.jpg",
+      "title": "HARE \u2014 Headless Autonomous Relay Engine \u2197",
+      "description": "Agent infrastructure that removes the human from execution and quality control. Both loops.",
       "links": [
-        {
-          "text": "[trade on dquant]",
-          "url": "https://github.com/tobiawolaju"
-        },
         {
           "text": "[GitHub]",
           "url": "https://github.com/tobiawolaju"
         }
       ],
       "writeup": {
-        "goal": "Automate complex DeFi strategies (like liquidations, statistical arbitrage, and tokenomic rebalancing) on a high-speed chain.",
-        "hardPart": "Monad's architecture is designed to prevent traditional mempool sniping and sandwich attacks. To find an edge, I had to build a system that parses confirmed on-chain state, gas pricing logs, and AI-aggregated behavioral signals in real-time to execute trades strictly based on speed and statistical advantage.",
-        "stack": "TypeScript, Monad Situation Dashboard APIs, Distributed Node.js Microservices, Firebase.",
-        "value": "Proves I understand modern DeFi mechanism design, protocol health (Keeper networks), and how to programmatically interact with liquidity pools within the constraints of an MEV-resistant blockchain."
+        "goal": "Build the foundation for agents that are autonomous in the way that actually matters \u2014 no human reviewing outputs, no human retrying failures, no human deciding if the result was good enough.",
+        "hardPart": "Most 'autonomous' agent frameworks are autonomous in name only. They remove the human from execution but quietly keep them in the quality control loop. HARE treats reliability as a first-class architectural constraint. Tasks must self-evaluate against a success condition, self-retry with adjusted context on failure, and emit structured results that downstream systems can trust without human inspection.",
+        "stack": "Node.js, TypeScript, LLM APIs, Webhook Infrastructure.",
+        "value": "Proves I can build high-reliability agentic systems that handle the 'noisy' nature of LLMs through structured feedback loops and self-healing architecture."
       }
     },
     {

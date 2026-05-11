@@ -24,7 +24,7 @@
 }
 
 .splash-text {
-  font-size: clamp(1.875rem, 6vw, 4.5rem);
+  font-size: clamp(2.8125rem, 9vw, 6.75rem);
   font-weight: 900;
   margin: 0;
   display: flex;
@@ -370,7 +370,7 @@ section.visible {
     margin-bottom: 6px;
     display: block;
     line-height: 1.2;
-    color: var(--text-color);
+    color: #3b82f6;
   }
 
   .project-info p.mission {
@@ -456,6 +456,13 @@ section.visible {
 .project-info a {
   font-size: large;
   text-decoration: none;
+  color: #3b82f6;
+  transition: opacity 0.2s ease;
+}
+
+.project-info a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
 }
 
 .project-info p {
