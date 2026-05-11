@@ -4,8 +4,8 @@
   "profile": {
     "image": "pfp.jpg",
     "name": "Tobi Awolaju",
-    "title": "Systems Engineer (Real-time + Web3 Infrastructure)",
-    "bio": "<p style='font-size: large; padding-bottom: 1.5rem;'><b>\"I build because I am curious. I ship because I don't believe in 'impossible'.\"</b><br>#gmonad</p><p style='font-size: large; padding-bottom: 2rem;'><b> What I Bring to a Team:</b><br>\u2022 <b>Real-time Web3 Gaming:</b> Building 20Hz WebSockets and syncing complex 3D game states to on-chain execution.<br>\u2022 <b>Tokenomic Implementation:</b> Turning spreadsheet tokenomics into secure, automated on-chain logic (prize distributions, automated trading).<br>\u2022 <b>Internal Tooling & Automation:</b> If the team does a task twice, I build a local AI agent or a CLI tool to automate it.</p>",
+    "title": "Systems Engineer (Embedded | Web3 Infra | AI Agents)",
+    "bio": "<p style='font-size: large; padding-bottom: 1.5rem;'><b>\"Bridging the gap between Silicon, Software, and On-Chain Logic.\"</b></p><p style='font-size: large; padding-bottom: 2rem;'><b>What I Bring to a Team:</b><br>\u2022 <b>Real-time Web3 Gaming:</b> Building 20Hz WebSockets and syncing complex 3D game states to on-chain execution.<br>\u2022 <b>Embedded & Hardware:</b> C/C++, RTOS, ESP32/STM32, FPGA, Signal Processing, and IoT Protocols (MQTT, I2C, SPI).<br>\u2022 <b>Internal Tooling & Automation:</b> If the team does a task twice, I build a local AI agent or a CLI tool to automate it.</p>",
     "resumeLink": "https://docs.google.com/document/d/1PnD1JnPN4_dunRGlKE8qNg5aQrP1O-R3XqFPdMXQ3PE/edit?usp=sharing"
   },
   "sectionLabels": {
@@ -28,6 +28,10 @@
     {
       "id": "blockchain",
       "label": "Blockchain Tech"
+    },
+    {
+      "id": "embedded",
+      "label": "Silicon & Signal"
     }
   ],
   "projects": [
@@ -142,6 +146,24 @@
         "hardPart": "Monad's architecture is designed to prevent traditional mempool sniping and sandwich attacks. To find an edge, I had to build a system that parses confirmed on-chain state, gas pricing logs, and AI-aggregated behavioral signals in real-time to execute trades strictly based on speed and statistical advantage.",
         "stack": "TypeScript, Monad Situation Dashboard APIs, Distributed Node.js Microservices, Firebase.",
         "value": "Proves I understand modern DeFi mechanism design, protocol health (Keeper networks), and how to programmatically interact with liquidity pools within the constraints of an MEV-resistant blockchain."
+      }
+    },
+    {
+      "category": "embedded",
+      "image": "grey.jpg",
+      "title": "High-Fidelity Signal Processing & Control Systems \u2197",
+      "description": "Developed a real-time signal acquisition system focused on low-latency feedback loops for control systems.",
+      "links": [
+        {
+          "text": "[Hardware Docs]",
+          "url": "https://github.com/tobiawolaju"
+        }
+      ],
+      "writeup": {
+        "goal": "Develop a real-time signal acquisition system as part of EEE coursework, focused on low-latency feedback loops for control systems.",
+        "hardPart": "Public sensors can be noisy and slow. I optimized data throughput between hardware sensors and local processing units using SPI/I2C protocols and implemented DSP algorithms to filter noise in high-frequency environments.",
+        "stack": "C/C++, RTOS, ESP32/STM32, SPI, I2C, Signal Processing.",
+        "value": "Bridges the gap between hardware roots and software expertise, making me a rare 'Full-Stack Hardware-to-Web3' engineer. These skills are directly applied to smoothing data in my 20Hz Web3 game engines."
       }
     }
   ],
