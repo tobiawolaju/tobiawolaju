@@ -324,12 +324,100 @@ section.visible {
 }
 
 @media (max-width: 768px) {
+  .project {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 100px auto;
+    grid-template-areas:
+      "img info"
+      "footer footer";
+    gap: 12px 12px;
+    padding: 12px;
+    margin-bottom: 16px;
+    height: auto;
+    max-height: none;
+    scale: 1;
+    overflow: visible;
+    text-align: left;
+    align-items: start;
+  }
 
-  /* Adjust the width as needed */
-  /* General Project Styles */
-  .project img {
-    width: 100%;
+  .project > img {
+    grid-area: img;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .project-info {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    overflow: hidden;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .project-info a {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  .project-info p.mission {
+    font-size: 0.9rem;
+    margin: 0;
+    opacity: 0.7;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.3;
+  }
+
+  .project-footer {
+    grid-area: footer;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
+    background-color: transparent;
+  }
+
+  .project-footer .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+  }
+
+  .writeup-toggle {
+    margin: 0;
+    font-size: 0.85rem;
+    padding: 4px 8px;
+    width: auto;
+  }
+
+  .technical-writeup {
+    grid-column: 1 / -1;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    opacity: 0;
+    width: 100%;
+    border-left: none !important;
+    padding-left: 0 !important;
+    margin-top: 10px;
+  }
+
+  .technical-writeup.expanded {
+    max-height: 2000px !important;
+    opacity: 1 !important;
+    overflow-y: visible;
   }
 }
 
@@ -338,6 +426,12 @@ section.visible {
 
 .project-info {
   text-align: left;
+  background-color: #81818115;
+}
+
+.project-footer {
+  text-align: left;
+  padding: 8px 10px 0;
   background-color: #81818115;
 }
 

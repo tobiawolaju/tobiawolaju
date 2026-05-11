@@ -85,8 +85,9 @@ function renderPortfolio(data) {
                 <div class="project-info">
                     <a href="#"><strong>${project.title}</strong></a>
                     <p class="mission">${project.description}</p>
-                    
-                    <div class="links" style="margin-top: 1rem;">
+                </div>
+                <div class="project-footer">
+                    <div class="links">
                         ${project.links.map(link => {
                 let tagClass = 'tag-blue';
                 const text = link.text.toLowerCase();
@@ -98,7 +99,6 @@ function renderPortfolio(data) {
                 return `<a href="${link.url}" class="tag ${tagClass}" target="_blank">${link.text}</a>`;
             }).join("")}
                     </div>
-
                     ${project.writeup ? `
                     <button class="writeup-toggle">Project Breakdown ▾</button>
                     <div class="technical-writeup" style="border-left: 2px solid #ccc; padding-left: 1rem;">
@@ -124,7 +124,7 @@ function renderPortfolio(data) {
                         </div>
                         ${project.writeup.web3 ? `
                         <div class="writeup-section">
-                            <strong>6. Web3 & Smart Contracts:</strong>
+                            <strong>6. Web3 &amp; Smart Contracts:</strong>
                             <p>${project.writeup.web3}</p>
                         </div>
                         ` : ''}
