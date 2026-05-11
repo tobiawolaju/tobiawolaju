@@ -157,7 +157,8 @@ body {
 }
 
 .skill-icon.rust:hover {
-  filter: brightness(1) !important; /* Force original color and brightness */
+  /* Vibrant orange filter for black SVGs */
+  filter: invert(42%) sepia(98%) saturate(3000%) hue-rotate(0deg) brightness(100%) contrast(105%) !important;
   opacity: 1;
 }
 
