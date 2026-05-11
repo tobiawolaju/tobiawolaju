@@ -102,44 +102,84 @@ function renderPortfolio(data) {
                     ${project.writeup ? `
                     <button class="writeup-toggle">Project Breakdown ▾</button>
                     <div class="technical-writeup" style="border-left: 2px solid #ccc; padding-left: 1rem;">
+                        ${project.writeup.goal ? `
+                        <div class="writeup-section">
+                            <strong>• The Goal:</strong>
+                            <p>${project.writeup.goal}</p>
+                        </div>
+                        ` : ''}
+                        ${project.writeup.overview ? `
                         <div class="writeup-section">
                             <strong>1. Overview:</strong>
                             <p>${project.writeup.overview}</p>
                         </div>
+                        ` : ''}
+                        ${project.writeup.features ? `
                         <div class="writeup-section">
                             <strong>2. Core Features:</strong>
                             <ul>${project.writeup.features.map(feat => `<li>${feat}</li>`).join("")}</ul>
                         </div>
+                        ` : ''}
+                        ${project.writeup.architecture ? `
                         <div class="writeup-section">
                             <strong>3. Architecture:</strong>
                             <p>${project.writeup.architecture}</p>
                         </div>
+                        ` : ''}
+                        ${project.writeup.hardPart ? `
+                        <div class="writeup-section">
+                            <strong>• The Hard Part (Engineering):</strong>
+                            <p>${project.writeup.hardPart}</p>
+                        </div>
+                        ` : ''}
+                        ${project.writeup.techStack ? `
                         <div class="writeup-section">
                             <strong>4. Tech Stack:</strong>
                             <p>${project.writeup.techStack}</p>
                         </div>
+                        ` : ''}
+                        ${project.writeup.stack ? `
+                        <div class="writeup-section">
+                            <strong>• The Stack:</strong>
+                            <p>${project.writeup.stack}</p>
+                        </div>
+                        ` : ''}
+                        ${project.writeup.infrastructure ? `
                         <div class="writeup-section">
                             <strong>5. Infrastructure:</strong>
                             <p>${project.writeup.infrastructure}</p>
                         </div>
+                        ` : ''}
                         ${project.writeup.web3 ? `
                         <div class="writeup-section">
                             <strong>6. Web3 &amp; Smart Contracts:</strong>
                             <p>${project.writeup.web3}</p>
                         </div>
                         ` : ''}
+                        ${project.writeup.challenges ? `
                         <div class="writeup-section">
                             <strong>7. Challenges:</strong>
                             <p>${project.writeup.challenges}</p>
                         </div>
+                        ` : ''}
+                        ${project.writeup.outcomes ? `
                         <div class="writeup-section">
                             <strong>8. Outcomes:</strong>
                             <p>${project.writeup.outcomes}</p>
                         </div>
+                        ` : ''}
+                        ${project.writeup.value ? `
+                        <div class="writeup-section">
+                            <strong>• Value to a Team:</strong>
+                            <p>${project.writeup.value}</p>
+                        </div>
+                        ` : ''}
+                        ${project.writeup.future ? `
                         <div class="writeup-section">
                             <strong>9. Future Scope:</strong>
                             <p>${project.writeup.future}</p>
                         </div>
+                        ` : ''}
                     </div>
                     ` : ''}
                 </div>

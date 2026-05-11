@@ -5,7 +5,7 @@
     "image": "pfp.jpg",
     "name": "Tobi Awolaju",
     "title": "Systems Engineer (Real-time + Web3 Infrastructure)",
-    "bio": "<p style='font-size: large; padding-bottom: 1.5rem;'><b>\"I build because I am curious. I ship because I don't believe in 'impossible' \u2014 I only see a lack of information.\"</b></p><p style='font-size: large; padding-bottom: 1.5rem;'>I don't just use tech stacks; I inhabit them. To me, computers are the ultimate leverage for curiosity. Whether it's 3D modeling, real-time math, or decentralized economics, I dive in to see if I can make the machine dance.</p><p style='font-size: large; padding-bottom: 1.5rem;'><b>Areas of Obsession:</b><br>\u2022 <b>Real-time Systems:</b> Making 20 players move in sync at 20Hz.<br>\u2022 <b>On-chain Truth:</b> Building resilient infra that understands blockchains better than they understand themselves.<br>\u2022 <b>Digital Agency:</b> Giving AI 'hands' to navigate the world just like we do.</p><p style='font-size: large; padding-bottom: 3rem;'><b>Current Mission:</b><br>I'm looking for teams working on the high-performance edge of Web3 or agentic AI. If you're building something that 'can't be done,' let's talk.</p>",
+    "bio": "<p style='font-size: large; padding-bottom: 1.5rem;'><b>\"I build because I am curious. I ship because I don't believe in 'impossible'.\"</b><br>#gmonad</p><p style='font-size: large; padding-bottom: 2rem;'><b>\u2699\ufe0f What I Bring to a Team:</b><br>\u2022 <b>Real-time Web3 Gaming:</b> Building 20Hz WebSockets and syncing complex 3D game states to on-chain execution.<br>\u2022 <b>Tokenomic Implementation:</b> Turning spreadsheet tokenomics into secure, automated on-chain logic (prize distributions, automated trading).<br>\u2022 <b>Internal Tooling & Automation:</b> If the team does a task twice, I build a local AI agent or a CLI tool to automate it.</p>",
     "resumeLink": "https://docs.google.com/document/d/1PnD1JnPN4_dunRGlKE8qNg5aQrP1O-R3XqFPdMXQ3PE/edit?usp=sharing"
   },
   "sectionLabels": {
@@ -104,11 +104,11 @@
       "category": "blockchain",
       "image": "grey.jpg",
       "title": "MoyakiTraceEngine \u2197",
-      "description": "Blockchains are messy. I built this indexer to make them legible, featuring reorg detection and real-time execution trace streaming.",
+      "description": "Web3 Infra & Backend",
       "links": [
         {
           "text": "[Trace Blocks]",
-          "url": "https://github.com/tobiawolaju/MoyakiTraceEngine"
+          "url": "https://moyakitraceengine.vercel.app/"
         },
         {
           "text": "[GitHub]",
@@ -116,25 +116,17 @@
         }
       ],
       "writeup": {
-        "overview": "I wanted a clearer view of blockchain execution. This engine is built to ingest and index EVM data with absolute resilience.",
-        "features": [
-          "3-node RPC ingestion engine for consensus comparison",
-          "Reorg-aware rollback and state correction",
-          "Rate-limit resilient data streaming"
-        ],
-        "architecture": "High-concurrency ingestion layer feeding into a structured PostgreSQL/TimescaleDB store.",
-        "infrastructure": "Optimized for high-throughput RPC nodes and local caching.",
-        "techStack": "Rust, TypeScript, PostgreSQL, EVM RPC.",
-        "challenges": "Handling massive data influx and maintaining accuracy during network reorgs.",
-        "outcomes": "A production-grade indexer used for real-time tracking of complex on-chain events.",
-        "future": "Integration with more non-EVM chains and advanced behavioral indexing."
+        "goal": "Build a resilient EVM indexer that never drops data, even when the blockchain reorganizes.",
+        "hardPart": "Public RPCs are unreliable. I built a multi-node ingestion engine that cross-references 3 different Monad nodes, with a custom 'ReorgManager' that detects parent-hash mismatches and automatically rolls back bad state.",
+        "stack": "Node.js, Express, Svelte, Firebase RTDB, EVM RPCs.",
+        "value": "Proves I can build production-grade, fault-tolerant infrastructure and streaming data pipelines. I don't just query blockchains; I know how they fail."
       }
     },
     {
       "category": "ai",
       "image": "dominusquant.gif",
-      "title": "DominusQuant \u2197",
-      "description": "A deep dive into behavioral analytics and signal aggregation for crypto trading. Building the brain behind the trade.",
+      "title": "DominusQuant: Monad Keeper & Algo-Trading Bot \u2197",
+      "description": "Automated trading infrastructure leveraging Monad's gas pricing logs and distributed behavioral signals for healthy, non-toxic execution.",
       "links": [
         {
           "text": "[trade on dquant]",
@@ -146,18 +138,10 @@
         }
       ],
       "writeup": {
-        "overview": "A personal project to understand the psychology and data behind market movements using distributed systems.",
-        "features": [
-          "Distributed signal aggregation from multiple sources",
-          "AI-assisted sentiment and behavioral analysis",
-          "Modular architecture for custom trading strategies"
-        ],
-        "architecture": "Distributed Node.js microservices for data collection and AI processing.",
-        "infrastructure": "Scalable cloud-based signal ingestion pipelines.",
-        "techStack": "Node.js, Python, TensorFlow, Firebase.",
-        "challenges": "Aggregating vast amounts of noise to find actionable trading signals.",
-        "outcomes": "A robust framework for backtesting and executing AI-assisted crypto strategies.",
-        "future": "Implementing zero-knowledge proof verification for signal sources."
+        "goal": "Automate complex DeFi strategies (like liquidations, statistical arbitrage, and tokenomic rebalancing) on a high-speed chain.",
+        "hardPart": "Monad's architecture is designed to prevent traditional mempool sniping and sandwich attacks. To find an edge, I had to build a system that parses confirmed on-chain state, gas pricing logs, and AI-aggregated behavioral signals in real-time to execute trades strictly based on speed and statistical advantage.",
+        "stack": "TypeScript, Monad Situation Dashboard APIs, Distributed Node.js Microservices, Firebase.",
+        "value": "Proves I understand modern DeFi mechanism design, protocol health (Keeper networks), and how to programmatically interact with liquidity pools within the constraints of an MEV-resistant blockchain."
       }
     }
   ],
