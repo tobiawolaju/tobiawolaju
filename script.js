@@ -45,7 +45,7 @@ function renderPortfolio(data) {
             resumeBtn.href = data.profile.resumeLink;
             resumeBtn.target = "_blank";
             resumeBtn.rel = "noopener noreferrer";
-            resumeBtn.textContent = "View Resume ↗";
+            resumeBtn.textContent = "🗎 Download CV";
             aboutContent.appendChild(resumeBtn);
         }
     }
@@ -170,7 +170,13 @@ function renderPortfolio(data) {
         `).join("");
     }
 
-
+    // 6. Activity / Contributions
+    if (data.sectionLabels && data.sectionLabels.activity) {
+        const activityHeader = document.getElementById("activity-header");
+        if (activityHeader) {
+            activityHeader.textContent = data.sectionLabels.activity;
+        }
+    }
 }
 
 function initProjectGifLoops() {
