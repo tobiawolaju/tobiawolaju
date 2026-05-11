@@ -92,6 +92,61 @@ body {
   min-height: 100vh;
 }
 
+/* Skills Section Styling */
+.skill-group {
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+@media (prefers-color-scheme: dark) {
+  .skill-group {
+    color: #ccc;
+  }
+}
+
+.skill-group strong {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #3b82f6; /* Matching the project title blue */
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.skill-icon {
+  width: 24px;
+  height: 24px;
+  opacity: 0.6;
+  filter: brightness(0) invert(1); /* Ensure they are pure white */
+  transition: all 0.3s ease;
+  cursor: help;
+}
+
+.skill-icon:hover {
+  opacity: 1;
+  transform: translateY(-3px) scale(1.1);
+  filter: brightness(1) invert(0); /* Turn to original color if color icons, or stay white if already white */
+}
+
+@media (prefers-color-scheme: dark) {
+  .skill-icon {
+    opacity: 0.5;
+  }
+  .skill-icon:hover {
+    opacity: 1;
+  }
+}
+
 header {
   text-align: center;
   padding: 15px;
@@ -342,6 +397,12 @@ section.visible {
     align-items: start;
     background-color: rgba(128, 128, 128, 0.05);
   }
+
+  .filters button:hover {
+  background-color: rgba(128, 128, 128, 0.1);
+}
+
+
 
   .project>img {
     grid-area: img;
