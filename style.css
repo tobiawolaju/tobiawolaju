@@ -877,3 +877,12 @@ a {
       8px 8px 0 rgba(255, 255, 255, 0.1);
   }
 }
+
+/* CV button icon: light/dark mode switcher */
+.cv-icon-dark { display: none; }
+.cv-icon-light { display: inline; }
+
+@media (prefers-color-scheme: dark) {
+  .cv-icon-dark { display: inline; }
+  .cv-icon-light { display: none; }
+}

@@ -45,7 +45,7 @@ function renderPortfolio(data) {
             resumeBtn.href = data.profile.resumeLink;
             resumeBtn.target = "_blank";
             resumeBtn.rel = "noopener noreferrer";
-            resumeBtn.textContent = "🗎 Download CV";
+            resumeBtn.innerHTML = `<img src="https://img.icons8.com/ios-filled/24/000000/documents.png" alt="CV" class="cv-icon cv-icon-light" width="16" height="16" style="vertical-align:middle; margin-right:6px;"><img src="https://img.icons8.com/ios-filled/24/ffffff/documents.png" alt="CV" class="cv-icon cv-icon-dark" width="16" height="16" style="vertical-align:middle; margin-right:6px;">Download CV`;
             aboutContent.appendChild(resumeBtn);
         }
     }
@@ -329,26 +329,6 @@ function initInteractions() {
             const isExpanded = content.classList.toggle("expanded");
             toggle.textContent = isExpanded ? "Project Breakdown ▴" : "Project Breakdown ▾";
         }
-    });
-
-    // Close Project Breakdowns when out of view
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                const expanded = entry.target.querySelectorAll(".technical-writeup.expanded");
-                expanded.forEach(content => {
-                    content.classList.remove("expanded");
-                    const toggle = content.previousElementSibling;
-                    if (toggle && toggle.classList.contains("writeup-toggle")) {
-                        toggle.textContent = "Project Breakdown ▾";
-                    }
-                });
-            }
-        });
-    }, { threshold: 0 });
-
-    document.querySelectorAll(".project").forEach(project => {
-        observer.observe(project);
     });
 
     // --- Filters ---
