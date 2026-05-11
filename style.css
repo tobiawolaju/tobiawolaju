@@ -129,7 +129,7 @@ body {
   height: 32px;
   opacity: 0.6;
   filter: brightness(0); /* Black in light mode */
-  transition: all 0.3s ease;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); /* Slower, smoother fade back */
   cursor: help;
 }
 
@@ -155,6 +155,7 @@ body {
   opacity: 1;
   transform: translateY(-3px) scale(1.1);
   filter: none; /* Restore original color */
+  transition: all 0.2s ease; /* Snappy activation */
 }
 
 .skill-icon.rust:hover,
