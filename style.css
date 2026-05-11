@@ -862,7 +862,7 @@ a {
   /* min, fluid, max */
   font-family: 'Press Start 2P', monospace;
   color: rgb(48, 48, 48);
-  -webkit-text-stroke: 0.1px rgb(226, 226, 226);
+  -webkit-text-stroke: 0.1px rgb(0, 0, 0);
   text-shadow:
     4px 4px 0 rgba(0, 0, 0, 0.15),
     8px 8px 0 rgba(0, 0, 0, 0.05);
