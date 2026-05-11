@@ -403,6 +403,9 @@ function initInteractions() {
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal2').forEach(el => revealObs.observe(el));
 
+    // --- Skill Scroll Sync ---
+    initSkillScrollSync();
+
     // --- Footer Scroll ---
     const footer = document.getElementById("site-footer");
     if (footer) {
@@ -416,4 +419,39 @@ function initInteractions() {
             }
         });
     }
+}
+
+function initSkillScrollSync() {
+    const skillIcons = document.querySelectorAll('.skill-icon');
+    const skillsSection = document.getElementById('skills-section');
+    
+    if (!skillsSection || skillIcons.length === 0) return;
+
+    window.addEventListener('scroll', () => {
+        const rect = skillsSection.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // If section is roughly in the middle of the screen or becoming visible
+        if (rect.top < windowHeight * 0.8 && rect.bottom > windowHeight * 0.2) {
+            // Calculate progress: 0 when top enters bottom, 1 when bottom leaves top
+            const sectionHeight = rect.height;
+            const scrollDepth = (windowHeight * 0.8) - rect.top; 
+            const totalScrollRange = (windowHeight * 0.6) + sectionHeight;
+            const progress = Math.min(Math.max(scrollDepth / totalScrollRange, 0), 1);
+            
+            // Map progress to icon index
+            // Using a slightly wider range to ensure first/last icons get their moment
+            const indexToActivate = Math.floor(progress * (skillIcons.length + 1)) - 1; 
+            
+            skillIcons.forEach((icon, i) => {
+                if (i === indexToActivate) {
+                    icon.classList.add('active');
+                } else {
+                    icon.classList.remove('active');
+                }
+            });
+        } else {
+            skillIcons.forEach(icon => icon.classList.remove('active'));
+        }
+    });
 }

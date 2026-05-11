@@ -150,19 +150,22 @@ body {
   }
 }
 
-.skill-icon:hover {
+.skill-icon:hover,
+.skill-icon.active {
   opacity: 1;
   transform: translateY(-3px) scale(1.1);
   filter: none; /* Restore original color */
 }
 
-.skill-icon.rust:hover {
+.skill-icon.rust:hover,
+.skill-icon.rust.active {
   /* Vibrant orange filter for black SVGs */
   filter: invert(42%) sepia(98%) saturate(3000%) hue-rotate(0deg) brightness(100%) contrast(105%) !important;
   opacity: 1;
 }
 
-.skill-icon.solidity:hover {
+.skill-icon.solidity:hover,
+.skill-icon.solidity.active {
   filter: invert(31%) sepia(97%) saturate(1900%) hue-rotate(250deg) brightness(95%) contrast(100%) !important;
   opacity: 1;
 }
