@@ -128,9 +128,15 @@ body {
   width: 32px;
   height: 32px;
   opacity: 0.6;
-  filter: brightness(0) invert(1); /* Ensure they are pure white */
+  filter: brightness(0); /* Black in light mode */
   transition: all 0.3s ease;
   cursor: help;
+}
+
+@media (prefers-color-scheme: dark) {
+  .skill-icon {
+    filter: brightness(0) invert(1); /* White in dark mode */
+  }
 }
 
 @media (max-width: 768px) {
@@ -140,14 +146,23 @@ body {
   }
   .skill-icons {
     gap: 16px;
-    justify-content: center; /* Keep centered on mobile if it looks better, or change to flex-start */
+    justify-content: center;
   }
 }
 
 .skill-icon:hover {
   opacity: 1;
   transform: translateY(-3px) scale(1.1);
-  filter: brightness(1) invert(0); /* Turn to original color if color icons, or stay white if already white */
+  filter: none; /* Restore original color */
+}
+
+.skill-icon.rust:hover {
+  filter: none; /* Original Rust is orange */
+}
+
+.skill-icon.solidity:hover {
+  /* Force vibrant purple for Solidity */
+  filter: invert(31%) sepia(97%) saturate(1900%) hue-rotate(250deg) brightness(95%) contrast(100%);
 }
 
 @media (prefers-color-scheme: dark) {
