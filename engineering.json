@@ -38,7 +38,7 @@
       "description": "What happens when you bridge high-speed gaming and Monad? I built this entire world\u2014from the 3D assets to the 20Hz WebSocket server.",
       "links": [
         {
-          "text": "[Live Site]",
+          "text": "[Play world of nads]",
           "url": "https://worldofnads.xyz"
         },
         {
@@ -77,6 +77,10 @@
       "description": "Giving the ghost a body. An AI agent that doesn't just call APIs, but actually sees the screen and moves the mouse like a human.",
       "links": [
         {
+          "text": "[Watch Agent]",
+          "url": "https://github.com/tobiawolaju/Noogler"
+        },
+        {
           "text": "[GitHub]",
           "url": "https://github.com/tobiawolaju/Noogler"
         }
@@ -103,6 +107,10 @@
       "description": "Blockchains are messy. I built this indexer to make them legible, featuring reorg detection and real-time execution trace streaming.",
       "links": [
         {
+          "text": "[Trace Blocks]",
+          "url": "https://github.com/tobiawolaju/MoyakiTraceEngine"
+        },
+        {
           "text": "[GitHub]",
           "url": "https://github.com/tobiawolaju/MoyakiTraceEngine"
         }
@@ -128,6 +136,10 @@
       "title": "DominusQuant \u2197",
       "description": "A deep dive into behavioral analytics and signal aggregation for crypto trading. Building the brain behind the trade.",
       "links": [
+        {
+          "text": "[trade on dquant]",
+          "url": "https://github.com/tobiawolaju"
+        },
         {
           "text": "[GitHub]",
           "url": "https://github.com/tobiawolaju"
