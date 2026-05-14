@@ -4,7 +4,7 @@
   z-index: 10000;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -89,6 +89,20 @@
   }
 }
 
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 /* Default styles (light mode) */
 body {
   margin: 0;
@@ -259,10 +273,10 @@ footer {
   padding: 10px;
   margin: 0px;
   background: rgb(255, 255, 255);
-  width: 100vw;
+  width: 100%;
   position: static;
   scale: 0.85;
-  width: 100vw;
+  width: 100%;
 }
 
 .footit img {
