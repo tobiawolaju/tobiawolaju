@@ -27,9 +27,15 @@
   font-size: clamp(2.8125rem, 9vw, 6.75rem);
   font-weight: 900;
   margin: 0;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1em;
+}
+
+.splash-line {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 0.02em;
 }
 
