@@ -57,7 +57,7 @@ function renderPortfolio(data) {
         data.filters.forEach((filter, index) => {
             // First one active by default
             const activeClass = index === 0 ? "active" : "";
-            filterHTML += `<button data-filter="${filter.id === 'all' ? 'all' : filter.id}" class="${activeClass}">${filter.label}</button>`;
+            filterHTML += `<button data-filter="${filter.id}" class="${activeClass}">${filter.label}</button>`;
         });
         filterContainer.innerHTML = filterHTML;
     }
@@ -80,7 +80,7 @@ function renderPortfolio(data) {
                 : "";
 
             return `
-            <div class="project" data-category="${project.category}">
+            <div class="project" data-tags="${(project.tags || []).join(",")}">
                 <img src="${project.image}" alt="${project.title}"${gifSequence}>
                 <div class="project-info">
                     <a href="#"><strong>${project.title}</strong></a>
@@ -372,25 +372,58 @@ function initInteractions() {
     });
 
     // --- Filters ---
-    document.querySelectorAll('.filters button').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            const filter = btn.getAttribute('data-filter');
-            document.querySelectorAll('.project').forEach(project => {
-                const category = project.getAttribute('data-category');
-                if (filter === "all" || category === filter) {
-                    project.style.display = "block";
-                } else {
-                    project.style.display = "none";
-                }
+    const filterButtons = document.querySelectorAll('.filters button');
+    const projectCards = document.querySelectorAll('.project');
+
+    const setProjectVisibility = (activeFilter) => {
+        const isAllFilter = activeFilter === "all";
+        let visibleCount = 0;
+
+        projectCards.forEach(project => {
+            const tags = (project.getAttribute('data-tags') || "")
+                .split(",")
+                .map(tag => tag.trim())
+                .filter(Boolean);
+            const matchesFilter = isAllFilter || tags.includes(activeFilter);
+            const shouldShow = matchesFilter;
+
+            project.classList.toggle('is-visible', shouldShow);
+            project.classList.toggle('is-hidden', !shouldShow);
+            project.style.display = shouldShow ? "block" : "none";
+
+            if (shouldShow) visibleCount += 1;
+        });
+
+        // Ensure no empty states: fallback to showing all projects.
+        if (visibleCount === 0) {
+            projectCards.forEach(project => {
+                project.classList.add('is-visible');
+                project.classList.remove('is-hidden');
+                project.style.display = "block";
             });
+        }
+    };
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const activeFilter = btn.getAttribute('data-filter') || "all";
+
+            projectCards.forEach(project => {
+                project.classList.add('is-transitioning');
+            });
+
+            setTimeout(() => {
+                setProjectVisibility(activeFilter);
+                projectCards.forEach(project => project.classList.remove('is-transitioning'));
+            }, 160);
         });
     });
 
-    // Trigger first filter click
-    const firstFilter = document.querySelector('.filters button');
-    if (firstFilter) firstFilter.click();
+    // Default selected filter is "All"
+    const defaultFilter = document.querySelector('.filters button[data-filter="all"]') || document.querySelector('.filters button');
+    if (defaultFilter) defaultFilter.click();
 
     // --- Contact Section Reveal ---
     const revealObs = new IntersectionObserver((entries) => {

@@ -15,24 +15,27 @@
   "filters": [
     {
       "id": "all",
-      "label": "All Artifacts"
+      "label": "All"
     },
     {
-      "id": "games",
-      "label": "Interactive Worlds"
+      "id": "flagship",
+      "label": "Flagship"
     },
     {
-      "id": "ai",
-      "label": "Agentic AI"
+      "id": "notable",
+      "label": "Notable"
     },
     {
-      "id": "blockchain",
-      "label": "Blockchain Tech"
+      "id": "developer-tools",
+      "label": "Developer Tools"
     }
   ],
   "projects": [
     {
-      "category": "blockchain",
+      "tags": [
+        "notable",
+        "developer-tools"
+      ],
       "image": "grey.jpg",
       "title": "MoyakiTraceEngine \u2197",
       "description": "Web3 Infra & Backend",
@@ -53,7 +56,9 @@
       }
     },
     {
-      "category": "games",
+      "tags": [
+        "flagship"
+      ],
       "image": "worldofnads1.gif",
       "title": "World of Nads \u2197",
       "description": "What happens when you bridge high-speed gaming and Monad? I built this entire world\u2014from the 3D assets to the 20Hz WebSocket server.",
@@ -92,7 +97,9 @@
       ]
     },
     {
-      "category": "ai",
+      "tags": [
+        "flagship"
+      ],
       "image": "dominusquant.gif",
       "title": "DominusQuant: Monad Keeper & Algo-Trading Bot \u2197",
       "description": "Automated trading infrastructure leveraging Monad's gas pricing logs and distributed behavioral signals for healthy, non-toxic execution.",
@@ -113,7 +120,9 @@
       }
     },
     {
-      "category": "ai",
+      "tags": [
+        "flagship"
+      ],
       "image": "grey.jpg",
       "title": "Noogler - Embodied AI \u2197",
       "description": "Giving the ghost a body. An AI agent that doesn't just call APIs, but actually sees the screen and moves the mouse like a human.",
@@ -143,7 +152,10 @@
       }
     },
     {
-      "category": "blockchain",
+      "tags": [
+        "notable",
+        "developer-tools"
+      ],
       "image": "grey.jpg",
       "title": "ProofForge \u2197",
       "description": "Tamper-evident development timelines. Every Git commit, anchored on-chain.",
@@ -160,7 +172,10 @@
       }
     },
     {
-      "category": "ai",
+      "tags": [
+        "notable",
+        "developer-tools"
+      ],
       "image": "grey.jpg",
       "title": "HARE \u2014 Headless Autonomous Relay Engine \u2197",
       "description": "Agent infrastructure that removes the human from execution and quality control. Both loops.",

@@ -424,6 +424,24 @@ section.visible {
   padding-bottom: 20px;
   scale: 0.9;
   display: flex;
+  transition: opacity 180ms ease, transform 180ms ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project.is-transitioning {
+  opacity: 0.35;
+  transform: translateY(4px);
+}
+
+.project.is-hidden {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.project.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project img {
