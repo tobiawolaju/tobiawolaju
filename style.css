@@ -437,6 +437,7 @@ section.visible {
 .project.is-hidden {
   opacity: 0;
   transform: translateY(6px);
+  display: none !important;
 }
 
 .project.is-visible {
