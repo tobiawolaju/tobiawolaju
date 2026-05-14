@@ -1,162 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tobi's Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tobi Awolaju | High-Performance Systems & Infrastructure Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Press+Start+2P&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['Roboto Mono', 'monospace']
+          },
+          colors: {
+            surface: '#070B12',
+            panel: '#0F172A',
+            line: '#1E293B',
+            accent: '#38BDF8'
+          },
+          boxShadow: {
+            blueprint: '0 0 0 1px rgba(56,189,248,0.25), 0 12px 40px rgba(2,6,23,0.55)'
+          }
+        }
+      }
+    }
+  </script>
 </head>
-
-<body>
-  <div id="splash-screen">
-    <div class="splash-content">
-      <h1 class="splash-text" aria-label="BUILDER">
-        <span style="--i:1">B</span><span style="--i:2">U</span><span style="--i:3">I</span><span
-          style="--i:4">L</span><span style="--i:5">D</span><span style="--i:6">E</span><span style="--i:7">R</span>
-      </h1>
-
-    </div>
-  </div>
-
-
-  <section id="bio-section" style="display: block; text-align: center; padding-top: 20px">
-    <div style="text-align: center; margin-bottom: 20px;">
-      <p style="font-size: x-large; margin: 0; font-weight: bold;">
-      <div style="position: relative; display: inline-block;">
-        </p>
-        <h3 id="profile-name"></h3>
-        <p id="profile-title" style="font-size: medium; color: gray; margin: 5px 0;">
-        </p>
-
+<body class="bg-surface text-slate-100 antialiased">
+  <main class="mx-auto max-w-6xl px-6 pb-24 pt-12 lg:px-10">
+    <section class="border border-line bg-panel/60 p-8 shadow-blueprint lg:p-12">
+      <p class="font-mono text-xs uppercase tracking-[0.3em] text-accent">Systems Portfolio // Tobi Awolaju</p>
+      <h1 class="mt-5 text-4xl font-extrabold leading-tight text-white md:text-6xl">High-Performance Systems &amp; Infrastructure Engineer</h1>
+      <p class="mt-6 max-w-4xl text-lg text-slate-300">Applying EEE principles to On-Chain Logic. Engineering deterministic systems for 20Hz real-time synchronization and autonomous execution.</p>
+      <div class="mt-8 flex flex-wrap gap-3 font-mono text-xs">
+        <span class="border border-accent/40 bg-accent/10 px-3 py-1 text-accent">Throughput</span>
+        <span class="border border-accent/40 bg-accent/10 px-3 py-1 text-accent">Determinism</span>
+        <span class="border border-accent/40 bg-accent/10 px-3 py-1 text-accent">Fault Tolerance</span>
+        <span class="border border-accent/40 bg-accent/10 px-3 py-1 text-accent">Risk Mitigation</span>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <section class="mt-14">
+      <h2 class="font-mono text-xs uppercase tracking-[0.25em] text-accent">About</h2>
+      <div class="mt-4 border-l-2 border-accent/50 pl-6 text-base leading-8 text-slate-300">
+        <p>I view software through the lens of <span class="font-semibold text-white">Control Theory and Signal Integrity.</span> As an Electrical &amp; Electronic Engineering major, I don’t just write code; I design deterministic environments for high-stakes execution. My work centers on the boundary between hardware-level efficiency and on-chain logic—optimizing for <span class="font-semibold text-white">state synchronization, feedback loops, and resource-constrained environments.</span> Whether I’m architecting a 20Hz real-time gaming engine or an autonomous agent infrastructure, I engineer against entropy. I thrive where performance meets protocol, delivering infrastructure that remains resilient under production-grade chaos.</p>
+      </div>
+    </section>
 
+    <section class="mt-14">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="font-mono text-xs uppercase tracking-[0.25em] text-accent">Featured Projects // Rule of Three</h2>
+        <p class="font-mono text-xs text-slate-400">Case-study framing: Problem → Solution → Engineering Constraint</p>
+      </div>
+      <div class="mt-6 grid gap-6 lg:grid-cols-3">
+        <article class="border border-line bg-panel p-6 shadow-blueprint">
+          <header class="flex items-center justify-between gap-3">
+            <h3 class="text-lg font-bold text-white">MoyakiTraceEngine / World of Nads</h3>
+            <span class="inline-flex items-center gap-2 text-xs font-mono text-emerald-300"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>System Health: Stable</span>
+          </header>
+          <p class="mt-4 font-mono text-xs uppercase tracking-wide text-accent">Problem</p>
+          <p class="mt-2 text-sm text-slate-300">State synchronization drift and latency jitter threaten deterministic multiplayer execution and on-chain consistency.</p>
+          <p class="mt-4 font-mono text-xs uppercase tracking-wide text-accent">Solution</p>
+          <p class="mt-2 text-sm text-slate-300">Architected a 20Hz state machine with WebSocket orchestration and block-aware reconciliation to preserve synchronization under variable network conditions.</p>
+          <p class="mt-4 font-mono text-xs uppercase tracking-wide text-accent">Engineering Constraint</p>
+          <p class="mt-2 text-sm text-slate-300">Jitter reduction and throughput management in a resource-constrained browser runtime while minimizing protocol-level risk.</p>
+        </article>
 
-  <section id="about-me" class="visible">
-    <h2 class="toggle">About<a style="opacity: 0.4;">↗</a></h2>
-    <div id="about-content">
-      <!-- Content injected by JS -->
-    </div>
-    <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
-  </section>
+        <article class="border border-line bg-panel p-6 shadow-blueprint">
+          <header class="flex items-center justify-between gap-3">
+            <h3 class="text-lg font-bold text-white">Noogler</h3>
+            <span class="inline-flex items-center gap-2 text-xs font-mono text-emerald-300"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>System Health: Nominal</span>
+          </header>
+          <p class="mt-4 font-mono text-xs uppercase tracking-wide text-accent">Problem</p>
+          <p class="mt-2 text-sm text-slate-300">Traditional agents execute without reliable perception loops, producing low signal-to-noise decision paths in live interfaces.</p>
+          <p class="mt-4 font-mono text-xs uppercase tracking-wide text-accent">Solution</p>
+          <p class="mt-2 text-sm text-slate-300">Integrated computer vision with feedback control systems so the agent can observe state, adapt policy, and retry autonomously with bounded risk.</p>
+          <p class="mt-4 font-mono text-xs uppercase tracking-wide text-accent">Engineering Constraint</p>
+          <p class="mt-2 text-sm text-slate-300">Maintaining deterministic action sequencing while handling UI variance, asynchronous tool responses, and control-loop stability.</p>
+        </article>
 
-  <section id="skills-section" class="visible">
-    <h2 class="toggle">Core Stack<a style="opacity: 0.4;">↗</a></h2>
-    <div id="skills-content" style="padding: 20px 0;">
-      <div class="skill-group">
-        <div class="skill-icons" style="gap: 40px;">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-plain.svg" class="skill-icon" title="C / C++" style="width: 32px; height: 32px;">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg" class="skill-icon rust" title="Rust" style="width: 32px; height: 32px;">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg" class="skill-icon" title="TypeScript" style="width: 32px; height: 32px;">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg" class="skill-icon" title="Python" style="width: 32px; height: 32px;">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-plain.svg" class="skill-icon solidity" title="Solidity" style="width: 32px; height: 32px;">
+        <article class="border border-line bg-panel p-6 shadow-blueprint">
+          <header class="flex items-center justify-between gap-3">
+            <h3 class="text-lg font-bold text-white">HARE</h3>
+            <span class="inline-flex items-center gap-2 text-xs font-mono text-amber-300"><span class="h-2 w-2 rounded-full bg-amber-400"></span>System Health: Degraded-safe</span>
+          </header>
+          <p class="mt-4 font-mono text-xs uppercase tracking-wide text-accent">Problem</p>
+          <p class="mt-2 text-sm text-slate-300">Autonomous pipelines frequently fail at handoff boundaries where humans must intervene for quality validation and execution recovery.</p>
+          <p class="mt-4 font-mono text-xs uppercase tracking-wide text-accent">Solution</p>
+          <p class="mt-2 text-sm text-slate-300">Built fault-tolerant autonomous execution loops with explicit success conditions, self-corrective retries, and verifiable output contracts.</p>
+          <p class="mt-4 font-mono text-xs uppercase tracking-wide text-accent">Engineering Constraint</p>
+          <p class="mt-2 text-sm text-slate-300">Risk mitigation across non-deterministic model behavior without sacrificing operational throughput or reliability guarantees.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="mt-14">
+      <h2 class="font-mono text-xs uppercase tracking-[0.25em] text-accent">Systems Stack // Capability Model</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-3">
+        <div class="border border-line bg-panel p-5">
+          <h3 class="text-sm font-semibold uppercase tracking-wide text-white">Performance &amp; Low-Level</h3>
+          <p class="mt-3 text-sm text-slate-300">Rust, C/C++, WebSockets, Latency Optimization, Monad.</p>
+        </div>
+        <div class="border border-line bg-panel p-5">
+          <h3 class="text-sm font-semibold uppercase tracking-wide text-white">Agentic Intelligence</h3>
+          <p class="mt-3 text-sm text-slate-300">Python, Computer Vision, Feedback Control Systems, LangGraph.</p>
+        </div>
+        <div class="border border-line bg-panel p-5">
+          <h3 class="text-sm font-semibold uppercase tracking-wide text-white">Distributed Logic</h3>
+          <p class="mt-3 text-sm text-slate-300">Solidity, Deterministic Execution, Git-Anchoring, Bitcoin/Starknet.</p>
         </div>
       </div>
-    </div>
-    <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
-  </section>
+    </section>
 
-
-  <section id="projects-section" class="visible">
-    <h2 class="toggle">Projects<a style="opacity: 0.4;">↗</a></h2>
-    <div>
-
-      <div id="projects-header-description" style="display: none;"></div>
-
-      <div class="filters" id="project-filters">
-        <!-- Filters injected by JS -->
+    <section class="mt-14">
+      <h2 class="font-mono text-xs uppercase tracking-[0.25em] text-accent">Technical Artifacts &amp; Experiments</h2>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        <article class="border border-line bg-panel p-5">
+          <h3 class="font-semibold text-white">ProofForge</h3>
+          <p class="mt-2 text-sm text-slate-300">Git-anchored verification artifact focused on deterministic provenance and audit-grade trust minimization.</p>
+        </article>
+        <article class="border border-line bg-panel p-5">
+          <h3 class="font-semibold text-white">DominusQuant</h3>
+          <p class="mt-2 text-sm text-slate-300">Execution research artifact for throughput-aware strategy automation with constraint-based risk controls.</p>
+        </article>
       </div>
+    </section>
 
-
-      <div class="pjet" id="projects-list">
-        <!-- Projects injected by JS -->
-      </div>
-
-    </div>
-
-    <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
-  </section>
-
-  <section id="docs-section" class="visible">
-    <h2 class="toggle" id="docs-header">Docs<a style="opacity: 0.4;">↗</a></h2>
-    <div>
-      <ul id="docs-list">
-        <!-- Docs injected by JS -->
-      </ul>
-    </div>
-    <hr style="border: none; border-top: 1px solid #00000050; margin: 0px;">
-  </section>
-
-
-
-
-
-  <section id="activity-section">
-    <h2 id="activity-header"> GitHub Activity </h2>
-    <div style="display: flex; justify-content: center; margin-top: 10px;">
-      <a href="https://github.com/tobiawolaju" target="_blank" rel="noopener noreferrer">
-        <img style="max-width: 100%;" src="https://ghchart.rshah.org/tobiawolaju" alt="GitHub Contributions Chart">
-      </a>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact-section" style="padding: 60px 20px 40px; max-width: 800px; margin: 0 auto;">
-    <div class="reveal2" style="margin-bottom: 20px;">
-      <h2 style="font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; line-height: 0.95; margin-bottom: 16px;">
-        Beyond<br>Work.</h2>
-      <p style="font-size: 15px; color: gray; line-height: 1.9; max-width: 480px;">
-        I'm a hardcore PUBGM player who once spent three days debugging a WebSocket race condition instead of sleeping.
-        I build alone, ship ugly first drafts, and fix them at 2am. I'm based in Nigeria, I work async by default, and I
-        think the best teams are the ones where nobody asks for permission to try something.
-        If any of that resonates — you know where to find me
-      </p>
-
-      <p style="font-size: 15px; color: rgba(128, 128, 128, 0); line-height: 1.9; max-width: 480px;">
-        - --- -... .. / .- .-- --- .-.. .- .--- ..- / ...- . .-. .. ..-. .. . -.. / -... ..- .. .-.. -.. . .-. / .--.
-        .-. --- -.. ..- -.-. - .. --- -. / ... -.-- ... - . -- ... / ... .... .. .--. .--. . -.. / --- ...- . .-. .-. ..
-        -.. . / . -..- .--. . .-. .. . -. -.-. . / --. .- - . / .- -.. -.. / - --- / --.- ..- .- .-.. .. ..-. .. . -.. /
-        .-.. .. ... - / -.. --- / -. --- - / ..-. .. .-.. - . .-.
-      </p>
-    </div>
-  </section>
-
-  <div style="height: 200px;"></div>
-
-
-
-  <footer
-    style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 999; background-color: rgba(83, 83, 83, 0.5); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); height: 60px; display: flex; align-items: center; justify-content: center; font-size: large; color: white; gap: 25px; flex-wrap: wrap;">
-    <a href="https://github.com/tobiawolaju" target="_blank" rel="noopener noreferrer"
-      style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
-      <img src="https://img.icons8.com/ios-filled/24/ffffff/github.png" alt="GitHub" width="20" height="20" />
-    </a>
-    <a href="https://substack.com/@tobiawolaju" target="_blank" rel="noopener noreferrer"
-      style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
-      <img src="https://img.icons8.com/ios-filled/24/ffffff/substack.png" alt="Substack" width="20" height="20" />
-    </a>
-    <a href="https://www.linkedin.com/in/tobiawolaju" target="_blank" rel="noopener noreferrer"
-      style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
-      <img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn" width="20" height="20" />
-    </a>
-    <a href="https://x.com/tobiawolaju?s=09" target="_blank" rel="noopener noreferrer"
-      style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
-      <img src="https://img.icons8.com/ios-filled/24/ffffff/twitterx.png" alt="X" width="20" height="20" />
-    </a>
-    <a href="mailto:tobiawolaju21@gmail.com"
-      style="color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; border-left: 1px solid rgba(255,255,255,0.3); padding-left: 20px; margin-left: 10px;">
-      <img src="https://img.icons8.com/ios-filled/24/ffffff/gmail.png" alt="Gmail" width="20" height="20" />
-    </a>
-  </footer>
-
+    <section class="mt-14 border border-line bg-panel/70 p-8">
+      <h2 class="font-mono text-xs uppercase tracking-[0.25em] text-accent">Engineer’s Log</h2>
+      <p class="mt-4 max-w-3xl text-sm leading-7 text-slate-300">Operational Throughput: Hardcore PUBGM player (Strategic Coordination). 2 AM debugging sessions (High-Pressure Troubleshooting). Based in Nigeria, working async-first with a focus on autonomous delivery.</p>
+    </section>
+  </main>
 </body>
-
 </html>
