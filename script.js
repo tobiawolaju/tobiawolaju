@@ -403,8 +403,6 @@ function initInteractions() {
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal2').forEach(el => revealObs.observe(el));
 
-    // --- Skill Scroll Sync ---
-    initSkillScrollSync();
 
     // --- Footer Scroll ---
     const footer = document.getElementById("site-footer");
@@ -419,43 +417,4 @@ function initInteractions() {
             }
         });
     }
-}
-
-function initSkillScrollSync() {
-    const skillIcons = document.querySelectorAll('.skill-icon');
-    const skillsSection = document.getElementById('skills-section');
-    
-    if (!skillsSection || skillIcons.length === 0) return;
-
-    window.addEventListener('scroll', () => {
-        const rect = skillsSection.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        
-        // If section is roughly in view
-        if (rect.top < windowHeight && rect.bottom > 0) {
-            const centerY = windowHeight / 2;
-            let closestIcon = null;
-            let minDistance = Infinity;
-
-            // Find the icon closest to the vertical center of the screen
-            skillIcons.forEach((icon) => {
-                const iconRect = icon.getBoundingClientRect();
-                const iconCenterY = iconRect.top + iconRect.height / 2;
-                const distance = Math.abs(centerY - iconCenterY);
-
-                if (distance < minDistance) {
-                    minDistance = distance;
-                    closestIcon = icon;
-                }
-                icon.classList.remove('active');
-            });
-
-            // Only activate the closest icon if it's within a reasonable focus range
-            if (closestIcon && minDistance < windowHeight * 0.3) {
-                closestIcon.classList.add('active');
-            }
-        } else {
-            skillIcons.forEach(icon => icon.classList.remove('active'));
-        }
-    });
 }
