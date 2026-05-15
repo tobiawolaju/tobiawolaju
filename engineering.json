@@ -128,7 +128,7 @@
       "description": "Giving the ghost a body. An AI agent that doesn't just call APIs, but actually sees the screen and moves the mouse like a human.",
       "links": [
         {
-          "text": "[Watch Agent]",
+          "text": "[Launch an Agent]",
           "url": "https://github.com/tobiawolaju/Noogler"
         },
         {
@@ -161,6 +161,10 @@
       "description": "Tamper-evident development timelines. Every Git commit, anchored on-chain.",
       "links": [
         {
+          "text": "[Use ProofForge]",
+          "url": "https://github.com/tobiawolaju"
+        },
+        {
           "text": "[GitHub]",
           "url": "https://github.com/tobiawolaju"
         }
@@ -180,6 +184,10 @@
       "title": "HARE \u2014 Headless Autonomous Relay Engine \u2197",
       "description": "Agent infrastructure that removes the human from execution and quality control. Both loops.",
       "links": [
+        {
+          "text": "[Run Agent]",
+          "url": "https://github.com/tobiawolaju"
+        },
         {
           "text": "[GitHub]",
           "url": "https://github.com/tobiawolaju"
