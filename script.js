@@ -79,9 +79,14 @@ function renderPortfolio(data) {
                 ? ` data-gif-sequence="${project.gifSequence.join(",")}"`
                 : "";
 
+            const primaryLiveLink = (project.links || []).find(link => !/github/i.test(link.text || link.url));
+            const projectPreview = primaryLiveLink?.url
+                ? `<div class="project-preview" aria-hidden="true"><iframe src="${primaryLiveLink.url}" title="${project.title} live preview" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe></div>`
+                : `<img src="${project.image}" alt="${project.title}"${gifSequence}>`;
+
             return `
             <div class="project" data-tags="${(project.tags || []).join(",")}">
-                <img src="${project.image}" alt="${project.title}"${gifSequence}>
+                ${projectPreview}
                 <div class="project-info">
                     <a href="#"><strong>${project.title}</strong></a>
                     <p class="mission">${project.description}</p>
