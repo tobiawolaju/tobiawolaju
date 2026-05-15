@@ -217,6 +217,9 @@ function renderPortfolio(data) {
             activityHeader.textContent = data.sectionLabels.activity;
         }
     }
+
+    const projectsSection = document.getElementById("projects-section");
+    initProjectFilterPinning(filterContainer, projectsSection);
 }
 
 function initProjectGifLoops() {
@@ -246,6 +249,67 @@ function initProjectGifLoops() {
 
         playNextGif();
     });
+}
+
+function initProjectFilterPinning(filterContainer, projectsSection) {
+    if (!filterContainer || !projectsSection) return;
+
+    const filtersSpacer = document.createElement("div");
+    filtersSpacer.className = "filters-spacer";
+    filterContainer.parentNode.insertBefore(filtersSpacer, filterContainer);
+    filtersSpacer.appendChild(filterContainer);
+
+    const filtersShell = document.createElement("div");
+    filtersShell.id = "project-filters-shell";
+
+    let isPinned = false;
+    let ticking = false;
+
+    const syncPinnedGeometry = () => {
+        if (!isPinned) return;
+        const rect = filtersSpacer.getBoundingClientRect();
+        filtersShell.style.paddingLeft = `${rect.left}px`;
+        filtersShell.style.paddingRight = `${window.innerWidth - rect.right}px`;
+    };
+
+    const setPinned = (pinned) => {
+        if (pinned === isPinned) return;
+        isPinned = pinned;
+
+        if (pinned) {
+            filtersSpacer.style.height = `${filterContainer.offsetHeight}px`;
+            document.body.appendChild(filtersShell);
+            filtersShell.appendChild(filterContainer);
+            syncPinnedGeometry();
+        } else {
+            filtersSpacer.style.height = "";
+            filtersSpacer.appendChild(filterContainer);
+            filtersShell.remove();
+            filtersShell.style.paddingLeft = "";
+            filtersShell.style.paddingRight = "";
+        }
+    };
+
+    const updatePinnedState = () => {
+        ticking = false;
+        const sectionRect = projectsSection.getBoundingClientRect();
+        const spacerRect = filtersSpacer.getBoundingClientRect();
+        const topOffset = -20;
+        const shouldPin = sectionRect.top <= topOffset && sectionRect.bottom > spacerRect.height + topOffset;
+
+        setPinned(shouldPin);
+        syncPinnedGeometry();
+    };
+
+    const requestUpdate = () => {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(updatePinnedState);
+    };
+
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+    requestUpdate();
 }
 
 const gifDurationCache = new Map();

@@ -103,6 +103,7 @@ body {
 *::after {
   box-sizing: border-box;
 }
+
 /* Default styles (light mode) */
 body {
   margin: 0;
@@ -131,7 +132,8 @@ body {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #3b82f6; /* Matching the project title blue */
+  color: #3b82f6;
+  /* Matching the project title blue */
   margin-bottom: 12px;
   font-weight: 800;
 }
@@ -148,14 +150,17 @@ body {
   width: 32px;
   height: 32px;
   opacity: 0.6;
-  filter: brightness(0); /* Black in light mode */
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); /* Slower, smoother fade back */
+  filter: brightness(0);
+  /* Black in light mode */
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Slower, smoother fade back */
   cursor: help;
 }
 
 @media (prefers-color-scheme: dark) {
   .skill-icon {
-    filter: brightness(0) invert(1); /* White in dark mode */
+    filter: brightness(0) invert(1);
+    /* White in dark mode */
   }
 }
 
@@ -164,6 +169,7 @@ body {
     width: 27px;
     height: 27px;
   }
+
   .skill-icons {
     gap: 16px;
     justify-content: center;
@@ -174,8 +180,10 @@ body {
 .skill-icon.active {
   opacity: 1;
   transform: translateY(-3px) scale(1.1);
-  filter: none; /* Restore original color */
-  transition: all 0.2s ease; /* Snappy activation */
+  filter: none;
+  /* Restore original color */
+  transition: all 0.2s ease;
+  /* Snappy activation */
 }
 
 .skill-icon.rust:hover,
@@ -195,6 +203,7 @@ body {
   .skill-icon {
     opacity: 0.5;
   }
+
   .skill-icon:hover {
     opacity: 1;
   }
@@ -249,10 +258,12 @@ section {
 }
 
 #projects-section {
+  position: relative;
   padding-left: 0;
   padding-right: 0;
   margin-left: auto;
   margin-right: auto;
+  overflow: visible;
 }
 
 #docs-section,
@@ -471,8 +482,8 @@ section.visible {
   }
 
   .filters button:hover {
-  background-color: rgba(128, 128, 128, 0.1);
-}
+    background-color: rgba(128, 128, 128, 0.1);
+  }
 
 
 
@@ -714,9 +725,21 @@ a {
   background-color: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0px;
-  z-index: 999;
+  width: 100%;
+  align-self: flex-start;
+}
+
+#project-filters-shell {
+  position: fixed;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+  padding: 0 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 @media (max-width: 768px) {
@@ -767,6 +790,12 @@ a {
     -webkit-backdrop-filter: blur(10px);
   }
 
+  #project-filters-shell {
+    background-color: rgba(30, 30, 30, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
   .filters button {
     background: #222;
     border: 1px solid #666;
@@ -788,9 +817,9 @@ a {
   border-radius: 50px;
   font-size: 0.8em;
   height: fit-content;
-  position: absolute;
-  bottom: 24px;
-  right: 10px;
+  position: relative;
+  bottom: 5vh;
+  right: -55vw;
   text-decoration: none;
   cursor: pointer;
   z-index: 1;
