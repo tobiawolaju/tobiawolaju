@@ -1256,8 +1256,14 @@ a {
 
 .canvas-link {
   font-family: 'Chewy', cursive;
-  color: lime;
+  color: #000;
   text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .canvas-link {
+    color: #fff;
+  }
 }
 
 .canvas-link:hover {
