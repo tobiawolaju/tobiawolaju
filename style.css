@@ -1252,3 +1252,14 @@ a {
   margin: 0 0 16px;
   font-style: italic;
 }
+
+
+.canvas-link {
+  font-family: 'Chewy', cursive;
+  color: lime;
+  text-decoration: none;
+}
+
+.canvas-link:hover {
+  text-decoration: underline;
+}
