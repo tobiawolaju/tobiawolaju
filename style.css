@@ -147,8 +147,13 @@ body {
 }
 
 .skill-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 32px;
   height: 32px;
+  font-size: 32px;
+  line-height: 1;
   opacity: 0.6;
   filter: brightness(0);
   /* Black in light mode */
@@ -168,6 +173,7 @@ body {
   .skill-icon {
     width: 27px;
     height: 27px;
+    font-size: 27px;
   }
 
   .skill-icons {
