@@ -4,8 +4,8 @@
   "profile": {
     "image": "pfp.jpg",
     "name": "Tobi Awolaju",
-    "title": "Systems Engineer (Web3 Infra | AI Agents)",
-    "bio": "<p style='font-size: large; padding-bottom: 1.5rem;'><b>\"Bridging the gap between Software and On-Chain Logic.\"</b></p><p style='font-size: large; padding-bottom: 2rem;'><b>What I Bring to a Team:</b><br>• <b>Real-time Web3 Gaming:</b> Building 20Hz WebSockets and syncing complex 3D game states to on-chain execution.<br>• <b>Internal Tooling & Automation:</b> If the team does a task twice, I build a local AI agent or a CLI tool to automate it.</p>",
+    "title": "Full-Stack Engineer — Onchain Applications & Agent Infrastructure",
+    "bio": "<p style='font-size: large; padding-bottom: 1.5rem;'><b>\"I build infrastructure that survives chain chaos — reorg-resistant indexers, 20Hz game servers, and agents that run without a human in the loop.\"</b></p><p style='font-size: large; padding-bottom: 2rem;'><b>What I Bring to a Team:</b><br>• <b>Full-Stack Onchain Applications:</b> From React frontends with embedded wallet onboarding to WebSocket game servers syncing 20-player 3D state at 20Hz — I own the full stack.<br>• <b>EVM Infrastructure:</b> Built a reorg-resistant block indexer that cross-references three Monad nodes in real-time and auto-rolls back state on parent-hash mismatches.<br>• <b>Agent Systems:</b> Autonomous pipelines that self-evaluate, self-retry, and execute without a human in the loop — from a headless PC-controlling agent to a full relay engine.</p>",
     "resumeLink": "https://docs.google.com/document/d/1PnD1JnPN4_dunRGlKE8qNg5aQrP1O-R3XqFPdMXQ3PE/edit?usp=sharing"
   },
   "sectionLabels": {
@@ -100,52 +100,6 @@
       "tags": [
         "flagship"
       ],
-      "image": "dominusquant.gif",
-      "title": "DominusQuant: Monad Keeper & Algo-Trading Bot ↗",
-      "description": "Algo-trading infrastructure for Monad. Parses confirmed on-chain state, gas pricing logs, and behavioral signals in real-time — executing only when the statistical edge is there.",
-      "links": [
-        {
-          "text": "[trade on dquant]",
-          "url": "https://dominus-quant.vercel.app/"
-        },
-        {
-          "text": "[GitHub]",
-          "url": "https://github.com/tobiawolaju/DominusQuant"
-        }
-      ],
-      "writeup": {
-        "goal": "Automate complex DeFi strategies (like liquidations, statistical arbitrage, and tokenomic rebalancing) on a high-speed chain.",
-        "hardPart": "Monad's architecture is designed to prevent traditional mempool sniping and sandwich attacks. To find an edge, I had to build a system that parses confirmed on-chain state, gas pricing logs, and AI-aggregated behavioral signals in real-time to execute trades strictly based on speed and statistical advantage.",
-        "stack": "TypeScript, Monad Situation Dashboard APIs, Distributed Node.js Microservices, Firebase."
-      }
-    },
-    {
-      "tags": [
-        "notable"
-      ],
-      "image": "grey.jpg",
-      "title": "LockedIn",
-      "description": "A day planner with a natural language query layer. Block your schedule, ask it questions in plain English, and push the whole thing to Google Calendar — no copy-paste, no drift.",
-      "links": [
-        {
-          "text": "Open App",
-          "url": "https://lockedin-xyz.vercel.app/"
-        },
-        {
-          "text": "GitHub",
-          "url": "https://github.com/tobiawolaju/LockedIn/"
-        }
-      ],
-      "writeup": {
-        "goal": "Build a planner that closes the gap between intention and execution — not with motivation features, but with structure. If your day is scheduled with times and durations, the friction to skip it goes up. That's the whole mechanic.",
-        "hardPart": "Natural language scheduling is easy to demo and hard to make reliable. The query layer has to understand temporal relationships (\"what's after lunch?\", \"when's my first gap?\") without a rigid command syntax, then map those results back to a mutable schedule state. Getting that to sync correctly with Google Calendar — without duplication, without drift — required treating the calendar as a write-only commit target, not a two-way sync partner.",
-        "stack": "TypeScript, JavaScript, Google Calendar API, Natural Language Query Layer."
-      }
-    },
-    {
-      "tags": [
-        "flagship"
-      ],
       "image": "grey.jpg",
       "title": "Noogler - Embodied AI ↗",
       "description": "An AI agent that controls a PC through screen capture and a Rust OS input layer — not APIs. It sees the interface, makes decisions, and clicks. Like a human, but headless.",
@@ -196,6 +150,52 @@
         "goal": "Build the foundation for agents that are autonomous in the way that actually matters — no human reviewing outputs, no human retrying failures, no human deciding if the result was good enough.",
         "hardPart": "Most 'autonomous' agent frameworks are autonomous in name only. They remove the human from execution but quietly keep them in the quality control loop. HARE treats reliability as a first-class architectural constraint. Tasks must self-evaluate against a success condition, self-retry with adjusted context on failure, and emit structured results that downstream systems can trust without human inspection.",
         "stack": "Node.js, TypeScript, LLM APIs, Webhook Infrastructure."
+      }
+    },
+    {
+      "tags": [
+        "flagship"
+      ],
+      "image": "dominusquant.gif",
+      "title": "DominusQuant: Monad Keeper & Algo-Trading Bot ↗",
+      "description": "Algo-trading infrastructure for Monad. Parses confirmed on-chain state, gas pricing logs, and behavioral signals in real-time — executing only when the statistical edge is there.",
+      "links": [
+        {
+          "text": "[trade on dquant]",
+          "url": "https://dominus-quant.vercel.app/"
+        },
+        {
+          "text": "[GitHub]",
+          "url": "https://github.com/tobiawolaju/DominusQuant"
+        }
+      ],
+      "writeup": {
+        "goal": "Automate complex DeFi strategies (like liquidations, statistical arbitrage, and tokenomic rebalancing) on a high-speed chain.",
+        "hardPart": "Monad's architecture is designed to prevent traditional mempool sniping and sandwich attacks. To find an edge, I had to build a system that parses confirmed on-chain state, gas pricing logs, and AI-aggregated behavioral signals in real-time to execute trades strictly based on speed and statistical advantage.",
+        "stack": "TypeScript, Monad Situation Dashboard APIs, Distributed Node.js Microservices, Firebase."
+      }
+    },
+    {
+      "tags": [
+        "notable"
+      ],
+      "image": "grey.jpg",
+      "title": "LockedIn",
+      "description": "A day planner with a natural language query layer. Block your schedule, ask it questions in plain English, and push the whole thing to Google Calendar — no copy-paste, no drift.",
+      "links": [
+        {
+          "text": "Open App",
+          "url": "https://lockedin-xyz.vercel.app/"
+        },
+        {
+          "text": "GitHub",
+          "url": "https://github.com/tobiawolaju/LockedIn/"
+        }
+      ],
+      "writeup": {
+        "goal": "Build a planner that closes the gap between intention and execution — not with motivation features, but with structure. If your day is scheduled with times and durations, the friction to skip it goes up. That's the whole mechanic.",
+        "hardPart": "Natural language scheduling is easy to demo and hard to make reliable. The query layer has to understand temporal relationships (\"what's after lunch?\", \"when's my first gap?\") without a rigid command syntax, then map those results back to a mutable schedule state. Getting that to sync correctly with Google Calendar — without duplication, without drift — required treating the calendar as a write-only commit target, not a two-way sync partner.",
+        "stack": "TypeScript, JavaScript, Google Calendar API, Natural Language Query Layer."
       }
     }
   ],
