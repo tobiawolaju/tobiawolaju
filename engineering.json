@@ -121,6 +121,29 @@
     },
     {
       "tags": [
+        "notable"
+      ],
+      "image": "grey.jpg",
+      "title": "LockedIn",
+      "description": "Natural language scheduling. Query your day like a database, push it straight to Google Calendar. Most plans live in your head \u2014 vague, unscheduled, easy to ignore. LockedIn makes your day tangible before it starts: block your route, query it in plain language, lock it to your calendar. No dashboards. No streaks. Just structure.",
+      "links": [
+        {
+          "text": "Open App",
+          "url": "https://lockedin-xyz.vercel.app/"
+        },
+        {
+          "text": "GitHub",
+          "url": "https://github.com/tobiawolaju/LockedIn/"
+        }
+      ],
+      "writeup": {
+        "goal": "Build a planner that closes the gap between intention and execution \u2014 not with motivation features, but with structure. If your day is scheduled with times and durations, the friction to skip it goes up. That's the whole mechanic.",
+        "hardPart": "Natural language scheduling is easy to demo and hard to make reliable. The query layer has to understand temporal relationships (\"what's after lunch?\", \"when's my first gap?\") without a rigid command syntax, then map those results back to a mutable schedule state. Getting that to sync correctly with Google Calendar \u2014 without duplication, without drift \u2014 required treating the calendar as a write-only commit target, not a two-way sync partner.",
+        "stack": "TypeScript, JavaScript, Google Calendar API, Natural Language Query Layer."
+      }
+    },
+    {
+      "tags": [
         "flagship"
       ],
       "image": "grey.jpg",
@@ -149,30 +172,6 @@
         "challenges": "Ensuring the agent can handle errors and navigate diverse software interfaces autonomously.",
         "outcomes": "A working prototype that can fix its own errors in IDEs, Excel, and browsers.",
         "future": "Advancing toward a fully autonomous companion that learns from user behavior."
-      }
-    },
-    {
-      "tags": [
-        "notable",
-        "developer-tools"
-      ],
-      "image": "grey.jpg",
-      "title": "ProofForge \u2197",
-      "description": "Tamper-evident development timelines. Every Git commit, anchored on-chain.",
-      "links": [
-        {
-          "text": "[Use ProofForge]",
-          "url": "https://prooforge.vercel.app/"
-        },
-        {
-          "text": "[GitHub]",
-          "url": "https://github.com/tobiawolaju/ProofForge"
-        }
-      ],
-      "writeup": {
-        "goal": "Make build history unforgeable. Prove what was built, when, and by whom \u2014 without trusting GitHub, a repo host, or any single party.",
-        "hardPart": "The trust problem is subtle. GitHub repos can be force-pushed. History can be rewritten. The only moment you can't fake is the HMAC-signed webhook payload \u2014 that's when GitHub itself attests a push happened. I built the entire anchoring system around that specific event, not around repo state. The Monad contract only ever sees payloads that passed HMAC-SHA256 verification. That's the difference between 'tamper-resistant' and actually tamper-evident.",
-        "stack": "Node.js, Solidity, Monad Testnet, GitHub Webhooks, HMAC-SHA256."
       }
     },
     {
