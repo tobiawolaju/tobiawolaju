@@ -206,9 +206,19 @@
       "description": "An exploration of how I solved the multiplayer puzzle using WebSockets."
     },
     {
-      "link": "https://open.substack.com/pub/tobiawolaju21/p/success-is-90-luck-and-informed-guessing?r=2hkadt&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true",
-      "title": "Success is 90% luck and informed guessing. Success is 100% luck if you're uninformed. ↗",
-      "description": "A probability framework for luck, consistency, and what to do when life hands you a defective die."
+      "link": "https://tobiawolaju21.substack.com/p/inside-a-production-blockchain-indexer?r=2hkadt",
+      "title": "Teaching Engines to Handle Blockchain Reorgs ↗",
+      "description": "A deep dive into building infrastructure that survives the chaos of a live chain."
     },
+    {
+      "link": "https://tobiawolaju21.substack.com/p/building-an-ai-that-uses-your-computer?r=2hkadt",
+      "title": "Giving AI a Body: The Noogler Architecture ↗",
+      "description": "How I combined Rust and LLMs to create a computer-operating agent."
+    },
+    {
+      "link": "https://tobiawolaju21.substack.com/p/what-it-takes-to-ship-a-full-web3?r=2hkadt",
+      "title": "The Solo Builder's Playbook ↗",
+      "description": "Going from a blank canvas to a full-stack Web3 product alone."
+    }
   ]
 }
