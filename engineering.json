@@ -1,0 +1,214 @@
+{
+  "pageTitle": "Tobi Awolaju | Builder & Systems Engineer",
+  "theme": "curiosity-driven",
+  "profile": {
+    "image": "pfp.jpg",
+    "name": "Tobi Awolaju",
+    "title": "Full-Stack Engineer — Onchain Applications & Agent Infrastructure",
+    "bio": "<p style='font-size: large; padding-bottom: 1.5rem;'><b>\"i shipe fast and  build infrastructure that survives chain chaos\"</b></p><p style='font-size: large; padding-bottom: 2rem;'><b>What I Bring to a Team:</b><br>• <b>Full-Stack Onchain Applications:</b> From React frontends with embedded wallet onboarding to WebSocket game servers syncing 20-player 3D state at 20Hz — I own the full stack.<br>• <b>EVM Infrastructure:</b> Built a reorg-resistant block indexer that cross-references three Monad nodes in real-time and auto-rolls back state on parent-hash mismatches.<br>• <b>Agent Systems:</b> Autonomous pipelines that self-evaluate, self-retry, and execute without a human in the loop — from a headless PC-controlling agent to a full relay engine.</p>",
+    "resumeLink": "https://docs.google.com/document/d/1W3aYjK9DLJZg5m4uvQPeHwRHPUToai0Bfwe2Bbfq9E4/edit?usp=drivesdk"
+  },
+  "sectionLabels": {
+    "docs": "Blog",
+    "activity": ""
+  },
+  "filters": [
+    {
+      "id": "all",
+      "label": "All"
+    },
+    {
+      "id": "flagship",
+      "label": "Flagship"
+    },
+    {
+      "id": "notable",
+      "label": "Notable"
+    },
+    {
+      "id": "developer-tools",
+      "label": "Developer Tools"
+    }
+  ],
+  "projects": [
+    {
+      "tags": [
+        "notable",
+        "developer-tools"
+      ],
+      "image": "grey.jpg",
+      "title": "MoyakiTraceEngine ↗",
+      "description": "A resilient EVM block indexer built for chains that reorganize. Cross-references three Monad nodes in real-time and automatically rolls back state when parent-hash mismatches are detected.",
+      "links": [
+        {
+          "text": "[Trace Blocks]",
+          "url": "https://moyakitraceengine.vercel.app/"
+        },
+        {
+          "text": "[GitHub]",
+          "url": "https://github.com/tobiawolaju/MoyakiTraceEngine"
+        }
+      ],
+      "writeup": {
+        "goal": "Build a resilient EVM indexer that never drops data, even when the blockchain reorganizes.",
+        "hardPart": "Public RPCs are unreliable. I built a multi-node ingestion engine that cross-references 3 different Monad nodes, with a custom 'ReorgManager' that detects parent-hash mismatches and automatically rolls back bad state.",
+        "stack": "Node.js, Express, Svelte, Firebase RTDB, EVM RPCs."
+      }
+    },
+    {
+      "tags": [
+        "flagship"
+      ],
+      "image": "worldofnads1.gif",
+      "title": "World of Nads ↗",
+      "description": "20-player browser battle royale on Monad — built solo. 3D assets, 20Hz WebSocket server, on-chain prize distribution, and embedded wallet onboarding, all running in the browser with no install.",
+      "links": [
+        {
+          "text": "[Play world of nads]",
+          "url": "https://worldofnads.xyz"
+        },
+        {
+          "text": "[GitHub]",
+          "url": "https://github.com/tobiawolaju/WorldOfNads"
+        }
+      ],
+      "writeup": {
+        "overview": "A solo experiment in end-to-end creation: 3D modeling, smart contracts, and real-time multiplayer architecture.",
+        "features": [
+          "20-player real-time sync in the browser",
+          "Automated on-chain prize distribution",
+          "Low-friction Web3 onboarding via embedded wallets"
+        ],
+        "architecture": "Godot → WASM + React, Node.js WebSocket server @20Hz, Monad Smart Contracts.",
+        "infrastructure": "High-performance deployment on Vercel and Render.",
+        "techStack": "Godot, TypeScript, Solidity, Monad, Node.js, PostgreSQL.",
+        "web3": "Real-time state sync coupled with Privy for seamless identity and on-chain payouts.",
+        "challenges": "Solving the 'impossible' task of keeping 20 players perfectly synced while handling blockchain state.",
+        "outcomes": "A live, functional product used by real people, proving that a solo builder can ship a complete Web3 ecosystem.",
+        "future": "Expanding the physical laws of the game and deeper Monad integration."
+      },
+      "gifSequence": [
+        "worldofnads1.gif",
+        "worldofnads2.gif",
+        "worldofnads3.gif",
+        "worldofnads4.gif",
+        "worldofnads5.gif",
+        "worldofnads6.gif"
+      ]
+    },
+    {
+      "tags": [
+        "flagship"
+      ],
+      "image": "grey.jpg",
+      "title": "Noogler - Embodied AI ↗",
+      "description": "An AI agent that controls a PC through screen capture and a Rust OS input layer — not APIs. It sees the interface, makes decisions, and clicks. Like a human, but headless.",
+      "links": [
+        {
+          "text": "[Launch an Agent]",
+          "url": "https://noogler.vercel.app"
+        },
+        {
+          "text": "[GitHub]",
+          "url": "https://github.com/tobiawolaju/Noogler"
+        }
+      ],
+      "writeup": {
+        "overview": "An obsession with 'Digital Agency': building an agent that can operate software autonomously by observing and interacting.",
+        "features": [
+          "Real-time screen capture and visual reasoning",
+          "Gemini 2.0 Live API for high-level decision making",
+          "Rust-based local agent for direct OS-level control"
+        ],
+        "architecture": "Node.js Cloud Backend + Gemini 2.0, Svelte UI, and a local Rust agent for automation.",
+        "infrastructure": "Local automation layer optimized for Windows environments.",
+        "techStack": "Rust, Google Gemini 2.0, Svelte, Node.js.",
+        "challenges": "Ensuring the agent can handle errors and navigate diverse software interfaces autonomously.",
+        "outcomes": "A working prototype that can fix its own errors in IDEs, Excel, and browsers.",
+        "future": "Advancing toward a fully autonomous companion that learns from user behavior."
+      }
+    },
+    {
+      "tags": [
+        "notable",
+        "developer-tools"
+      ],
+      "image": "grey.jpg",
+      "title": "HARE — Headless Autonomous Relay Engine ↗",
+      "description": "Agent infrastructure that removes the human from both loops — execution and quality control. Tasks self-evaluate, self-retry, and emit trusted results with no human in the chain.",
+      "links": [
+        {
+          "text": "[Run Agent]",
+          "url": "https://h-a-r-e.vercel.app/"
+        },
+        {
+          "text": "[GitHub]",
+          "url": "https://github.com/tobiawolaju/H-A-R-E"
+        }
+      ],
+      "writeup": {
+        "goal": "Build the foundation for agents that are autonomous in the way that actually matters — no human reviewing outputs, no human retrying failures, no human deciding if the result was good enough.",
+        "hardPart": "Most 'autonomous' agent frameworks are autonomous in name only. They remove the human from execution but quietly keep them in the quality control loop. HARE treats reliability as a first-class architectural constraint. Tasks must self-evaluate against a success condition, self-retry with adjusted context on failure, and emit structured results that downstream systems can trust without human inspection.",
+        "stack": "Node.js, TypeScript, LLM APIs, Webhook Infrastructure."
+      }
+    },
+    {
+      "tags": [
+        "flagship"
+      ],
+      "image": "dominusquant.gif",
+      "title": "DominusQuant: Monad Keeper & Algo-Trading Bot ↗",
+      "description": "Algo-trading infrastructure for Monad. Parses confirmed on-chain state, gas pricing logs, and behavioral signals in real-time — executing only when the statistical edge is there.",
+      "links": [
+        {
+          "text": "[trade on dquant]",
+          "url": "https://dominus-quant.vercel.app/"
+        },
+        {
+          "text": "[GitHub]",
+          "url": "https://github.com/tobiawolaju/DominusQuant"
+        }
+      ],
+      "writeup": {
+        "goal": "Automate complex DeFi strategies (like liquidations, statistical arbitrage, and tokenomic rebalancing) on a high-speed chain.",
+        "hardPart": "Monad's architecture is designed to prevent traditional mempool sniping and sandwich attacks. To find an edge, I had to build a system that parses confirmed on-chain state, gas pricing logs, and AI-aggregated behavioral signals in real-time to execute trades strictly based on speed and statistical advantage.",
+        "stack": "TypeScript, Monad Situation Dashboard APIs, Distributed Node.js Microservices, Firebase."
+      }
+    },
+    {
+      "tags": [
+        "notable"
+      ],
+      "image": "grey.jpg",
+      "title": "LockedIn",
+      "description": "A day planner with a natural language query layer. Block your schedule, ask it questions in plain English, and push the whole thing to Google Calendar — no copy-paste, no drift.",
+      "links": [
+        {
+          "text": "Open App",
+          "url": "https://lockedin-xyz.vercel.app/"
+        },
+        {
+          "text": "GitHub",
+          "url": "https://github.com/tobiawolaju/LockedIn/"
+        }
+      ],
+      "writeup": {
+        "goal": "Build a planner that closes the gap between intention and execution — not with motivation features, but with structure. If your day is scheduled with times and durations, the friction to skip it goes up. That's the whole mechanic.",
+        "hardPart": "Natural language scheduling is easy to demo and hard to make reliable. The query layer has to understand temporal relationships (\"what's after lunch?\", \"when's my first gap?\") without a rigid command syntax, then map those results back to a mutable schedule state. Getting that to sync correctly with Google Calendar — without duplication, without drift — required treating the calendar as a write-only commit target, not a two-way sync partner.",
+        "stack": "TypeScript, JavaScript, Google Calendar API, Natural Language Query Layer."
+      }
+    }
+  ],
+  "docs": [
+    {
+      "link": "https://tobiawolaju21.substack.com/p/communicating-in-functions?r=2hkadt",
+      "title": "Communicating in Functions↗",
+      "description": "On engineering as communication — and why a function is just an idea precise enough to survive without its author."
+    },
+    {
+      "link": "https://tobiawolaju21.substack.com/p/success-is-90-luck-and-informed-guessing?r=2hkadt",
+      "title": "Success is 90% luck and informed guessing. Success is 100% luck if you're uninformed. ↗",
+      "description": "A probability framework for luck, consistency, and what to do when life hands you a defective die."
+    }
+  ]
+}
