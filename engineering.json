@@ -61,7 +61,7 @@
       ],
       "image": "worldofnads1.gif",
       "title": "World of Nads ↗",
-      "description": "20-player browser battle royale on Monad — built solo. 3D assets, 20Hz WebSocket server, on-chain prize distribution, and embedded wallet onboarding, all running in the browser with no install.",
+      "description": "20-player browser battle royale — 3D assets, 20Hz WebSocket server, on-chain prize distribution, and embedded wallet onboarding, all running in the browser with no install. Core mechanics validated on Monad testnet; currently porting the settlement layer to Solana.",
       "links": [
         {
           "text": "[Play world of nads]",
@@ -79,13 +79,13 @@
           "Automated on-chain prize distribution",
           "Low-friction Web3 onboarding via embedded wallets"
         ],
-        "architecture": "Godot → WASM + React, Node.js WebSocket server @20Hz, Monad Smart Contracts.",
+        "architecture": "Godot → WASM + React, Node.js WebSocket server @20Hz, EVM (Monad) smart contracts — Solana port (Anchor) in progress.",
         "infrastructure": "High-performance deployment on Vercel and Render.",
-        "techStack": "Godot, TypeScript, Solidity, Monad, Node.js, PostgreSQL.",
+        "techStack": "Godot, TypeScript, Solidity, Rust, Anchor, Solana, Monad, Node.js, PostgreSQL.",
         "web3": "Real-time state sync coupled with Privy for seamless identity and on-chain payouts.",
         "challenges": "Solving the 'impossible' task of keeping 20 players perfectly synced while handling blockchain state.",
         "outcomes": "A live, functional product used by real people, proving that a solo builder can ship a complete Web3 ecosystem.",
-        "future": "Expanding the physical laws of the game and deeper Monad integration."
+        "future": "Expanding the physical laws of the game, native Solana settlement program, and WONs2 decentralized relay network."
       },
       "gifSequence": [
         "worldofnads1.gif",
