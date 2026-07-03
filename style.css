@@ -431,6 +431,10 @@ section.visible {
 @media (max-width: 768px) {
 
   /* Adjust the width as needed */
+.filters {
+  display: none !important;
+}
+
 /* Light mode (default) */
 .filters {
   padding-top: 8px;
@@ -501,7 +505,9 @@ section.visible {
     -webkit-backdrop-filter: blur(10px);
   }
 
-  #project-filters-shell {
+#project-filters-shell {
+  display: none;
+
     background-color: rgba(30, 30, 30, 0.4);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
