@@ -273,8 +273,12 @@
       ],
       "image": "grey.jpg",
       "title": "Terra Engine ↗",
-      "description": "Game engine and survival game built with Godot/GDScript for Gamedev.js Jam 2026. Web3-integrated gameplay with real-time mechanics.",
+      "description": "The planet is a living machine — it grows your food, makes your air, and tries to kill you with boulders. Every ship brought technology. The planet just kept being a planet. Feed it. Or become the food.",
       "links": [
+        {
+          "text": "[Play]",
+          "url": "https://wavedash.com/games/terraengine"
+        },
         {
           "text": "[GitHub]",
           "url": "https://github.com/tobiawolaju/Terra-engine"
