@@ -78,7 +78,7 @@ function renderPortfolio(data) {
             <div class="project" data-tags="${(project.tags || []).join(",")}">
                 ${projectPreview}
                 <div class="project-info">
-                    <a href="#"><strong>${project.title}</strong></a>
+                    <a href="${primaryLiveLink?.url || '#'}" target="_blank" rel="noopener noreferrer"><strong>${project.title}</strong></a>
                     <p class="mission">${project.description}</p>
                 </div>
                 <div class="project-footer">
