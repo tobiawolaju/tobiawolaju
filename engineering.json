@@ -197,6 +197,94 @@
         "hardPart": "Natural language scheduling is easy to demo and hard to make reliable. The query layer has to understand temporal relationships (\"what's after lunch?\", \"when's my first gap?\") without a rigid command syntax, then map those results back to a mutable schedule state. Getting that to sync correctly with Google Calendar — without duplication, without drift — required treating the calendar as a write-only commit target, not a two-way sync partner.",
         "stack": "TypeScript, JavaScript, Google Calendar API, Natural Language Query Layer."
       }
+    },
+    {
+      "tags": [
+        "notable"
+      ],
+      "image": "grey.jpg",
+      "title": "Rug Pool ↗",
+      "description": "A provably fair memecoin launchpad on Monad where no one can sell early — not even the dev. Onchain randomness decides who exits at 24h. Losers fund the winners.",
+      "links": [
+        {
+          "text": "[Play]",
+          "url": "https://rug-pool.vercel.app"
+        },
+        {
+          "text": "[GitHub]",
+          "url": "https://github.com/tobiawolaju/rug-pool"
+        }
+      ],
+      "writeup": {
+        "goal": "Build a memecoin launchpad where the exit mechanics are fully transparent and onchain.",
+        "hardPart": "Designing a game where no one — not even the deployer — can exit early required a novel locking mechanism enforced at the contract level. Onchain randomness had to be verifiable and manipulation-resistant while determining winners every 24h cycle.",
+        "stack": "Solidity, Hardhat, Monad, TypeScript, React."
+      }
+    },
+    {
+      "tags": [
+        "notable"
+      ],
+      "image": "grey.jpg",
+      "title": "John Wick: Exitus ↗",
+      "description": "John Wick-themed shooting range built for the Remix GG x Lionsgate game jam. Fast-paced target shooting with scoring and time pressure.",
+      "links": [
+        {
+          "text": "[Play]",
+          "url": "https://johnwick1000.vercel.app"
+        },
+        {
+          "text": "[GitHub]",
+          "url": "https://github.com/tobiawolaju/johnwick-lex-Exitus"
+        }
+      ],
+      "writeup": {
+        "goal": "Ship a polished game experience under game jam time constraints.",
+        "hardPart": "Building responsive gunplay mechanics, hit detection, and scoring logic in Godot within a tight jam deadline while maintaining performance across devices.",
+        "stack": "Godot, GDScript, GLTF."
+      }
+    },
+    {
+      "tags": [
+        "notable"
+      ],
+      "image": "grey.jpg",
+      "title": "Superyap ↗",
+      "description": "Decentralized anonymous p2p encrypted chat on Monad. Send messages and execute in-chat transactions with no identity required.",
+      "links": [
+        {
+          "text": "[Open App]",
+          "url": "https://superyap.vercel.app/"
+        },
+        {
+          "text": "[GitHub]",
+          "url": "https://github.com/tobiawolaju/Superyap"
+        }
+      ],
+      "writeup": {
+        "goal": "Build a fully anonymous, encrypted p2p messaging layer on Monad with native transaction support.",
+        "hardPart": "End-to-end encryption in a decentralized context without managing key infrastructure client-side, while enabling seamless in-chat token transfers without compromising anonymity.",
+        "stack": "TypeScript, React, Monad, WebSocket, Encryption Layer."
+      }
+    },
+    {
+      "tags": [
+        "notable"
+      ],
+      "image": "grey.jpg",
+      "title": "Terra Engine ↗",
+      "description": "Game engine and survival game built with Godot/GDScript for Gamedev.js Jam 2026. Web3-integrated gameplay with real-time mechanics.",
+      "links": [
+        {
+          "text": "[GitHub]",
+          "url": "https://github.com/tobiawolaju/Terra-engine"
+        }
+      ],
+      "writeup": {
+        "goal": "Build a reusable game engine and ship a complete survival game within a game jam.",
+        "hardPart": "Designing an engine flexible enough for jam iteration while keeping the scope tight enough to ship a complete, playable experience.",
+        "stack": "Godot, GDScript, Web3."
+      }
     }
   ],
   "docs": [
