@@ -1278,3 +1278,68 @@ a {
 .canvas-link:hover {
   text-decoration: underline;
 }
+
+/* Other Builds Strip */
+.other-builds {
+  padding: 0 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.other-builds-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.other-build-item {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.12);
+}
+
+.other-build-item:last-child {
+  border-bottom: none;
+}
+
+.other-build-item strong {
+  font-weight: 700;
+}
+
+.other-build-desc {
+  opacity: 0.55;
+}
+
+.other-build-item .links {
+  display: inline;
+  margin-left: 6px;
+}
+
+.other-build-item .links .tag {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  margin: 0 2px;
+}
+
+@media (max-width: 768px) {
+  .other-build-item {
+    font-size: 0.85rem;
+  }
+
+  .other-build-desc {
+    display: block;
+    margin: 2px 0 4px;
+  }
+
+  .other-build-item .links {
+    display: block;
+    margin-left: 0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .other-build-item {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+  }
+}

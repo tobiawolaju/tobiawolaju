@@ -4,8 +4,8 @@
   "profile": {
     "image": "pfp.jpg",
     "name": "Tobi Awolaju",
-    "title": "Full-Stack Engineer — Onchain Applications & Agent Infrastructure",
-    "bio": "<p style='font-size: large; padding-bottom: 1.5rem;'><b>\"I build infrastructure that survives chain chaos\"</b></p><p style='font-size: large; padding-bottom: 2rem;'><b>What I Bring to a Team:</b><br>• <b>Full-Stack Onchain Applications:</b> From React frontends with embedded wallet onboarding to WebSocket game servers syncing 20-player 3D state at 20Hz — I own the full stack.<br>• <b>EVM Infrastructure:</b> Built a reorg-resistant block indexer that cross-references three Monad nodes in real-time and auto-rolls back state on parent-hash mismatches.<br>• <b>Agent Systems:</b> Autonomous pipelines that self-evaluate, self-retry, and execute without a human in the loop — from a headless PC-controlling agent to a full relay engine.</p>",
+    "title": "Full-Stack Engineer (Web3) — I ship real-time systems solo, from contract to frontend.",
+    "bio": "<p style='font-size: large; padding-bottom: 1.5rem;'>I build the systems most people are afraid to touch: real-time multiplayer sync, reorg-resistant blockchain indexers, and smart contracts that hold user funds. Currently finishing a degree in Electrical & Electronics Engineering at Adeleke University while building full-stack Web3 products solo — from Solidity to WebSocket servers to React frontends. I own the whole stack because I've had to.</p>",
     "resumeLink": "https://docs.google.com/document/d/1W3aYjK9DLJZg5m4uvQPeHwRHPUToai0Bfwe2Bbfq9E4/edit?usp=drivesdk"
   },
   "sectionLabels": {
@@ -33,35 +33,11 @@
   "projects": [
     {
       "tags": [
-        "notable",
-        "developer-tools"
-      ],
-      "image": "grey.jpg",
-      "title": "MoyakiTraceEngine ↗",
-      "description": "A resilient EVM block indexer built for chains that reorganize. Cross-references three Monad nodes in real-time and automatically rolls back state when parent-hash mismatches are detected.",
-      "links": [
-        {
-          "text": "[Trace Blocks]",
-          "url": "https://moyakitraceengine.vercel.app/"
-        },
-        {
-          "text": "[GitHub]",
-          "url": "https://github.com/tobiawolaju/MoyakiTraceEngine"
-        }
-      ],
-      "writeup": {
-        "goal": "Build a resilient EVM indexer that never drops data, even when the blockchain reorganizes.",
-        "hardPart": "Public RPCs are unreliable. I built a multi-node ingestion engine that cross-references 3 different Monad nodes, with a custom 'ReorgManager' that detects parent-hash mismatches and automatically rolls back bad state.",
-        "stack": "Node.js, Express, Svelte, Firebase RTDB, EVM RPCs."
-      }
-    },
-    {
-      "tags": [
         "flagship"
       ],
       "image": "worldofnads1.gif",
       "title": "World of Nads ↗",
-      "description": "20-player browser battle royale — 3D assets, 20Hz WebSocket server, on-chain prize distribution, and embedded wallet onboarding, all running in the browser with no install. Core mechanics validated on Monad testnet; currently porting the settlement layer to Solana.",
+      "description": "20-player browser battle royale — 3D assets, a 20Hz WebSocket server keeping every player in sync in real time, on-chain prize distribution, and embedded wallet onboarding. No install, runs in-browser.",
       "links": [
         {
           "text": "[Play world of nads]",
@@ -73,19 +49,8 @@
         }
       ],
       "writeup": {
-        "overview": "A solo experiment in end-to-end creation: 3D modeling, smart contracts, and real-time multiplayer architecture.",
-        "features": [
-          "20-player real-time sync in the browser",
-          "Automated on-chain prize distribution",
-          "Low-friction Web3 onboarding via embedded wallets"
-        ],
-        "architecture": "Godot → WASM + React, Node.js WebSocket server @20Hz, EVM (Monad) smart contracts — Solana port (Anchor) in progress.",
-        "infrastructure": "High-performance deployment on Vercel and Render.",
-        "techStack": "Godot, TypeScript, Solidity, Rust, Anchor, Solana, Monad, Node.js, PostgreSQL.",
-        "web3": "Real-time state sync coupled with Privy for seamless identity and on-chain payouts.",
-        "challenges": "Solving the 'impossible' task of keeping 20 players perfectly synced while handling blockchain state.",
-        "outcomes": "A live, functional product used by real people, proving that a solo builder can ship a complete Web3 ecosystem.",
-        "future": "Expanding the physical laws of the game, native Solana settlement program, and WONs2 decentralized relay network."
+        "hardPart": "Keeping 20 players' state perfectly synced over WebSocket while the frontend also has to talk to a wallet layer and on-chain state — three moving pieces that all had to stay consistent under real network jitter. I profiled and fixed a bottleneck where per-frame calls across the Godot/React bridge were tanking browser FPS from 60 to under 12, then rebuilt the sync path around batched state updates.",
+        "stack": "Godot (WASM), TypeScript, React, Node.js WebSocket server, Solidity, PostgreSQL, Privy."
       },
       "gifSequence": [
         "worldofnads1.gif",
@@ -98,104 +63,25 @@
     },
     {
       "tags": [
-        "flagship"
-      ],
-      "image": "grey.jpg",
-      "title": "Noogler - Embodied AI ↗",
-      "description": "An AI agent that controls a PC through screen capture and a Rust OS input layer — not APIs. It sees the interface, makes decisions, and clicks. Like a human, but headless.",
-      "links": [
-        {
-          "text": "[Launch an Agent]",
-          "url": "https://noogler.vercel.app"
-        },
-        {
-          "text": "[GitHub]",
-          "url": "https://github.com/tobiawolaju/Noogler"
-        }
-      ],
-      "writeup": {
-        "overview": "An obsession with 'Digital Agency': building an agent that can operate software autonomously by observing and interacting.",
-        "features": [
-          "Real-time screen capture and visual reasoning",
-          "Gemini 2.0 Live API for high-level decision making",
-          "Rust-based local agent for direct OS-level control"
-        ],
-        "architecture": "Node.js Cloud Backend + Gemini 2.0, Svelte UI, and a local Rust agent for automation.",
-        "infrastructure": "Local automation layer optimized for Windows environments.",
-        "techStack": "Rust, Google Gemini 2.0, Svelte, Node.js.",
-        "challenges": "Ensuring the agent can handle errors and navigate diverse software interfaces autonomously.",
-        "outcomes": "A working prototype that can fix its own errors in IDEs, Excel, and browsers.",
-        "future": "Advancing toward a fully autonomous companion that learns from user behavior."
-      }
-    },
-    {
-      "tags": [
         "notable",
         "developer-tools"
       ],
       "image": "grey.jpg",
-      "title": "HARE — Headless Autonomous Relay Engine ↗",
-      "description": "Agent infrastructure that removes the human from both loops — execution and quality control. Tasks self-evaluate, self-retry, and emit trusted results with no human in the chain.",
+      "title": "MoyakiTraceEngine ↗",
+      "description": "A block indexer built for chains that reorganize. Cross-references three independent Monad nodes in real time and automatically rolls back state the moment it detects a parent-hash mismatch, so downstream consumers never read bad data.",
       "links": [
         {
-          "text": "[Run Agent]",
-          "url": "https://h-a-r-e.vercel.app/"
+          "text": "[Trace Blocks]",
+          "url": "https://moyakitraceengine.vercel.app/"
         },
         {
           "text": "[GitHub]",
-          "url": "https://github.com/tobiawolaju/H-A-R-E"
+          "url": "https://github.com/tobiawolaju/MoyakiTraceEngine"
         }
       ],
       "writeup": {
-        "goal": "Build the foundation for agents that are autonomous in the way that actually matters — no human reviewing outputs, no human retrying failures, no human deciding if the result was good enough.",
-        "hardPart": "Most 'autonomous' agent frameworks are autonomous in name only. They remove the human from execution but quietly keep them in the quality control loop. HARE treats reliability as a first-class architectural constraint. Tasks must self-evaluate against a success condition, self-retry with adjusted context on failure, and emit structured results that downstream systems can trust without human inspection.",
-        "stack": "Node.js, TypeScript, LLM APIs, Webhook Infrastructure."
-      }
-    },
-    {
-      "tags": [
-        "flagship"
-      ],
-      "image": "dominusquant.gif",
-      "title": "DominusQuant: Monad Keeper & Algo-Trading Bot ↗",
-      "description": "Algo-trading infrastructure for Monad. Parses confirmed on-chain state, gas pricing logs, and behavioral signals in real-time — executing only when the statistical edge is there.",
-      "links": [
-        {
-          "text": "[trade on dquant]",
-          "url": "https://dominus-quant.vercel.app/"
-        },
-        {
-          "text": "[GitHub]",
-          "url": "https://github.com/tobiawolaju/DominusQuant"
-        }
-      ],
-      "writeup": {
-        "goal": "Automate complex DeFi strategies (like liquidations, statistical arbitrage, and tokenomic rebalancing) on a high-speed chain.",
-        "hardPart": "Monad's architecture is designed to prevent traditional mempool sniping and sandwich attacks. To find an edge, I had to build a system that parses confirmed on-chain state, gas pricing logs, and AI-aggregated behavioral signals in real-time to execute trades strictly based on speed and statistical advantage.",
-        "stack": "TypeScript, Monad Situation Dashboard APIs, Distributed Node.js Microservices, Firebase."
-      }
-    },
-    {
-      "tags": [
-        "notable"
-      ],
-      "image": "grey.jpg",
-      "title": "LockedIn",
-      "description": "A day planner with a natural language query layer. Block your schedule, ask it questions in plain English, and push the whole thing to Google Calendar — no copy-paste, no drift.",
-      "links": [
-        {
-          "text": "Open App",
-          "url": "https://lockedin-xyz.vercel.app/"
-        },
-        {
-          "text": "GitHub",
-          "url": "https://github.com/tobiawolaju/LockedIn/"
-        }
-      ],
-      "writeup": {
-        "goal": "Build a planner that closes the gap between intention and execution — not with motivation features, but with structure. If your day is scheduled with times and durations, the friction to skip it goes up. That's the whole mechanic.",
-        "hardPart": "Natural language scheduling is easy to demo and hard to make reliable. The query layer has to understand temporal relationships (\"what's after lunch?\", \"when's my first gap?\") without a rigid command syntax, then map those results back to a mutable schedule state. Getting that to sync correctly with Google Calendar — without duplication, without drift — required treating the calendar as a write-only commit target, not a two-way sync partner.",
-        "stack": "TypeScript, JavaScript, Google Calendar API, Natural Language Query Layer."
+        "hardPart": "Public RPCs disagree with each other more than people expect. I designed a ReorgManager that treats disagreement as the normal case, not the exception — comparing state across nodes continuously and rolling back cleanly rather than crashing or silently serving stale data.",
+        "stack": "Node.js, Express, Svelte, Firebase RTDB, EVM RPCs."
       }
     },
     {
@@ -204,7 +90,7 @@
       ],
       "image": "grey.jpg",
       "title": "Rug Pool ↗",
-      "description": "A provably fair memecoin launchpad on Monad where no one can sell early — not even the dev. Onchain randomness decides who exits at 24h. Losers fund the winners.",
+      "description": "A memecoin launchpad where no one — not even the deployer — can exit early. On-chain, verifiable randomness decides who exits at the 24-hour mark; losers fund the winner's payout.",
       "links": [
         {
           "text": "[Play]",
@@ -216,64 +102,71 @@
         }
       ],
       "writeup": {
-        "goal": "Build a memecoin launchpad where the exit mechanics are fully transparent and onchain.",
-        "hardPart": "Designing a game where no one — not even the deployer — can exit early required a novel locking mechanism enforced at the contract level. Onchain randomness had to be verifiable and manipulation-resistant while determining winners every 24h cycle.",
+        "hardPart": "Enforcing a hard lock at the contract level with no admin backdoor, while making the randomness both unpredictable and independently verifiable. Used Pyth Entropy for VRF. Shipped 5 contracts to Monad testnet with 53 passing tests and ran two full simulation cycles to confirm the payout logic held under edge cases.",
         "stack": "Solidity, Hardhat, Monad, TypeScript, React."
       }
-    },
+    }
+  ],
+  "otherBuilds": [
     {
-      "tags": [
-        "notable"
-      ],
-      "image": "grey.jpg",
-      "title": "John Wick: Exitus ↗",
-      "description": "John Wick-themed shooting range built for the Remix GG x Lionsgate game jam. Fast-paced target shooting with scoring and time pressure.",
+      "title": "Noogler",
+      "description": "AI agent that controls a PC via screen capture + a Rust OS input layer, no APIs.",
       "links": [
         {
-          "text": "[Play]",
-          "url": "https://johnwick1000.vercel.app"
+          "text": "[Launch]",
+          "url": "https://noogler.vercel.app"
         },
         {
           "text": "[GitHub]",
-          "url": "https://github.com/tobiawolaju/johnwick-lex-Exitus"
+          "url": "https://github.com/tobiawolaju/Noogler"
         }
-      ],
-      "writeup": {
-        "goal": "Ship a polished game experience under game jam time constraints.",
-        "hardPart": "Building responsive gunplay mechanics, hit detection, and scoring logic in Godot within a tight jam deadline while maintaining performance across devices.",
-        "stack": "Godot, GDScript, GLTF."
-      }
+      ]
     },
     {
-      "tags": [
-        "notable"
-      ],
-      "image": "grey.jpg",
-      "title": "Superyap ↗",
-      "description": "Decentralized anonymous p2p encrypted chat on Monad. Send messages and execute in-chat transactions with no identity required.",
+      "title": "HARE",
+      "description": "Agent pipeline that self-evaluates and self-retries with zero human in the QC loop.",
       "links": [
         {
-          "text": "[Open App]",
+          "text": "[Run]",
+          "url": "https://h-a-r-e.vercel.app/"
+        },
+        {
+          "text": "[GitHub]",
+          "url": "https://github.com/tobiawolaju/H-A-R-E"
+        }
+      ]
+    },
+    {
+      "title": "DominusQuant",
+      "description": "Algo-trading bot parsing real-time on-chain state on Monad.",
+      "links": [
+        {
+          "text": "[Trade]",
+          "url": "https://dominus-quant.vercel.app/"
+        },
+        {
+          "text": "[GitHub]",
+          "url": "https://github.com/tobiawolaju/DominusQuant"
+        }
+      ]
+    },
+    {
+      "title": "Superyap",
+      "description": "Anonymous encrypted p2p chat with in-chat transactions on Monad.",
+      "links": [
+        {
+          "text": "[Open]",
           "url": "https://superyap.vercel.app/"
         },
         {
           "text": "[GitHub]",
           "url": "https://github.com/tobiawolaju/Superyap"
         }
-      ],
-      "writeup": {
-        "goal": "Build a fully anonymous, encrypted p2p messaging layer on Monad with native transaction support.",
-        "hardPart": "End-to-end encryption in a decentralized context without managing key infrastructure client-side, while enabling seamless in-chat token transfers without compromising anonymity.",
-        "stack": "TypeScript, React, Monad, WebSocket, Encryption Layer."
-      }
+      ]
     },
     {
-      "tags": [
-        "notable"
-      ],
-      "image": "grey.jpg",
-      "title": "Terra Engine ↗",
-      "description": "The planet is a living machine — it grows your food, makes your air, and tries to kill you with boulders. Every ship brought technology. The planet just kept being a planet. Feed it. Or become the food.",
+      "title": "Terra Engine",
+      "description": "Game jam build in Godot, shipped under a 48-hour deadline.",
       "links": [
         {
           "text": "[Play]",
@@ -283,12 +176,21 @@
           "text": "[GitHub]",
           "url": "https://github.com/tobiawolaju/Terra-engine"
         }
-      ],
-      "writeup": {
-        "goal": "Build a reusable game engine and ship a complete survival game within a game jam.",
-        "hardPart": "Designing an engine flexible enough for jam iteration while keeping the scope tight enough to ship a complete, playable experience.",
-        "stack": "Godot, GDScript, Web3."
-      }
+      ]
+    },
+    {
+      "title": "John Wick: Exitus",
+      "description": "Game jam build in Godot, shipped under a 48-hour deadline.",
+      "links": [
+        {
+          "text": "[Play]",
+          "url": "https://johnwick1000.vercel.app"
+        },
+        {
+          "text": "[GitHub]",
+          "url": "https://github.com/tobiawolaju/johnwick-lex-Exitus"
+        }
+      ]
     }
   ],
   "docs": [
