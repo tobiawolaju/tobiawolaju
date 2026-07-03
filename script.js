@@ -50,6 +50,17 @@ function renderPortfolio(data) {
         }
     }
 
+    // 3. Projects filters
+    const filterContainer = document.getElementById("project-filters");
+    if (data.filters) {
+        let filterHTML = "";
+        data.filters.forEach((filter, index) => {
+            const activeClass = index === 0 ? "active" : "";
+            filterHTML += `<button data-filter="${filter.id}" class="${activeClass}">${filter.label}</button>`;
+        });
+        filterContainer.innerHTML = filterHTML;
+    }
+
     // 4. Projects
     const projectsList = document.getElementById("projects-list");
     if (data.projects) {
@@ -64,7 +75,7 @@ function renderPortfolio(data) {
                 : `<img src="${project.image}" alt="${project.title}"${gifSequence}>`;
 
             return `
-            <div class="project">
+            <div class="project" data-tags="${(project.tags || []).join(",")}">
                 ${projectPreview}
                 <div class="project-info">
                     <a href="#"><strong>${project.title}</strong></a>
@@ -153,6 +164,9 @@ function renderPortfolio(data) {
             </li>
         `).join("");
     }
+
+    const projectsSection = document.getElementById("projects-section");
+    initProjectFilterPinning(filterContainer, projectsSection);
 
     // 6. Activity / Contributions
     if (data.sectionLabels && data.sectionLabels.activity) {
@@ -318,6 +332,67 @@ function parseGifDurationMs(arrayBuffer) {
     return totalMs > 0 ? totalMs : GIF_DURATION_FALLBACK_MS;
 }
 
+function initProjectFilterPinning(filterContainer, projectsSection) {
+    if (!filterContainer || !projectsSection) return;
+
+    const filtersSpacer = document.createElement("div");
+    filtersSpacer.className = "filters-spacer";
+    filterContainer.parentNode.insertBefore(filtersSpacer, filterContainer);
+    filtersSpacer.appendChild(filterContainer);
+
+    const filtersShell = document.createElement("div");
+    filtersShell.id = "project-filters-shell";
+
+    let isPinned = false;
+    let ticking = false;
+
+    const syncPinnedGeometry = () => {
+        if (!isPinned) return;
+        const rect = filtersSpacer.getBoundingClientRect();
+        filtersShell.style.paddingLeft = `${rect.left}px`;
+        filtersShell.style.paddingRight = `${window.innerWidth - rect.right}px`;
+    };
+
+    const setPinned = (pinned) => {
+        if (pinned === isPinned) return;
+        isPinned = pinned;
+
+        if (pinned) {
+            filtersSpacer.style.height = `${filterContainer.offsetHeight}px`;
+            document.body.appendChild(filtersShell);
+            filtersShell.appendChild(filterContainer);
+            syncPinnedGeometry();
+        } else {
+            filtersSpacer.style.height = "";
+            filtersSpacer.appendChild(filterContainer);
+            filtersShell.remove();
+            filtersShell.style.paddingLeft = "";
+            filtersShell.style.paddingRight = "";
+        }
+    };
+
+    const updatePinnedState = () => {
+        ticking = false;
+        const sectionRect = projectsSection.getBoundingClientRect();
+        const spacerRect = filtersSpacer.getBoundingClientRect();
+        const topOffset = -20;
+        const shouldPin = sectionRect.top <= topOffset && sectionRect.bottom > spacerRect.height + topOffset;
+
+        setPinned(shouldPin);
+        syncPinnedGeometry();
+    };
+
+    const requestUpdate = () => {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(updatePinnedState);
+    };
+
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+    requestUpdate();
+}
+
 function initInteractions() {
     // --- Scroll Reveal ---
     const sections = document.querySelectorAll("section");
@@ -342,6 +417,58 @@ function initInteractions() {
             toggle.textContent = isExpanded ? "Project Breakdown ▴" : "Project Breakdown ▾";
         }
     });
+
+    // --- Filters ---
+    const filterButtons = document.querySelectorAll('.filters button');
+    const projectCards = document.querySelectorAll('.project');
+
+    const setProjectVisibility = (activeFilter) => {
+        const isAllFilter = activeFilter === "all";
+        let visibleCount = 0;
+
+        projectCards.forEach(project => {
+            const tags = (project.getAttribute('data-tags') || "")
+                .split(",")
+                .map(tag => tag.trim())
+                .filter(Boolean);
+            const matchesFilter = isAllFilter || tags.includes(activeFilter);
+            const shouldShow = matchesFilter;
+
+            project.classList.toggle('is-visible', shouldShow);
+            project.classList.toggle('is-hidden', !shouldShow);
+            project.style.display = shouldShow ? "block" : "none";
+
+            if (shouldShow) visibleCount += 1;
+        });
+
+        if (visibleCount === 0) {
+            projectCards.forEach(project => {
+                project.classList.add('is-visible');
+                project.classList.remove('is-hidden');
+                project.style.display = "block";
+            });
+        }
+    };
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const activeFilter = btn.getAttribute('data-filter') || "all";
+
+            projectCards.forEach(project => {
+                project.classList.add('is-transitioning');
+            });
+
+            setTimeout(() => {
+                setProjectVisibility(activeFilter);
+                projectCards.forEach(project => project.classList.remove('is-transitioning'));
+            }, 160);
+        });
+    });
+
+    const defaultFilter = document.querySelector('.filters button[data-filter="all"]') || document.querySelector('.filters button');
+    if (defaultFilter) defaultFilter.click();
 
     // --- Contact Section Reveal ---
     const revealObs = new IntersectionObserver((entries) => {
