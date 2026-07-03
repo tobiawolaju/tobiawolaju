@@ -453,22 +453,6 @@ section.visible {
   transform: translateY(0);
 }
 
-.project.is-transitioning {
-  opacity: 0.35;
-  transform: translateY(4px);
-}
-
-.project.is-hidden {
-  opacity: 0;
-  transform: translateY(6px);
-  display: none !important;
-}
-
-.project.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .project > img,
 .project-preview {
   width: 100%;
@@ -757,100 +741,6 @@ a {
 
 
 
-
-/* Light mode (default) */
-.filters {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  margin: 1em 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
-  background-color: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  width: 100%;
-  align-self: flex-start;
-}
-
-#project-filters-shell {
-  position: fixed;
-  top: -20px;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  box-sizing: border-box;
-  padding: 0 20px;
-  background-color: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-@media (max-width: 768px) {
-  .filters {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    /* Firefox */
-  }
-
-  .filters::-webkit-scrollbar {
-    display: none;
-    /* Chrome / Safari */
-  }
-
-  .filters button {
-    flex: 0 0 auto;
-    /* prevent shrinking */
-    white-space: nowrap;
-    /* keep labels on one line */
-  }
-}
-
-
-.filters button {
-  padding: 0.5em 1em;
-  border: 1px solid #ccc;
-  background: #fff;
-  cursor: pointer;
-  border-radius: 50px;
-  font-size: 0.9em;
-  color: #000;
-  margin-left: 20px;
-}
-
-.filters button.active {
-  background: #565656;
-  color: #fff;
-}
-
-/* Dark mode styles */
-@media (prefers-color-scheme: dark) {
-  .filters {
-    background-color: rgba(30, 30, 30, 0.4);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
-
-  #project-filters-shell {
-    background-color: rgba(30, 30, 30, 0.4);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
-
-  .filters button {
-    background: #222;
-    border: 1px solid #666;
-    color: #eee;
-  }
-
-  .filters button.active {
-    background: #eee;
-    color: #000;
-  }
-}
 
 
 /* Light mode (default) */

@@ -12,24 +12,7 @@
     "docs": "Blog",
     "activity": ""
   },
-  "filters": [
-    {
-      "id": "all",
-      "label": "All"
-    },
-    {
-      "id": "flagship",
-      "label": "Flagship"
-    },
-    {
-      "id": "notable",
-      "label": "Notable"
-    },
-    {
-      "id": "developer-tools",
-      "label": "Developer Tools"
-    }
-  ],
+
   "projects": [
     {
       "tags": [
