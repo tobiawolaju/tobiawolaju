@@ -428,14 +428,13 @@ section.visible {
 }
 
 
-@media (max-width: 768px) {
-
-  /* Adjust the width as needed */
 .filters {
   display: none !important;
 }
 
-/* Light mode (default) */
+@media (max-width: 768px) {
+
+  /* Adjust the width as needed */
 .filters {
   padding-top: 8px;
   padding-bottom: 8px;
