@@ -81,7 +81,7 @@ function renderPortfolio(data) {
 
             const primaryLiveLink = (project.links || []).find(link => !/github/i.test(link.text || link.url));
             const projectPreview = primaryLiveLink?.url
-                ? `<div class="project-preview" aria-hidden="true"><iframe src="${primaryLiveLink.url}" title="${project.title} live preview" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe></div>`
+                ? `<div class="project-preview" aria-hidden="true"><iframe data-src="${primaryLiveLink.url}" title="${project.title} live preview" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe></div>`
                 : `<img src="${project.image}" alt="${project.title}"${gifSequence}>`;
 
             return `
@@ -193,6 +193,7 @@ function renderPortfolio(data) {
         }).join("");
 
         initProjectGifLoops();
+        initLazyIframes();
     }
 
     // 5. Docs
@@ -253,6 +254,32 @@ function initProjectGifLoops() {
         };
 
         playNextGif();
+    });
+}
+
+function initLazyIframes() {
+    if (!("IntersectionObserver" in window)) {
+        document.querySelectorAll("iframe[data-src]").forEach(iframe => {
+            iframe.src = iframe.dataset.src;
+        });
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const iframe = entry.target;
+                if (iframe.dataset.src) {
+                    iframe.src = iframe.dataset.src;
+                    iframe.removeAttribute("data-src");
+                }
+                observer.unobserve(iframe);
+            }
+        });
+    }, { rootMargin: "400px" });
+
+    document.querySelectorAll("iframe[data-src]").forEach(iframe => {
+        observer.observe(iframe);
     });
 }
 
