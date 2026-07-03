@@ -451,16 +451,7 @@ section.visible {
 }
 
 #project-filters-shell {
-  position: fixed;
-  top: -20px;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  box-sizing: border-box;
-  padding: 0 20px;
-  background-color: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  display: none !important;
 }
 
 @media (max-width: 768px) {
@@ -505,13 +496,6 @@ section.visible {
     -webkit-backdrop-filter: blur(10px);
   }
 
-#project-filters-shell {
-  display: none;
-
-    background-color: rgba(30, 30, 30, 0.4);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
 
   .filters button {
     background: #222;
