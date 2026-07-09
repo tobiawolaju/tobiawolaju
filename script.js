@@ -27,89 +27,156 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 function renderPortfolio(data) {
-    document.title = data.pageTitle || "Tobiloba Awolaju | Web3 Systems Engineer";
+    // 1. Page Title
+    document.title = data.pageTitle || "Tobi's Portfolio";
 
+    // 2. Profile
     if (data.profile) {
+
         document.getElementById("profile-name").textContent = data.profile.name;
         document.getElementById("profile-title").textContent = data.profile.title;
-        const subtitle = document.getElementById("hero-subtitle");
-        if (subtitle) subtitle.textContent = data.profile.subtitle || subtitle.textContent;
 
+        // About Content
         const aboutContent = document.getElementById("about-content");
-        aboutContent.innerHTML = data.profile.bio || "";
+        aboutContent.innerHTML = data.profile.bio;
         if (data.profile.resumeLink) {
             const resumeBtn = document.createElement("a");
-            resumeBtn.className = "resume inline-resume";
+            resumeBtn.className = "resume";
             resumeBtn.href = data.profile.resumeLink;
             resumeBtn.target = "_blank";
             resumeBtn.rel = "noopener noreferrer";
-            resumeBtn.textContent = "Open CV";
+            resumeBtn.innerHTML = `<img src="https://img.icons8.com/ios-filled/24/000000/documents.png" alt="CV" class="cv-icon cv-icon-light" width="16" height="16" style="vertical-align:middle; margin-right:6px;"><img src="https://img.icons8.com/ios-filled/24/ffffff/documents.png" alt="CV" class="cv-icon cv-icon-dark" width="16" height="16" style="vertical-align:middle; margin-right:6px;">Open CV`;
             aboutContent.appendChild(resumeBtn);
         }
     }
 
+    // 3. Projects filters
     const filterContainer = document.getElementById("project-filters");
-    if (filterContainer && data.filters) {
-        filterContainer.innerHTML = data.filters.map((filter, index) =>
-            `<button data-filter="${filter.id}" class="${index === 0 ? "active" : ""}">${filter.label}</button>`
-        ).join("");
+    if (data.filters) {
+        let filterHTML = "";
+        data.filters.forEach((filter, index) => {
+            const activeClass = index === 0 ? "active" : "";
+            filterHTML += `<button data-filter="${filter.id}" class="${activeClass}">${filter.label}</button>`;
+        });
+        filterContainer.innerHTML = filterHTML;
     }
 
+    // 4. Projects
     const projectsList = document.getElementById("projects-list");
-    if (projectsList && data.projects) {
-        const flagshipProjects = data.projects.filter(project => (project.tags || []).includes("flagship"));
-        projectsList.innerHTML = flagshipProjects.map(project => {
-            const slug = project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "").replace(/-$/, "");
+    if (data.projects) {
+        projectsList.innerHTML = data.projects.map(project => {
             const gifSequence = Array.isArray(project.gifSequence) && project.gifSequence.length
                 ? ` data-gif-sequence="${project.gifSequence.join(",")}"`
                 : "";
-            const preview = project.image ? `<img src="${project.image}" alt="${project.title} product preview" loading="lazy"${gifSequence}>` : "";
+
+            const primaryLiveLink = (project.links || []).find(link => !/github/i.test(link.text || link.url));
+            const projectPreview = primaryLiveLink?.url
+                ? `<div class="project-preview" aria-hidden="true"><iframe data-src="${primaryLiveLink.url}" title="${project.title} live preview" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe></div>`
+                : `<img src="${project.image}" alt="${project.title}"${gifSequence}>`;
+
             return `
-            <article class="project flagship-card" id="${slug}-details" data-tags="${(project.tags || []).join(",")}">
-                <div class="project-media">${preview}<div class="architecture-map">${(project.architecture || []).map(item => `<span>${item}</span>`).join("")}</div></div>
+            <div class="project" data-tags="${(project.tags || []).join(",")}">
+                ${projectPreview}
                 <div class="project-info">
-                    <p class="project-kicker">${project.kicker || "Flagship build"}</p>
-                    <h3>${project.title.replace(" ↗", "")}</h3>
+                    <a href="${primaryLiveLink?.url || '#'}" target="_blank" rel="noopener noreferrer"><strong>${project.title}</strong></a>
                     <p class="mission">${project.description}</p>
-                    <ul class="project-bullets">${(project.bullets || []).map(item => `<li>${item}</li>`).join("")}</ul>
-                    <div class="links">${(project.links || []).map(link => `<a href="${link.url}" class="tag tag-blue" ${link.url.startsWith("#") ? "" : 'target="_blank" rel="noopener noreferrer"'}>${link.text}</a>`).join("")}</div>
-                    ${project.details ? `<button class="writeup-toggle">Project Page ▾</button><div class="technical-writeup project-page">${Object.entries(project.details).map(([key, value]) => `<div class="writeup-section"><strong>${labelFromKey(key)}</strong><p>${linkifyDetail(value)}</p></div>`).join("")}</div>` : ""}
                 </div>
-            </article>`;
+                <div class="project-footer">
+                    <div class="links">
+                        ${project.links.map(link => {
+                let tagClass = 'tag-blue';
+                const text = link.text.toLowerCase();
+                if (text.includes('github')) tagClass = 'tag-purple';
+                else if (text.includes('demo') || text.includes('video')) tagClass = 'tag-green';
+                else if (text.includes('3d') || text.includes('files')) tagClass = 'tag-yellow';
+                else if (text.includes('docs') || text.includes('paper')) tagClass = 'tag-blue';
+                else if (text.includes('testing') || text.includes('results')) tagClass = 'tag-red';
+                return `<a href="${link.url}" class="tag ${tagClass}" target="_blank">${link.text}</a>`;
+            }).join("")}
+                    </div>
+                    ${project.writeup ? `
+                     <button class="writeup-toggle">Engineering Breakdown ▾</button>
+                     <div class="technical-writeup" style="border-left: 2px solid #ccc; padding-left: 1rem;">
+                         ${project.writeup.hardPart ? `
+                         <div class="writeup-section">
+                             <strong>The hardest technical problem:</strong>
+                             <p>${project.writeup.hardPart}</p>
+                         </div>
+                         ` : ''}
+                         ${project.writeup.stack ? `
+                         <div class="writeup-section">
+                             <strong>Stack:</strong>
+                             <p>${project.writeup.stack}</p>
+                         </div>
+                         ` : ''}
+                     </div>
+                     ` : ''}
+                </div>
+            </div>
+        `;
         }).join("");
+
         initProjectGifLoops();
+        initLazyIframes();
     }
 
-    const highlightsGrid = document.getElementById("highlights-grid");
-    if (highlightsGrid && data.highlights) {
-        highlightsGrid.innerHTML = data.highlights.map(item => `<article class="highlight-card"><span>✦</span><p>${item}</p></article>`).join("");
+    // 4b. Other Builds (compact strip)
+    if (data.otherBuilds) {
+        const otherSection = document.createElement("div");
+        otherSection.className = "other-builds";
+        otherSection.innerHTML = `
+            <h3 style="margin: 2rem 0 1rem; font-size: 1.1rem; opacity: 0.6;">Other builds</h3>
+            <div class="other-builds-list">
+                ${data.otherBuilds.map(b => {
+                    const linkTags = (b.links || []).map(link => {
+                        let cls = link.text.toLowerCase().includes('github') ? 'tag-purple' : 'tag-green';
+                        return `<a href="${link.url}" class="tag ${cls}" target="_blank">${link.text}</a>`;
+                    }).join("");
+                    return `
+                        <div class="other-build-item">
+                            <strong>${b.title}</strong>
+                            <span class="other-build-desc">— ${b.description}</span>
+                            <span class="links">${linkTags}</span>
+                        </div>
+                    `;
+                }).join("")}
+            </div>
+        `;
+        projectsList.parentNode.appendChild(otherSection);
     }
 
-    const skillsContent = document.getElementById("skills-content");
-    if (skillsContent && data.techStack) {
-        skillsContent.innerHTML = Object.entries(data.techStack).map(([group, items]) => `<article class="stack-card"><h3>${group}</h3><div>${items.map(item => `<span>${item}</span>`).join("")}</div></article>`).join("");
-    }
-
-    const timelineList = document.getElementById("timeline-list");
-    if (timelineList && data.currentlyBuilding) {
-        timelineList.innerHTML = data.currentlyBuilding.map((item, index) => `<article class="timeline-item"><span>0${index + 1}</span><p>${item}</p></article>`).join("");
-    }
-
+    // 5. Docs
     const docsList = document.getElementById("docs-list");
-    if (docsList && data.docs) {
-        docsList.innerHTML = data.docs.map(doc => `<li><a href="${doc.link}" target="_blank" rel="noopener noreferrer"><strong>${doc.title}</strong></a><p>${doc.description}</p></li>`).join("");
-    }
-}
+    if (data.docs) {
+        // Set dynamic title
+        if (data.sectionLabels && data.sectionLabels.docs) {
+            document.getElementById("docs-header").innerHTML = `${data.sectionLabels.docs}<a style="opacity: 0.4;">↗</a>`;
+        } else {
+            document.getElementById("docs-header").innerHTML = `Docs<a style="opacity: 0.4;">↗</a>`;
+        }
 
-function labelFromKey(key) {
-    return key.replace(/([A-Z])/g, " $1").replace(/^./, char => char.toUpperCase());
-}
-
-function linkifyDetail(value) {
-    if (typeof value === "string" && /^https?:\/\//.test(value)) {
-        return `<a href="${value}" target="_blank" rel="noopener noreferrer">${value}</a>`;
+        docsList.innerHTML = data.docs.map(doc => `
+            <li>
+                <a href="${doc.link}" target="_blank" rel="noopener noreferrer">
+                    <strong><span style="color: #FFD700;">{</span> ${doc.title} <span style="color: #FFD700;">}</span></strong>
+                </a>
+                <p style="opacity: 50%;">${doc.description}</p>
+            </li>
+        `).join("");
     }
-    return value;
+
+    const projectsSection = document.getElementById("projects-section");
+    initProjectFilterPinning(filterContainer, projectsSection);
+
+    // 6. Activity / Contributions
+    if (data.sectionLabels && data.sectionLabels.activity) {
+        const activityHeader = document.getElementById("activity-header");
+        if (activityHeader) {
+            activityHeader.textContent = data.sectionLabels.activity;
+        }
+    }
+
+
 }
 
 function initProjectGifLoops() {
@@ -327,17 +394,6 @@ function initProjectFilterPinning(filterContainer, projectsSection) {
 }
 
 function initInteractions() {
-    // --- Scroll Progress ---
-    const progress = document.querySelector(".scroll-progress");
-    const updateProgress = () => {
-        if (!progress) return;
-        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-        const percentage = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
-        progress.style.width = `${Math.min(100, Math.max(0, percentage))}%`;
-    };
-    window.addEventListener("scroll", updateProgress, { passive: true });
-    updateProgress();
-
     // --- Scroll Reveal ---
     const sections = document.querySelectorAll("section");
     const revealSections = () => {
@@ -380,7 +436,7 @@ function initInteractions() {
 
             project.classList.toggle('is-visible', shouldShow);
             project.classList.toggle('is-hidden', !shouldShow);
-            project.style.display = shouldShow ? "" : "none";
+            project.style.display = shouldShow ? "block" : "none";
 
             if (shouldShow) visibleCount += 1;
         });
@@ -389,7 +445,7 @@ function initInteractions() {
             projectCards.forEach(project => {
                 project.classList.add('is-visible');
                 project.classList.remove('is-hidden');
-                project.style.display = "";
+                project.style.display = "block";
             });
         }
     };
