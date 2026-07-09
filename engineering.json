@@ -4,7 +4,7 @@
   "profile": {
     "image": "pfp.jpg",
     "name": "Tobi Awolaju",
-    "title": "Full-Stack Engineer (Web3) — I ship real-time systems solo, from contract to frontend.",
+    "title": "Web3 Systems Engineer • Smart Contract Developer • Multiplayer Game Architect   Building on-chain games, DeFi protocols, and real-time decentralized applications.",
     "bio": "<p style='font-size: large; padding-bottom: 1.5rem;'>I build the systems most people are afraid to touch: real-time multiplayer sync, reorg-resistant blockchain indexers, and smart contracts that hold user funds. Currently finishing a degree in Electrical & Electronics Engineering at Adeleke University while building full-stack Web3 products solo — from Solidity to WebSocket servers to React frontends. I own the whole stack because I've had to.</p>",
     "resumeLink": "https://docs.google.com/document/d/1W3aYjK9DLJZg5m4uvQPeHwRHPUToai0Bfwe2Bbfq9E4/edit?usp=drivesdk"
   },
@@ -32,9 +32,7 @@
   ],
   "projects": [
     {
-      "tags": [
-        "flagship"
-      ],
+      "tags": ["flagship"],
       "image": "worldofnads1.gif",
       "title": "World of Nads ↗",
       "description": "20-player browser battle royale — 3D assets, a 20Hz WebSocket server keeping every player in sync in real time, on-chain prize distribution, and embedded wallet onboarding. No install, runs in-browser.",
@@ -62,32 +60,7 @@
       ]
     },
     {
-      "tags": [
-        "notable",
-        "developer-tools"
-      ],
-      "image": "grey.jpg",
-      "title": "MoyakiTraceEngine ↗",
-      "description": "A block indexer built for chains that reorganize. Cross-references three independent Monad nodes in real time and automatically rolls back state the moment it detects a parent-hash mismatch, so downstream consumers never read bad data.",
-      "links": [
-        {
-          "text": "[Trace Blocks]",
-          "url": "https://moyakitraceengine.vercel.app/"
-        },
-        {
-          "text": "[GitHub]",
-          "url": "https://github.com/tobiawolaju/MoyakiTraceEngine"
-        }
-      ],
-      "writeup": {
-        "hardPart": "Public RPCs disagree with each other more than people expect. I designed a ReorgManager that treats disagreement as the normal case, not the exception — comparing state across nodes continuously and rolling back cleanly rather than crashing or silently serving stale data.",
-        "stack": "Node.js, Express, Svelte, Firebase RTDB, EVM RPCs."
-      }
-    },
-    {
-      "tags": [
-        "notable"
-      ],
+      "tags": ["notable"],
       "image": "grey.jpg",
       "title": "Rug Pool ↗",
       "description": "A memecoin launchpad where no one — not even the deployer — can exit early. On-chain, verifiable randomness decides who exits at the 24-hour mark; losers fund the winner's payout.",
@@ -104,6 +77,26 @@
       "writeup": {
         "hardPart": "Enforcing a hard lock at the contract level with no admin backdoor, while making the randomness both unpredictable and independently verifiable. Used Pyth Entropy for VRF. Shipped 5 contracts to Monad testnet with 53 passing tests and ran two full simulation cycles to confirm the payout logic held under edge cases.",
         "stack": "Solidity, Hardhat, Monad, TypeScript, React."
+      }
+    },
+    {
+      "tags": ["notable", "developer-tools"],
+      "image": "grey.jpg",
+      "title": "MoyakiTraceEngine ↗",
+      "description": "A block indexer built for chains that reorganize. Cross-references three independent Monad nodes in real time and automatically rolls back state the moment it detects a parent-hash mismatch, so downstream consumers never read bad data.",
+      "links": [
+        {
+          "text": "[Trace Blocks]",
+          "url": "https://moyakitraceengine.vercel.app/"
+        },
+        {
+          "text": "[GitHub]",
+          "url": "https://github.com/tobiawolaju/MoyakiTraceEngine"
+        }
+      ],
+      "writeup": {
+        "hardPart": "Public RPCs disagree with each other more than people expect. I designed a ReorgManager that treats disagreement as the normal case, not the exception — comparing state across nodes continuously and rolling back cleanly rather than crashing or silently serving stale data.",
+        "stack": "Node.js, Express, Svelte, Firebase RTDB, EVM RPCs."
       }
     }
   ],
