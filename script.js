@@ -35,6 +35,22 @@ function renderPortfolio(data) {
 
         document.getElementById("profile-name").textContent = data.profile.name;
         document.getElementById("profile-title").textContent = data.profile.title;
+        const subtitle = document.getElementById("profile-subtitle");
+        if (subtitle) subtitle.textContent = data.profile.subtitle || "";
+
+        const ctas = document.getElementById("hero-ctas");
+        if (ctas && Array.isArray(data.ctas)) {
+            ctas.innerHTML = data.ctas.map((cta, index) => `<a class="tag ${index === 0 ? 'tag-green' : index === 1 ? 'tag-purple' : 'tag-blue'}" href="${cta.url}" ${cta.url.startsWith('#') ? '' : 'target="_blank" rel="noopener noreferrer"'} style="font-size: 0.9rem; padding: 0.65rem 1rem;">${cta.text}</a>`).join("");
+        }
+
+        const chainVisual = document.getElementById("chain-visual");
+        if (chainVisual) {
+            chainVisual.innerHTML = `<svg viewBox="0 0 680 120" role="img" aria-label="Abstract blockchain network" style="width: 100%; height: auto; display: block;">
+                <defs><linearGradient id="chainLine" x1="0" x2="1"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.15"/><stop offset="0.5" stop-color="#8250df" stop-opacity="0.65"/><stop offset="1" stop-color="#3fb950" stop-opacity="0.2"/></linearGradient></defs>
+                <path d="M30 76 C120 18, 220 104, 320 54 S520 22, 650 72" fill="none" stroke="url(#chainLine)" stroke-width="2"/>
+                ${[[30,76],[122,30],[220,91],[320,54],[430,42],[535,28],[650,72]].map(([x,y], i) => `<g><circle cx="${x}" cy="${y}" r="${i % 2 ? 5 : 7}" fill="currentColor" opacity="0.55"><animate attributeName="opacity" values="0.25;0.8;0.25" dur="${2.4 + i * 0.2}s" repeatCount="indefinite"/></circle><circle cx="${x}" cy="${y}" r="${14 + i % 3 * 3}" fill="none" stroke="currentColor" opacity="0.08"/></g>`).join('')}
+            </svg>`;
+        }
 
         // About Content
         const aboutContent = document.getElementById("about-content");
@@ -70,20 +86,23 @@ function renderPortfolio(data) {
                 : "";
 
             const primaryLiveLink = (project.links || []).find(link => !/github/i.test(link.text || link.url));
-            const projectPreview = primaryLiveLink?.url
-                ? `<div class="project-preview" aria-hidden="true"><iframe data-src="${primaryLiveLink.url}" title="${project.title} live preview" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe></div>`
-                : `<img src="${project.image}" alt="${project.title}"${gifSequence}>`;
+            const projectPreview = `<img src="${project.image}" alt="${project.title}" loading="lazy"${gifSequence}>`;
+            const architecture = project.architecture ? `<div style="margin-top: 12px; font-size: 0.78rem; opacity: 0.72;"><strong>Architecture:</strong> ${project.architecture.join(" → ")}</div>` : "";
+            const bullets = project.bullets ? `<ul class="specs" style="display: grid; gap: 6px; margin: 12px 0 0; font-size: 0.82rem; opacity: 0.72;">${project.bullets.map(item => `<li>• ${item}</li>`).join("")}</ul>` : "";
 
             return `
-            <div class="project" data-tags="${(project.tags || []).join(",")}">
+            <div class="project" data-tags="${(project.tags || []).join(",")}" style="${project.featured ? 'grid-column: 1 / -1;' : ''}">
                 ${projectPreview}
-                <div class="project-info">
+                <div class="project-info" style="padding: 12px;">
+                    ${project.kicker ? `<p style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.55; margin: 0 0 8px;">${project.kicker}</p>` : ''}
                     <a href="${primaryLiveLink?.url || '#'}" target="_blank" rel="noopener noreferrer"><strong>${project.title}</strong></a>
                     <p class="mission">${project.description}</p>
+                    ${bullets}
+                    ${architecture}
                 </div>
                 <div class="project-footer">
                     <div class="links">
-                        ${project.links.map(link => {
+                        ${(project.links || []).map(link => {
                 let tagClass = 'tag-blue';
                 const text = link.text.toLowerCase();
                 if (text.includes('github')) tagClass = 'tag-purple';
@@ -94,21 +113,10 @@ function renderPortfolio(data) {
                 return `<a href="${link.url}" class="tag ${tagClass}" target="_blank">${link.text}</a>`;
             }).join("")}
                     </div>
-                    ${project.writeup ? `
-                     <button class="writeup-toggle">Engineering Breakdown ▾</button>
+                    ${project.details ? `
+                     <button class="writeup-toggle">Project Page ▾</button>
                      <div class="technical-writeup" style="border-left: 2px solid #ccc; padding-left: 1rem;">
-                         ${project.writeup.hardPart ? `
-                         <div class="writeup-section">
-                             <strong>The hardest technical problem:</strong>
-                             <p>${project.writeup.hardPart}</p>
-                         </div>
-                         ` : ''}
-                         ${project.writeup.stack ? `
-                         <div class="writeup-section">
-                             <strong>Stack:</strong>
-                             <p>${project.writeup.stack}</p>
-                         </div>
-                         ` : ''}
+                         ${Object.entries(project.details).map(([heading, value]) => `<div class="writeup-section"><strong>${heading}</strong><p>${value}</p></div>`).join("")}
                      </div>
                      ` : ''}
                 </div>
@@ -143,6 +151,22 @@ function renderPortfolio(data) {
             </div>
         `;
         projectsList.parentNode.appendChild(otherSection);
+    }
+
+    // 5. Engineering highlights / tech stack / timeline
+    const highlightsContent = document.getElementById("highlights-content");
+    if (highlightsContent && data.engineeringHighlights) {
+        highlightsContent.innerHTML = data.engineeringHighlights.map(item => `<div style="border: 1px solid #8383837f; border-radius: 8px; padding: 14px; background: #81818110;">${item}</div>`).join("");
+    }
+
+    const techStackContent = document.getElementById("tech-stack-content");
+    if (techStackContent && data.techStack) {
+        techStackContent.innerHTML = Object.entries(data.techStack).map(([group, items]) => `<div class="skill-group" style="border: 1px solid #83838340; border-radius: 8px; padding: 14px;"><strong>${group}</strong><div style="display:flex; flex-wrap:wrap; gap:8px;">${items.map(item => `<span class="tag tag-blue">${item}</span>`).join("")}</div></div>`).join("");
+    }
+
+    const currentlyBuildingContent = document.getElementById("currently-building-content");
+    if (currentlyBuildingContent && data.currentlyBuilding) {
+        currentlyBuildingContent.innerHTML = `<ol style="margin: 0; padding-left: 1.2rem; line-height: 2;">${data.currentlyBuilding.map(item => `<li>${item}</li>`).join("")}</ol>`;
     }
 
     // 5. Docs
@@ -414,7 +438,7 @@ function initInteractions() {
             const toggle = e.target;
             const content = toggle.nextElementSibling;
             const isExpanded = content.classList.toggle("expanded");
-            toggle.textContent = isExpanded ? "Project Breakdown ▴" : "Project Breakdown ▾";
+            toggle.textContent = isExpanded ? "Project Page ▴" : "Project Page ▾";
         }
     });
 

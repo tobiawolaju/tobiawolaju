@@ -1,208 +1,121 @@
 {
-  "pageTitle": "Tobi Awolaju | Builder & Systems Engineer",
-  "theme": "curiosity-driven",
+  "pageTitle": "Tobiloba Awolaju | Web3 Systems Engineer",
   "profile": {
-    "image": "pfp.jpg",
-    "name": "Tobi Awolaju",
-    "title": "Full-Stack Engineer (Web3) — I ship real-time systems solo, from contract to frontend.",
-    "bio": "<p style='font-size: large; padding-bottom: 1.5rem;'>I build the systems most people are afraid to touch: real-time multiplayer sync, reorg-resistant blockchain indexers, and smart contracts that hold user funds. Currently finishing a degree in Electrical & Electronics Engineering at Adeleke University while building full-stack Web3 products solo — from Solidity to WebSocket servers to React frontends. I own the whole stack because I've had to.</p>",
+    "name": "Tobiloba Awolaju",
+    "title": "Web3 Systems Engineer • Smart Contract Developer • Multiplayer Game Architect",
+    "subtitle": "Building on-chain games, DeFi protocols, and real-time decentralized applications.",
+    "bio": "<p style='font-size: large; padding-bottom: 1.5rem;'>I build full-stack Web3 systems across smart contracts, realtime backends, wallet-connected frontends, and browser-based game clients. My strongest work sits at the intersection of blockchain settlement, multiplayer infrastructure, and product engineering — the kind of systems where the frontend, backend, contracts, and player/user experience all have to stay consistent.</p>",
     "resumeLink": "https://docs.google.com/document/d/1W3aYjK9DLJZg5m4uvQPeHwRHPUToai0Bfwe2Bbfq9E4/edit?usp=drivesdk"
   },
+  "ctas": [
+    { "text": "View Projects", "url": "#projects-section" },
+    { "text": "GitHub", "url": "https://github.com/tobiawolaju" },
+    { "text": "Contact", "url": "mailto:tobiawolaju21@gmail.com" }
+  ],
   "sectionLabels": {
-    "docs": "Blog",
-    "activity": ""
+    "docs": "Technical Writing",
+    "activity": "GitHub Activity"
   },
+  "engineeringHighlights": [
+    "Built a 20-player real-time multiplayer Web3 game",
+    "Designed blockchain settlement systems",
+    "Architected full-stack decentralized applications",
+    "Designed bonding curve tokenomics",
+    "Smart contract development and protocol architecture",
+    "Real-time backend infrastructure using WebSockets"
+  ],
+  "techStack": {
+    "Smart Contracts": ["Solidity", "Foundry", "Hardhat", "Anchor (Learning)"],
+    "Blockchain": ["Monad", "Solana", "Ethereum"],
+    "Backend": ["Node.js", "Express", "WebSockets", "Firebase"],
+    "Frontend": ["React", "TypeScript", "Svelte", "Vite"],
+    "Game Development": ["Godot", "WebAssembly"],
+    "Cloud": ["Google Cloud Run", "Vercel"]
+  },
+  "currentlyBuilding": [
+    "World of Nads Solana Port",
+    "Rug Pool Testnet",
+    "Research into scalable on-chain multiplayer systems"
+  ],
   "filters": [
-    {
-      "id": "all",
-      "label": "All"
-    },
-    {
-      "id": "flagship",
-      "label": "Flagship"
-    },
-    {
-      "id": "notable",
-      "label": "Notable"
-    },
-    {
-      "id": "developer-tools",
-      "label": "Developer Tools"
-    }
+    { "id": "all", "label": "All" },
+    { "id": "flagship", "label": "Flagship" },
+    { "id": "protocol", "label": "Protocol" },
+    { "id": "infrastructure", "label": "Infrastructure" }
   ],
   "projects": [
     {
-      "tags": [
-        "flagship"
-      ],
+      "tags": ["flagship", "game", "infrastructure"],
+      "featured": true,
       "image": "worldofnads1.gif",
-      "title": "World of Nads ↗",
-      "description": "20-player browser battle royale — 3D assets, a 20Hz WebSocket server keeping every player in sync in real time, on-chain prize distribution, and embedded wallet onboarding. No install, runs in-browser.",
+      "title": "World of Nads",
+      "kicker": "Browser-based multiplayer Web3 game",
+      "description": "20-player browser battle royale with real-time multiplayer, smart contract settlement, WebSocket backend, wallet integration, and a Godot/WebAssembly client embedded in a React product experience.",
+      "bullets": ["Browser-based multiplayer Web3 game", "Real-time multiplayer", "Smart contract settlement", "WebSocket backend", "Wallet integration", "Built with React, Godot, Node.js, Solidity"],
       "links": [
-        {
-          "text": "[Play world of nads]",
-          "url": "https://worldofnads.xyz"
-        },
-        {
-          "text": "[GitHub]",
-          "url": "https://github.com/tobiawolaju/WorldOfNads"
-        }
+        { "text": "Live Demo", "url": "https://worldofnads.xyz" },
+        { "text": "GitHub", "url": "https://github.com/tobiawolaju/WorldOfNads" },
+        { "text": "Whitepaper", "url": "https://worldofnads.xyz" }
       ],
-      "writeup": {
-        "hardPart": "Keeping 20 players' state perfectly synced over WebSocket while the frontend also has to talk to a wallet layer and on-chain state — three moving pieces that all had to stay consistent under real network jitter. I profiled and fixed a bottleneck where per-frame calls across the Godot/React bridge were tanking browser FPS from 60 to under 12, then rebuilt the sync path around batched state updates.",
-        "stack": "Godot (WASM), TypeScript, React, Node.js WebSocket server, Solidity, PostgreSQL, Privy."
+      "architecture": ["React + wallet onboarding", "Godot WASM game client", "Node.js WebSocket realtime server", "Solidity settlement contracts"],
+      "details": {
+        "Overview": "A no-install, in-browser Web3 battle royale that combines a Godot game client, React wallet onboarding, realtime WebSocket gameplay, and on-chain prize distribution.",
+        "Problem": "Most blockchain games feel either like websites with tokens attached or games with blockchain bolted on after the fact. World of Nads needed realtime gameplay while still settling outcomes on-chain.",
+        "Architecture": "React handles product UI and wallet flow, the Godot client runs in-browser through WebAssembly, a Node.js WebSocket server keeps player state synchronized, and Solidity contracts handle settlement.",
+        "Technical Challenges": "Keeping 20 players synchronized under network jitter while avoiding expensive per-frame bridge calls between Godot, React, wallet state, and backend state.",
+        "Solutions": "Rebuilt the sync path around batched state updates after profiling a bottleneck that dropped browser FPS from 60 to under 12.",
+        "Tech Stack": "React, TypeScript, Godot, WebAssembly, Node.js, WebSockets, Solidity, PostgreSQL, Privy.",
+        "Screenshots": "worldofnads1.gif, worldofnads2.gif, worldofnads3.gif, worldofnads4.gif, worldofnads5.gif, worldofnads6.gif",
+        "Architecture Diagrams": "Wallet + React UI → Godot WASM Client → Node.js WebSocket Server → Solidity Settlement Contracts.",
+        "Demo": "https://worldofnads.xyz",
+        "GitHub": "https://github.com/tobiawolaju/WorldOfNads",
+        "Whitepaper": "https://worldofnads.xyz",
+        "Lessons Learned": "Realtime Web3 products only feel credible when game state, wallet state, backend state, and contract state are treated as one system instead of separate features."
       },
-      "gifSequence": [
-        "worldofnads1.gif",
-        "worldofnads2.gif",
-        "worldofnads3.gif",
-        "worldofnads4.gif",
-        "worldofnads5.gif",
-        "worldofnads6.gif"
-      ]
+      "gifSequence": ["worldofnads1.gif", "worldofnads2.gif", "worldofnads3.gif", "worldofnads4.gif", "worldofnads5.gif", "worldofnads6.gif"]
     },
     {
-      "tags": [
-        "notable",
-        "developer-tools"
-      ],
+      "tags": ["flagship", "protocol"],
+      "featured": true,
       "image": "grey.jpg",
-      "title": "MoyakiTraceEngine ↗",
-      "description": "A block indexer built for chains that reorganize. Cross-references three independent Monad nodes in real time and automatically rolls back state the moment it detects a parent-hash mismatch, so downstream consumers never read bad data.",
+      "title": "Rug Pool",
+      "kicker": "Memecoin launch protocol",
+      "description": "A memecoin launch protocol with bonding curves, verifiable randomness, Solidity contracts, Foundry/Hardhat testing, and Monad deployment work.",
+      "bullets": ["Memecoin launch protocol", "Bonding curves", "VRF randomness", "Solidity contracts", "Foundry", "Monad"],
       "links": [
-        {
-          "text": "[Trace Blocks]",
-          "url": "https://moyakitraceengine.vercel.app/"
-        },
-        {
-          "text": "[GitHub]",
-          "url": "https://github.com/tobiawolaju/MoyakiTraceEngine"
-        }
+        { "text": "Live Demo", "url": "https://rug-pool.vercel.app" },
+        { "text": "GitHub", "url": "https://github.com/tobiawolaju/rug-pool" },
+        { "text": "Whitepaper", "url": "https://rug-pool.vercel.app" }
       ],
-      "writeup": {
-        "hardPart": "Public RPCs disagree with each other more than people expect. I designed a ReorgManager that treats disagreement as the normal case, not the exception — comparing state across nodes continuously and rolling back cleanly rather than crashing or silently serving stale data.",
-        "stack": "Node.js, Express, Svelte, Firebase RTDB, EVM RPCs."
+      "architecture": ["React launch interface", "Solidity protocol contracts", "VRF randomness via Pyth Entropy", "Monad testnet deployment"],
+      "details": {
+        "Overview": "A memecoin launchpad where no one — not even the deployer — can exit early; on-chain randomness determines the exit outcome after the lock period.",
+        "Problem": "Memecoin launch mechanics often rely on trust, admin behavior, or off-chain coordination. Rug Pool explores hard contract-level constraints for a launch game with explicit risk.",
+        "Architecture": "The frontend coordinates launch and participation flows, Solidity contracts enforce locks and payout rules, and verifiable randomness selects the exit outcome.",
+        "Technical Challenges": "Enforcing a hard lock without an admin backdoor while keeping randomness unpredictable and independently verifiable.",
+        "Solutions": "Used Pyth Entropy for VRF and validated payout logic with contract tests and simulation cycles already described in the project notes.",
+        "Tech Stack": "Solidity, Foundry, Hardhat, Monad, TypeScript, React.",
+        "Screenshots": "grey.jpg",
+        "Architecture Diagrams": "React App → Protocol Contracts → VRF Randomness → Monad Settlement.",
+        "Demo": "https://rug-pool.vercel.app",
+        "GitHub": "https://github.com/tobiawolaju/rug-pool",
+        "Whitepaper": "https://rug-pool.vercel.app",
+        "Lessons Learned": "Protocol UX is strongest when the rules are legible in the interface and impossible to bypass in the contracts."
       }
     },
     {
-      "tags": [
-        "notable"
-      ],
+      "tags": ["infrastructure"],
       "image": "grey.jpg",
-      "title": "Rug Pool ↗",
-      "description": "A memecoin launchpad where no one — not even the deployer — can exit early. On-chain, verifiable randomness decides who exits at the 24-hour mark; losers fund the winner's payout.",
+      "title": "MoyakiTraceEngine",
+      "description": "A reorg-aware block indexer that cross-references independent Monad nodes and rolls back state on parent-hash mismatch.",
       "links": [
-        {
-          "text": "[Play]",
-          "url": "https://rug-pool.vercel.app"
-        },
-        {
-          "text": "[GitHub]",
-          "url": "https://github.com/tobiawolaju/rug-pool"
-        }
-      ],
-      "writeup": {
-        "hardPart": "Enforcing a hard lock at the contract level with no admin backdoor, while making the randomness both unpredictable and independently verifiable. Used Pyth Entropy for VRF. Shipped 5 contracts to Monad testnet with 53 passing tests and ran two full simulation cycles to confirm the payout logic held under edge cases.",
-        "stack": "Solidity, Hardhat, Monad, TypeScript, React."
-      }
-    }
-  ],
-  "otherBuilds": [
-    {
-      "title": "Noogler",
-      "description": "AI agent that controls a PC via screen capture + a Rust OS input layer, no APIs.",
-      "links": [
-        {
-          "text": "[Launch]",
-          "url": "https://noogler.vercel.app"
-        },
-        {
-          "text": "[GitHub]",
-          "url": "https://github.com/tobiawolaju/Noogler"
-        }
-      ]
-    },
-    {
-      "title": "HARE",
-      "description": "Agent pipeline that self-evaluates and self-retries with zero human in the QC loop.",
-      "links": [
-        {
-          "text": "[Run]",
-          "url": "https://h-a-r-e.vercel.app/"
-        },
-        {
-          "text": "[GitHub]",
-          "url": "https://github.com/tobiawolaju/H-A-R-E"
-        }
-      ]
-    },
-    {
-      "title": "DominusQuant",
-      "description": "Algo-trading bot parsing real-time on-chain state on Monad.",
-      "links": [
-        {
-          "text": "[Trade]",
-          "url": "https://dominus-quant.vercel.app/"
-        },
-        {
-          "text": "[GitHub]",
-          "url": "https://github.com/tobiawolaju/DominusQuant"
-        }
-      ]
-    },
-    {
-      "title": "Superyap",
-      "description": "Anonymous encrypted p2p chat with in-chat transactions on Monad.",
-      "links": [
-        {
-          "text": "[Open]",
-          "url": "https://superyap.vercel.app/"
-        },
-        {
-          "text": "[GitHub]",
-          "url": "https://github.com/tobiawolaju/Superyap"
-        }
-      ]
-    },
-    {
-      "title": "Terra Engine",
-      "description": "Game jam build in Godot, shipped under a 48-hour deadline.",
-      "links": [
-        {
-          "text": "[Play]",
-          "url": "https://wavedash.com/games/terraengine"
-        },
-        {
-          "text": "[GitHub]",
-          "url": "https://github.com/tobiawolaju/Terra-engine"
-        }
-      ]
-    },
-    {
-      "title": "John Wick: Exitus",
-      "description": "Game jam build in Godot, shipped under a 48-hour deadline.",
-      "links": [
-        {
-          "text": "[Play]",
-          "url": "https://johnwick1000.vercel.app"
-        },
-        {
-          "text": "[GitHub]",
-          "url": "https://github.com/tobiawolaju/johnwick-lex-Exitus"
-        }
+        { "text": "Live Demo", "url": "https://moyakitraceengine.vercel.app/" },
+        { "text": "GitHub", "url": "https://github.com/tobiawolaju/MoyakiTraceEngine" }
       ]
     }
   ],
   "docs": [
-    {
-      "link": "https://tobiawolaju21.substack.com/p/communicating-in-functions?r=2hkadt",
-      "title": "Communicating in Functions↗",
-      "description": "On engineering as communication — and why a function is just an idea precise enough to survive without its author."
-    },
-    {
-      "link": "https://tobiawolaju21.substack.com/p/success-is-90-luck-and-informed-guessing?r=2hkadt",
-      "title": "Success is 90% luck and informed guessing. Success is 100% luck if you're uninformed. ↗",
-      "description": "A probability framework for luck, consistency, and what to do when life hands you a defective die."
-    }
+    { "link": "https://tobiawolaju21.substack.com/p/communicating-in-functions?r=2hkadt", "title": "Communicating in Functions↗", "description": "On engineering as communication — and why a function is just an idea precise enough to survive without its author." },
+    { "link": "https://tobiawolaju21.substack.com/p/success-is-90-luck-and-informed-guessing?r=2hkadt", "title": "Success is 90% luck and informed guessing. Success is 100% luck if you're uninformed. ↗", "description": "A probability framework for luck, consistency, and what to do when life hands you a defective die." }
   ]
 }
