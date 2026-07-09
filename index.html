@@ -4,157 +4,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tobi's Portfolio</title>
+  <meta name="description" content="Tobiloba Awolaju — Web3 Systems Engineer building on-chain games, DeFi protocols, and real-time decentralized applications.">
+  <title>Tobiloba Awolaju | Web3 Systems Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Fira+Mono:wght@400;500;700&family=Press+Start+2P&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 
 <body>
+  <div class="scroll-progress" aria-hidden="true"></div>
   <div id="splash-screen">
     <div class="splash-content">
-      <h1 class="splash-text" aria-label="Godiya Gareka">
-        <span class="splash-line"><span style="--i:1">G</span><span style="--i:2">o</span><span
-            style="--i:3">d</span><span style="--i:4">i</span><span style="--i:5">y</span><span
-            style="--i:6">a</span></span>
-        <span class="splash-line"><span style="--i:7">G</span><span style="--i:8">a</span><span
-            style="--i:9">r</span><span style="--i:10">e</span><span style="--i:11">k</span><span
-            style="--i:12">a</span></span>
+      <h1 class="splash-text" aria-label="Tobiloba Awolaju">
+        <span class="splash-line"><span style="--i:1">T</span><span style="--i:2">o</span><span style="--i:3">b</span><span style="--i:4">i</span><span style="--i:5">l</span><span style="--i:6">o</span><span style="--i:7">b</span><span style="--i:8">a</span></span>
+        <span class="splash-line"><span style="--i:9">A</span><span style="--i:10">w</span><span style="--i:11">o</span><span style="--i:12">l</span><span style="--i:13">a</span><span style="--i:14">j</span><span style="--i:15">u</span></span>
       </h1>
-
     </div>
   </div>
 
-
-  <section id="bio-section" style="display: block; text-align: center; padding-top: 20px">
-    <div style="text-align: center; margin-bottom: 20px;">
-      <p style="font-size: x-large; margin: 0; font-weight: bold;">
-      <div style="position: relative; display: inline-block;">
-        </p>
-        <h3 id="profile-name"></h3>
-        <p id="profile-title" style="font-size: medium; color: gray; margin: 5px 0;">
-        </p>
-
+  <main>
+    <section id="hero" class="hero-section visible">
+      <div class="chain-visual" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
       </div>
-
-    </div>
-  </section>
-
-
-  <section id="about-me" class="visible">
-    <h2 class="toggle">About<a style="opacity: 0.4;">↗</a></h2>
-    <div id="about-content">
-      <!-- Content injected by JS -->
-    </div>
-    <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
-  </section>
-
-  <section id="skills-section" class="visible">
-    <h2 class="toggle">Core Stack<a style="opacity: 0.4;">↗</a></h2>
-    <div id="skills-content" style="padding: 20px 0;">
-      <div class="skill-group">
-        <div class="skill-icons" style="gap: 40px;">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg"
-            class="skill-icon rust" title="Rust" style="width: 32px; height: 32px;">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg"
-            class="skill-icon" title="TypeScript" style="width: 32px; height: 32px;">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-plain.svg"
-            class="skill-icon solidity" title="Solidity" style="width: 32px; height: 32px;">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="skill-icon"
-            title="React" style="width: 32px; height: 32px;">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg" class="skill-icon"
-            title="Node.js" style="width: 32px; height: 32px;">
-
-        </div>
+      <p class="eyebrow">Full-stack Web3 systems • contracts • real-time backends</p>
+      <h1 id="profile-name">Tobiloba Awolaju</h1>
+      <p id="profile-title" class="hero-title">Web3 Systems Engineer • Smart Contract Developer • Multiplayer Game Architect</p>
+      <p id="hero-subtitle" class="hero-subtitle">Building on-chain games, DeFi protocols, and real-time decentralized applications.</p>
+      <div class="hero-actions">
+        <a class="primary-action" href="#projects-section">View Projects</a>
+        <a class="secondary-action" href="https://github.com/tobiawolaju" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="secondary-action" href="mailto:tobiawolaju21@gmail.com">Contact</a>
       </div>
-    </div>
-    <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
-  </section>
+      <div id="about-content" class="hero-bio"></div>
+    </section>
 
-
-  <section id="projects-section" class="visible">
-    <h2>Projects<a style="opacity: 0.4;">↗</a></h2>
-    <div>
-
-
-      <div class="filters" id="project-filters">
-        <!-- Filters injected by JS -->
+    <section id="projects-section" class="visible portfolio-section">
+      <div class="section-heading">
+        <p class="eyebrow">Flagship work</p>
+        <h2>Featured Projects</h2>
       </div>
+      <div class="filters" id="project-filters"></div>
+      <div class="pjet" id="projects-list"></div>
+    </section>
 
-      <div class="pjet" id="projects-list">
-        <!-- Projects injected by JS -->
-      </div>
+    <section id="engineering-highlights" class="portfolio-section">
+      <div class="section-heading"><p class="eyebrow">Recruiter signal</p><h2>Engineering Highlights</h2></div>
+      <div id="highlights-grid" class="highlight-grid"></div>
+    </section>
 
-    </div>
+    <section id="skills-section" class="portfolio-section">
+      <div class="section-heading"><p class="eyebrow">Production toolkit</p><h2>Tech Stack</h2></div>
+      <div id="skills-content" class="stack-grid"></div>
+    </section>
 
-    <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
-  </section>
+    <section id="currently-building" class="portfolio-section">
+      <div class="section-heading"><p class="eyebrow">Now shipping</p><h2>Currently Building</h2></div>
+      <div id="timeline-list" class="timeline-list"></div>
+    </section>
 
-  <section id="docs-section" class="visible">
-    <p style="font-size: 0.8rem; opacity: 0.55; margin: 0 0 8px;">Technical writing that gets read by engineers, not marketers.</p>
-    <h2 class="toggle" id="docs-header">Docs<a style="opacity: 0.4;">↗</a></h2>
-    <div>
-      <ul id="docs-list">
-        <!-- Docs injected by JS -->
-      </ul>
-    </div>
-    <hr style="border: none; border-top: 1px solid #00000050; margin: 0px;">
-  </section>
+    <section id="docs-section" class="portfolio-section">
+      <p class="eyebrow">Technical writing that gets read by engineers, not marketers.</p>
+      <h2 class="toggle" id="docs-header">Blog</h2>
+      <ul id="docs-list"></ul>
+    </section>
 
-
-
-
-
-  <section id="activity-section">
-    <h2 id="activity-header"> GitHub Activity </h2>
-    <div style="display: flex; justify-content: center; margin-top: 10px;">
-      <a href="https://github.com/tobiawolaju" target="_blank" rel="noopener noreferrer">
-        <img style="max-width: 100%;" src="https://ghchart.rshah.org/tobiawolaju" alt="GitHub Contributions Chart">
+    <section id="activity-section" class="portfolio-section">
+      <div class="section-heading"><p class="eyebrow">Open source cadence</p><h2 id="activity-header">GitHub Activity</h2></div>
+      <a class="github-card" href="https://github.com/tobiawolaju" target="_blank" rel="noopener noreferrer">
+        <img src="https://ghchart.rshah.org/tobiawolaju" alt="GitHub Contributions Chart" loading="lazy">
       </a>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT -->
-  <section id="contact-section" style="padding: 60px 20px 40px; max-width: 800px; margin: 0 auto;">
-    <div class="reveal2" style="margin-bottom: 20px;">
-      <h2 style="font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; line-height: 0.95; margin-bottom: 16px;">
-        Beyond<br>Work.</h2>
+    <section id="contact-section" class="portfolio-section contact-panel">
+      <div class="reveal2">
+        <p class="eyebrow">Available for ambitious Web3 teams</p>
+        <h2>Build the protocol, the app, and the system between them.</h2>
+        <p>I build alone, ship fast, and iterate async by default. Based in Nigeria, focused on full-stack Web3 products where smart contracts, real-time infrastructure, and polished user experience have to work together.</p>
+        <a class="primary-action" href="mailto:tobiawolaju21@gmail.com">Start a conversation</a>
+      </div>
+    </section>
+  </main>
 
-       <p style="font-size: 15px; color: gray; line-height: 1.9; max-width: 480px;">
-I build alone, ship fast, and iterate at odd hours. Based in Nigeria, I work async by default — best teams are the ones where nobody asks permission to try something.
-       </p>
-
-    </div>
-  </section>
-
-  <div style="height: 200px;"></div>
-
-
-
-  <footer
-    style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 999; background-color: rgba(83, 83, 83, 0.5); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); height: 60px; display: flex; align-items: center; justify-content: center; font-size: large; color: white; gap: 25px; flex-wrap: wrap;">
-<a href="https://github.com/tobiawolaju" target="_blank" rel="noopener noreferrer"
-          style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
-          <img src="https://img.icons8.com/ios-filled/24/ffffff/github.png" alt="GitHub" width="20" height="20" />
-        </a>
-        <a href="https://www.linkedin.com/in/tobiawolaju" target="_blank" rel="noopener noreferrer"
-      style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
-      <img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn" width="20" height="20" />
-    </a>
-    <a href="https://x.com/tobiawolaju?s=09" target="_blank" rel="noopener noreferrer"
-      style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
-      <img src="https://img.icons8.com/ios-filled/24/ffffff/twitterx.png" alt="X" width="20" height="20" />
-    </a>
-    <a href="mailto:tobiawolaju21@gmail.com"
-      style="color: white; text-decoration: none; display: flex; align-items: center; gap: 8px;">
-      <img src="https://img.icons8.com/ios-filled/24/ffffff/gmail.png" alt="Gmail" width="20" height="20" />
-    </a>
+  <footer class="dock-footer">
+    <a href="https://github.com/tobiawolaju" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/in/tobiawolaju" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://x.com/tobiawolaju?s=09" target="_blank" rel="noopener noreferrer">X</a>
+    <a href="mailto:tobiawolaju21@gmail.com">Email</a>
   </footer>
-
 </body>
 
 </html>
