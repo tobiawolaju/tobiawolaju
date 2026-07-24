@@ -734,6 +734,24 @@ section.visible {
   opacity: 0.8;
 }
 
+.project-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 0.75em;
+  font-weight: 600;
+  background: #fef3c7;
+  color: #92400e;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .project-badge {
+    background: #78350f;
+    color: #fde68a;
+  }
+}
+
 .project-info p {
   opacity: 0.5;
   font-size: large;

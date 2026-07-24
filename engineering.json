@@ -4,8 +4,8 @@
   "profile": {
     "image": "pfp.jpg",
     "name": "Tobi Awolaju",
-    "title": "Web3 Systems Engineer • Smart Contract Developer • Multiplayer Game Architect   Building on-chain games, DeFi protocols, and real-time decentralized applications.",
-    "bio": "<p style='font-size: large; padding-bottom: 1.5rem;'>I build the systems most people are afraid to touch: real-time multiplayer sync, reorg-resistant blockchain indexers, and smart contracts that hold user funds. Currently finishing a degree in Electrical & Electronics Engineering at Adeleke University while building full-stack Web3 products solo — from Solidity to WebSocket servers to React frontends. I own the whole stack because I've had to.</p>",
+    "title": "Web3 Systems Engineer • Smart Contract Engineer • AI Agent Builder",
+    "bio": "<p style='font-size: large; padding-bottom: 1.5rem;'>I build production-grade Web3 systems—from smart contracts and AI agents to blockchain infrastructure and real-time multiplayer applications. My work spans protocol research platforms, on-chain accountability systems, multiplayer networking, and blockchain indexing. I enjoy solving distributed systems problems that sit between backend infrastructure, cryptography, and user experience.</p>",
     "resumeLink": "https://docs.google.com/document/d/1W3aYjK9DLJZg5m4uvQPeHwRHPUToai0Bfwe2Bbfq9E4/edit?usp=drivesdk"
   },
   "sectionLabels": {
@@ -31,6 +31,37 @@
     }
   ],
   "projects": [
+    {
+      "tags": ["flagship"],
+      "image": "grey.jpg",
+      "title": "KYP",
+      "badge": "🏆 BuildAnything Spark Hackathon",
+      "description": "Research protocols. Commit with a stake. Let your wallet prove you followed through.",
+      "links": [
+        {
+          "text": "[Live App]",
+          "url": "https://knowyourprotocol.vercel.app"
+        },
+        {
+          "text": "[GitHub]",
+          "url": "https://github.com/tobiawolaju/kyp"
+        }
+      ],
+      "writeup": {
+        "hardPart": "Building a protocol-agnostic verification system that works across any EVM protocol without relying on custom event signatures. I designed an architecture that scans a user's on-chain activity using indexed log queries, filters engagement by protocol contract, and automatically resolves commitments through Solidity contracts and a heartbeat-driven backend worker. The same architecture supports both Monad Testnet and Mainnet while remaining chain-agnostic.",
+        "highlights": [
+          "AI research pipeline (FlashResearcher + DeepResearcher)",
+          "Protocol-agnostic engagement detection using getLogs",
+          "Smart contract commitment system with automatic verify/slash",
+          "9-day, 3-strike accountability model",
+          "Multi-network architecture (Monad Testnet + Mainnet)",
+          "Zero-cost heartbeat worker instead of paid cron services",
+          "Adaptive block-time estimation instead of hardcoded assumptions",
+          "Verified worker test harness covering all commitment paths"
+        ],
+        "stack": "Svelte 5, TypeScript, Node.js, Solidity, viem, ethers, Firebase RTDB, Gemini, Privy, Monad."
+      }
+    },
     {
       "tags": ["flagship"],
       "image": "worldofnads1.gif",
@@ -78,12 +109,12 @@
         "hardPart": "Enforcing a hard lock at the contract level with no admin backdoor, while making the randomness both unpredictable and independently verifiable. Used Pyth Entropy for VRF. Shipped 5 contracts to Monad testnet with 53 passing tests and ran two full simulation cycles to confirm the payout logic held under edge cases.",
         "stack": "Solidity, Hardhat, Monad, TypeScript, React."
       }
-    },
+    }
+  ],
+  "otherBuilds": [
     {
-      "tags": ["notable", "developer-tools"],
-      "image": "grey.jpg",
-      "title": "MoyakiTraceEngine ↗",
-      "description": "A block indexer built for chains that reorganize. Cross-references three independent Monad nodes in real time and automatically rolls back state the moment it detects a parent-hash mismatch, so downstream consumers never read bad data.",
+      "title": "MoyakiTraceEngine",
+      "description": "A block indexer built for chains that reorganize. Cross-references three independent Monad nodes in real time and automatically rolls back state on parent-hash mismatch.",
       "links": [
         {
           "text": "[Trace Blocks]",
@@ -93,14 +124,8 @@
           "text": "[GitHub]",
           "url": "https://github.com/tobiawolaju/MoyakiTraceEngine"
         }
-      ],
-      "writeup": {
-        "hardPart": "Public RPCs disagree with each other more than people expect. I designed a ReorgManager that treats disagreement as the normal case, not the exception — comparing state across nodes continuously and rolling back cleanly rather than crashing or silently serving stale data.",
-        "stack": "Node.js, Express, Svelte, Firebase RTDB, EVM RPCs."
-      }
-    }
-  ],
-  "otherBuilds": [
+      ]
+    },
     {
       "title": "Noogler",
       "description": "AI agent that controls a PC via screen capture + a Rust OS input layer, no APIs.",

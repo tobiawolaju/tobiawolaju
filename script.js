@@ -79,6 +79,7 @@ function renderPortfolio(data) {
                 ${projectPreview}
                 <div class="project-info">
                     <a href="${primaryLiveLink?.url || '#'}" target="_blank" rel="noopener noreferrer"><strong>${project.title}</strong></a>
+                    ${project.badge ? `<span class="project-badge">${project.badge}</span>` : ''}
                     <p class="mission">${project.description}</p>
                 </div>
                 <div class="project-footer">
@@ -101,6 +102,12 @@ function renderPortfolio(data) {
                          <div class="writeup-section">
                              <strong>The hardest technical problem:</strong>
                              <p>${project.writeup.hardPart}</p>
+                         </div>
+                         ` : ''}
+                         ${project.writeup.highlights ? `
+                         <div class="writeup-section">
+                             <strong>Key engineering highlights</strong>
+                             <ul>${project.writeup.highlights.map(h => `<li>${h}</li>`).join('')}</ul>
                          </div>
                          ` : ''}
                          ${project.writeup.stack ? `
