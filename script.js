@@ -1,6 +1,6 @@
 /**
  * TOBI AWOLAJU — MULTIDISCIPLINARY ENGINEERING PORTFOLIO
- * Vanilla JS Application Architecture
+ * Monochrome Editorial Engineering Client Script
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadPortfolioData();
 });
 
-// --- Theme Management ---
+// --- Theme Management (Strict Monochrome) ---
 function initTheme() {
   const savedTheme = localStorage.getItem("theme");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -89,38 +89,32 @@ function renderFlagships(flagships) {
   const container = document.getElementById("flagships-list");
   if (!container) return;
 
-  container.innerHTML = flagships.map((f, idx) => {
-    const isFirst = idx === 0;
+  container.innerHTML = flagships.map((f) => {
+    const cs = f.caseStudy || {};
     const isEeg = f.id === "eeg-headset";
     const isCellular = f.id === "cellular-positioning";
     const isKyp = f.id === "kyp";
 
-    // Visual Component Generation
+    // Visual Component Generation (Monochrome diagrams & real media)
     let visualHtml = "";
-    if (f.gifSequence && f.gifSequence.length > 0) {
+    if (f.image && !f.image.includes("grey.jpg")) {
       visualHtml = `
-        <div class="gif-player-wrapper" id="gif-player-${f.id}">
-          <img src="${f.gifSequence[0]}" alt="${f.title} gameplay capture" class="gif-frame-view" id="gif-view-${f.id}" loading="lazy">
-          <div class="gif-controls-bar">
-            <span class="gif-counter" id="gif-counter-${f.id}">Frame 1 / ${f.gifSequence.length}</span>
-            <div class="gif-btn-group">
-              <button class="gif-ctrl-btn" data-action="prev" data-id="${f.id}" aria-label="Previous frame">← Prev</button>
-              <button class="gif-ctrl-btn" data-action="toggle" data-id="${f.id}" id="gif-toggle-btn-${f.id}" aria-label="Pause animation">Pause</button>
-              <button class="gif-ctrl-btn" data-action="next" data-id="${f.id}" aria-label="Next frame">Next →</button>
-            </div>
-          </div>
+        <div class="flagship-media-wrapper">
+          <img src="${f.image}" alt="${f.title} gameplay interface" class="flagship-img" loading="lazy">
         </div>
       `;
-    } else if (isEeg) {
-      visualHtml = renderEegDiagram();
-    } else if (isCellular) {
-      visualHtml = renderCellularDiagram();
-    } else if (isKyp) {
-      visualHtml = renderKypDiagram();
     }
 
-    // Deep Dive Content Generation
-    const cs = f.caseStudy || {};
+    let diagramHtml = "";
+    if (isEeg) {
+      diagramHtml = renderEegDiagram();
+    } else if (isCellular) {
+      diagramHtml = renderCellularDiagram();
+    } else if (isKyp) {
+      diagramHtml = renderKypDiagram();
+    }
+
+    // Deep Dive Content
     let deepDiveHtml = `
       <div class="deep-dive-grid">
         <div class="case-section">
@@ -128,93 +122,58 @@ function renderFlagships(flagships) {
           <p>${cs.problem || ""}</p>
         </div>
         <div class="case-section">
-          <h4>Technical Challenge & Bottleneck</h4>
+          <h4>Engineering Challenge</h4>
           <p>${cs.difficulty || ""}</p>
-          ${cs.hardestBug ? `<p style="margin-top:8px;"><strong>Debugging Deep Dive:</strong> ${cs.hardestBug}</p>` : ""}
+          ${cs.hardestBug ? `<p style="margin-top:8px;"><strong>Debugging Detail:</strong> ${cs.hardestBug}</p>` : ""}
         </div>
         <div class="case-section">
-          <h4>Personal Engineering Ownership</h4>
+          <h4>Personal Contribution</h4>
           <p>${cs.personalContribution || ""}</p>
         </div>
         <div class="case-section">
-          <h4>Trade-offs & Architecture</h4>
+          <h4>Architectural Trade-offs</h4>
           ${cs.tradeoffs ? `<ul>${cs.tradeoffs.map(t => `<li>${t}</li>`).join("")}</ul>` : ""}
-          <p style="margin-top:8px;"><strong>Current Verified Status:</strong> ${cs.verifiedStatus || f.status}</p>
-          <p style="margin-top:4px;"><strong>Next Milestone:</strong> ${cs.nextSteps || ""}</p>
+          <p style="margin-top:8px;"><strong>Status:</strong> ${cs.currentStatus || f.status}</p>
+          ${cs.nextSteps ? `<p style="margin-top:4px;"><strong>Next Milestone:</strong> ${cs.nextSteps}</p>` : ""}
         </div>
       </div>
     `;
 
-    // Special Audit Matrix for Hardware & Research
+    // Hardware Audit for EEG
     if (cs.auditStatus) {
       deepDiveHtml += `
-        <div class="case-section" style="margin-top:16px;">
-          <h4>Hardware Engineering Audit & BOM</h4>
+        <div class="case-section" style="margin-top:14px;">
+          <h4>Hardware Engineering Audit</h4>
           <table class="audit-table">
             <thead>
-              <tr><th>Subsystem / Parameter</th><th>Engineering Status</th><th>Detail</th></tr>
+              <tr><th>Dimension</th><th>Status & Specification</th></tr>
             </thead>
             <tbody>
-              <tr>
-                <td><strong>BOM & Components</strong></td>
-                <td><span class="badge-verified">Acquired</span></td>
-                <td>${cs.auditStatus.componentsAcquired ? cs.auditStatus.componentsAcquired.join(", ") : "TGAM, ESP32, PAM8403, Transducers"}</td>
-              </tr>
-              <tr>
-                <td><strong>Hardware Assembly</strong></td>
-                <td><span class="badge-verified">Assembled</span></td>
-                <td>${cs.auditStatus.hardwareAssembled || ""}</td>
-              </tr>
-              <tr>
-                <td><strong>Firmware Pipeline</strong></td>
-                <td><span class="badge-verified">Operational</span></td>
-                <td>${cs.auditStatus.firmwareImplemented || ""}</td>
-              </tr>
-              <tr>
-                <td><strong>Validation Results</strong></td>
-                <td><span class="badge-verified">Tested</span></td>
-                <td>${cs.auditStatus.testedResults || ""}</td>
-              </tr>
-              <tr>
-                <td><strong>Honest Scope & Limits</strong></td>
-                <td><span class="badge-in-progress">Constrained</span></td>
-                <td>${cs.auditStatus.limitationsAndHonestScope || ""}</td>
-              </tr>
+              <tr><td><strong>Components Acquired</strong></td><td>${cs.auditStatus.componentsAcquired}</td></tr>
+              <tr><td><strong>Hardware Assembled</strong></td><td>${cs.auditStatus.hardwareAssembled}</td></tr>
+              <tr><td><strong>Firmware Implemented</strong></td><td>${cs.auditStatus.firmwareImplemented}</td></tr>
+              <tr><td><strong>Bench Results</strong></td><td>${cs.auditStatus.testedResults}</td></tr>
+              <tr><td><strong>Scope & Limitations</strong></td><td>${cs.auditStatus.honestLimitations}</td></tr>
             </tbody>
           </table>
         </div>
       `;
     }
 
+    // Research Audit for Cellular
     if (cs.researchDetails) {
       deepDiveHtml += `
-        <div class="case-section" style="margin-top:16px;">
-          <h4>Research Methodology & Capstone Audit</h4>
+        <div class="case-section" style="margin-top:14px;">
+          <h4>Research Methodology & Stage</h4>
           <table class="audit-table">
             <thead>
-              <tr><th>Dimension</th><th>Status</th><th>Specification</th></tr>
+              <tr><th>Dimension</th><th>Specification</th></tr>
             </thead>
             <tbody>
-              <tr>
-                <td><strong>RF Features Logged</strong></td>
-                <td><span class="badge-verified">Configured</span></td>
-                <td>${cs.researchDetails.featuresLogged ? cs.researchDetails.featuresLogged.join(", ") : ""}</td>
-              </tr>
-              <tr>
-                <td><strong>Algorithmic Methods</strong></td>
-                <td><span class="badge-verified">In Testing</span></td>
-                <td>${cs.researchDetails.algorithmExploration || ""}</td>
-              </tr>
-              <tr>
-                <td><strong>Current Stage</strong></td>
-                <td><span class="badge-in-progress">In Progress</span></td>
-                <td>${cs.researchDetails.currentStage || ""}</td>
-              </tr>
-              <tr>
-                <td><strong>Physical Constraints</strong></td>
-                <td><span class="badge-in-progress">Environmental</span></td>
-                <td>${cs.researchDetails.limitations || ""}</td>
-              </tr>
+              <tr><td><strong>Features Logged</strong></td><td>${cs.researchDetails.featuresLogged}</td></tr>
+              <tr><td><strong>Algorithmic Methods</strong></td><td>${cs.researchDetails.algorithmExploration}</td></tr>
+              <tr><td><strong>Current Stage</strong></td><td>${cs.researchDetails.currentStage}</td></tr>
+              <tr><td><strong>Constraints</strong></td><td>${cs.researchDetails.limitations}</td></tr>
             </tbody>
           </table>
         </div>
@@ -224,18 +183,13 @@ function renderFlagships(flagships) {
     return `
       <article class="flagship-card" id="${f.id}">
         <div class="flagship-header">
-          <div class="flagship-index-group">
-            <span class="flagship-index">SYS // ${f.index}</span>
-            <span class="flagship-category">${f.category}</span>
-          </div>
-          <span class="flagship-status-badge ${f.badge.includes('🏆') ? 'highlight' : ''}">${f.badge}</span>
+          <span class="flagship-domain">${f.domain}</span>
+          <span class="flagship-status-badge">${f.status}</span>
         </div>
 
         <div class="flagship-body">
-          <div class="flagship-headline">
-            <h3 class="flagship-title">${f.title}</h3>
-            <div class="flagship-subtitle">${f.subtitle}</div>
-          </div>
+          <h3 class="flagship-title">${f.title}</h3>
+          <div class="flagship-subtitle">${f.subtitle}</div>
 
           <p class="flagship-desc">${f.description}</p>
 
@@ -251,13 +205,12 @@ function renderFlagships(flagships) {
             `).join("")}
           </div>
 
-          <div class="flagship-visual-container">
-            ${visualHtml}
-          </div>
+          ${visualHtml}
+          ${diagramHtml}
 
           <div class="deep-dive-accordion">
             <button class="deep-dive-toggle" aria-expanded="false" data-target="deep-dive-${f.id}">
-              <span>Engineering Breakdown & System Case Study</span>
+              <span>Technical Breakdown & Case Study</span>
               <span class="arrow">▾</span>
             </button>
             <div class="deep-dive-content" id="deep-dive-${f.id}">
@@ -268,38 +221,33 @@ function renderFlagships(flagships) {
       </article>
     `;
   }).join("");
-
-  initGifPlayers(flagships);
 }
 
-// --- SVG System Diagrams ---
+// --- Monochrome System Flowcharts ---
 function renderEegDiagram() {
   return `
     <div class="diagram-canvas">
-      <div class="diagram-header-label">
-        <span>Hardware Architecture & Biosignal Pipeline</span>
-        <span>PHY.SYS // TGAM-ESP32</span>
-      </div>
+      <div class="diagram-header-label">Hardware Signal Chain Architecture</div>
       <div class="system-flow-grid">
         <div class="flow-node">
-          <span class="node-step">STAGE 01</span>
+          <span class="node-step">01. CAPTURE</span>
           <div class="node-title">Scalp Electrodes</div>
-          <div class="node-desc">Fp1 Forehead Dry Sensor with ear ground/reference clips capturing 10-100μV biological potentials.</div>
+          <div class="node-desc">Single-point Fp1 forehead dry electrode with ear ground/reference clips.</div>
         </div>
         <div class="flow-node">
-          <span class="node-step">STAGE 02</span>
-          <div class="node-title">TGAM ASIC Frontend</div>
-          <div class="node-desc">Analog filtering (50Hz notch + bandpass) and 12-bit ADC digitization into ThinkGear serial stream.</div>
+          <span class="node-step">02. DIGITIZE</span>
+          <div class="node-title">TGAM Biosensing Frontend</div>
+          <div class="node-desc">Hardware pre-amplification, 50Hz notch filter, and 12-bit ADC digitization.</div>
         </div>
         <div class="flow-node">
-          <span class="node-step">STAGE 03</span>
-          <div class="node-title">ESP32 Dual-Core Engine</div>
-          <div class="node-desc">Core 0: 57,600 baud UART parser & checksum check. Core 1: rolling SD intentional gesture detector.</div>
+          <span class="node-step">03. PROCESS</span>
+          <div class="node-title">ESP32 FreeRTOS Layer</div>
+          <div class="node-desc">Core 0: 57,600-baud UART packet parsing. Core 1: Intentional threshold detection.</div>
         </div>
         <div class="flow-node">
-          <span class="node-step">STAGE 04</span>
-          <div class="node-title">Audio & Bone Conduction</div>
-          <div class="node-desc">PAM8403 amplifier driving 8Ω bone-conduction transducers directly against cranial temporal bones.</div>
+          <span class="node-step">04. OUTPUT</span>
+          <div class="node-title">Bone Conduction Audio</div>
+          <div class="node-desc">DAC tone generator driving PAM8403 amplifier and bone-conduction transducers.</div>
         </div>
       </div>
     </div>
@@ -309,30 +257,27 @@ function renderEegDiagram() {
 function renderCellularDiagram() {
   return `
     <div class="diagram-canvas">
-      <div class="diagram-header-label">
-        <span>Cellular Fingerprinting Localization Architecture</span>
-        <span>RF.SYS // GSM-LTE-KNN</span>
-      </div>
+      <div class="diagram-header-label">Cellular Fingerprinting Localization Architecture</div>
       <div class="system-flow-grid">
         <div class="flow-node">
-          <span class="node-step">PHASE 01</span>
-          <div class="node-title">Cellular Transceivers</div>
-          <div class="node-desc">Multiple commercial eNodeB / BTS towers broadcasting RF carrier signals across 900/1800/2100MHz bands.</div>
+          <span class="node-step">01. TRANSMISSION</span>
+          <div class="node-title">Base Station Network</div>
+          <div class="node-desc">Serving and neighboring GSM/LTE base stations broadcasting beacon signals.</div>
         </div>
         <div class="flow-node">
-          <span class="node-step">PHASE 02</span>
+          <span class="node-step">02. ACQUISITION</span>
           <div class="node-title">AT-Command Logging Rig</div>
-          <div class="node-desc">Dedicated modem polling AT+CSQ (RSSI), AT+CREG (LAC/CID) and neighbor cell measurements.</div>
+          <div class="node-desc">Dedicated cellular modem interrogating AT+CSQ, AT+CREG, and neighbor registers.</div>
         </div>
         <div class="flow-node">
-          <span class="node-step">PHASE 03</span>
-          <div class="node-title">Offline Radio Map DB</div>
-          <div class="node-desc">Calibrated spatial grid linking reference coordinates (X, Y) with multi-dimensional RSSI fingerprint vectors.</div>
+          <span class="node-step">03. DATABASE</span>
+          <div class="node-title">Offline Radio Map</div>
+          <div class="node-desc">Calibrated spatial grid linking reference coordinates with multi-cell RSSI vectors.</div>
         </div>
         <div class="flow-node">
-          <span class="node-step">PHASE 04</span>
-          <div class="node-title">Online Pattern Matching</div>
-          <div class="node-desc">Weighted k-Nearest Neighbors (WkNN) and Bayesian estimation mapping unknown vectors to real coordinates.</div>
+          <span class="node-step">04. ESTIMATION</span>
+          <div class="node-title">Pattern Matching Engine</div>
+          <div class="node-desc">k-Nearest Neighbors (k-NN) estimating coordinates from online measured vectors.</div>
         </div>
       </div>
     </div>
@@ -342,107 +287,34 @@ function renderCellularDiagram() {
 function renderKypDiagram() {
   return `
     <div class="diagram-canvas">
-      <div class="diagram-header-label">
-        <span>Protocol-Agnostic Accountability Pipeline</span>
-        <span>EVM.SYS // MONAD-KYP</span>
-      </div>
+      <div class="diagram-header-label">Protocol-Agnostic Accountability Flow</div>
       <div class="system-flow-grid">
         <div class="flow-node">
-          <span class="node-step">STEP 01</span>
+          <span class="node-step">01. SYNTHESIS</span>
           <div class="node-title">AI Research Pipeline</div>
-          <div class="node-desc">Dual-agent framework (Flash + Deep Researcher via Gemini) synthesizing target protocol contracts.</div>
+          <div class="node-desc">Dual-tier synthesis summarizing target protocol contract addresses.</div>
         </div>
         <div class="flow-node">
-          <span class="node-step">STEP 02</span>
+          <span class="node-step">02. ESCROW</span>
           <div class="node-title">Solidity Stake Vault</div>
-          <div class="node-desc">User locks economic stake under a programmable 9-day, 3-strike accountability contract.</div>
+          <div class="node-desc">User locks stake under programmable 9-day, 3-strike commitment contracts.</div>
         </div>
         <div class="flow-node">
-          <span class="node-step">STEP 03</span>
+          <span class="node-step">03. VERIFICATION</span>
           <div class="node-title">Heartbeat Log Scanner</div>
-          <div class="node-desc">Autonomous zero-cost daemon invoking getLogs filtering for user address interaction with target contracts.</div>
+          <div class="node-desc">Dynamic getLogs indexer scanning raw block logs for address interaction.</div>
         </div>
         <div class="flow-node">
-          <span class="node-step">STEP 04</span>
+          <span class="node-step">04. SETTLEMENT</span>
           <div class="node-title">Automated Resolution</div>
-          <div class="node-desc">Deterministic stake release upon successful completion or slashing redistribution upon strike expiration.</div>
+          <div class="node-desc">Autonomous stake release on completion or slash distribution on expiration.</div>
         </div>
       </div>
     </div>
   `;
 }
 
-// --- GIF Player Controls ---
-function initGifPlayers(flagships) {
-  const gifHolders = {};
-
-  flagships.forEach(f => {
-    if (!f.gifSequence || f.gifSequence.length === 0) return;
-
-    gifHolders[f.id] = {
-      frames: f.gifSequence,
-      currentIndex: 0,
-      isPlaying: true,
-      timer: null
-    };
-
-    const view = document.getElementById(`gif-view-${f.id}`);
-    const counter = document.getElementById(`gif-counter-${f.id}`);
-    const toggleBtn = document.getElementById(`gif-toggle-btn-${f.id}`);
-
-    const updateView = () => {
-      const state = gifHolders[f.id];
-      if (view) view.src = state.frames[state.currentIndex];
-      if (counter) counter.textContent = `Frame ${state.currentIndex + 1} / ${state.frames.length}`;
-    };
-
-    const startLoop = () => {
-      const state = gifHolders[f.id];
-      if (state.timer) clearInterval(state.timer);
-      state.timer = setInterval(() => {
-        state.currentIndex = (state.currentIndex + 1) % state.frames.length;
-        updateView();
-      }, 2400);
-      state.isPlaying = true;
-      if (toggleBtn) toggleBtn.textContent = "Pause";
-    };
-
-    const stopLoop = () => {
-      const state = gifHolders[f.id];
-      if (state.timer) clearInterval(state.timer);
-      state.isPlaying = false;
-      if (toggleBtn) toggleBtn.textContent = "Play";
-    };
-
-    startLoop();
-
-    // Attach Button Handlers
-    const container = document.getElementById(`gif-player-${f.id}`);
-    if (container) {
-      container.querySelectorAll(".gif-ctrl-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-          const action = btn.getAttribute("data-action");
-          const state = gifHolders[f.id];
-
-          if (action === "toggle") {
-            if (state.isPlaying) stopLoop();
-            else startLoop();
-          } else if (action === "next") {
-            stopLoop();
-            state.currentIndex = (state.currentIndex + 1) % state.frames.length;
-            updateView();
-          } else if (action === "prev") {
-            stopLoop();
-            state.currentIndex = (state.currentIndex - 1 + state.frames.length) % state.frames.length;
-            updateView();
-          }
-        });
-      });
-    }
-  });
-}
-
-// --- Other Systems Rendering & Filtering ---
+// --- Other Systems Portfolio ---
 let allSystemsData = [];
 
 function renderOtherSystems(systems) {
@@ -451,7 +323,6 @@ function renderOtherSystems(systems) {
   const filterContainer = document.getElementById("systems-filter-bar");
   if (!container || !filterContainer) return;
 
-  // Extract unique categories
   const categories = ["All", ...new Set(systems.map(s => s.category).filter(Boolean))];
 
   filterContainer.innerHTML = categories.map((cat, idx) => `
@@ -483,13 +354,13 @@ function filterSystemsGrid(category) {
       <div class="system-top">
         <div class="system-header">
           <h4 class="system-title">${s.title}</h4>
-          <span class="system-domain">${s.category}</span>
+          <span class="system-category">${s.category}</span>
         </div>
-        <p class="system-desc" style="margin-top:10px;">${s.description}</p>
+        <p class="system-desc" style="margin-top:8px;">${s.description}</p>
       </div>
 
-      <div class="system-middle" style="margin: 12px 0;">
-        <span class="system-metric">⚡ ${s.metric}</span>
+      <div class="system-middle" style="margin: 10px 0;">
+        <span class="system-highlight">${s.highlight}</span>
       </div>
 
       <div class="system-footer">
@@ -497,8 +368,8 @@ function filterSystemsGrid(category) {
           ${s.stack.map(tag => `<span class="system-stack-pill">${tag}</span>`).join(" · ")}
         </div>
         <div class="system-links">
-          ${s.demo ? `<a href="${s.demo}" class="link-icon-btn" target="_blank" rel="noopener noreferrer">Live ↗</a>` : ""}
-          ${s.github ? `<a href="${s.github}" class="link-icon-btn" target="_blank" rel="noopener noreferrer">Code ↗</a>` : ""}
+          ${s.demo ? `<a href="${s.demo}" class="link-btn" target="_blank" rel="noopener noreferrer">Live ↗</a>` : ""}
+          ${s.github ? `<a href="${s.github}" class="link-btn" target="_blank" rel="noopener noreferrer">Code ↗</a>` : ""}
         </div>
       </div>
     </div>
@@ -513,8 +384,8 @@ function renderResearch(items) {
   container.innerHTML = items.map(r => `
     <article class="research-card">
       <div class="research-header">
-        <span class="research-status-pill">${r.status}</span>
-        <span class="research-role">${r.role} · ${r.institution}</span>
+        <span class="research-category-pill">${r.category}</span>
+        <span class="research-meta">${r.role} · ${r.institution}</span>
       </div>
 
       <h3 class="research-title">${r.title}</h3>
@@ -526,20 +397,20 @@ function renderResearch(items) {
 
       <div class="research-details-grid">
         <div class="research-col">
-          <strong>Context & Motivation</strong>
-          <p>${r.context}</p>
+          <strong>Motivation</strong>
+          <p>${r.motivation}</p>
         </div>
         <div class="research-col">
           <strong>Methodology</strong>
           <p>${r.methodology}</p>
         </div>
         <div class="research-col">
-          <strong>Current Findings</strong>
-          <p>${r.currentFindings}</p>
+          <strong>Current Status</strong>
+          <p>${r.status}</p>
         </div>
         <div class="research-col">
-          <strong>Open Questions</strong>
-          <p>${r.openQuestions}</p>
+          <strong>Limitations & Next Steps</strong>
+          <p>${r.limitations} ${r.nextSteps}</p>
         </div>
       </div>
     </article>
@@ -555,17 +426,17 @@ function renderWriting(articles) {
     <article class="writing-card">
       <div class="writing-top">
         <div class="writing-meta">
-          <span class="writing-platform">${a.publication}</span>
+          <span>${a.publication}</span>
           <span>${a.readTime}</span>
         </div>
-        <h3 class="writing-title" style="margin-top:10px;">
+        <h3 class="writing-title" style="margin-top:8px;">
           <a href="${a.url}" target="_blank" rel="noopener noreferrer">${a.title} ↗</a>
         </h3>
-        <p class="writing-summary" style="margin-top:8px;">${a.summary}</p>
+        <p class="writing-summary">${a.summary}</p>
       </div>
 
       <div class="writing-footer">
-        <a href="${a.url}" class="btn-read-essay" target="_blank" rel="noopener noreferrer">Read Essay on Substack ↗</a>
+        <a href="${a.url}" class="btn-read" target="_blank" rel="noopener noreferrer">Read on Substack ↗</a>
       </div>
     </article>
   `).join("");
@@ -577,10 +448,7 @@ function renderAbout(about) {
   const competenciesContainer = document.getElementById("competencies-list");
 
   if (narrativeContainer && about.narrative) {
-    narrativeContainer.innerHTML = `
-      <p class="lead">${about.summary || ""}</p>
-      ${about.narrative.map(p => `<p>${p}</p>`).join("")}
-    `;
+    narrativeContainer.innerHTML = about.narrative.map(p => `<p>${p}</p>`).join("");
   }
 
   if (competenciesContainer && about.competencies) {
@@ -610,7 +478,7 @@ function renderContact(profile) {
       try {
         await navigator.clipboard.writeText(profile.email);
         const originalText = copyBtn.textContent;
-        copyBtn.textContent = "Copied!";
+        copyBtn.textContent = "Copied";
         setTimeout(() => { copyBtn.textContent = originalText; }, 2000);
       } catch (e) {
         window.location.href = `mailto:${profile.email}`;
@@ -636,7 +504,7 @@ function initInteractions() {
 
   // Handle internal anchor links to flagship deep-dives
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", (e) => {
+    anchor.addEventListener("click", () => {
       const hash = anchor.getAttribute("href");
       if (!hash || hash === "#" || hash === "#top" || hash === "#main-content") return;
       

@@ -1,16 +1,16 @@
 {
   "meta": {
-    "title": "Tobi Awolaju | Multidisciplinary Engineer · Builder · Researcher",
-    "description": "Portfolio of Tobi Awolaju — Final-year Electrical Engineering student building real-time multiplayer systems, embedded electronics, telecommunications research, AI agents, and blockchain infrastructure.",
+    "title": "Tobi Awolaju — Engineer · Builder · Researcher",
+    "description": "Portfolio of Tobi Awolaju — Final-year Electrical Engineering student building across software, real-time networking, blockchain infrastructure, AI agents, embedded systems, and telecommunications.",
     "url": "https://tobiawolaju.vercel.app",
-    "status": "Available for Junior Engineering, Web3, AI & R&D Roles"
+    "status": "Open to junior engineering roles, remote opportunities, internships, and applied R&D."
   },
   "profile": {
     "name": "Tobi Awolaju",
     "title": "Engineer · Builder · Researcher",
-    "tagline": "I build across software, blockchain, AI, and physical systems. From real-time multiplayer infrastructure and autonomous agents to experimental electronics and telecommunications research, I turn difficult problems into working systems.",
-    "education": "Final-year Electrical Engineering student at Adeleke University, Nigeria",
-    "location": "Nigeria · Open to Remote & Relocation",
+    "intro": "I build across software, blockchain, AI, and physical systems. My projects range from real-time multiplayer infrastructure and autonomous agents to experimental electronics and telecommunications research. I enjoy understanding difficult problems, building practical systems, and documenting what I learn.",
+    "status": "Final-year Electrical Engineering student at Adeleke University · Nigeria",
+    "availability": "Open to junior engineering roles, remote opportunities, internships, and applied R&D.",
     "image": "pfp.jpg",
     "resumeLink": "https://docs.google.com/document/d/1W3aYjK9DLJZg5m4uvQPeHwRHPUToai0Bfwe2Bbfq9E4/edit?usp=drivesdk",
     "github": "https://github.com/tobiawolaju",
@@ -18,166 +18,116 @@
     "email": "tobiawolaju21@gmail.com",
     "twitter": "https://x.com/tobiawolaju"
   },
-  "about": {
-    "summary": "I’m a final-year Electrical Engineering student at Adeleke University and an independent engineer building at the intersection of software and physical systems.",
-    "narrative": [
-      "My projects span real-time networking, blockchain infrastructure, AI agents, embedded electronics, and telecommunications. I enjoy taking unfamiliar problems apart, learning the underlying principles, and building systems I can test and improve.",
-      "I’m looking for ambitious engineering teams where I can contribute as a junior engineer, learn from strong technical peers, and work on problems that reward curiosity and rigorous execution. Outside formal work, I intend to keep building independent projects and documenting my research."
-    ],
-    "competencies": [
-      {
-        "category": "Systems & Languages",
-        "items": ["Rust", "TypeScript", "JavaScript", "Python", "C/C++ (ESP32)", "Solidity", "SQL", "HTML5/CSS3"]
-      },
-      {
-        "category": "Networking & Protocols",
-        "items": ["WebSockets", "Real-Time State Sync", "EVM JSON-RPC", "GSM/LTE AT Commands", "UART / Serial", "P2P WebRTC"]
-      },
-      {
-        "category": "Embedded & Physical Systems",
-        "items": ["ESP32 (FreeRTOS)", "NeuroSky TGAM (EEG)", "Analog Audio Amplification", "Bone Conduction Transducers", "Circuit Bench Testing"]
-      },
-      {
-        "category": "AI, Data & Infrastructure",
-        "items": ["Autonomous Agents", "Screen & OS Automation", "Gemini API", "PostgreSQL", "Node.js", "Docker", "Viem / Ethers"]
-      },
-      {
-        "category": "Game & Graphics Delivery",
-        "items": ["Godot Engine", "WebAssembly (WASM)", "WebGL", "3D Asset Pipelines", "Client Prediction Reconciliation"]
-      }
-    ]
-  },
   "flagships": [
     {
       "id": "world-of-nads",
-      "index": "01",
       "title": "World of Nads",
-      "subtitle": "Real-Time Multiplayer Systems",
-      "category": "Real-Time Networking & Game Delivery",
+      "subtitle": "Browser-Based 3D Multiplayer Arena Game",
+      "domain": "Real-Time Networking & Game Architecture",
       "status": "Shipped & Playable",
-      "badge": "Production System",
-      "description": "A browser-based 3D multiplayer arena game. Built with Godot compiled to WebAssembly for seamless zero-install delivery, backed by an authoritative Rust WebSocket multiplayer server running 20Hz deterministic state synchronization, and Monad-focused EVM on-chain prize distribution.",
+      "description": "A browser-based 3D multiplayer arena game built with Godot, exported to WebAssembly for zero-install client delivery, paired with a custom Rust-based WebSocket multiplayer server handling authoritative state synchronization, and Monad-focused EVM on-chain prize distribution.",
       "image": "worldofnads1.gif",
-      "gifSequence": [
-        "worldofnads1.gif",
-        "worldofnads2.gif",
-        "worldofnads3.gif",
-        "worldofnads4.gif",
-        "worldofnads5.gif",
-        "worldofnads6.gif"
-      ],
       "links": [
         { "text": "Play Demo", "url": "https://worldofnads.xyz", "primary": true },
         { "text": "GitHub Repository", "url": "https://github.com/tobiawolaju/WorldOfNads", "primary": false }
       ],
       "stack": ["Godot (WASM)", "Rust (WebSocket Server)", "TypeScript", "Solidity (Monad EVM)", "PostgreSQL", "Privy Auth"],
       "caseStudy": {
-        "problem": "Delivering a fast 3D multiplayer arena game directly inside the browser without requiring external game launchers, while maintaining smooth real-time state synchronization across 20 concurrent players in volatile network environments.",
-        "difficulty": "Bridging three distinct domains in real time: the Godot WebAssembly graphics runtime, the browser JavaScript environment (wallet authentication & UI), and a low-latency Rust WebSocket backend server, all under tight client-side memory and CPU constraints.",
-        "personalContribution": "Independently built the game client in Godot, authored 3D game assets and mechanics, implemented client-side interpolation, built the 20Hz Rust WebSocket state server, and integrated Monad EVM smart contracts for prize distribution.",
+        "problem": "Delivering an uncompromised 3D multiplayer game directly inside the browser without requiring external game launchers or extensions, while keeping player states synchronized in real time alongside wallet authentication and on-chain payouts.",
+        "difficulty": "Maintaining low perceived latency across client network fluctuations while bridging three distinct execution environments: the Godot WebAssembly client runtime, the browser DOM/JavaScript wallet interface, and a custom asynchronous Rust WebSocket server.",
+        "personalContribution": "Independently developed the game client in Godot, 3D asset pipeline, client-side movement interpolation, the Rust WebSocket multiplayer server, and the Monad smart contract payout integration.",
         "architecture": {
-          "diagramType": "multiplayer",
           "components": [
-            { "name": "Browser Client", "desc": "Godot 4 WASM/WebGL canvas handling physics, input capture, and local interpolation" },
-            { "name": "Interop Bridge", "desc": "Lightweight JS boundary relaying wallet signatures and WebSocket frames without DOM overhead" },
-            { "name": "Rust Server Engine", "desc": "20Hz authoritative tick loop, spatial partitioning, delta compression, and heartbeat monitoring" },
-            { "name": "Monad Settlement", "desc": "Smart contracts executing deterministic match entry escrow and verifiable prize disbursement" }
+            { "name": "Godot Client (WASM)", "desc": "WebGL/WASM canvas managing 3D graphics, local physics simulation, and player input capture." },
+            { "name": "JS Interop Layer", "desc": "Lightweight boundary bridging wallet signing and WebSocket packet dispatch without DOM overhead." },
+            { "name": "Rust Server Engine", "desc": "Authoritative state synchronization loop, spatial validation, and client connection management." },
+            { "name": "Monad Settlement", "desc": "Smart contracts executing deterministic match entry escrow and verifiable prize disbursement." }
           ]
         },
         "tradeoffs": [
-          "Optimistic client prediction vs strict server validation: prioritized visual responsiveness on standard 60Hz displays while keeping collision validation authoritative on the Rust server.",
-          "Compact binary WebSocket frames vs JSON: stripped serialization overhead, reducing packet payload sizes by over 60%."
+          "Client-side prediction vs authoritative validation: responsive client motion for local control, with server authority during collision and damage resolution.",
+          "Custom binary framing vs JSON: eliminated serialization overhead to keep packet sizes compact over WebSockets."
         ],
-        "hardestBug": "During early testing, browser frame rates plummeted from 60 FPS to under 12 FPS on lower-spec hardware. Profiling traced the bottleneck to frequent per-frame function calls across the Godot-WASM to JavaScript React boundary. Resolved by decoupling rendering from network updates, batching bridge calls at 20Hz, and passing contiguous typed arrays.",
-        "verifiedStatus": "Publicly playable at worldofnads.xyz. Monad-focused EVM architecture (Solana legacy references removed).",
-        "nextSteps": "Implement client-side rollback lag compensation buffers and optimize initial WASM bundle size with progressive texture loading."
+        "hardestBug": "During early testing, browser frame rates plummeted from 60 FPS to under 12 FPS on lower-spec machines. Profiling showed that per-frame interop calls crossing the Godot-WASM to JavaScript boundary caused severe browser garbage collector stalls. Resolved by decoupling rendering from network updates and batching bridge calls into timed intervals with typed arrays.",
+        "currentStatus": "Playable in modern desktop browsers at worldofnads.xyz. Monad-focused EVM architecture with no Solana dependencies.",
+        "nextSteps": "Implement client-side rollback lag compensation buffers and optimize initial WASM bundle size."
       }
     },
     {
       "id": "eeg-headset",
-      "index": "02",
       "title": "EEG Communication Headset",
-      "subtitle": "Embedded Systems Experiment",
-      "category": "Embedded Systems & Physiological Signals",
-      "status": "Bench Prototyping (Tested)",
-      "badge": "Hardware Prototyping",
-      "description": "An experimental hardware and firmware investigation exploring an affordable, wearable communication-support interface for non-speaking users. Integrates forehead dry EEG electrodes, a TGAM biosensing frontend, an ESP32 microcontroller, audio amplification, and bone-conduction transducers.",
-      "image": "grey.jpg",
+      "subtitle": "Wearable Assistive Interface Concept for Non-Speaking Users",
+      "domain": "Embedded Systems & Assistive Technology",
+      "status": "Bench Prototyping (Tested on Test Bench)",
+      "description": "An experimental hardware and firmware investigation exploring an affordable, wearable communication-support interface for non-speaking users. Integrates scalp dry electrodes, a TGAM EEG frontend, an ESP32 microcontroller, audio amplification, and bone-conduction transducers.",
       "links": [
-        { "text": "Signal Chain Deep Dive", "url": "#eeg-headset", "primary": true },
-        { "text": "Hardware Audit & BOM", "url": "#eeg-headset", "primary": false }
+        { "text": "Signal Chain Architecture", "url": "#eeg-headset", "primary": true }
       ],
-      "stack": ["ESP32 (FreeRTOS / C++)", "NeuroSky TGAM ASIC", "UART Serial Protocol", "PAM8403 Audio Amp", "Bone Conduction Transducer", "Signal Processing"],
+      "stack": ["ESP32 (FreeRTOS / C++)", "NeuroSky TGAM ASIC", "UART Serial Protocol", "PAM8403 Audio Amp", "Bone Conduction Transducer"],
       "caseStudy": {
-        "problem": "Commercial brain-computer and assistive speech interfaces cost thousands of dollars, require wet conductive pastes, or depend on continuous desktop tethering, placing them out of reach for everyday mobility in resource-constrained environments.",
-        "difficulty": "Scalp biosignals sit in the microvolt range (10-100 μV) and are easily corrupted by ocular blinks, jaw clenches (EMG), and 50Hz environmental powerline hum. Achieving reproducible, intentional user triggers on an embedded microcontroller without false alarms requires disciplined filtering and FreeRTOS task prioritization.",
-        "personalContribution": "Designed the circuit schematic and breadboard layout, implemented dual-core FreeRTOS firmware in C++ on the ESP32, developed the ThinkGear UART serial packet decoder with strict checksum validation, and configured the audio amplification circuit driving bone-conduction transducers.",
+        "problem": "Commercial assistive brain-computer and speech interfaces cost thousands of dollars, require messy conductive gels, or depend on continuous desktop tethering, placing them out of reach for everyday mobility.",
+        "difficulty": "Physiological signals acquired at the scalp are in the microvolt range (10-100 μV) and are easily corrupted by blinks, jaw clenches (EMG), and 50Hz environmental powerline noise. Producing reliable, intentional user triggers on an embedded microcontroller without false alarms requires disciplined signal acquisition and task isolation.",
+        "personalContribution": "Designed the circuit schematic and breadboard layout, implemented dual-core FreeRTOS firmware in C++ on the ESP32, developed the ThinkGear UART serial packet decoder with checksum validation, and configured the audio amplification circuit driving bone-conduction transducers.",
         "architecture": {
-          "diagramType": "eeg-signal-chain",
           "components": [
-            { "name": "Scalp Dry Electrodes", "desc": "Single-point Fp1 forehead electrode with earlobe ground and reference clips" },
-            { "name": "TGAM Biosensing Frontend", "desc": "Hardware pre-amplifier, 50Hz notch filter, and 12-bit ADC outputting ThinkGear packets over UART" },
-            { "name": "ESP32 Firmware Layer", "desc": "Core 0 consumes 57600 baud serial stream; Core 1 evaluates intentional threshold events and state transitions" },
-            { "name": "Audio Synthesis & Transducer", "desc": "DAC/PWM tone generator into PAM8403 amplifier driving a bone-conduction transducer" }
+            { "name": "Scalp Dry Electrodes", "desc": "Single-point Fp1 forehead dry electrode with earlobe ground and reference clips." },
+            { "name": "TGAM Biosensing Frontend", "desc": "Hardware pre-amplifier, 50Hz notch filter, and 12-bit ADC outputting ThinkGear packets over UART." },
+            { "name": "ESP32 Firmware Layer", "desc": "Core 0 consumes 57,600 baud serial stream; Core 1 evaluates intentional threshold events." },
+            { "name": "Audio & Bone Conduction", "desc": "DAC tone generation into PAM8403 amplifier driving a bone-conduction transducer against temporal bone." }
           ]
         },
         "auditStatus": {
-          "componentsAcquired": ["NeuroSky TGAM module", "ESP32-WROOM-32 development board", "PAM8403 audio amplifier module", "Bone-conduction transducers (8 Ohm)", "Li-ion charging & regulation circuit"],
+          "componentsAcquired": "NeuroSky TGAM module, ESP32-WROOM-32 dev board, PAM8403 audio amplifier, 8Ω bone-conduction transducers, lithium charging regulation circuit.",
           "hardwareAssembled": "Benchtop breadboard and perfboard test bench established for signal validation, serial telemetry, and audio triggering.",
-          "firmwareImplemented": "UART packet parser validating 0xAA 0xAA sync bytes and packet checksums; real-time extraction of Poor Signal Quality, Attention, and raw wave packets; dual-threshold state machine for intentional blink detection.",
-          "testedResults": "Verified packet integrity at 57,600 baud with zero buffer overrun across 30-minute stress runs; confirmed audible feedback delivered via bone conduction against temporal bone.",
-          "limitationsAndHonestScope": "Does NOT decode continuous speech, arbitrary thoughts, or complex linguistic sentences. The system operates strictly as an intentional state/event trigger (e.g., deliberate consecutive blinks or concentrated focus thresholds) mapped to discrete assistive audio cues."
+          "firmwareImplemented": "UART packet parser validating 0xAA 0xAA sync bytes and packet checksums; extraction of Signal Quality, Attention, and raw wave packets; threshold-based event detection.",
+          "testedResults": "Verified packet integrity at 57,600 baud without buffer overruns on continuous test runs; confirmed audible feedback delivered via bone conduction.",
+          "honestLimitations": "Does NOT decode continuous speech, arbitrary thoughts, or complex linguistic sentences. The system operates strictly as an intentional state/event trigger mapped to discrete assistive audio cues."
         },
-        "nextSteps": "Transition from perfboard to a custom two-layer PCB; print a 3D ergonomic adjustable headset headband; incorporate adaptive baseline drift rejection."
+        "currentStatus": "Bench prototype assembled and tested. Firmware signal parser operational. Headband ergonomics and custom PCB layout are in progress.",
+        "nextSteps": "Transition from perfboard to a custom two-layer PCB; design an adjustable 3D-printed wearable headband; evaluate adaptive baseline drift rejection."
       }
     },
     {
       "id": "cellular-positioning",
-      "index": "03",
       "title": "Cellular Fingerprint Positioning System",
-      "subtitle": "Telecommunications Research",
-      "category": "Telecommunications & RF Localization",
+      "subtitle": "GPS-Denied Localization via RF Signal Fingerprints",
+      "domain": "Telecommunications Research & Capstone",
       "status": "Undergraduate Thesis (In Progress)",
-      "badge": "Academic Research",
-      "description": "My final-year Electrical Engineering capstone project at Adeleke University. Investigating position estimation algorithms in urban and indoor environments using cellular signal fingerprints (GSM/LTE RSSI, Cell ID, LAC, and Timing Advance) where satellite GPS signals are severely attenuated or unavailable.",
-      "image": "grey.jpg",
+      "description": "My final-year Electrical Engineering capstone investigation at Adeleke University. Investigating position estimation algorithms in urban and indoor environments using cellular signal fingerprints (GSM/LTE RSSI, Cell ID, LAC) where satellite GPS signals are severely attenuated or unavailable.",
       "links": [
-        { "text": "Research Methodology", "url": "#cellular-positioning", "primary": true },
-        { "text": "System Architecture", "url": "#cellular-positioning", "primary": false }
+        { "text": "Methodology & Architecture", "url": "#cellular-positioning", "primary": true }
       ],
-      "stack": ["Cellular Telephony (GSM/LTE)", "AT-Command Modems", "Python (NumPy / SciPy)", "k-NN / Weighted Fingerprinting", "RF Propagation Modeling"],
+      "stack": ["Cellular Telephony (GSM/LTE)", "AT-Command Modems", "Python (NumPy / SciPy)", "k-NN Matching", "RF Propagation Analysis"],
       "caseStudy": {
         "problem": "Satellite GPS signals suffer dramatic attenuation, multipath distortion, and power drain inside concrete buildings and high-density urban areas. Asset tracking and emergency location require an alternative positioning mechanism utilizing existing terrestrial cellular infrastructure.",
         "difficulty": "Cellular Received Signal Strength Indicator (RSSI) exhibits high temporal and spatial variance caused by shadow fading, structural multipath, and dynamic network load balancing, rendering naive geometric trilateration error-prone.",
         "personalContribution": "Formulated the research methodology, assembled the hardware survey logging rig (microcontroller + cellular modem running AT commands), gathered empirical RSSI vectors across campus reference points, and implemented baseline fingerprint matching algorithms.",
         "architecture": {
-          "diagramType": "telecom-fingerprint",
           "components": [
-            { "name": "Base Station Array", "desc": "Multiple commercial cell towers (serving and neighbor cells) broadcasting GSM/LTE beacon channels" },
-            { "name": "Logging Test Rig", "desc": "Hardware transceiver interrogating modem registers (AT+CSQ, AT+CREG, AT+COPS) with timestamped coordinates" },
-            { "name": "Spatial Radio Map (Offline)", "desc": "Calibrated database associating reference locations (X, Y) with multi-dimensional RSSI fingerprint vectors" },
-            { "name": "Pattern Matching Engine (Online)", "desc": "K-Nearest Neighbors (k-NN) and probabilistic matching determining estimated position from unknown vectors" }
+            { "name": "Base Station Array", "desc": "Multiple commercial cell towers (serving and neighbor cells) broadcasting GSM/LTE beacon channels." },
+            { "name": "Logging Test Rig", "desc": "Hardware transceiver interrogating modem registers (AT+CSQ, AT+CREG, AT+COPS) with timestamped coordinates." },
+            { "name": "Spatial Radio Map (Offline)", "desc": "Calibrated database associating reference locations (X, Y) with multi-dimensional RSSI fingerprint vectors." },
+            { "name": "Pattern Matching Engine (Online)", "desc": "K-Nearest Neighbors (k-NN) and probabilistic matching determining estimated position from unknown vectors." }
           ]
         },
         "researchDetails": {
-          "featuresLogged": ["Serving Cell ID (CID)", "Location Area Code (LAC)", "Received Signal Strength Indicator (RSSI)", "Neighbor Cell IDs and relative signal levels"],
-          "algorithmExploration": "Benchmarking Euclidean k-NN vs Mahalanobis distance and Bayesian probabilistic modeling to handle signal fluctuation.",
-          "currentStage": "Hardware logging rig calibrated; offline grid sampling ongoing across predefined outdoor-to-indoor transition zones at Adeleke University; constructing baseline error CDF.",
-          "limitations": "Accuracy is bounded by cell tower density and environmental dynamics (weather, structural movement). The work is actively ongoing as part of my graduating degree requirements."
+          "featuresLogged": "Serving Cell ID (CID), Location Area Code (LAC), Received Signal Strength Indicator (RSSI), and neighboring cell signal measurements.",
+          "algorithmExploration": "Evaluating Euclidean k-NN vs Weighted k-NN and probabilistic modeling to handle signal fluctuation.",
+          "currentStage": "Hardware logging rig calibrated; offline grid sampling actively ongoing across outdoor-to-indoor transition zones on campus at Adeleke University.",
+          "limitations": "Accuracy is constrained by commercial base station density, indoor structural attenuation, and dynamic network rebalancing. Research is actively ongoing as part of degree requirements."
         },
-        "nextSteps": "Complete grid cross-validation, evaluate Weighted k-NN against Gaussian Process Regression, and document empirical Cumulative Distribution Function (CDF) positioning error curves for thesis presentation."
+        "currentStatus": "Survey rig functional. Initial grid measurements logged. Algorithm benchmarking and thesis evaluation in progress.",
+        "nextSteps": "Complete full campus grid survey, evaluate Weighted k-NN against spatial interpolation models, and document empirical Cumulative Distribution Function (CDF) error curves."
       }
     },
     {
       "id": "kyp",
-      "index": "04",
       "title": "Know Your Protocol (KYP)",
-      "subtitle": "On-Chain Accountability",
-      "category": "Blockchain Infrastructure & Automation",
+      "subtitle": "On-Chain Protocol Research & Accountability Platform",
+      "domain": "Blockchain Infrastructure & Automation",
       "status": "Shipped & Verifiable",
-      "badge": "🏆 Spark Hackathon Recognized",
-      "description": "A protocol accountability platform built around commitments, stakes, and verifiable follow-through. Users research protocols through AI pipelines, lock economic stakes into smart contracts, and have their follow-through verified across EVM protocols without custom event signatures.",
-      "image": "grey.jpg",
+      "badge": "BuildAnything Spark Hackathon Recognized",
+      "description": "A protocol accountability platform built around economic commitments, wallet stakes, and verifiable on-chain follow-through. Users research protocols through an AI synthesis pipeline, lock stakes in smart contracts, and have their activity verified across EVM protocols without custom event signatures.",
       "links": [
         { "text": "Live Web App", "url": "https://knowyourprotocol.vercel.app", "primary": true },
         { "text": "GitHub Repository", "url": "https://github.com/tobiawolaju/kyp", "primary": false }
@@ -188,21 +138,20 @@
         "difficulty": "Creating a protocol-agnostic verification system that inspects a user's on-chain activity across any EVM protocol without requiring custom event signatures or proprietary ABI decoders, while operating a zero-cost autonomous verification heartbeat.",
         "personalContribution": "Architected the complete system: Svelte 5 frontend, smart contract commitment logic with automatic stake verification and slashing, a protocol-agnostic on-chain event scanner using indexed getLogs, and a zero-cost heartbeat worker architecture.",
         "architecture": {
-          "diagramType": "kyp-flow",
           "components": [
-            { "name": "Research Engine", "desc": "Dual-tier AI pipeline (FlashResearcher + DeepResearcher via Gemini) synthesizing protocol parameters" },
-            { "name": "Commitment Contract", "desc": "Solidity vault locking user stakes under a 9-day, 3-strike programmable accountability model" },
-            { "name": "Heartbeat Daemon", "desc": "Zero-cost heartbeat worker triggering periodic verification passes without paid subscription cron services" },
-            { "name": "Event Filter Engine", "desc": "Dynamic getLogs indexer scanning raw block logs for address interaction regardless of contract ABI" }
+            { "name": "AI Research Pipeline", "desc": "Dual-tier synthesis pipeline (Flash + Deep Researcher via Gemini) summarizing protocol parameters." },
+            { "name": "Solidity Commitment Vault", "desc": "Smart contracts locking stakes under a programmable 9-day, 3-strike accountability model." },
+            { "name": "Heartbeat Daemon", "desc": "Zero-cost heartbeat worker triggering periodic verification passes without paid subscription cron services." },
+            { "name": "Event Filter Engine", "desc": "Dynamic getLogs indexer scanning raw block logs for address interaction regardless of contract ABI." }
           ]
         },
         "tradeoffs": [
-          "Protocol-agnostic log queries vs custom ABI decoders: chosen to allow users to verify engagement with ANY arbitrary new EVM smart contract on Monad without requiring pre-compiled contract artifacts.",
+          "Protocol-agnostic log queries vs custom ABI decoders: chosen to allow users to verify engagement with any EVM smart contract on Monad without requiring pre-compiled contract artifacts.",
           "Adaptive block-time estimation vs fixed timestamps: dynamically calculates inspection intervals from network block rate rather than hardcoded assumptions."
         ],
         "hardestBug": "Eliminating RPC rate limits while scanning wide block ranges across multi-network environments (Monad Testnet and Mainnet). Solved by implementing exponential backoff with adaptive chunk size throttling in the custom getLogs worker.",
-        "verifiedStatus": "Publicly deployed and verified on GitHub; recognized during the BuildAnything Spark Hackathon.",
-        "nextSteps": "Add multi-sig commitment vaults and extend verification heuristics to cross-chain LayerZero messaging events."
+        "currentStatus": "Publicly deployed and verified on GitHub; recognized during the BuildAnything Spark Hackathon.",
+        "nextSteps": "Add multi-sig commitment vaults and extend verification heuristics to cross-chain messaging events."
       }
     }
   ],
@@ -211,119 +160,122 @@
       "id": "moyaki-trace",
       "title": "MoyakiTraceEngine",
       "category": "Systems & Indexing",
-      "description": "High-throughput blockchain indexer engineered for chains with micro-reorgs. Cross-references 3 independent Monad RPC nodes in real time, detecting parent-hash mismatches and rolling back state deterministically.",
+      "description": "Block indexer engineered for chains with micro-reorgs. Cross-references 3 independent Monad RPC nodes in real time, detecting parent-hash mismatches and automatically rolling back state.",
       "stack": ["TypeScript", "Node.js", "EVM JSON-RPC", "PostgreSQL"],
       "demo": "https://moyakitraceengine.vercel.app/",
       "github": "https://github.com/tobiawolaju/MoyakiTraceEngine",
-      "metric": "Triple-node reorg detection"
+      "highlight": "Triple-node reorg detection & automatic rollback"
     },
     {
       "id": "noogler",
       "title": "Noogler",
-      "category": "AI & OS Automation",
-      "description": "Autonomous AI agent interacting directly with an operating system via raw screen capture and native OS input dispatch. Eliminates brittle browser extensions and proprietary API dependencies.",
+      "category": "AI & Automation",
+      "description": "Autonomous AI agent interacting directly with an operating system via raw screen capture and native OS input dispatch, removing brittle browser extensions or proprietary API dependencies.",
       "stack": ["Python", "Rust OS Input", "Computer Vision", "Gemini Vision"],
       "demo": "https://noogler.vercel.app",
       "github": "https://github.com/tobiawolaju/Noogler",
-      "metric": "Direct OS-level control"
+      "highlight": "Direct OS-level control without API crutches"
     },
     {
       "id": "hare",
       "title": "HARE",
-      "category": "AI Agents & QC",
-      "description": "Autonomous agent workflow implementing deterministic self-evaluation and automated retry loops. Evaluates generated artifacts against rigorous assertion criteria with zero human in the QC loop.",
+      "category": "AI & Automation",
+      "description": "Autonomous agent workflow implementing deterministic self-evaluation and automated retry loops. Evaluates generated outputs against assertion criteria with zero human in the QC loop.",
       "stack": ["TypeScript", "LLM Pipelines", "Node.js", "Evaluation Harness"],
       "demo": "https://h-a-r-e.vercel.app/",
       "github": "https://github.com/tobiawolaju/H-A-R-E",
-      "metric": "Zero-human QC loop"
+      "highlight": "Deterministic self-evaluation & automated retry loops"
     },
     {
       "id": "rug-pool",
       "title": "Rug Pool",
-      "category": "Smart Contracts & Game Theory",
-      "description": "Memecoin launchpad enforcing non-custodial exit constraints at the contract level. Pyth Entropy Verifiable Randomness Function (VRF) resolves winners and payouts at the 24-hour expiration mark.",
+      "category": "Blockchain & Systems",
+      "description": "Memecoin launchpad enforcing non-custodial exit constraints at the contract level. Pyth Entropy Verifiable Randomness Function (VRF) resolves winners and payouts at expiration.",
       "stack": ["Solidity", "Hardhat", "Pyth VRF", "Monad", "React"],
       "demo": "https://rug-pool.vercel.app",
       "github": "https://github.com/tobiawolaju/rug-pool",
-      "metric": "53 automated passing tests"
+      "highlight": "53 automated passing tests on Monad testnet"
     },
     {
       "id": "superyap",
       "title": "Superyap",
-      "category": "P2P Cryptography & Web3",
+      "category": "Blockchain & Systems",
       "description": "Anonymous end-to-end encrypted peer-to-peer messaging prototype with integrated non-custodial micropayments on Monad EVM. WebRTC transport with cryptographic session key ratchets.",
       "stack": ["WebRTC", "Cryptography (E2EE)", "Solidity", "TypeScript"],
       "demo": "https://superyap.vercel.app/",
       "github": "https://github.com/tobiawolaju/Superyap",
-      "metric": "Encrypted P2P messaging"
+      "highlight": "Encrypted P2P messaging with on-chain micro-transactions"
     },
     {
       "id": "dominus-quant",
       "title": "DominusQuant",
-      "category": "Quantitative Systems",
+      "category": "Systems & Indexing",
       "description": "Algorithmic execution engine parsing real-time order flow and state changes on Monad EVM, calculating liquidity depth and executing automated trading heuristics.",
       "stack": ["Python", "WebSocket Streams", "Monad State Engine"],
       "demo": "https://dominus-quant.vercel.app/",
       "github": "https://github.com/tobiawolaju/DominusQuant",
-      "metric": "Sub-second state parser"
+      "highlight": "Real-time on-chain state stream parser"
     },
     {
       "id": "terra-engine",
       "title": "Terra Engine",
-      "category": "Game Engine & Graphics",
-      "description": "Procedural terrain rendering and physics simulation engine developed and shipped under a strict 48-hour game jam constraint using Godot and GDScript.",
+      "category": "Game Engine & Delivery",
+      "description": "Procedural terrain rendering and physics simulation engine developed and shipped under a strict 48-hour game jam deadline using Godot and GDScript.",
       "stack": ["Godot Engine", "GDScript", "Procedural Mesh", "WASM"],
       "demo": "https://wavedash.com/games/terraengine",
       "github": "https://github.com/tobiawolaju/Terra-engine",
-      "metric": "48-Hour Game Jam Ship"
+      "highlight": "Shipped within 48-hour game jam constraint"
     },
     {
       "id": "john-wick-exitus",
       "title": "John Wick: Exitus",
-      "category": "Game Mechanics & AI",
+      "category": "Game Engine & Delivery",
       "description": "Action combat state machine and isometric spatial physics game built and deployed in 48 hours for a global game jam competition.",
       "stack": ["Godot Engine", "State Machines", "WebGL", "Audio Mixers"],
       "demo": "https://johnwick1000.vercel.app",
       "github": "https://github.com/tobiawolaju/johnwick-lex-Exitus",
-      "metric": "48-Hour Jam Architecture"
+      "highlight": "48-hour game jam combat state machine"
     }
   ],
   "research": [
     {
       "id": "res-cellular",
       "title": "Cellular Signal Fingerprinting for GPS-Denied Localization",
-      "status": "Active Capstone Research",
-      "role": "Lead Researcher (Undergraduate Thesis)",
+      "category": "Ongoing Research",
+      "role": "Lead Researcher (Undergraduate Capstone)",
       "institution": "Adeleke University",
-      "question": "What localization accuracy and error bounds can be achieved indoors using opportunistic GSM/LTE multi-cell RSSI vectors without deploying custom anchor hardware?",
-      "context": "Traditional satellite GPS signals degrade rapidly inside concrete buildings and industrial environments. Cellular fingerprinting leverages existing radio infrastructure by mapping unique multipath patterns.",
-      "methodology": "Two-phase system: (1) An empirical offline survey collecting multi-cell RSSI, Cell ID, LAC, and Timing Advance across mapped test coordinates using AT-command modems. (2) An online positioning engine comparing real-time vectors via k-Nearest Neighbors (k-NN) and Bayesian probability models.",
-      "currentFindings": "Signal variance on indoor corridors averages ±4.2 dBm under stationary conditions; multi-cell vector fusion significantly suppresses single-tower ambiguity.",
-      "openQuestions": "Quantifying error degradation under heavy human movement and evaluating how dynamic weather conditions alter 900MHz/1800MHz propagation contours."
+      "question": "What positioning estimation accuracy can be achieved indoors using opportunistic GSM/LTE multi-cell RSSI vectors without dedicated anchor hardware?",
+      "motivation": "Traditional satellite GPS signals degrade rapidly inside concrete buildings and industrial environments. Cellular fingerprinting leverages existing radio infrastructure by mapping unique multipath patterns.",
+      "methodology": "Two-phase system: (1) An empirical offline survey collecting multi-cell RSSI, Cell ID, LAC, and Timing Advance across mapped test coordinates using AT-command modems. (2) An online positioning engine comparing real-time vectors via k-Nearest Neighbors (k-NN) and probabilistic models.",
+      "status": "Hardware survey rig operational. Initial grid sampling logged across transition zones on campus at Adeleke University. Benchmarking algorithms against measured radio data.",
+      "limitations": "Accuracy is inherently sensitive to commercial base station topology, environmental multipath shifts, and human density changes.",
+      "nextSteps": "Complete grid cross-validation, evaluate Weighted k-NN against spatial interpolation models, and document empirical Cumulative Distribution Function (CDF) positioning error curves for thesis presentation."
     },
     {
       "id": "res-eeg",
       "title": "Low-Cost Biosignal Interfaces: Artifact Filtering on ESP32 Microcontrollers",
-      "status": "Bench Prototyping & Investigation",
+      "category": "Hardware Experiments",
       "role": "Independent Hardware Experimenter",
       "institution": "Independent Laboratory",
-      "question": "How reliably can an entry-level dry-electrode EEG frontend be filtered in real-time on an embedded dual-core microcontroller to detect deliberate trigger events without false positives?",
-      "context": "Commercial brain-computer interfaces are prohibitively expensive for assistive care in developing nations. Integrating commercial-off-the-shelf ASICs like the NeuroSky TGAM with an ESP32 offers an ultra-low-cost pathway.",
-      "methodology": "Configured 57600-baud UART streaming with FreeRTOS task isolation; Core 0 handles checksum validation and 512Hz raw wave buffering; Core 1 runs dynamic thresholding to separate deliberate intentional blinks from ambient EMG jaw-clenching noise.",
-      "currentFindings": "Dual-blink intentional gestures produce distinct high-amplitude biphasic spikes (>200μV equivalent) that can be reliably classified with rolling standard deviation windowing (>94% classification precision in bench calibration).",
-      "openQuestions": "Integrating bone-conduction audio back-EMF isolation to prevent feedback loop coupling into the scalp electrode reference."
+      "question": "How reliably can an entry-level dry-electrode EEG frontend be filtered in real time on an embedded dual-core microcontroller to detect deliberate trigger events without false positives?",
+      "motivation": "Commercial brain-computer interfaces are prohibitively expensive for assistive care in developing nations. Integrating commercial-off-the-shelf ASICs like the NeuroSky TGAM with an ESP32 offers an ultra-low-cost pathway.",
+      "methodology": "Configured 57,600-baud UART streaming with FreeRTOS task isolation; Core 0 handles checksum validation and 512Hz raw wave buffering; Core 1 runs dynamic thresholding to separate deliberate intentional blinks from ambient EMG jaw-clenching noise.",
+      "status": "Benchtop test bench operational. Dual-core FreeRTOS firmware reliably decodes ThinkGear serial streams and executes threshold detection on test signals.",
+      "limitations": "Does not decode continuous thoughts or sentences. Susceptible to movement artifacts without strict dry-electrode contact pressure.",
+      "nextSteps": "Transition to a custom 2-layer PCB, fabricate an ergonomic 3D-printed adjustable headband, and incorporate active baseline drift filtering."
     },
     {
       "id": "res-reorg",
       "title": "State Consistency & Reorg Recovery in High-Throughput EVM Networks",
-      "status": "Implemented & Verified Experiment",
+      "category": "Implemented Engineering Investigations",
       "role": "Systems Engineer",
       "institution": "Independent Project (MoyakiTraceEngine)",
       "question": "In sub-second block architectures with frequent micro-reorganizations, how can off-chain indexers maintain 100% deterministic state consistency without prohibitive multi-block finality lag?",
-      "context": "High-throughput chains like Monad execute state rapidly, but asynchronous peer gossiping can cause temporary fork divergence that corrupts off-chain indexing databases if state is written immediately.",
+      "motivation": "High-throughput chains like Monad execute state rapidly, but asynchronous peer gossiping can cause temporary fork divergence that corrupts off-chain indexing databases if state is written immediately.",
       "methodology": "Implemented a triple-RPC quorum polling engine with a rolling FIFO block buffer. When parent-hash mismatch is detected across nodes, the indexer triggers an automated retroactive unwind, reversing mutated state up to the common ancestor before re-indexing.",
-      "currentFindings": "A 12-block rewind buffer eliminates 100% of temporary branch corruption under network jitter without requiring manual administrative intervention.",
-      "openQuestions": "Extending the consensus quorum engine to zero-knowledge state proof validation for instant finality verification."
+      "status": "Implemented and tested in MoyakiTraceEngine against concurrent RPC nodes under simulated network jitter.",
+      "limitations": "Requires multi-RPC access and additional memory overhead for deep rolling buffers.",
+      "nextSteps": "Extend the quorum engine with cryptographic state verification heuristics for cross-client consistency."
     }
   ],
   "writing": [
@@ -331,7 +283,6 @@
       "title": "Communicating in Functions",
       "url": "https://tobiawolaju21.substack.com/p/communicating-in-functions?r=2hkadt",
       "publication": "Substack",
-      "date": "Technical Essay",
       "readTime": "4 min read",
       "summary": "On engineering as communication — and why a function is just an idea precise enough to survive without its author. Examines interface boundaries, predictable contracts, and writing software that communicates intent clearly to both compilers and future teammates."
     },
@@ -339,9 +290,45 @@
       "title": "Success Is 90% Luck and Informed Guessing",
       "url": "https://tobiawolaju21.substack.com/p/success-is-90-luck-and-informed-guessing?r=2hkadt",
       "publication": "Substack",
-      "date": "Analytical Essay",
       "readTime": "6 min read",
       "summary": "A probability framework for luck, consistency, and what to do when life hands you a defective die. Exploring Bayesian priors, increasing personal surface area for serendipity, and how technical builders turn probabilistic outcomes in their favor through relentless shipping."
     }
-  ]
+  ],
+  "about": {
+    "narrative": [
+      "I'm a final-year Electrical Engineering student at Adeleke University, Nigeria, and an independent builder working across software and physical systems.",
+      "My projects span real-time networking, blockchain infrastructure, AI agents, embedded electronics, and telecommunications. I enjoy taking unfamiliar technical problems apart, learning the underlying principles, and building systems I can test and improve.",
+      "I'm looking for an engineering team where I can contribute, learn from experienced technical peers, and work on challenging problems. I also intend to continue building independent projects and documenting my research."
+    ],
+    "competencies": [
+      {
+        "category": "Programming and systems",
+        "items": ["Rust", "TypeScript", "JavaScript", "Python", "C/C++", "SQL", "HTML5 / CSS3", "Linux / POSIX"]
+      },
+      {
+        "category": "Networking and infrastructure",
+        "items": ["WebSockets", "Real-Time State Synchronization", "WebRTC", "EVM JSON-RPC", "Node.js", "PostgreSQL", "Docker"]
+      },
+      {
+        "category": "Blockchain and distributed systems",
+        "items": ["Solidity (EVM)", "Monad Architecture", "viem / ethers", "Hardhat", "Smart Contract Testing", "Reorg Handling"]
+      },
+      {
+        "category": "AI and automation",
+        "items": ["Autonomous Agent Workflows", "Gemini API", "Computer Vision Integration", "OS-Level Automation", "Self-Evaluation Loops"]
+      },
+      {
+        "category": "Embedded systems and electronics",
+        "items": ["ESP32 (FreeRTOS)", "NeuroSky TGAM (EEG)", "UART / Serial Protocols", "Analog Audio & Amplifiers", "Breadboard / Bench Prototyping"]
+      },
+      {
+        "category": "Telecommunications and signal processing",
+        "items": ["GSM / LTE Telephony", "AT-Command Modems", "RSSI Fingerprinting", "k-NN Classification", "RF Propagation Analysis"]
+      },
+      {
+        "category": "Game development and browser delivery",
+        "items": ["Godot Engine", "WebAssembly (WASM)", "WebGL", "3D Asset Integration", "Client-Side Movement Prediction"]
+      }
+    ]
+  }
 }
