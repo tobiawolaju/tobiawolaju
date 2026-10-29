@@ -1,537 +1,505 @@
-/**
- * TOBI AWOLAJU — MULTIDISCIPLINARY ENGINEERING PORTFOLIO
- * Monochrome Editorial Engineering Client Script
- */
+// Wait until the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", async function () {
+    // Splash screen timeout
+    setTimeout(() => {
+        const splash = document.getElementById("splash-screen");
+        if (splash) {
+            splash.classList.add("splash-hidden");
+        }
+    }, 2500);
 
-document.addEventListener("DOMContentLoaded", () => {
-  initTheme();
-  initMobileMenu();
-  loadPortfolioData();
+    const jsonFile = "engineering.json";
+
+    try {
+        const response = await fetch(jsonFile);
+        if (!response.ok) {
+            throw new Error(`Could not load ${jsonFile}`);
+        }
+        const data = await response.json();
+        renderPortfolio(data);
+    } catch (error) {
+        console.error(error);
+        alert("Failed to load portfolio content.");
+    }
+
+    // Initialize UI interactions after rendering
+    initInteractions();
 });
 
-// --- Theme Management (Strict Monochrome) ---
-function initTheme() {
-  const savedTheme = localStorage.getItem("theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
-  
-  applyTheme(initialTheme);
+function renderPortfolio(data) {
+    // 1. Page Title
+    document.title = data.pageTitle || "Tobi's Portfolio";
 
-  const toggleBtn = document.getElementById("theme-toggle-btn");
-  if (toggleBtn) {
-    toggleBtn.addEventListener("click", () => {
-      const currentTheme = document.documentElement.getAttribute("data-theme") || "dark";
-      const nextTheme = currentTheme === "dark" ? "light" : "dark";
-      applyTheme(nextTheme);
-      localStorage.setItem("theme", nextTheme);
-    });
-  }
-}
+    // 2. Profile
+    if (data.profile) {
 
-function applyTheme(theme) {
-  document.documentElement.setAttribute("data-theme", theme);
-  const icon = document.getElementById("theme-icon");
-  if (icon) {
-    icon.textContent = theme === "dark" ? "☼" : "☾";
-    icon.setAttribute("aria-label", theme === "dark" ? "Switch to light theme" : "Switch to dark theme");
-  }
-}
+        document.getElementById("profile-name").textContent = data.profile.name;
+        document.getElementById("profile-title").textContent = data.profile.title;
 
-// --- Mobile Navigation ---
-function initMobileMenu() {
-  const menuBtn = document.getElementById("mobile-menu-btn");
-  const nav = document.getElementById("site-nav");
-
-  if (menuBtn && nav) {
-    menuBtn.addEventListener("click", () => {
-      const isOpen = nav.classList.toggle("open");
-      menuBtn.setAttribute("aria-expanded", isOpen);
-    });
-
-    nav.querySelectorAll(".nav-link").forEach(link => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("open");
-        menuBtn.setAttribute("aria-expanded", "false");
-      });
-    });
-  }
-}
-
-// --- Data Loading & Rendering ---
-async function loadPortfolioData() {
-  try {
-    const response = await fetch("engineering.json");
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: Failed to fetch engineering.json`);
-    }
-    const data = await response.json();
-    renderApp(data);
-  } catch (err) {
-    console.error("Error loading portfolio data:", err);
-  }
-}
-
-function renderApp(data) {
-  if (!data) return;
-
-  renderFlagships(data.flagships || []);
-  renderOtherSystems(data.otherSystems || []);
-  renderResearch(data.research || []);
-  renderWriting(data.writing || []);
-  renderAbout(data.about || {});
-  renderContact(data.profile || {});
-
-  initInteractions();
-}
-
-// --- Flagship Rendering ---
-function renderFlagships(flagships) {
-  const container = document.getElementById("flagships-list");
-  if (!container) return;
-
-  container.innerHTML = flagships.map((f) => {
-    const cs = f.caseStudy || {};
-    const isEeg = f.id === "eeg-headset";
-    const isCellular = f.id === "cellular-positioning";
-    const isKyp = f.id === "kyp";
-
-    // Visual Component Generation (Monochrome diagrams & real media)
-    let visualHtml = "";
-    if (f.image && !f.image.includes("grey.jpg")) {
-      visualHtml = `
-        <div class="flagship-media-wrapper">
-          <img src="${f.image}" alt="${f.title} gameplay interface" class="flagship-img" loading="lazy">
-        </div>
-      `;
-    }
-
-    let diagramHtml = "";
-    if (isEeg) {
-      diagramHtml = renderEegDiagram();
-    } else if (isCellular) {
-      diagramHtml = renderCellularDiagram();
-    } else if (isKyp) {
-      diagramHtml = renderKypDiagram();
-    }
-
-    // Deep Dive Content
-    let deepDiveHtml = `
-      <div class="deep-dive-grid">
-        <div class="case-section">
-          <h4>Problem Statement</h4>
-          <p>${cs.problem || ""}</p>
-        </div>
-        <div class="case-section">
-          <h4>Engineering Challenge</h4>
-          <p>${cs.difficulty || ""}</p>
-          ${cs.hardestBug ? `<p style="margin-top:8px;"><strong>Debugging Detail:</strong> ${cs.hardestBug}</p>` : ""}
-        </div>
-        <div class="case-section">
-          <h4>Personal Contribution</h4>
-          <p>${cs.personalContribution || ""}</p>
-        </div>
-        <div class="case-section">
-          <h4>Architectural Trade-offs</h4>
-          ${cs.tradeoffs ? `<ul>${cs.tradeoffs.map(t => `<li>${t}</li>`).join("")}</ul>` : ""}
-          <p style="margin-top:8px;"><strong>Status:</strong> ${cs.currentStatus || f.status}</p>
-          ${cs.nextSteps ? `<p style="margin-top:4px;"><strong>Next Milestone:</strong> ${cs.nextSteps}</p>` : ""}
-        </div>
-      </div>
-    `;
-
-    // Hardware Audit for EEG
-    if (cs.auditStatus) {
-      deepDiveHtml += `
-        <div class="case-section" style="margin-top:14px;">
-          <h4>Hardware Engineering Audit</h4>
-          <table class="audit-table">
-            <thead>
-              <tr><th>Dimension</th><th>Status & Specification</th></tr>
-            </thead>
-            <tbody>
-              <tr><td><strong>Components Acquired</strong></td><td>${cs.auditStatus.componentsAcquired}</td></tr>
-              <tr><td><strong>Hardware Assembled</strong></td><td>${cs.auditStatus.hardwareAssembled}</td></tr>
-              <tr><td><strong>Firmware Implemented</strong></td><td>${cs.auditStatus.firmwareImplemented}</td></tr>
-              <tr><td><strong>Bench Results</strong></td><td>${cs.auditStatus.testedResults}</td></tr>
-              <tr><td><strong>Scope & Limitations</strong></td><td>${cs.auditStatus.honestLimitations}</td></tr>
-            </tbody>
-          </table>
-        </div>
-      `;
-    }
-
-    // Research Audit for Cellular
-    if (cs.researchDetails) {
-      deepDiveHtml += `
-        <div class="case-section" style="margin-top:14px;">
-          <h4>Research Methodology & Stage</h4>
-          <table class="audit-table">
-            <thead>
-              <tr><th>Dimension</th><th>Specification</th></tr>
-            </thead>
-            <tbody>
-              <tr><td><strong>Features Logged</strong></td><td>${cs.researchDetails.featuresLogged}</td></tr>
-              <tr><td><strong>Algorithmic Methods</strong></td><td>${cs.researchDetails.algorithmExploration}</td></tr>
-              <tr><td><strong>Current Stage</strong></td><td>${cs.researchDetails.currentStage}</td></tr>
-              <tr><td><strong>Constraints</strong></td><td>${cs.researchDetails.limitations}</td></tr>
-            </tbody>
-          </table>
-        </div>
-      `;
-    }
-
-    return `
-      <article class="flagship-card" id="${f.id}">
-        <div class="flagship-header">
-          <span class="flagship-domain">${f.domain}</span>
-          <span class="flagship-status-badge">${f.status}</span>
-        </div>
-
-        <div class="flagship-body">
-          <h3 class="flagship-title">${f.title}</h3>
-          <div class="flagship-subtitle">${f.subtitle}</div>
-
-          <p class="flagship-desc">${f.description}</p>
-
-          <div class="flagship-stack-list">
-            ${f.stack.map(st => `<span class="stack-tag">${st}</span>`).join("")}
-          </div>
-
-          <div class="flagship-links-row">
-            ${f.links.map(l => `
-              <a href="${l.url}" class="btn ${l.primary ? 'btn-primary' : 'btn-secondary'}" target="${l.url.startsWith('#') ? '_self' : '_blank'}" rel="noopener noreferrer">
-                ${l.text} ${l.url.startsWith('#') ? '↓' : '↗'}
-              </a>
-            `).join("")}
-          </div>
-
-          ${visualHtml}
-          ${diagramHtml}
-
-          <div class="deep-dive-accordion">
-            <button class="deep-dive-toggle" aria-expanded="false" data-target="deep-dive-${f.id}">
-              <span>Technical Breakdown & Case Study</span>
-              <span class="arrow">▾</span>
-            </button>
-            <div class="deep-dive-content" id="deep-dive-${f.id}">
-              ${deepDiveHtml}
-            </div>
-          </div>
-        </div>
-      </article>
-    `;
-  }).join("");
-}
-
-// --- Monochrome System Flowcharts ---
-function renderEegDiagram() {
-  return `
-    <div class="diagram-canvas">
-      <div class="diagram-header-label">Hardware Signal Chain Architecture</div>
-      <div class="system-flow-grid">
-        <div class="flow-node">
-          <span class="node-step">01. CAPTURE</span>
-          <div class="node-title">Scalp Electrodes</div>
-          <div class="node-desc">Single-point Fp1 forehead dry electrode with ear ground/reference clips.</div>
-        </div>
-        <div class="flow-node">
-          <span class="node-step">02. DIGITIZE</span>
-          <div class="node-title">TGAM Biosensing Frontend</div>
-          <div class="node-desc">Hardware pre-amplification, 50Hz notch filter, and 12-bit ADC digitization.</div>
-        </div>
-        <div class="flow-node">
-          <span class="node-step">03. PROCESS</span>
-          <div class="node-title">ESP32 FreeRTOS Layer</div>
-          <div class="node-desc">Core 0: 57,600-baud UART packet parsing. Core 1: Intentional threshold detection.</div>
-        </div>
-        <div class="flow-node">
-          <span class="node-step">04. OUTPUT</span>
-          <div class="node-title">Bone Conduction Audio</div>
-          <div class="node-desc">DAC tone generator driving PAM8403 amplifier and bone-conduction transducers.</div>
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-function renderCellularDiagram() {
-  return `
-    <div class="diagram-canvas">
-      <div class="diagram-header-label">Cellular Fingerprinting Localization Architecture</div>
-      <div class="system-flow-grid">
-        <div class="flow-node">
-          <span class="node-step">01. TRANSMISSION</span>
-          <div class="node-title">Base Station Network</div>
-          <div class="node-desc">Serving and neighboring GSM/LTE base stations broadcasting beacon signals.</div>
-        </div>
-        <div class="flow-node">
-          <span class="node-step">02. ACQUISITION</span>
-          <div class="node-title">AT-Command Logging Rig</div>
-          <div class="node-desc">Dedicated cellular modem interrogating AT+CSQ, AT+CREG, and neighbor registers.</div>
-        </div>
-        <div class="flow-node">
-          <span class="node-step">03. DATABASE</span>
-          <div class="node-title">Offline Radio Map</div>
-          <div class="node-desc">Calibrated spatial grid linking reference coordinates with multi-cell RSSI vectors.</div>
-        </div>
-        <div class="flow-node">
-          <span class="node-step">04. ESTIMATION</span>
-          <div class="node-title">Pattern Matching Engine</div>
-          <div class="node-desc">k-Nearest Neighbors (k-NN) estimating coordinates from online measured vectors.</div>
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-function renderKypDiagram() {
-  return `
-    <div class="diagram-canvas">
-      <div class="diagram-header-label">Protocol-Agnostic Accountability Flow</div>
-      <div class="system-flow-grid">
-        <div class="flow-node">
-          <span class="node-step">01. SYNTHESIS</span>
-          <div class="node-title">AI Research Pipeline</div>
-          <div class="node-desc">Dual-tier synthesis summarizing target protocol contract addresses.</div>
-        </div>
-        <div class="flow-node">
-          <span class="node-step">02. ESCROW</span>
-          <div class="node-title">Solidity Stake Vault</div>
-          <div class="node-desc">User locks stake under programmable 9-day, 3-strike commitment contracts.</div>
-        </div>
-        <div class="flow-node">
-          <span class="node-step">03. VERIFICATION</span>
-          <div class="node-title">Heartbeat Log Scanner</div>
-          <div class="node-desc">Dynamic getLogs indexer scanning raw block logs for address interaction.</div>
-        </div>
-        <div class="flow-node">
-          <span class="node-step">04. SETTLEMENT</span>
-          <div class="node-title">Automated Resolution</div>
-          <div class="node-desc">Autonomous stake release on completion or slash distribution on expiration.</div>
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-// --- Other Systems Portfolio ---
-let allSystemsData = [];
-
-function renderOtherSystems(systems) {
-  allSystemsData = systems;
-  const container = document.getElementById("systems-grid");
-  const filterContainer = document.getElementById("systems-filter-bar");
-  if (!container || !filterContainer) return;
-
-  const categories = ["All", ...new Set(systems.map(s => s.category).filter(Boolean))];
-
-  filterContainer.innerHTML = categories.map((cat, idx) => `
-    <button class="filter-btn ${idx === 0 ? 'active' : ''}" data-category="${cat}">${cat}</button>
-  `).join("");
-
-  filterContainer.querySelectorAll(".filter-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      filterContainer.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      const chosen = btn.getAttribute("data-category");
-      filterSystemsGrid(chosen);
-    });
-  });
-
-  filterSystemsGrid("All");
-}
-
-function filterSystemsGrid(category) {
-  const container = document.getElementById("systems-grid");
-  if (!container) return;
-
-  const filtered = category === "All" 
-    ? allSystemsData 
-    : allSystemsData.filter(s => s.category === category);
-
-  container.innerHTML = filtered.map(s => `
-    <div class="system-card">
-      <div class="system-top">
-        <div class="system-header">
-          <h4 class="system-title">${s.title}</h4>
-          <span class="system-category">${s.category}</span>
-        </div>
-        <p class="system-desc" style="margin-top:8px;">${s.description}</p>
-      </div>
-
-      <div class="system-middle" style="margin: 10px 0;">
-        <span class="system-highlight">${s.highlight}</span>
-      </div>
-
-      <div class="system-footer">
-        <div class="system-stack">
-          ${s.stack.map(tag => `<span class="system-stack-pill">${tag}</span>`).join(" · ")}
-        </div>
-        <div class="system-links">
-          ${s.demo ? `<a href="${s.demo}" class="link-btn" target="_blank" rel="noopener noreferrer">Live ↗</a>` : ""}
-          ${s.github ? `<a href="${s.github}" class="link-btn" target="_blank" rel="noopener noreferrer">Code ↗</a>` : ""}
-        </div>
-      </div>
-    </div>
-  `).join("");
-}
-
-// --- Research Section Rendering ---
-function renderResearch(items) {
-  const container = document.getElementById("research-grid");
-  if (!container) return;
-
-  container.innerHTML = items.map(r => `
-    <article class="research-card">
-      <div class="research-header">
-        <span class="research-category-pill">${r.category}</span>
-        <span class="research-meta">${r.role} · ${r.institution}</span>
-      </div>
-
-      <h3 class="research-title">${r.title}</h3>
-
-      <div class="research-question-box">
-        <strong>Research Question:</strong>
-        ${r.question}
-      </div>
-
-      <div class="research-details-grid">
-        <div class="research-col">
-          <strong>Motivation</strong>
-          <p>${r.motivation}</p>
-        </div>
-        <div class="research-col">
-          <strong>Methodology</strong>
-          <p>${r.methodology}</p>
-        </div>
-        <div class="research-col">
-          <strong>Current Status</strong>
-          <p>${r.status}</p>
-        </div>
-        <div class="research-col">
-          <strong>Limitations & Next Steps</strong>
-          <p>${r.limitations} ${r.nextSteps}</p>
-        </div>
-      </div>
-    </article>
-  `).join("");
-}
-
-// --- Technical Writing Rendering ---
-function renderWriting(articles) {
-  const container = document.getElementById("writing-grid");
-  if (!container) return;
-
-  container.innerHTML = articles.map(a => `
-    <article class="writing-card">
-      <div class="writing-top">
-        <div class="writing-meta">
-          <span>${a.publication}</span>
-          <span>${a.readTime}</span>
-        </div>
-        <h3 class="writing-title" style="margin-top:8px;">
-          <a href="${a.url}" target="_blank" rel="noopener noreferrer">${a.title} ↗</a>
-        </h3>
-        <p class="writing-summary">${a.summary}</p>
-      </div>
-
-      <div class="writing-footer">
-        <a href="${a.url}" class="btn-read" target="_blank" rel="noopener noreferrer">Read on Substack ↗</a>
-      </div>
-    </article>
-  `).join("");
-}
-
-// --- About & Competencies Rendering ---
-function renderAbout(about) {
-  const narrativeContainer = document.getElementById("about-narrative");
-  const competenciesContainer = document.getElementById("competencies-list");
-
-  if (narrativeContainer && about.narrative) {
-    narrativeContainer.innerHTML = about.narrative.map(p => `<p>${p}</p>`).join("");
-  }
-
-  if (competenciesContainer && about.competencies) {
-    competenciesContainer.innerHTML = about.competencies.map(comp => `
-      <div class="competency-group">
-        <span class="competency-title">${comp.category}</span>
-        <div class="competency-tags">
-          ${comp.items.map(item => `<span class="competency-pill">${item}</span>`).join("")}
-        </div>
-      </div>
-    `).join("");
-  }
-}
-
-// --- Contact & Socials Rendering ---
-function renderContact(profile) {
-  const emailElem = document.getElementById("contact-email");
-  const copyBtn = document.getElementById("copy-email-btn");
-
-  if (emailElem && profile.email) {
-    emailElem.textContent = profile.email;
-    emailElem.href = `mailto:${profile.email}`;
-  }
-
-  if (copyBtn && profile.email) {
-    copyBtn.addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(profile.email);
-        const originalText = copyBtn.textContent;
-        copyBtn.textContent = "Copied";
-        setTimeout(() => { copyBtn.textContent = originalText; }, 2000);
-      } catch (e) {
-        window.location.href = `mailto:${profile.email}`;
-      }
-    });
-  }
-}
-
-// --- Global UI Interactions ---
-function initInteractions() {
-  // Deep Dive Accordion Toggles
-  document.querySelectorAll(".deep-dive-toggle").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const targetId = btn.getAttribute("data-target");
-      const targetContent = document.getElementById(targetId);
-      if (!targetContent) return;
-
-      const isExpanded = targetContent.classList.toggle("expanded");
-      btn.classList.toggle("expanded", isExpanded);
-      btn.setAttribute("aria-expanded", isExpanded);
-    });
-  });
-
-  // Handle internal anchor links to flagship deep-dives
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", () => {
-      const hash = anchor.getAttribute("href");
-      if (!hash || hash === "#" || hash === "#top" || hash === "#main-content") return;
-      
-      const targetCard = document.querySelector(hash);
-      if (targetCard && targetCard.classList.contains("flagship-card")) {
-        const deepDiveContent = targetCard.querySelector(".deep-dive-content");
-        const deepDiveBtn = targetCard.querySelector(".deep-dive-toggle");
-        if (deepDiveContent && deepDiveBtn) {
-          deepDiveContent.classList.add("expanded");
-          deepDiveBtn.classList.add("expanded");
-          deepDiveBtn.setAttribute("aria-expanded", "true");
+        // About Content
+        const aboutContent = document.getElementById("about-content");
+        aboutContent.innerHTML = data.profile.bio;
+        if (data.profile.resumeLink) {
+            const resumeBtn = document.createElement("a");
+            resumeBtn.className = "resume";
+            resumeBtn.href = data.profile.resumeLink;
+            resumeBtn.target = "_blank";
+            resumeBtn.rel = "noopener noreferrer";
+            resumeBtn.innerHTML = `<img src="https://img.icons8.com/ios-filled/24/000000/documents.png" alt="CV" class="cv-icon cv-icon-light" width="16" height="16" style="vertical-align:middle; margin-right:6px;"><img src="https://img.icons8.com/ios-filled/24/ffffff/documents.png" alt="CV" class="cv-icon cv-icon-dark" width="16" height="16" style="vertical-align:middle; margin-right:6px;">Open CV`;
+            aboutContent.appendChild(resumeBtn);
         }
-      }
-    });
-  });
-
-  // Check URL hash on page load
-  if (window.location.hash) {
-    const targetCard = document.querySelector(window.location.hash);
-    if (targetCard && targetCard.classList.contains("flagship-card")) {
-      const deepDiveContent = targetCard.querySelector(".deep-dive-content");
-      const deepDiveBtn = targetCard.querySelector(".deep-dive-toggle");
-      if (deepDiveContent && deepDiveBtn) {
-        deepDiveContent.classList.add("expanded");
-        deepDiveBtn.classList.add("expanded");
-        deepDiveBtn.setAttribute("aria-expanded", "true");
-      }
     }
-  }
+
+    // 3. Projects filters
+    const filterContainer = document.getElementById("project-filters");
+    if (data.filters) {
+        let filterHTML = "";
+        data.filters.forEach((filter, index) => {
+            const activeClass = index === 0 ? "active" : "";
+            filterHTML += `<button data-filter="${filter.id}" class="${activeClass}">${filter.label}</button>`;
+        });
+        filterContainer.innerHTML = filterHTML;
+    }
+
+    // 4. Projects
+    const projectsList = document.getElementById("projects-list");
+    if (data.projects) {
+        projectsList.innerHTML = data.projects.map(project => {
+            const gifSequence = Array.isArray(project.gifSequence) && project.gifSequence.length
+                ? ` data-gif-sequence="${project.gifSequence.join(",")}"`
+                : "";
+
+            const primaryLiveLink = (project.links || []).find(link => !/github/i.test(link.text || link.url));
+            const projectPreview = primaryLiveLink?.url && (!project.gifSequence || !project.gifSequence.length)
+                ? `<div class="project-preview" aria-hidden="true"><iframe data-src="${primaryLiveLink.url}" title="${project.title} live preview" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe></div>`
+                : `<img src="${project.image}" alt="${project.title}"${gifSequence}>`;
+
+            return `
+            <div class="project" data-tags="${(project.tags || []).join(",")}">
+                ${projectPreview}
+                <div class="project-info">
+                    <a href="${primaryLiveLink?.url || '#'}" target="_blank" rel="noopener noreferrer"><strong>${project.title}</strong></a>
+                    ${project.badge ? `<span class="project-badge">${project.badge}</span>` : ''}
+                    <p class="mission">${project.description}</p>
+                </div>
+                <div class="project-footer">
+                    <div class="links">
+                        ${project.links.map(link => {
+                let tagClass = 'tag-blue';
+                const text = link.text.toLowerCase();
+                if (text.includes('github')) tagClass = 'tag-purple';
+                else if (text.includes('demo') || text.includes('video')) tagClass = 'tag-green';
+                else if (text.includes('3d') || text.includes('files')) tagClass = 'tag-yellow';
+                else if (text.includes('docs') || text.includes('paper')) tagClass = 'tag-blue';
+                else if (text.includes('testing') || text.includes('results')) tagClass = 'tag-red';
+                return `<a href="${link.url}" class="tag ${tagClass}" target="_blank">${link.text}</a>`;
+            }).join("")}
+                    </div>
+                    ${project.writeup ? `
+                     <button class="writeup-toggle">Engineering Breakdown ▾</button>
+                     <div class="technical-writeup" style="border-left: 2px solid #ccc; padding-left: 1rem;">
+                         ${project.writeup.hardPart ? `
+                         <div class="writeup-section">
+                             <strong>The hardest technical problem:</strong>
+                             <p>${project.writeup.hardPart}</p>
+                         </div>
+                         ` : ''}
+                         ${project.writeup.highlights ? `
+                         <div class="writeup-section">
+                             <strong>Key engineering highlights</strong>
+                             <ul>${project.writeup.highlights.map(h => `<li>${h}</li>`).join('')}</ul>
+                         </div>
+                         ` : ''}
+                         ${project.writeup.stack ? `
+                         <div class="writeup-section">
+                             <strong>Stack:</strong>
+                             <p>${project.writeup.stack}</p>
+                         </div>
+                         ` : ''}
+                     </div>
+                     ` : ''}
+                </div>
+            </div>
+        `;
+        }).join("");
+
+        initProjectGifLoops();
+        initLazyIframes();
+    }
+
+    // 4b. Other Builds (compact strip)
+    if (data.otherBuilds) {
+        const otherSection = document.createElement("div");
+        otherSection.className = "other-builds";
+        otherSection.innerHTML = `
+            <h3 style="margin: 2rem 0 1rem; font-size: 1.1rem; opacity: 0.6;">Other builds</h3>
+            <div class="other-builds-list">
+                ${data.otherBuilds.map(b => {
+                    const linkTags = (b.links || []).map(link => {
+                        let cls = link.text.toLowerCase().includes('github') ? 'tag-purple' : 'tag-green';
+                        return `<a href="${link.url}" class="tag ${cls}" target="_blank">${link.text}</a>`;
+                    }).join("");
+                    return `
+                        <div class="other-build-item">
+                            <strong>${b.title}</strong>
+                            <span class="other-build-desc">— ${b.description}</span>
+                            <span class="links">${linkTags}</span>
+                        </div>
+                    `;
+                }).join("")}
+            </div>
+        `;
+        projectsList.parentNode.appendChild(otherSection);
+    }
+
+    // 5. Docs
+    const docsList = document.getElementById("docs-list");
+    if (data.docs) {
+        // Set dynamic title
+        if (data.sectionLabels && data.sectionLabels.docs) {
+            document.getElementById("docs-header").innerHTML = `${data.sectionLabels.docs}<a style="opacity: 0.4;">↗</a>`;
+        } else {
+            document.getElementById("docs-header").innerHTML = `Docs<a style="opacity: 0.4;">↗</a>`;
+        }
+
+        docsList.innerHTML = data.docs.map(doc => `
+            <li>
+                <a href="${doc.link}" target="_blank" rel="noopener noreferrer">
+                    <strong><span style="color: #FFD700;">{</span> ${doc.title} <span style="color: #FFD700;">}</span></strong>
+                </a>
+                <p style="opacity: 50%;">${doc.description}</p>
+            </li>
+        `).join("");
+    }
+
+    const projectsSection = document.getElementById("projects-section");
+    initProjectFilterPinning(filterContainer, projectsSection);
+
+    // 6. Activity / Contributions
+    if (data.sectionLabels && data.sectionLabels.activity) {
+        const activityHeader = document.getElementById("activity-header");
+        if (activityHeader) {
+            activityHeader.textContent = data.sectionLabels.activity;
+        }
+    }
+
+
+}
+
+function initProjectGifLoops() {
+    const gifImages = document.querySelectorAll(".project img[data-gif-sequence]");
+
+    gifImages.forEach((image) => {
+        const frames = image.dataset.gifSequence
+            .split(",")
+            .map(frame => frame.trim())
+            .filter(Boolean);
+
+        if (frames.length < 2) return;
+
+        let frameIndex = 0;
+        image.src = frames[frameIndex];
+
+        const playNextGif = async () => {
+            const activeGif = frames[frameIndex];
+            const durationMs = await getGifDurationMs(activeGif);
+
+            setTimeout(() => {
+                frameIndex = (frameIndex + 1) % frames.length;
+                image.src = frames[frameIndex];
+                playNextGif();
+            }, durationMs);
+        };
+
+        playNextGif();
+    });
+}
+
+function initLazyIframes() {
+    if (!("IntersectionObserver" in window)) {
+        document.querySelectorAll("iframe[data-src]").forEach(iframe => {
+            iframe.src = iframe.dataset.src;
+        });
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const iframe = entry.target;
+                if (iframe.dataset.src) {
+                    iframe.src = iframe.dataset.src;
+                    iframe.removeAttribute("data-src");
+                }
+                observer.unobserve(iframe);
+            }
+        });
+    }, { rootMargin: "400px" });
+
+    document.querySelectorAll("iframe[data-src]").forEach(iframe => {
+        observer.observe(iframe);
+    });
+}
+
+const gifDurationCache = new Map();
+const GIF_DURATION_FALLBACK_MS = 2000;
+
+async function getGifDurationMs(gifUrl) {
+    if (gifDurationCache.has(gifUrl)) {
+        return gifDurationCache.get(gifUrl);
+    }
+
+    try {
+        const response = await fetch(gifUrl);
+        if (!response.ok) {
+            throw new Error(`Could not load GIF: ${gifUrl}`);
+        }
+
+        const buffer = await response.arrayBuffer();
+        const durationMs = parseGifDurationMs(buffer);
+        gifDurationCache.set(gifUrl, durationMs);
+        return durationMs;
+    } catch (error) {
+        console.warn(`Falling back to default GIF duration for ${gifUrl}`, error);
+        gifDurationCache.set(gifUrl, GIF_DURATION_FALLBACK_MS);
+        return GIF_DURATION_FALLBACK_MS;
+    }
+}
+
+function parseGifDurationMs(arrayBuffer) {
+    const bytes = new Uint8Array(arrayBuffer);
+    let pointer = 0;
+    let totalMs = 0;
+
+    // Skip GIF Header + Logical Screen Descriptor
+    pointer += 13;
+
+    // Global Color Table
+    const packedFields = bytes[10];
+    const hasGlobalColorTable = (packedFields & 0x80) !== 0;
+    if (hasGlobalColorTable) {
+        const gctSize = 3 * (2 ** ((packedFields & 0x07) + 1));
+        pointer += gctSize;
+    }
+
+    while (pointer < bytes.length) {
+        const blockId = bytes[pointer];
+
+        // Graphic Control Extension
+        if (blockId === 0x21 && bytes[pointer + 1] === 0xF9) {
+            const delayCs = bytes[pointer + 4] | (bytes[pointer + 5] << 8);
+            // GIF delay is in centiseconds; clamp tiny values to 10ms-equivalent browser behavior.
+            const frameDelayMs = Math.max(delayCs, 1) * 10;
+            totalMs += frameDelayMs;
+            pointer += 8; // 21 F9 04 [packed] [delay lo] [delay hi] [trans index] 00
+            continue;
+        }
+
+        // Extension block (other than GCE)
+        if (blockId === 0x21) {
+            pointer += 2; // Skip introducer + label
+            while (pointer < bytes.length) {
+                const size = bytes[pointer];
+                pointer += 1;
+                if (size === 0) break;
+                pointer += size;
+            }
+            continue;
+        }
+
+        // Image Descriptor
+        if (blockId === 0x2C) {
+            pointer += 10; // Descriptor block
+            const localPacked = bytes[pointer - 1];
+            const hasLocalColorTable = (localPacked & 0x80) !== 0;
+            if (hasLocalColorTable) {
+                const lctSize = 3 * (2 ** ((localPacked & 0x07) + 1));
+                pointer += lctSize;
+            }
+
+            pointer += 1; // LZW minimum code size
+            while (pointer < bytes.length) {
+                const size = bytes[pointer];
+                pointer += 1;
+                if (size === 0) break;
+                pointer += size;
+            }
+            continue;
+        }
+
+        // GIF Trailer
+        if (blockId === 0x3B) {
+            break;
+        }
+
+        // Unknown block; stop parsing to avoid infinite loops
+        break;
+    }
+
+    return totalMs > 0 ? totalMs : GIF_DURATION_FALLBACK_MS;
+}
+
+function initProjectFilterPinning(filterContainer, projectsSection) {
+    if (!filterContainer || !projectsSection) return;
+
+    const filtersSpacer = document.createElement("div");
+    filtersSpacer.className = "filters-spacer";
+    filterContainer.parentNode.insertBefore(filtersSpacer, filterContainer);
+    filtersSpacer.appendChild(filterContainer);
+
+    const filtersShell = document.createElement("div");
+    filtersShell.id = "project-filters-shell";
+
+    let isPinned = false;
+    let ticking = false;
+
+    const syncPinnedGeometry = () => {
+        if (!isPinned) return;
+        const rect = filtersSpacer.getBoundingClientRect();
+        filtersShell.style.paddingLeft = `${rect.left}px`;
+        filtersShell.style.paddingRight = `${window.innerWidth - rect.right}px`;
+    };
+
+    const setPinned = (pinned) => {
+        if (pinned === isPinned) return;
+        isPinned = pinned;
+
+        if (pinned) {
+            filtersSpacer.style.height = `${filterContainer.offsetHeight}px`;
+            document.body.appendChild(filtersShell);
+            filtersShell.appendChild(filterContainer);
+            syncPinnedGeometry();
+        } else {
+            filtersSpacer.style.height = "";
+            filtersSpacer.appendChild(filterContainer);
+            filtersShell.remove();
+            filtersShell.style.paddingLeft = "";
+            filtersShell.style.paddingRight = "";
+        }
+    };
+
+    const updatePinnedState = () => {
+        ticking = false;
+        const sectionRect = projectsSection.getBoundingClientRect();
+        const spacerRect = filtersSpacer.getBoundingClientRect();
+        const topOffset = -20;
+        const shouldPin = sectionRect.top <= topOffset && sectionRect.bottom > spacerRect.height + topOffset;
+
+        setPinned(shouldPin);
+        syncPinnedGeometry();
+    };
+
+    const requestUpdate = () => {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(updatePinnedState);
+    };
+
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+    requestUpdate();
+}
+
+function initInteractions() {
+    // --- Scroll Reveal ---
+    const sections = document.querySelectorAll("section");
+    const revealSections = () => {
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            if (rect.top <= windowHeight - 100 && rect.bottom >= 100) {
+                section.classList.add("visible");
+            }
+        });
+    };
+    window.addEventListener("scroll", revealSections);
+    revealSections();
+
+    // --- Project Breakdown Toggles ---
+    document.addEventListener("click", (e) => {
+        if (e.target.classList.contains("writeup-toggle")) {
+            const toggle = e.target;
+            const content = toggle.nextElementSibling;
+            const isExpanded = content.classList.toggle("expanded");
+            toggle.textContent = isExpanded ? "Project Breakdown ▴" : "Project Breakdown ▾";
+        }
+    });
+
+    // --- Filters ---
+    const filterButtons = document.querySelectorAll('.filters button');
+    const projectCards = document.querySelectorAll('.project');
+
+    const setProjectVisibility = (activeFilter) => {
+        const isAllFilter = activeFilter === "all";
+        let visibleCount = 0;
+
+        projectCards.forEach(project => {
+            const tags = (project.getAttribute('data-tags') || "")
+                .split(",")
+                .map(tag => tag.trim())
+                .filter(Boolean);
+            const matchesFilter = isAllFilter || tags.includes(activeFilter);
+            const shouldShow = matchesFilter;
+
+            project.classList.toggle('is-visible', shouldShow);
+            project.classList.toggle('is-hidden', !shouldShow);
+            project.style.display = shouldShow ? "block" : "none";
+
+            if (shouldShow) visibleCount += 1;
+        });
+
+        if (visibleCount === 0) {
+            projectCards.forEach(project => {
+                project.classList.add('is-visible');
+                project.classList.remove('is-hidden');
+                project.style.display = "block";
+            });
+        }
+    };
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const activeFilter = btn.getAttribute('data-filter') || "all";
+
+            projectCards.forEach(project => {
+                project.classList.add('is-transitioning');
+            });
+
+            setTimeout(() => {
+                setProjectVisibility(activeFilter);
+                projectCards.forEach(project => project.classList.remove('is-transitioning'));
+            }, 160);
+        });
+    });
+
+    const defaultFilter = document.querySelector('.filters button[data-filter="all"]') || document.querySelector('.filters button');
+    if (defaultFilter) defaultFilter.click();
+
+    // --- Contact Section Reveal ---
+    const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('vis');
+                revealObs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal2').forEach(el => revealObs.observe(el));
+
+
+    // --- Footer Scroll ---
+    const footer = document.getElementById("site-footer");
+    if (footer) {
+        window.addEventListener("scroll", () => {
+            const rect = footer.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            if (rect.top < windowHeight && rect.bottom > 0) {
+                footer.classList.add("visible");
+            } else {
+                footer.classList.remove("visible");
+            }
+        });
+    }
 }

@@ -1,278 +1,185 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tobi Awolaju — Engineer · Builder · Researcher</title>
-  
-  <!-- SEO & Open Graph -->
-  <meta name="description" content="Portfolio of Tobi Awolaju — Final-year Electrical Engineering student building across software engineering, real-time networking, blockchain infrastructure, AI agents, embedded systems, and telecommunications.">
-  <meta name="author" content="Tobi Awolaju">
-  <meta property="og:title" content="Tobi Awolaju — Engineer · Builder · Researcher">
-  <meta property="og:description" content="I build across software, blockchain, AI, and physical systems. Open to junior engineering roles, remote opportunities, and applied R&D.">
-  <meta property="og:image" content="pfp.jpg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tobiawolaju.vercel.app">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:creator" content="@tobiawolaju">
-  
-  <link rel="icon" type="image/jpeg" href="pfp.jpg">
-  
-  <!-- Typography: Inter & JetBrains Mono -->
+  <title>Tobi Awolaju | Engineer · Builder · Researcher</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Fira+Mono:wght@400;500;700&family=Press+Start+2P&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 
 <body>
-  <!-- Accessible Skip Link -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div id="splash-screen">
+    <div class="splash-content">
+        <h1 class="splash-text" aria-label="Godiya Gareka">
+             <span class="splash-line"><span style="--i:1">G</span><span style="--i:2">o</span><span
+                 style="--i:3">d</span><span style="--i:4">i</span><span style="--i:5">y</span><span
+                 style="--i:6">a</span></span>
+             <span class="splash-line"><span style="--i:7">G</span><span style="--i:8">a</span><span
+                 style="--i:9">r</span><span style="--i:10">e</span><span style="--i:11">k</span><span
+                 style="--i:12">a</span></span>
+           </h1>
 
-  <!-- Header & Navigation -->
-  <header class="site-header">
-    <div class="container">
-      <div class="masthead-bar">
-        <div class="system-status">
-          <span class="status-dot" aria-hidden="true"></span>
-          <span>AVAILABLE FOR JUNIOR ROLES & APPLIED R&D</span>
-        </div>
-        <div class="masthead-geo">
-          <span>ADELEKE UNIVERSITY · NIGERIA</span>
-        </div>
-      </div>
-
-      <div class="nav-bar">
-        <a href="#top" class="brand-id">
-          <img src="pfp.jpg" alt="Tobi Awolaju" class="brand-avatar">
-          <div class="brand-text">
-            <span class="brand-name">Tobi Awolaju</span>
-            <span class="brand-role">Engineer · Builder · Researcher</span>
-          </div>
-        </a>
-
-        <nav class="site-nav" id="site-nav" aria-label="Main Navigation">
-          <ul class="nav-links">
-            <li><a href="#flagships" class="nav-link">Flagships</a></li>
-            <li><a href="#systems" class="nav-link">Systems</a></li>
-            <li><a href="#research" class="nav-link">Research</a></li>
-            <li><a href="#writing" class="nav-link">Writing</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-          </ul>
-
-          <div class="nav-actions">
-            <a href="https://docs.google.com/document/d/1W3aYjK9DLJZg5m4uvQPeHwRHPUToai0Bfwe2Bbfq9E4/edit?usp=drivesdk" 
-               target="_blank" rel="noopener noreferrer" class="btn-nav-cv" title="Open Google Docs CV">
-              Open CV ↗
-            </a>
-            <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle visual theme" title="Toggle theme">
-              <span id="theme-icon">☼</span>
-            </button>
-          </div>
-        </nav>
-
-        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
     </div>
-  </header>
+  </div>
 
-  <!-- Main Content -->
-  <main id="main-content">
-    
-    <!-- Hero Section -->
-    <section class="hero-section" id="top">
-      <div class="container">
-        <div class="hero-main">
-          <h1 class="hero-title">Tobi Awolaju</h1>
-          <div class="hero-identity">
-            Engineer <span class="dot">·</span> Builder <span class="dot">·</span> Researcher
-          </div>
 
-          <p class="hero-intro">
-            I build across software, blockchain, AI, and physical systems. My projects range from real-time multiplayer infrastructure and autonomous agents to experimental electronics and telecommunications research. I enjoy understanding difficult problems, building practical systems, and documenting what I learn.
-          </p>
+  <section id="bio-section" style="display: block; text-align: center; padding-top: 20px">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <p style="font-size: x-large; margin: 0; font-weight: bold;">
+      <div style="position: relative; display: inline-block;">
+        </p>
+        <h3 id="profile-name"></h3>
+        <p id="profile-title" style="font-size: medium; color: gray; margin: 5px 0;">
+        </p>
 
-          <div class="hero-support-line">
-            Final-year Electrical Engineering student at Adeleke University · Nigeria
-          </div>
-
-          <div class="hero-availability-box">
-            Open to junior engineering roles, remote opportunities, internships, and applied R&D.
-          </div>
-
-          <div class="hero-actions">
-            <a href="#flagships" class="btn btn-primary">Explore Projects ↓</a>
-            <a href="https://github.com/tobiawolaju" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub ↗</a>
-            <a href="https://linkedin.com/in/tobiawolaju" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn ↗</a>
-            <a href="https://docs.google.com/document/d/1W3aYjK9DLJZg5m4uvQPeHwRHPUToai0Bfwe2Bbfq9E4/edit?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Open CV ↗</a>
-            <a href="#contact" class="btn btn-secondary">Contact ↓</a>
-          </div>
-
-          <div class="disciplines-strip">
-            <span class="disciplines-label">Technical Domains</span>
-            <div class="disciplines-list">
-              <span class="discipline-badge">Real-Time Networking & WebSockets</span>
-              <span class="discipline-badge">WebAssembly & Browser Delivery</span>
-              <span class="discipline-badge">Embedded Systems (ESP32 / FreeRTOS)</span>
-              <span class="discipline-badge">Physiological Biosignals (TGAM EEG)</span>
-              <span class="discipline-badge">Telecommunications & RF Fingerprinting</span>
-              <span class="discipline-badge">Blockchain Infrastructure & EVM State</span>
-              <span class="discipline-badge">Autonomous AI Agents</span>
-            </div>
-          </div>
-        </div>
       </div>
-    </section>
 
-    <!-- SECTION 1: Flagship Engineering Work -->
-    <section class="section-wrapper" id="flagships">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-pretitle">Flagship Work</div>
-          <h2 class="section-title">Selected Engineering Projects</h2>
-          <p class="section-desc">
-            Four flagship systems demonstrating technical depth across real-time multiplayer systems, embedded physiological hardware, telecommunications research, and verifiable protocol accountability.
-          </p>
-        </div>
+    </div>
+  </section>
 
-        <div class="flagships-container" id="flagships-list">
-          <!-- Dynamically populated by script.js -->
-        </div>
-      </div>
-    </section>
 
-    <!-- SECTION 2: Other Systems I've Built -->
-    <section class="section-wrapper" id="systems">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-pretitle">Portfolio</div>
-          <h2 class="section-title">Other Systems I've Built</h2>
-          <p class="section-desc">
-            Autonomous agent workflows, high-throughput blockchain indexers, algorithmic state engines, encrypted P2P messaging protocols, and rapid game jam builds.
-          </p>
-        </div>
+  <section id="about-me" class="visible">
+    <h2 class="toggle">About</h2>
+    <div id="about-content">
+      <!-- Content injected by JS -->
+    </div>
+    <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
+  </section>
 
-        <div class="filter-bar" id="systems-filter-bar">
-          <!-- Filters generated dynamically -->
-        </div>
-
-        <div class="systems-grid" id="systems-grid">
-          <!-- Systems rendered dynamically -->
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 3: Research Notebook -->
-    <section class="section-wrapper" id="research">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-pretitle">Laboratory Notebook</div>
-          <h2 class="section-title">Research & Independent Experiments</h2>
-          <p class="section-desc">
-            Structured investigations into cellular signal bounds, indoor positioning, embedded artifact filtering, and high-throughput consensus reorganization dynamics.
-          </p>
-        </div>
-
-        <div class="research-grid" id="research-grid">
-          <!-- Research entries rendered dynamically -->
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 4: Technical Writing -->
-    <section class="section-wrapper" id="writing">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-pretitle">Written Thought</div>
-          <h2 class="section-title">Technical Writing & Essays</h2>
-          <p class="section-desc">
-            Essays on engineering abstraction boundaries, interface communication, and probabilistic frameworks for iterative shipping.
-          </p>
-        </div>
-
-        <div class="writing-grid" id="writing-grid">
-          <!-- Writing rendered dynamically -->
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 5: About -->
-    <section class="section-wrapper" id="about">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-pretitle">Background</div>
-          <h2 class="section-title">About Me</h2>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-narrative" id="about-narrative">
-            <!-- Populated dynamically -->
-          </div>
-
-          <div class="competencies-card">
-            <h3>Technical Competencies</h3>
-            <div id="competencies-list">
-              <!-- Competency groups rendered dynamically -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 6: Contact -->
-    <section class="section-wrapper" id="contact" style="border-bottom: none;">
-      <div class="container">
-        <div class="contact-card">
-          <div class="contact-intro">
-            <h3>Let's build something difficult.</h3>
-            <p>
-              I'm open to junior engineering roles, remote opportunities, internships, and applied R&D collaborations.
-            </p>
-          </div>
-
-          <div class="contact-actions">
-            <div class="email-box">
-              <a href="mailto:tobiawolaju21@gmail.com" class="email-address" id="contact-email">tobiawolaju21@gmail.com</a>
-              <button class="btn-copy-email" id="copy-email-btn" title="Copy email address">Copy</button>
-            </div>
-
-            <div class="contact-social-row">
-              <a href="https://github.com/tobiawolaju" target="_blank" rel="noopener noreferrer" class="contact-social-btn">GitHub ↗</a>
-              <a href="https://linkedin.com/in/tobiawolaju" target="_blank" rel="noopener noreferrer" class="contact-social-btn">LinkedIn ↗</a>
-              <a href="https://docs.google.com/document/d/1W3aYjK9DLJZg5m4uvQPeHwRHPUToai0Bfwe2Bbfq9E4/edit?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="contact-social-btn">CV Document ↗</a>
-              <a href="https://x.com/tobiawolaju" target="_blank" rel="noopener noreferrer" class="contact-social-btn">Twitter / X ↗</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Site Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <div>
-          <span>Tobi Awolaju © 2026</span>
-          <span style="opacity: 0.4; margin: 0 8px;">|</span>
-          <span>Adeleke University · Nigeria</span>
-        </div>
-        <div class="footer-links">
-          <a href="#top">Back to top ↑</a>
-          <a href="https://github.com/tobiawolaju/tobiawolaju" target="_blank" rel="noopener noreferrer">Source Code ↗</a>
+  <section id="skills-section" class="visible">
+    <h2 class="toggle">Core Stack<a style="opacity: 0.4;">↗</a></h2>
+    <div id="skills-content" style="padding: 20px 0;">
+      <div class="skill-group">
+        <div class="skill-icons" style="gap: 40px;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg"
+            class="skill-icon rust" title="Rust" style="width: 32px; height: 32px;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg"
+            class="skill-icon" title="TypeScript" style="width: 32px; height: 32px;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-plain.svg"
+            class="skill-icon solidity" title="Solidity" style="width: 32px; height: 32px;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+            class="skill-icon" title="Python" style="width: 32px; height: 32px;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+            class="skill-icon" title="C++ / Embedded" style="width: 32px; height: 32px;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/godot/godot-original.svg"
+            class="skill-icon" title="Godot" style="width: 32px; height: 32px;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="skill-icon"
+            title="React" style="width: 32px; height: 32px;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg" class="skill-icon"
+            title="Node.js" style="width: 32px; height: 32px;">
         </div>
       </div>
     </div>
+    <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
+  </section>
+
+
+  <section id="projects-section" class="visible">
+    <h2>Projects</h2>
+    <div>
+
+
+      <div class="filters" id="project-filters">
+        <!-- Filters injected by JS -->
+      </div>
+
+      <div class="pjet" id="projects-list">
+        <!-- Projects injected by JS -->
+      </div>
+
+    </div>
+
+    <hr style="border: none; border-top: 1px solid #00000050; margin: 0px 0;">
+  </section>
+
+  <section id="docs-section" class="visible">
+
+    <h2 class="toggle" id="docs-header"></h2>
+    <div>
+      <ul id="docs-list">
+        <!-- Docs injected by JS -->
+      </ul>
+    </div>
+    <hr style="border: none; border-top: 1px solid #00000050; margin: 0px;">
+  </section>
+
+
+
+
+
+  <section id="activity-section">
+    <h2 id="activity-header"> GitHub </h2>
+    <div style="display: flex; justify-content: center; margin-top: 10px;">
+      <a href="https://github.com/tobiawolaju" target="_blank" rel="noopener noreferrer">
+        <img style="max-width: 100%;" src="https://ghchart.rshah.org/tobiawolaju" alt="GitHub Contributions Chart">
+      </a>
+    </div>
+  </section>
+
+
+  <section id="currentlybuilding-section">
+    <h2 id="activity-header"> Currently Building </h2>
+    <p style="font-size: medium; color: gray; margin: 5px 0;">
+        World of Nads — Real-Time Multiplayer Arena on Monad (Godot WASM + 20Hz Rust WebSockets)
+    </p>
+
+    <p style="font-size: medium; color: gray; margin: 5px 0;">
+        EEG Communication Headset — Assistive Interface on ESP32 & TGAM Biosensing
+    </p>
+
+    <p style="font-size: medium; color: gray; margin: 5px 0;">
+        Cellular Fingerprint Positioning — Final-Year Telecommunications Capstone Research at Adeleke University
+    </p>
+
+    <p style="font-size: medium; color: gray; margin: 5px 0;">
+        KYP — Protocol-Agnostic On-Chain Accountability Platform
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact-section" style="padding: 60px 20px 40px; max-width: 800px; margin: 0 auto;">
+    <div class="reveal2" style="margin-bottom: 20px;">
+      <h2 style="font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; line-height: 0.95; margin-bottom: 16px;">
+        Beyond<br>Work.</h2>
+
+       <p style="font-size: 15px; color: gray; line-height: 1.9; max-width: 480px;">
+I build alone, ship fast, and iterate across software and physical systems. Open to junior engineering roles, remote opportunities, internships, and applied R&D collaborations.
+       </p>
+
+    </div>
+  </section>
+
+  <div style="height: 200px;"></div>
+
+
+
+  <footer
+    style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 999; background-color: rgba(83, 83, 83, 0.5); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); height: 60px; display: flex; align-items: center; justify-content: center; font-size: large; color: white; gap: 25px; flex-wrap: wrap;">
+    <a href="https://github.com/tobiawolaju" target="_blank" rel="noopener noreferrer"
+      style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/github.png" alt="GitHub" width="20" height="20" />
+    </a>
+    <a href="https://www.linkedin.com/in/tobiawolaju" target="_blank" rel="noopener noreferrer"
+      style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn" width="20" height="20" />
+    </a>
+    <a href="https://x.com/tobiawolaju?s=09" target="_blank" rel="noopener noreferrer"
+      style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/twitterx.png" alt="X" width="20" height="20" />
+    </a>
+    <a href="mailto:tobiawolaju21@gmail.com"
+      style="color: white; text-decoration: none; display: flex; align-items: center; gap: 8px;">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/gmail.png" alt="Gmail" width="20" height="20" />
+    </a>
   </footer>
 
 </body>
+
 </html>
