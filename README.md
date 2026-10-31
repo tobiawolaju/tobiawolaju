@@ -1,64 +1,108 @@
-# Tobi Awolaju — Engineering & Research Portfolio
+Tobi Awolaju
 
-> **Multidisciplinary Engineer · Builder · Researcher**  
-> Final-Year Electrical Engineering Student, Adeleke University, Nigeria.
+Engineer · Builder · Researcher
 
-[![Live Website](https://img.shields.io/badge/Live-tobiawolaju.vercel.app-00e5ff?style=flat-square)](https://tobiawolaju.vercel.app)
-[![GitHub](https://img.shields.io/badge/GitHub-tobiawolaju-181717?style=flat-square&logo=github)](https://github.com/tobiawolaju)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-tobiawolaju-0A66C2?style=flat-square&logo=linkedin)](https://linkedin.com/in/tobiawolaju)
-[![Substack](https://img.shields.io/badge/Substack-Writing-FF6719?style=flat-square&logo=substack)](https://tobiawolaju21.substack.com)
+Final-year Electrical Engineering student at Adeleke University, Nigeria.
 
----
+I build across software, real-time systems, blockchain, AI, and physical computing. My work ranges from browser-based multiplayer infrastructure and blockchain systems to embedded electronics and telecommunications research.
 
-## Overview
+I'm interested in difficult engineering problems—especially where software meets physical systems—and I learn by building, testing, and iterating.
 
-This repository hosts the personal portfolio, engineering case studies, laboratory experiments, and technical essays of **Tobi Awolaju**.
+Open to junior engineering roles, internships, remote opportunities, and applied R&D collaborations.
 
-The site is designed with a **minimal technical laboratory meets editorial engineering journal** aesthetic, presenting technical depth, system architectures, physical hardware experiments, and peer-inspectable code across:
-- **Real-Time Multiplayer Infrastructure:** Authoritative 20Hz WebSockets in Rust, Godot WebAssembly, and EVM prize settlement.
-- **Embedded Electronics & Biosignals:** ESP32 FreeRTOS firmware, NeuroSky TGAM dry-electrode EEG frontends, and bone-conduction transducers.
-- **Telecommunications Research:** Final-year capstone research in cellular RF signal fingerprinting (GSM/LTE RSSI, Cell ID, LAC, and k-NN estimation) for GPS-denied environments.
-- **Blockchain Infrastructure:** Protocol-agnostic event indexing, autonomous zero-cost heartbeat workers, and consensus reorg recovery.
-- **Autonomous AI Agents:** Computer vision and OS-level native automation pipelines.
+"Portfolio" (https://tobiawolaju.vercel.app) · "LinkedIn" (https://linkedin.com/in/tobiawolaju) · "Writing" (https://tobiawolaju21.substack.com) · "CV" (https://docs.google.com/document/d/1W3aYjK9DLJZg5m4uvQPeHwRHPUToai0Bfwe2Bbfq9E4/edit?usp=drivesdk)
 
 ---
 
-## Flagship Systems
+What I'm Building
 
-1. **[World of Nads](https://worldofnads.xyz)** — Browser 3D multiplayer arena with Godot WASM client delivery and authoritative 20Hz Rust WebSocket synchronization server on Monad.
-2. **EEG Communication Headset** — Wearable assistive interface for non-speaking individuals integrating TGAM EEG, dual-core ESP32 FreeRTOS firmware, and bone-conduction audio transducers.
-3. **Cellular Fingerprint Positioning System** — Final-year EE capstone investigating indoor/GPS-denied localization bounds using terrestrial GSM/LTE radio fingerprints and weighted k-NN.
-4. **[Know Your Protocol (KYP)](https://knowyourprotocol.vercel.app)** — Verifiable protocol accountability platform featuring dynamic on-chain `getLogs` inspection and zero-cost heartbeat worker daemons.
+🎮 "World of Nads" (https://worldofnads.xyz)
 
----
+A browser-based 3D multiplayer arena built with Godot, WebAssembly, Rust, and WebSockets.
 
-## Architecture & Technology Stack
+I'm building the game client, multiplayer systems, 3D assets, and backend infrastructure, while exploring blockchain-based gameplay and prize mechanisms on Monad.
 
-- **Client:** Semantic HTML5, CSS Custom Properties (Dark/Light lab themes, accessible contrast, reduced-motion compliance), Vanilla JavaScript (ES2022).
-- **Data Architecture:** Single source of truth in `engineering.json` structuring flagships, technical audits, hardware BOMs, research logs, and essays.
-- **Design System:** Inter + JetBrains Mono typography pairing, custom SVG system flowcharts, interactive GIF sequencer, and print stylesheet.
-- **Zero Heavyweight Dependencies:** No Node build step required; native browser execution with instant loading.
+→ "Play" (https://worldofnads.xyz) · "Source" (https://github.com/tobiawolaju/WorldOfNads)
 
----
+🧠 EEG Communication Headset
 
-## Local Development & Preview
+An experimental embedded-systems project exploring a wearable communication-support interface.
 
-Run a static web server from the project directory:
+The system combines EEG sensing hardware, an ESP32 microcontroller, embedded firmware, and audio output hardware. The project is focused on exploring practical signal acquisition and intentional input—not arbitrary thought decoding.
 
-```bash
-# Using Python
-python -m http.server 8000
+📡 Cellular Fingerprint Positioning
 
-# Or using Node.js
-npx serve .
-```
+My final-year Electrical Engineering project investigating position estimation using cellular signal fingerprints.
 
-Open `http://localhost:8000` in any modern web browser.
+I'm exploring how measurements such as cellular signal strength and cell information can be used for localization in environments where satellite positioning is unreliable or unavailable.
+
+⛓️ "Know Your Protocol" (https://knowyourprotocol.vercel.app)
+
+An on-chain accountability platform exploring how blockchain activity can be used to verify commitments and follow-through.
+
+The project combines protocol research, wallet interactions, smart contracts, and backend infrastructure.
+
+→ "Live App" (https://knowyourprotocol.vercel.app) · "Source" (https://github.com/tobiawolaju/kyp)
 
 ---
 
-## Contact & Opportunities
+Other Things I've Built
 
-- **Email:** [tobiawolaju21@gmail.com](mailto:tobiawolaju21@gmail.com)
-- **CV / Resume:** [View Google Docs CV](https://docs.google.com/document/d/1W3aYjK9DLJZg5m4uvQPeHwRHPUToai0Bfwe2Bbfq9E4/edit?usp=drivesdk)
-- **Location:** Nigeria (Open to Remote Worldwide & Relocation)
+- "MoyakiTraceEngine" (https://github.com/tobiawolaju/MoyakiTraceEngine) — Blockchain indexing and chain reorganization handling.
+- "Noogler" (https://github.com/tobiawolaju/Noogler) — An AI agent exploring computer interaction through screen capture and native input control.
+- "HARE" (https://github.com/tobiawolaju/H-A-R-E) — Autonomous agent workflows with self-evaluation and retry mechanisms.
+- "Rug Pool" (https://github.com/tobiawolaju/rug-pool) — Smart-contract experiment exploring locked liquidity and verifiable randomness.
+- "DominusQuant" (https://github.com/tobiawolaju/DominusQuant) — Experimental systems for monitoring on-chain and market data.
+- "Superyap" (https://github.com/tobiawolaju/Superyap) — Encrypted peer-to-peer communication with blockchain-related payment experiments.
+- "Terra Engine" (https://github.com/tobiawolaju/Terra-engine) — A Godot project built during a 48-hour game jam.
+- "John Wick: Exitus" (https://github.com/tobiawolaju/johnwick-lex-Exitus) — An action game prototype built during a game jam.
+
+---
+
+Areas I Work In
+
+Systems & Software
+Rust · TypeScript · Python · C++ · Node.js
+
+Blockchain & Distributed Systems
+Solidity · EVM · Monad · Smart Contracts · Indexing
+
+Real-Time & Interactive Systems
+WebSockets · Multiplayer Networking · Godot · WebAssembly
+
+AI & Automation
+AI Agents · Computer Interaction · Automation Pipelines
+
+Embedded & Physical Systems
+ESP32 · Embedded C/C++ · Sensors · Electronics
+
+Telecommunications
+RF Systems · Cellular Networks · Signal Processing · Localization
+
+---
+
+Writing
+
+- "Communicating in Functions" (https://tobiawolaju21.substack.com/p/communicating-in-functions?r=2hkadt) — On engineering as communication and why a function is an idea precise enough to survive without its author.
+- "Success is 90% Luck and Informed Guessing" (https://tobiawolaju21.substack.com/p/success-is-90-luck-and-informed-guessing?r=2hkadt) — A framework for thinking about probability, luck, and informed decision-making.
+
+---
+
+Currently Exploring
+
+- Real-time multiplayer systems and browser game delivery
+- Blockchain infrastructure and on-chain coordination
+- Embedded systems and assistive technology
+- Cellular positioning and telecommunications research
+- AI agents and computer automation
+
+---
+
+Contact
+
+📧 Email: "tobiawolaju21@gmail.com" (mailto:tobiawolaju21@gmail.com)
+💼 LinkedIn: "linkedin.com/in/tobiawolaju" (https://linkedin.com/in/tobiawolaju)
+🌐 Portfolio: "tobiawolaju.vercel.app" (https://tobiawolaju.vercel.app)
+📄 CV: "View my CV" (https://docs.google.com/document/d/1W3aYjK9DLJZg5m4uvQPeHwRHPUToai0Bfwe2Bbfq9E4/edit?usp=drivesdk)
+
+Nigeria · Open to remote opportunities worldwide.
