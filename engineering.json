@@ -5,11 +5,11 @@
     "image": "pfp.jpg",
     "name": "Tobi Awolaju",
     "title": "Engineer · Builder · Researcher",
-    "bio": "<p style='font-size: 1.15rem; line-height: 1.7; padding-bottom: 1rem;'>I build across software, blockchain, AI, and physical systems. From real-time multiplayer infrastructure and autonomous agents to experimental electronics and telecommunications research, I turn difficult problems into working systems.</p><p style='font-size: 0.95rem; color: gray; margin-bottom: 1.2rem;'>Final-year Electrical Engineering student at Adeleke University, Nigeria · Independent builder<br><span style='display:inline-block; margin-top: 4px; color: #888;'>Open to junior engineering roles, remote opportunities, internships, and applied R&D.</span></p>",
+    "bio": "<p>I build software and systems across real-time infrastructure, blockchain, embedded electronics, and applied research. I take ideas from technical problem to working product.</p><p>Final-year Electrical Engineering student at Adeleke University, Nigeria · Independent builder<br><span>Open to software, systems, blockchain, embedded engineering, and applied R&D opportunities worldwide.</span></p>",
     "resumeLink": "https://docs.google.com/document/d/1W3aYjK9DLJZg5m4uvQPeHwRHPUToai0Bfwe2Bbfq9E4/edit?usp=drivesdk"
   },
   "sectionLabels": {
-    "docs": "Technical Writing",
+    "docs": "Writing",
     "activity": "GitHub Activity"
   },
   "filters": [
@@ -19,7 +19,7 @@
     },
     {
       "id": "flagship",
-      "label": "Flagship"
+      "label": "Featured"
     },
     {
       "id": "research",
@@ -27,37 +27,39 @@
     },
     {
       "id": "systems",
-      "label": "Web3 & Systems"
+      "label": "Software & Systems"
     }
   ],
   "projects": [
     {
-      "tags": ["flagship", "systems"],
+      "tags": [
+        "flagship",
+        "systems"
+      ],
       "image": "worldofnads1.gif",
       "title": "World of Nads ↗",
-      "badge": "Real-Time Multiplayer",
-      "description": "Browser-based 3D multiplayer arena game. Godot client compiled to WebAssembly for zero-install delivery, 20Hz authoritative Rust WebSocket multiplayer server synchronizing players in real time, and Monad EVM smart contracts for prize distribution.",
+      "badge": "Cross-platform multiplayer game",
+      "description": "A web-first 3D multiplayer game with browser and Android builds. I build the Godot client, Rust multiplayer server, and Monad-based game systems.",
       "links": [
         {
-          "text": "[Play World of Nads]",
+          "text": "Play",
           "url": "https://worldofnads.xyz"
         },
         {
-          "text": "[GitHub]",
+          "text": "GitHub",
           "url": "https://github.com/tobiawolaju/WorldOfNads"
         }
       ],
       "writeup": {
-        "hardPart": "Keeping player state synchronized over WebSockets in real time while the browser also handles a wallet layer and on-chain state without frame collapses. I profiled and resolved a critical bottleneck where per-frame function calls crossing the Godot-WASM to JavaScript DOM bridge tanked browser frame rates from 60 FPS to under 12 FPS on lower-end devices; rebuilt the sync path around batched 20Hz delta frames and contiguous typed arrays.",
+        "hardPart": "The main challenge is keeping multiplayer state responsive across browsers and lower-end devices. I profiled the Godot-to-JavaScript boundary, identified expensive per-frame bridge calls, and reworked synchronization around batched network updates.",
         "highlights": [
-          "Real-time 20Hz authoritative Rust WebSocket state synchronization server",
-          "Zero-install 3D arena client delivered via Godot WebAssembly (WASM) & WebGL",
-          "Optimistic client-side movement interpolation with server reconciliation",
-          "Decoupled render loops from network dispatch to eliminate V8 GC stalls",
-          "Monad EVM smart contracts for escrow match entry and on-chain prize payouts",
-          "Custom compact framing reducing WebSocket wire serialization payload"
+          "Godot 3D client compiled to WebAssembly for browser play",
+          "Rust WebSocket server for authoritative multiplayer state",
+          "Client-side movement interpolation and server reconciliation",
+          "Batched state updates to reduce browser bridge overhead",
+          "Monad smart-contract integration for game-related transactions"
         ],
-        "stack": "Godot (WASM), Rust (Tokio WebSocket Server), TypeScript, Solidity (Monad EVM), PostgreSQL, Privy Auth."
+        "stack": "Godot, WebAssembly, Rust, Tokio, WebSockets, TypeScript, Solidity, Monad, PostgreSQL, Privy."
       },
       "gifSequence": [
         "worldofnads1.gif",
@@ -69,206 +71,202 @@
       ]
     },
     {
-      "tags": ["flagship", "research"],
+      "tags": [
+        "flagship",
+        "research"
+      ],
       "image": "grey.jpg",
       "title": "EEG Communication Headset ↗",
-      "badge": "Embedded Systems Experiment",
-      "description": "Experimental hardware and firmware investigation exploring an affordable, wearable communication-support interface for non-speaking users. Integrates scalp dry electrodes, a NeuroSky TGAM biosensing frontend, an ESP32 microcontroller, audio amplification, and bone-conduction transducers.",
-      "links": [
-        {
-          "text": "[Hardware Specs & Firmware]",
-          "url": "https://github.com/tobiawolaju"
-        }
-      ],
+      "badge": "Embedded systems experiment",
+      "description": "An experimental wearable communication-support interface using EEG sensing, an ESP32, and audio output. The focus is on detecting useful intentional input, not decoding arbitrary thoughts.",
+      "links": [],
       "writeup": {
-        "hardPart": "Physiological signals acquired at the scalp are in the microvolt range (10-100 μV) and easily corrupted by ocular blinks, jaw clenches (EMG), and 50Hz mains hum. Isolating deliberate, intentional user triggers on a low-power microcontroller without false positives required strict FreeRTOS task isolation across ESP32 cores and a custom ThinkGear UART packet parser.",
+        "hardPart": "EEG signals are weak and easily affected by eye movement, muscle activity, and electrical noise. The prototype explores reliable signal acquisition and intentional-input detection within the constraints of a low-cost embedded platform.",
         "highlights": [
-          "Benchtop test bench established with TGAM biosensing module and ESP32-WROOM-32",
-          "Dual-core FreeRTOS firmware: Core 0 parses 57,600 baud serial packets; Core 1 runs event state machines",
-          "ThinkGear UART packet parser with strict 0xAA 0xAA sync byte and checksum verification",
-          "PAM8403 audio amplifier stage driving 8Ω bone-conduction transducers against temporal bones",
-          "Honest scope: Designed as a discrete intentional trigger interface (not arbitrary sentence/thought decoding)",
-          "Hardware assembled and bench-tested; custom PCB layout and ergonomic 3D-printed headband in progress"
+          "Prototype built around NeuroSky TGAM sensing and an ESP32",
+          "Firmware parses ThinkGear UART packets and validates checksums",
+          "Exploring event-based input and audio feedback",
+          "Hardware assembled for bench testing; enclosure and integration work remain"
         ],
-        "stack": "ESP32 (FreeRTOS / C++), NeuroSky TGAM ASIC, UART Serial Protocol, PAM8403 Audio Amp, Bone Conduction Transducers."
+        "stack": "ESP32, Embedded C/C++, FreeRTOS, NeuroSky TGAM, UART, EEG, audio electronics."
       }
     },
     {
-      "tags": ["flagship", "research"],
-      "image": "grey.jpg",
-      "title": "Cellular Fingerprint Positioning System ↗",
-      "badge": "Telecommunications Research",
-      "description": "Final-year Electrical Engineering capstone project at Adeleke University. Investigating position estimation algorithms in urban and indoor environments using cellular signal fingerprints (GSM/LTE RSSI, Cell ID, LAC) where satellite GPS signals are severely attenuated or unavailable.",
-      "links": [
-        {
-          "text": "[Research & Capstone Specs]",
-          "url": "https://github.com/tobiawolaju"
-        }
+      "tags": [
+        "flagship",
+        "research"
       ],
+      "image": "grey.jpg",
+      "title": "Cellular Fingerprint Positioning ↗",
+      "badge": "Telecommunications research",
+      "description": "Final-year Electrical Engineering research investigating position estimation from cellular signal measurements in places where GPS is unreliable or unavailable.",
+      "links": [],
       "writeup": {
-        "hardPart": "Cellular Received Signal Strength Indicator (RSSI) exhibits high temporal and spatial variance caused by shadow fading, structural multipath, and dynamic network load balancing, rendering naive geometric trilateration error-prone indoors.",
+        "hardPart": "Cellular signal strength varies with buildings, multipath, shadowing, and network conditions. The project investigates fingerprint-based positioning rather than relying on simple distance estimates from signal strength.",
         "highlights": [
-          "Final-year Electrical Engineering capstone research project at Adeleke University",
-          "Hardware survey test rig logging cellular modem registers (AT+CSQ, AT+CREG, AT+COPS) with timestamped coordinates",
-          "Multi-cell fingerprint vector construction combining serving cell and neighbor cell signal levels",
-          "Offline radio map calibration linked with online k-Nearest Neighbors (k-NN) and probabilistic matching",
-          "Ongoing empirical grid survey across campus outdoor-to-indoor transition zones",
-          "Constructing baseline error Cumulative Distribution Function (CDF) curves for thesis evaluation"
+          "Collecting GSM/LTE signal and cell information",
+          "Building multi-cell signal fingerprints",
+          "Investigating k-nearest-neighbour and probabilistic matching",
+          "Evaluating positioning error across outdoor and indoor areas"
         ],
-        "stack": "Cellular Telephony (GSM/LTE), AT-Command Modems, Python (NumPy / SciPy), k-NN Classification, RF Propagation Modeling."
+        "stack": "GSM/LTE, cellular modems, AT commands, Python, NumPy, SciPy, k-NN, RF propagation."
       }
     },
     {
-      "tags": ["flagship", "systems"],
+      "tags": [
+        "flagship",
+        "systems"
+      ],
       "image": "grey.jpg",
-      "title": "KYP ↗",
-      "badge": "🏆 BuildAnything Spark Hackathon",
-      "description": "On-chain protocol accountability platform. Research protocols with an AI pipeline, commit with a wallet stake, and let smart contracts automatically verify your follow-through across EVM protocols without custom event signatures.",
+      "title": "Know Your Protocol ↗",
+      "badge": "BuildAnything Spark Hackathon",
+      "description": "An on-chain accountability platform that lets users make commitments and verify follow-through through wallet activity and smart contracts.",
       "links": [
         {
-          "text": "[Live App]",
+          "text": "Live app",
           "url": "https://knowyourprotocol.vercel.app"
         },
         {
-          "text": "[GitHub]",
+          "text": "GitHub",
           "url": "https://github.com/tobiawolaju/kyp"
         }
       ],
       "writeup": {
-        "hardPart": "Building a protocol-agnostic verification system that works across any EVM protocol without relying on custom event signatures or proprietary ABI decoders. Designed an architecture that scans user on-chain activity using indexed getLogs queries, filters engagement by protocol contract, and automatically resolves commitments through Solidity vaults and a heartbeat-driven backend worker.",
+        "hardPart": "The core challenge was detecting meaningful user activity across EVM protocols without depending on custom event signatures. I built an activity-scanning approach using indexed contract logs and connected it to commitment and verification logic.",
         "highlights": [
-          "Dual-tier AI research pipeline (FlashResearcher + DeepResearcher via Gemini)",
-          "Protocol-agnostic engagement detection across arbitrary EVM smart contracts using getLogs",
-          "Solidity commitment contracts with automatic 9-day, 3-strike verify/slash execution",
-          "Zero-cost heartbeat worker architecture avoiding expensive third-party cron services",
-          "Multi-network support (Monad Testnet + Mainnet) with adaptive block-time estimation",
-          "Recognized during the BuildAnything Spark Hackathon with 100% verified test harness"
+          "AI-assisted protocol research pipeline",
+          "Protocol activity detection using EVM log queries",
+          "Solidity commitment contracts with automated verification logic",
+          "Backend worker for scheduled commitment checks",
+          "Recognized in the BuildAnything Spark Hackathon"
         ],
-        "stack": "Svelte 5, TypeScript, Node.js, Solidity, viem, ethers, Firebase RTDB, Gemini API, Privy, Monad."
+        "stack": "Svelte, TypeScript, Node.js, Solidity, viem, ethers, Firebase, Gemini API, Privy, Monad."
       }
     },
     {
-      "tags": ["systems"],
+      "tags": [
+        "systems"
+      ],
       "image": "grey.jpg",
       "title": "Rug Pool ↗",
-      "badge": "Smart Contracts",
-      "description": "Memecoin launchpad where no one — not even the deployer — can exit early. On-chain, verifiable randomness decides who exits at the 24-hour mark; losers fund the winner's payout.",
+      "badge": "Smart contracts",
+      "description": "A smart-contract experiment where participants are locked in until a defined exit time, with verifiable randomness determining the payout.",
       "links": [
         {
-          "text": "[Live Demo]",
+          "text": "Live demo",
           "url": "https://rug-pool.vercel.app"
         },
         {
-          "text": "[GitHub]",
+          "text": "GitHub",
           "url": "https://github.com/tobiawolaju/rug-pool"
         }
       ],
       "writeup": {
-        "hardPart": "Enforcing a hard lock at the contract level with no admin backdoor, while making the randomness both unpredictable and independently verifiable. Used Pyth Entropy for VRF. Shipped 5 contracts to Monad testnet with 53 passing tests and ran two full simulation cycles to confirm the payout logic held under edge cases.",
+        "hardPart": "The challenge was enforcing exit restrictions at the contract level while making the outcome independently verifiable. I integrated Pyth Entropy and tested the payout flow against edge cases.",
         "highlights": [
-          "Non-custodial contract exit constraints enforced at the EVM bytecode level",
-          "Pyth Entropy VRF integration for verifiable tamper-proof randomness",
-          "53 automated passing unit and integration tests on Hardhat"
+          "Contract-enforced exit restrictions",
+          "Pyth Entropy integration for verifiable randomness",
+          "53 passing automated tests reported for the project"
         ],
-        "stack": "Solidity, Hardhat, Monad, Pyth VRF, TypeScript, React."
+        "stack": "Solidity, Hardhat, Monad, Pyth Entropy, TypeScript, React."
       }
     }
   ],
   "otherBuilds": [
     {
       "title": "MoyakiTraceEngine",
-      "description": "High-throughput block indexer cross-referencing 3 independent Monad RPC nodes in real time with automatic rollback on parent-hash reorgs.",
+      "description": "A Monad block indexer that monitors multiple RPC endpoints and handles chain reorganizations through rollback logic.",
       "links": [
         {
-          "text": "[Trace Blocks]",
+          "text": "Live demo",
           "url": "https://moyakitraceengine.vercel.app/"
         },
         {
-          "text": "[GitHub]",
+          "text": "GitHub",
           "url": "https://github.com/tobiawolaju/MoyakiTraceEngine"
         }
       ]
     },
     {
       "title": "Noogler",
-      "description": "Autonomous AI agent controlling a PC via raw screen capture and a native Rust OS input layer without API crutches.",
+      "description": "An AI agent prototype that observes a computer screen and interacts through native operating-system input.",
       "links": [
         {
-          "text": "[Launch]",
+          "text": "Demo",
           "url": "https://noogler.vercel.app"
         },
         {
-          "text": "[GitHub]",
+          "text": "GitHub",
           "url": "https://github.com/tobiawolaju/Noogler"
         }
       ]
     },
     {
       "title": "HARE",
-      "description": "Autonomous agent workflow that self-evaluates and self-retries with zero human in the quality control loop.",
+      "description": "An agent workflow with self-evaluation and retry mechanisms.",
       "links": [
         {
-          "text": "[Run]",
+          "text": "Demo",
           "url": "https://h-a-r-e.vercel.app/"
         },
         {
-          "text": "[GitHub]",
+          "text": "GitHub",
           "url": "https://github.com/tobiawolaju/H-A-R-E"
         }
       ]
     },
     {
       "title": "DominusQuant",
-      "description": "Algorithmic trading engine parsing real-time order flow and on-chain state changes on Monad EVM.",
+      "description": "An experimental engine for monitoring market data and on-chain activity.",
       "links": [
         {
-          "text": "[Trade]",
+          "text": "Demo",
           "url": "https://dominus-quant.vercel.app/"
         },
         {
-          "text": "[GitHub]",
+          "text": "GitHub",
           "url": "https://github.com/tobiawolaju/DominusQuant"
         }
       ]
     },
     {
       "title": "Superyap",
-      "description": "Anonymous end-to-end encrypted peer-to-peer messaging prototype with integrated micropayments on Monad EVM.",
+      "description": "An encrypted peer-to-peer messaging prototype exploring integrated micropayments.",
       "links": [
         {
-          "text": "[Open]",
+          "text": "Demo",
           "url": "https://superyap.vercel.app/"
         },
         {
-          "text": "[GitHub]",
+          "text": "GitHub",
           "url": "https://github.com/tobiawolaju/Superyap"
         }
       ]
     },
     {
       "title": "Terra Engine",
-      "description": "Procedural terrain rendering and physics simulation engine developed and shipped under a 48-hour game jam constraint.",
+      "description": "A procedural terrain and physics prototype built during a 48-hour game jam.",
       "links": [
         {
-          "text": "[Play]",
+          "text": "Play",
           "url": "https://wavedash.com/games/terraengine"
         },
         {
-          "text": "[GitHub]",
+          "text": "GitHub",
           "url": "https://github.com/tobiawolaju/Terra-engine"
         }
       ]
     },
     {
       "title": "John Wick: Exitus",
-      "description": "Action combat state machine and isometric physics game built and deployed in 48 hours for a global game jam.",
+      "description": "An isometric action-game prototype built for a 48-hour game jam.",
       "links": [
         {
-          "text": "[Play]",
+          "text": "Play",
           "url": "https://johnwick1000.vercel.app"
         },
         {
-          "text": "[GitHub]",
+          "text": "GitHub",
           "url": "https://github.com/tobiawolaju/johnwick-lex-Exitus"
         }
       ]
@@ -277,13 +275,13 @@
   "docs": [
     {
       "link": "https://tobiawolaju21.substack.com/p/communicating-in-functions?r=2hkadt",
-      "title": "Communicating in Functions ↗",
-      "description": "On engineering as communication — and why a function is just an idea precise enough to survive without its author."
+      "title": "Communicating in Functions",
+      "description": "On engineering as communication and writing ideas that remain clear without their author."
     },
     {
       "link": "https://tobiawolaju21.substack.com/p/success-is-90-luck-and-informed-guessing?r=2hkadt",
-      "title": "Success is 90% luck and informed guessing. Success is 100% luck if you're uninformed. ↗",
-      "description": "A probability framework for luck, consistency, and what to do when life hands you a defective die."
+      "title": "Success is 90% Luck and Informed Guessing",
+      "description": "A framework for probability, informed decisions, and uncertainty."
     }
   ]
 }
