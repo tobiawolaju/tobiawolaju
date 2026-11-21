@@ -547,14 +547,19 @@ function initInteractions() {
 
 function initSkillIconLoop() {
     const icons = Array.from(document.querySelectorAll("#skills-section .skill-icon"));
+    const label = document.getElementById("skill-icon-label");
     if (!icons.length) return;
 
     let index = 0;
-    icons[index].classList.add("active");
+    const setActive = (i) => {
+        icons.forEach((icon, idx) => icon.classList.toggle("active", idx === i));
+        if (label) label.textContent = icons[i].getAttribute("title") || "";
+    };
+
+    setActive(index);
 
     setInterval(() => {
-        icons[index].classList.remove("active");
         index = (index + 1) % icons.length;
-        icons[index].classList.add("active");
-    }, 1400);
+        setActive(index);
+    }, 800);
 }
