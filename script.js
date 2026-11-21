@@ -130,7 +130,6 @@ function renderPortfolio(data) {
         const otherSection = document.createElement("div");
         otherSection.className = "other-builds";
         otherSection.innerHTML = `
-            <h3 style="margin: 1.5rem 0 1rem; font-size: 1.1rem; opacity: 0.6;">Builds</h3>
             <div class="other-builds-list">
                 ${data.otherBuilds.map(b => {
                     const linkTags = (b.links || []).map(link => {
