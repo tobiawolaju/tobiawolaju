@@ -1,4 +1,4 @@
-{
+﻿{
   "pageTitle": "Tobi Awolaju | Engineer · Builder · Researcher",
   "theme": "curiosity-driven",
   "profile": {
@@ -13,42 +13,19 @@
     "activity": "GitHub Activity"
   },
   "filters": [
-    {
-      "id": "all",
-      "label": "All"
-    },
-    {
-      "id": "flagship",
-      "label": "Featured"
-    },
-    {
-      "id": "research",
-      "label": "Research & Hardware"
-    },
-    {
-      "id": "systems",
-      "label": "Software & Systems"
-    }
+    { "id": "all", "label": "All" },
+    { "id": "flagship", "label": "Featured" },
+    { "id": "research", "label": "Research & Hardware" },
+    { "id": "systems", "label": "Software & Systems" }
   ],
-  "projects": [
+  "projects": [],
+  "otherBuilds": [
     {
-      "tags": [
-        "flagship",
-        "systems"
-      ],
-      "image": "worldofnads1.gif",
-      "title": "World of Nads ↗",
-      "badge": "Cross-platform multiplayer game",
+      "title": "World of Nads",
       "description": "A web-first 3D multiplayer game with browser and Android builds. I build the Godot client, Rust multiplayer server, and Monad-based game systems.",
       "links": [
-        {
-          "text": "Play",
-          "url": "https://worldofnads.xyz"
-        },
-        {
-          "text": "GitHub",
-          "url": "https://github.com/tobiawolaju/WorldOfNads"
-        }
+        { "text": "Play", "url": "https://worldofnads.xyz" },
+        { "text": "GitHub", "url": "https://github.com/tobiawolaju/WorldOfNads" }
       ],
       "writeup": {
         "hardPart": "The main challenge is keeping multiplayer state responsive across browsers and lower-end devices. I profiled the Godot-to-JavaScript boundary, identified expensive per-frame bridge calls, and reworked synchronization around batched network updates.",
@@ -60,24 +37,10 @@
           "Monad smart-contract integration for game-related transactions"
         ],
         "stack": "Godot, WebAssembly, Rust, Tokio, WebSockets, TypeScript, Solidity, Monad, PostgreSQL, Privy."
-      },
-      "gifSequence": [
-        "worldofnads1.gif",
-        "worldofnads2.gif",
-        "worldofnads3.gif",
-        "worldofnads4.gif",
-        "worldofnads5.gif",
-        "worldofnads6.gif"
-      ]
+      }
     },
     {
-      "tags": [
-        "flagship",
-        "research"
-      ],
-      "image": "grey.jpg",
-      "title": "EEG Communication Headset ↗",
-      "badge": "Embedded systems experiment",
+      "title": "EEG Communication Headset",
       "description": "An experimental wearable communication-support interface using EEG sensing, an ESP32, and audio output. The focus is on detecting useful intentional input, not decoding arbitrary thoughts.",
       "links": [],
       "writeup": {
@@ -92,13 +55,7 @@
       }
     },
     {
-      "tags": [
-        "flagship",
-        "research"
-      ],
-      "image": "grey.jpg",
-      "title": "Cellular Fingerprint Positioning ↗",
-      "badge": "Telecommunications research",
+      "title": "Cellular Fingerprint Positioning",
       "description": "Final-year Electrical Engineering research investigating position estimation from cellular signal measurements in places where GPS is unreliable or unavailable.",
       "links": [],
       "writeup": {
@@ -113,23 +70,11 @@
       }
     },
     {
-      "tags": [
-        "flagship",
-        "systems"
-      ],
-      "image": "grey.jpg",
-      "title": "Know Your Protocol ↗",
-      "badge": "BuildAnything Spark Hackathon",
+      "title": "Know Your Protocol",
       "description": "An on-chain accountability platform that lets users make commitments and verify follow-through through wallet activity and smart contracts.",
       "links": [
-        {
-          "text": "Live app",
-          "url": "https://knowyourprotocol.vercel.app"
-        },
-        {
-          "text": "GitHub",
-          "url": "https://github.com/tobiawolaju/kyp"
-        }
+        { "text": "Live app", "url": "https://knowyourprotocol.vercel.app" },
+        { "text": "GitHub", "url": "https://github.com/tobiawolaju/kyp" }
       ],
       "writeup": {
         "hardPart": "The core challenge was detecting meaningful user activity across EVM protocols without depending on custom event signatures. I built an activity-scanning approach using indexed contract logs and connected it to commitment and verification logic.",
@@ -144,22 +89,11 @@
       }
     },
     {
-      "tags": [
-        "systems"
-      ],
-      "image": "grey.jpg",
-      "title": "Rug Pool ↗",
-      "badge": "Smart contracts",
+      "title": "Rug Pool",
       "description": "A smart-contract experiment where participants are locked in until a defined exit time, with verifiable randomness determining the payout.",
       "links": [
-        {
-          "text": "Live demo",
-          "url": "https://rug-pool.vercel.app"
-        },
-        {
-          "text": "GitHub",
-          "url": "https://github.com/tobiawolaju/rug-pool"
-        }
+        { "text": "Live demo", "url": "https://rug-pool.vercel.app" },
+        { "text": "GitHub", "url": "https://github.com/tobiawolaju/rug-pool" }
       ],
       "writeup": {
         "hardPart": "The challenge was enforcing exit restrictions at the contract level while making the outcome independently verifiable. I integrated Pyth Entropy and tested the payout flow against edge cases.",
@@ -170,105 +104,61 @@
         ],
         "stack": "Solidity, Hardhat, Monad, Pyth Entropy, TypeScript, React."
       }
-    }
-  ],
-  "otherBuilds": [
+    },
     {
       "title": "MoyakiTraceEngine",
       "description": "A Monad block indexer that monitors multiple RPC endpoints and handles chain reorganizations through rollback logic.",
       "links": [
-        {
-          "text": "Live demo",
-          "url": "https://moyakitraceengine.vercel.app/"
-        },
-        {
-          "text": "GitHub",
-          "url": "https://github.com/tobiawolaju/MoyakiTraceEngine"
-        }
+        { "text": "Live demo", "url": "https://moyakitraceengine.vercel.app/" },
+        { "text": "GitHub", "url": "https://github.com/tobiawolaju/MoyakiTraceEngine" }
       ]
     },
     {
       "title": "Noogler",
       "description": "An AI agent prototype that observes a computer screen and interacts through native operating-system input.",
       "links": [
-        {
-          "text": "Demo",
-          "url": "https://noogler.vercel.app"
-        },
-        {
-          "text": "GitHub",
-          "url": "https://github.com/tobiawolaju/Noogler"
-        }
+        { "text": "Demo", "url": "https://noogler.vercel.app" },
+        { "text": "GitHub", "url": "https://github.com/tobiawolaju/Noogler" }
       ]
     },
     {
       "title": "HARE",
       "description": "An agent workflow with self-evaluation and retry mechanisms.",
       "links": [
-        {
-          "text": "Demo",
-          "url": "https://h-a-r-e.vercel.app/"
-        },
-        {
-          "text": "GitHub",
-          "url": "https://github.com/tobiawolaju/H-A-R-E"
-        }
+        { "text": "Demo", "url": "https://h-a-r-e.vercel.app/" },
+        { "text": "GitHub", "url": "https://github.com/tobiawolaju/H-A-R-E" }
       ]
     },
     {
       "title": "DominusQuant",
       "description": "An experimental engine for monitoring market data and on-chain activity.",
       "links": [
-        {
-          "text": "Demo",
-          "url": "https://dominus-quant.vercel.app/"
-        },
-        {
-          "text": "GitHub",
-          "url": "https://github.com/tobiawolaju/DominusQuant"
-        }
+        { "text": "Demo", "url": "https://dominus-quant.vercel.app/" },
+        { "text": "GitHub", "url": "https://github.com/tobiawolaju/DominusQuant" }
       ]
     },
     {
       "title": "Superyap",
       "description": "An encrypted peer-to-peer messaging prototype exploring integrated micropayments.",
       "links": [
-        {
-          "text": "Demo",
-          "url": "https://superyap.vercel.app/"
-        },
-        {
-          "text": "GitHub",
-          "url": "https://github.com/tobiawolaju/Superyap"
-        }
+        { "text": "Demo", "url": "https://superyap.vercel.app/" },
+        { "text": "GitHub", "url": "https://github.com/tobiawolaju/Superyap" }
       ]
     },
     {
       "title": "Terra Engine",
       "description": "A procedural terrain and physics prototype built during a 48-hour game jam.",
       "links": [
-        {
-          "text": "Play",
-          "url": "https://wavedash.com/games/terraengine"
-        },
-        {
-          "text": "GitHub",
-          "url": "https://github.com/tobiawolaju/Terra-engine"
-        }
+        { "text": "Play", "url": "https://wavedash.com/games/terraengine" },
+        { "text": "GitHub", "url": "https://github.com/tobiawolaju/Terra-engine" }
       ]
     },
     {
       "title": "John Wick: Exitus",
       "description": "An isometric action-game prototype built for a 48-hour game jam.",
       "links": [
-        {
-          "text": "Play",
-          "url": "https://johnwick1000.vercel.app"
-        },
-        {
-          "text": "GitHub",
-          "url": "https://github.com/tobiawolaju/johnwick-lex-Exitus"
-        }
+        { "text": "Play", "url": "https://johnwick1000.vercel.app" },
+        { "text": "GitHub", "url": "https://github.com/tobiawolaju/johnwick-lex-Exitus" }
       ]
     }
   ],

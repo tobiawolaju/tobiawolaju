@@ -70,9 +70,7 @@ function renderPortfolio(data) {
                 : "";
 
             const primaryLiveLink = (project.links || []).find(link => !/github/i.test(link.text || link.url));
-            const projectPreview = primaryLiveLink?.url && (!project.gifSequence || !project.gifSequence.length)
-                ? `<div class="project-preview" aria-hidden="true"><iframe data-src="${primaryLiveLink.url}" title="${project.title} live preview" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe></div>`
-                : `<img src="${project.image}" alt="${project.title}"${gifSequence}>`;
+            const projectPreview = `<img src="${project.image || ''}" alt="${project.title}"${gifSequence}>`;
 
             return `
             <div class="project" data-tags="${(project.tags || []).join(",")}">
@@ -127,23 +125,52 @@ function renderPortfolio(data) {
         initLazyIframes();
     }
 
-    // 4b. Other Builds (compact strip)
-    if (data.otherBuilds) {
+    // 4b. Compact builds/projects list
+    if (data.otherBuilds && data.otherBuilds.length) {
         const otherSection = document.createElement("div");
         otherSection.className = "other-builds";
         otherSection.innerHTML = `
-            <h3 style="margin: 2rem 0 1rem; font-size: 1.1rem; opacity: 0.6;">Other builds</h3>
+            <h3 style="margin: 1.5rem 0 1rem; font-size: 1.1rem; opacity: 0.6;">Builds</h3>
             <div class="other-builds-list">
                 ${data.otherBuilds.map(b => {
                     const linkTags = (b.links || []).map(link => {
                         let cls = link.text.toLowerCase().includes('github') ? 'tag-purple' : 'tag-green';
-                        return `<a href="${link.url}" class="tag ${cls}" target="_blank">${link.text}</a>`;
+                        return `<a href="${link.url}" class="tag ${cls}" target="_blank" rel="noopener noreferrer">${link.text}</a>`;
                     }).join("");
+                    const hasWriteup = !!b.writeup;
+                    const breakdownPill = hasWriteup
+                        ? `<button type="button" class="tag tag-yellow writeup-pill" aria-expanded="false">Engineering breakdown</button>`
+                        : "";
+                    const writeupHTML = hasWriteup ? `
+                        <div class="technical-writeup other-build-writeup">
+                            ${b.writeup.hardPart ? `
+                            <div class="writeup-section">
+                                <strong>The hardest technical problem:</strong>
+                                <p>${b.writeup.hardPart}</p>
+                            </div>
+                            ` : ''}
+                            ${b.writeup.highlights ? `
+                            <div class="writeup-section">
+                                <strong>Key engineering highlights</strong>
+                                <ul>${b.writeup.highlights.map(h => `<li>${h}</li>`).join('')}</ul>
+                            </div>
+                            ` : ''}
+                            ${b.writeup.stack ? `
+                            <div class="writeup-section">
+                                <strong>Stack:</strong>
+                                <p>${b.writeup.stack}</p>
+                            </div>
+                            ` : ''}
+                        </div>
+                    ` : "";
                     return `
                         <div class="other-build-item">
-                            <strong>${b.title}</strong>
-                            <span class="other-build-desc">— ${b.description}</span>
-                            <span class="links">${linkTags}</span>
+                            <div class="other-build-main">
+                                <strong>${b.title}</strong>
+                                <span class="other-build-desc">— ${b.description}</span>
+                                <span class="links">${linkTags}${breakdownPill}</span>
+                            </div>
+                            ${writeupHTML}
                         </div>
                     `;
                 }).join("")}
@@ -415,13 +442,25 @@ function initInteractions() {
     window.addEventListener("scroll", revealSections);
     revealSections();
 
-    // --- Project Breakdown Toggles ---
+    // --- Project/Build Breakdown Toggles ---
     document.addEventListener("click", (e) => {
-        if (e.target.classList.contains("writeup-toggle")) {
-            const toggle = e.target;
-            const content = toggle.nextElementSibling;
+        const writeupToggle = e.target.closest(".writeup-toggle");
+        if (writeupToggle) {
+            const content = writeupToggle.nextElementSibling;
+            if (!content) return;
             const isExpanded = content.classList.toggle("expanded");
-            toggle.textContent = isExpanded ? "Project Breakdown ▴" : "Project Breakdown ▾";
+            writeupToggle.textContent = isExpanded ? "Project Breakdown ▴" : "Project Breakdown ▾";
+            return;
+        }
+
+        const writeupPill = e.target.closest(".writeup-pill");
+        if (writeupPill) {
+            const item = writeupPill.closest(".other-build-item");
+            const content = item ? item.querySelector(".technical-writeup") : null;
+            if (!content) return;
+            const isExpanded = content.classList.toggle("expanded");
+            writeupPill.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+            writeupPill.textContent = isExpanded ? "Engineering breakdown ▴" : "Engineering breakdown";
         }
     });
 
