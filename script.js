@@ -428,6 +428,8 @@ function initProjectFilterPinning(filterContainer, projectsSection) {
 }
 
 function initInteractions() {
+    initSkillIconLoop();
+
     // --- Scroll Reveal ---
     const sections = document.querySelectorAll("section");
     const revealSections = () => {
@@ -541,4 +543,18 @@ function initInteractions() {
             }
         });
     }
+}
+
+function initSkillIconLoop() {
+    const icons = Array.from(document.querySelectorAll("#skills-section .skill-icon"));
+    if (!icons.length) return;
+
+    let index = 0;
+    icons[index].classList.add("active");
+
+    setInterval(() => {
+        icons[index].classList.remove("active");
+        index = (index + 1) % icons.length;
+        icons[index].classList.add("active");
+    }, 1400);
 }
