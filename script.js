@@ -546,14 +546,14 @@ function initInteractions() {
 }
 
 function initSkillIconLoop() {
+    const items = Array.from(document.querySelectorAll("#skills-section .skill-icon-item"));
     const icons = Array.from(document.querySelectorAll("#skills-section .skill-icon"));
-    const label = document.getElementById("skill-icon-label");
-    if (!icons.length) return;
+    if (!items.length || !icons.length) return;
 
     let index = 0;
     const setActive = (i) => {
         icons.forEach((icon, idx) => icon.classList.toggle("active", idx === i));
-        if (label) label.textContent = icons[i].getAttribute("title") || "";
+        items.forEach((item, idx) => item.classList.toggle("active", idx === i));
     };
 
     setActive(index);
